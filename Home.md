@@ -24,12 +24,19 @@ The following is a path that will persist after a boot2docker restart:
 The following is a path that will persist after a Docker restart:
 `/var/lib/docker`
 
-## Create an Image from the Dockerfile provided in this repo (or download from Docker Hub)
+## Option 1:  Create an Image from the Dockerfile Provided in this Github Repo
+This will take about 10-15 mins to build - and lots of internet traffic - as dependent binaries and libraries will be retrieved from the internet.
+
+(You can also pull the image from the Docker Hub Repository detailed in Option 2 below.)
+
 ```
 git clone https://github.com/fluxcapacitor/pipeline.git
 cd pipeline
 docker build -t fluxcapacitor/pipeline .
 ```
+
+## Option 2:  Download the Image (2-3GB) from the Docker Hub Repo
+```docker pull fluxcapacitor/pipeline```
 
 ## Run Docker Container with the Image and Get a Bash Prompt within the Container
 ```
@@ -50,6 +57,8 @@ Apache Spark Master (7077):  37077
 Apache Spark Master Admin UI (8080):  38080
 Apache Spark Worker Admin UI (8081):  38081
 
+## Accessing Services Outside of the Container
+You'll need to use the 30000+ ports listed above to access services outside of the Docker container.
 
 ## Start the Pipeline Services 
 ```
