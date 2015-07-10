@@ -15,6 +15,15 @@ boot2docker start
 boot2docker ssh
 ```
 
+## Persistent and Non-Persistent Container Directories
+Consider everything you do in a boot2docker or docker session to be scoped to the life of just that session.
+
+The following is a path that will persist after a boot2docker restart:
+`/var/lib/boot2docker`
+
+The following is a path that will persist after a Docker restart:
+`/var/lib/docker`
+
 ## Create an Image from the Dockerfile provided in this repo (or download from Docker Hub)
 ```
 git clone https://github.com/fluxcapacitor/pipeline.git
@@ -40,4 +49,4 @@ flux-init-all.sh
 
 ## Disclaimer
 The end-to-end hasn't been tested, yet.
-I'm putting this out so others can test.
+I'm putting this out so others can test and enhance.
