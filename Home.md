@@ -56,6 +56,7 @@ Apache Zeppelin (7070):  37070
 Apache Spark Master (7077):  37077
 Apache Spark Master Admin UI (8080):  38080
 Apache Spark Worker Admin UI (8081):  38081
+```
 
 ## Accessing Services Outside of the Container
 You'll need to use the 30000+ ports listed above to access services outside of the Docker container.
