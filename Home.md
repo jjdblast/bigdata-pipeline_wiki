@@ -61,14 +61,22 @@ Apache Spark Worker Admin UI (8081):  38081
 You'll need to use the 30000+ ports listed above to access services outside of the Docker container.
 
 ## Start the Pipeline Services 
+
 ```
 cd pipeline
 flux-start-all.sh
 ```
 
 ## Initialize the Pipeline Data
+
 ```
 flux-init-all.sh
+```
+
+## Stop the Pipeline Services
+
+```
+flux-stop-all.sh
 ```
 
 ## Disclaimer
