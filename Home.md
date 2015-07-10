@@ -33,10 +33,25 @@ docker build -t fluxcapacitor/pipeline .
 
 ## Run Docker Container with the Image and Get a Bash Prompt within the Container
 ```
-docker run -p 30080:80 -p 32181:2181 -p 38082:8082 -p 39092:9092 -p 39200:9200 -p 37070:7070 -p 37077:7077 -p 38080:8080 -p 38081:8081 -p 38090:8090 -it fluxcapacitor/pipeline bash
+docker run -p 30080:80 -p 32181:2181 -p 38082:8082 -p 39042:9042 -p 39092:9092 -p -p 39160:9160 39200:9200 -p 37070:7070 -p 37077:7077 -p 38080:8080 -p 38081:8081 -p 38090:8090 -it fluxcapacitor/pipeline bash
 ```
 
-## Start the Pipeline Services
+## Ports
+In order to reduce the likelihood of port collisions on your local machine, I've mapped the somewhat-common container service ports to uncommon ports in the `30000` range as follows:
+```
+Apache Httpd (80):  30080
+Apache ZooKeeper (2181):  32181
+Apache Kafka Rest Proxy (8082):  38082
+Apache Kafka (9092):  39092
+Apache Cassandra (9042, 9160):  39042, 39160
+ElasticSearch (9200):  39200
+Apache Zeppelin (7070):  37070
+Apache Spark Master (7077):  37077
+Apache Spark Master Admin UI (8080):  38080
+Apache Spark Worker Admin UI (8081):  38081
+
+
+## Start the Pipeline Services 
 ```
 cd pipeline
 flux-start-all.sh
