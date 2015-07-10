@@ -37,3 +37,7 @@ flux-start-all.sh
 ```
 flux-init-all.sh
 ```
+
+## Disclaimer
+The end-to-end hasn't been tested, yet.
+I'm putting this out so others can test.
