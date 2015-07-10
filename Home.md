@@ -2,11 +2,11 @@ Welcome to the pipeline wiki!
 
 # Getting Started
 ## Install latest boot2docker (1.7+) 
-### If you have Virtual Box already installed, it's best if you could remove it (assuming you're not using it!)
-### boot2docker expects a certain version of Virtual Box, otherwise things won't work.
+If you have Virtual Box already installed, it's best if you could remove it (assuming you're not using it!)
+boot2docker expects a certain version of Virtual Box, otherwise things won't work.
 
 ## Initialize boot2docker with enough memory (4-6 GB minimum)
-### Units are Megabytes
+Units are Megabytes
 `boot2docker init -m 6144`
 
 ## Run boot2docker and ssh into it
