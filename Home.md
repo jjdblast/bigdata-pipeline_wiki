@@ -40,7 +40,8 @@ docker build -t fluxcapacitor/pipeline .
 
 ## Run Docker Container with the Image and Get a Bash Prompt within the Container
 ```
-docker run -p 30080:80 -p 32181:2181 -p 38082:8082 -p 39042:9042 -p 39092:9092 -p -p 39160:9160 39200:9200 -p 37070:7070 -p 37077:7077 -p 38080:8080 -p 38081:8081 -p 38090:8090 -it fluxcapacitor/pipeline bash
+docker run -p 30080:80 -p 32181:2181 -p 38082:8082 -p 39042:9042 -p 39092:9092 -p 39160:9160 -p 39200:92
+00 -p 37070:7070 -p 37077:7077 -p 38080:8080 -p 38081:8081 -p 38090:8090 -it fluxcapacitor/pipeline bash
 ```
 
 ## Ports
