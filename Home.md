@@ -79,7 +79,7 @@ flux-start-all.sh
 flux-init-all.sh
 ```
 
-## Test the Services and Data
+## Test the Services and Data from *Within* the Container
 ```
 # Kafka REST API
 curl "http://localhost:4042/topics"
@@ -109,7 +109,13 @@ cqlsh:sparkafterdark> select * from real_time_likes;
 
 # ZooKeeper
 zookeeper-shell localhost:2181
+
+# ElasticSearch
+curl 'localhost:9200/_cat/indices?v'
 ```
+
+## Test the Services and Data from *Outside* the Container
+[TODO]
 
 ## Stop the Pipeline Services
 ```
