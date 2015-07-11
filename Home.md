@@ -66,6 +66,7 @@ You'll need to use the 30000+ ports listed above to access services outside of t
 ```
 cd ~/pipeline
 git reset --hard && git pull
+chmod 777 *.sh
 ```
 
 ## Start the Pipeline Services 
