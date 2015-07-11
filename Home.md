@@ -86,12 +86,37 @@ curl "http://localhost:4042/topics"
 
 # Apache Zeppelin Web UI
 curl "http://localhost:8080/topics"
+
+# Apache Spark Master Admin Web UI
+curl "http://localhost:6060"
+
+# Apache Spark Worker Admin Web UI
+curl "http://localhost:6061"
+
+# JDBC/ODBC Hive ThriftServer
+~/spark-1.4.0-bin-hadoop2.6/bin/beeline
+beeline> !connect jdbc:hive2://localhost:10000 hive ''
+
+# Cassandra
+cqlsh
+cqlsh> use sparkafterdark;
+cqlsh:sparkafterdark> select * from real_time_likes;
+
+ fromuserid | touserid | batchtime
+------------+----------+-----------
+
+(0 rows)
+
+# ZooKeeper
+zookeeper-shell localhost:2181
 ```
 
 ## Stop the Pipeline Services
 ```
 flux-stop-all.sh
 ```
+Note:  Sometimes the Zookeeper Service does not shutdown.
+You'll need to use `jps` and `kill` the process manually.
 
 ## Disclaimer
 The end-to-end hasn't been tested, yet.
