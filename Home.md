@@ -34,8 +34,9 @@ git clone https://github.com/fluxcapacitor/pipeline.git
 cd pipeline
 docker build -t fluxcapacitor/pipeline .
 ```
+Note:  If you run out of memory while building the image, you need re-initialize boot2docker with more memory (4-6GB) per a previous step.
 
-## [Out Of Date, Do Not Use] Option 2:  Download the Image (2-3GB) from the Docker Hub Repo
+## Option 2:  Download the Image (2-3GB) from the Docker Hub Repo
 ```docker pull fluxcapacitor/pipeline```
 
 ## Run Docker Container with the Image and Get a Bash Prompt within the Container
