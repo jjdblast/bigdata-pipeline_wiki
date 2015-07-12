@@ -72,12 +72,12 @@ chmod 777 *.sh
 
 ## Start the Pipeline Services 
 ```
-flux-start-all.sh
+./flux-start-all.sh
 ```
 
 ## Initialize the Pipeline Data
 ```
-flux-init-all.sh
+./flux-init-all.sh
 ```
 
 ## Test the Services and Data from *Within* the Container
@@ -120,7 +120,7 @@ curl 'localhost:9200/_cat/indices?v'
 
 ## Stop the Pipeline Services
 ```
-flux-stop-all.sh
+./flux-stop-all.sh
 ```
 Note:  Sometimes the Zookeeper Service does not shutdown.
 You'll need to use `jps` and `kill` the process manually.
