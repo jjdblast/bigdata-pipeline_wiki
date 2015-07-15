@@ -153,6 +153,9 @@ zookeeper-shell localhost:2181
 
 # ElasticSearch
 curl 'localhost:9200/_cat/indices?v'
+
+# Spark Submit
+[TODO] ./bin/spark-submit --class org.apache.spark.examples.SparkPi --master spark://localhost:7077 ~/spark-1.4.0-bin-hadoop2.6/lib/spark-examples-1.4.0-hadoop2.6.0.jar 10 
 ```
 
 ## Stop the Pipeline Services
