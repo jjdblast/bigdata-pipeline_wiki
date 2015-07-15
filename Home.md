@@ -94,7 +94,6 @@ tail -f ./nohup.out
 ## Ports
 In order to reduce the likelihood of port collisions on your local machine, we've mapped the relatively-common container service ports to relatively-uncommon ports in the `30000` range below.
 
-Note:  You'll need to use the 30000+ ports listed below to access these services **outside** of the Docker container.
 ```
 Apache Httpd (80):  30080
 Apache Kafka Rest Proxy (4042):  34042
@@ -112,8 +111,15 @@ Apache Kafka (9092):  39092
 
 ## Test the Services and Pipeline Data
 Notes:
-* From within the running Docker container, use the ports below.
-* From outside the container, use the equivalent 30000+ ports defined above.
+* From within the running Docker container, use the relatively-common ports above.
+* Use the equivalent relatively-uncommon 30000+ ports above from **outside** the Docker container - either still within boot2docker or outside completely on your local laptop.
+* If you're outside completely on your local laptop, you'll need to get the IP of your boot2docker VM using the following:
+```
+local-laptop$ boot2docker ip
+```
+
+Use this IP instead of "localhost".
+
 ```
 # Kafka REST API
 curl "http://localhost:4042/topics"
