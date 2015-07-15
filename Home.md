@@ -126,9 +126,6 @@ zookeeper-shell localhost:2181
 curl 'localhost:9200/_cat/indices?v'
 ```
 
-## Test the Services and Data from *Outside* the Container
-[TODO]
-
 ## Stop the Pipeline Services
 ```
 ./flux-stop-all.sh
