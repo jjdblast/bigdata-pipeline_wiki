@@ -44,6 +44,10 @@ Note:  If you run out of memory while building the image, you need re-initialize
 docker run -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:8080 -p 38081:8081 -p 36060:6060 -p 36061:6061 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -it fluxcapacitor/pipeline bash
 ```
 
+```
+cd ~
+```
+
 ## Ports
 In order to reduce the likelihood of port collisions on your local machine, I've mapped the somewhat-common container service ports to uncommon ports in the `30000` range below.
 
