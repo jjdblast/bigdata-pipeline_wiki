@@ -82,7 +82,7 @@ The output of jps should look something like the following:
 2152 io.confluent.kafka.schemaregistry.rest.Main <-- Kafka Schema Registry
 2123 -- process information unavailable <-- Either ElasticSearch or Cassandra
 ```
-Note that the "process information unavailable" message appears to be an OpenJDK [bug](https://bugs.openjdk.java.net/browse/JDK-8075773)
+Note that the "process information unavailable" message appears to be an OpenJDK [bug](https://bugs.openjdk.java.net/browse/JDK-8075773).
 
 
 ## Initialize Pipeline Data 
