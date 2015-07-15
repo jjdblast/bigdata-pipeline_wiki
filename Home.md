@@ -118,7 +118,7 @@ Notes:
 local-laptop$ boot2docker ip
 ```
 
-Use this IP instead of "localhost".
+Use this IP instead of "localhost" below.
 
 ```
 # Kafka REST API
