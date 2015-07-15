@@ -80,6 +80,12 @@ chmod 777 flux-*.sh
 ./flux-init-all.sh
 ```
 
+## Monitor the Startup and Initialize
+In a separate terminal, you can tail the nohup.out log as follows:
+```
+tail -f ./nohup.out
+```
+
 ## Test the Services and Data from *Within* the Container
 ```
 # Kafka REST API
