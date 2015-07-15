@@ -44,25 +44,6 @@ Note:  If you run out of memory while building the image, you need re-initialize
 docker run -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:8080 -p 38081:8081 -p 36060:6060 -p 36061:6061 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -it fluxcapacitor/pipeline bash
 ```
 
-## Ports
-In order to reduce the likelihood of port collisions on your local machine, I've mapped the somewhat-common container service ports to uncommon ports in the `30000` range below.
-
-Note:  You'll need to use the 30000+ ports listed below to access these services outside of the Docker container.
-```
-Apache Httpd (80):  30080
-Apache Kafka Rest Proxy (4042):  34042
-Apache Cassandra (9160, 9042):  39160, 39042
-ElasticSearch (9200):  39200
-Apache Spark Master (7077):  37077
-Apache Zeppelin (8080, 8081):  38080, 38081
-Apache Spark Master Admin UI (6060):  36060
-Apache Spark Worker Admin UI (6061):  36061
-Apache ZooKeeper (2181):  32181
-Apache Spark JDBC/ODBC Hive ThriftServer (10000):  30000
-Apache Hadoop (50070, 50090):  30070, 30090
-Apache Kafka (9092):  39092
-```
-
 ## Update the Pipeline Scripts to the Latest
 ```
 cd ~/pipeline
@@ -88,7 +69,29 @@ Initialize and Monitor
 tail -f ./nohup.out
 ```
 
-## Test the Services and Data from *Within* the Container
+## Ports
+In order to reduce the likelihood of port collisions on your local machine, we've mapped the relatively-common container service ports to relatively-uncommon ports in the `30000` range below.
+
+Note:  You'll need to use the 30000+ ports listed below to access these services **outside** of the Docker container.
+```
+Apache Httpd (80):  30080
+Apache Kafka Rest Proxy (4042):  34042
+Apache Cassandra (9160, 9042):  39160, 39042
+ElasticSearch (9200):  39200
+Apache Spark Master (7077):  37077
+Apache Zeppelin (8080, 8081):  38080, 38081
+Apache Spark Master Admin UI (6060):  36060
+Apache Spark Worker Admin UI (6061):  36061
+Apache ZooKeeper (2181):  32181
+Apache Spark JDBC/ODBC Hive ThriftServer (10000):  30000
+Apache Hadoop (50070, 50090):  30070, 30090
+Apache Kafka (9092):  39092
+```
+
+## Test the Services and Pipeline Data
+Notes:
+* From within the running Docker container, use the ports below.
+* From outside the container, use the equivalent 30000+ ports defined above.
 ```
 # Kafka REST API
 curl "http://localhost:4042/topics"
