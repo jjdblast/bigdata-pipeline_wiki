@@ -73,16 +73,18 @@ chmod 777 flux-*.sh
 ## Start the Pipeline Services 
 ```
 ./flux-start-all.sh
+tail -f ./nohup.out
 ```
 
 ## Initialize the Pipeline Data
+Before initializing, check that the processes are all running as expected:
 ```
-./flux-init-all.sh
+jps
 ```
 
-## Monitor the Startup and Initialize
-In a separate terminal, you can tail the nohup.out log as follows:
+Initialize and Monitor
 ```
+./flux-init-all.sh
 tail -f ./nohup.out
 ```
 
