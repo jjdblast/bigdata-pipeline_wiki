@@ -155,6 +155,9 @@ curl 'localhost:9200/_cat/indices?v'
 Note:  Sometimes the Zookeeper Service does not shutdown.
 You'll need to use `jps` and `kill` the process manually.
 
-## Disclaimer
-The end-to-end hasn't been tested, yet.
-I'm putting this out so others can test and enhance.
+## Help Me!
+Feel free to email help@fluxcapacitor.com for help.  We love questions.
+
+## Disclaimers
+* A complete end-to-end hasn't been fully tested, yet.
+* I'm putting this out so others can test and enhance.
