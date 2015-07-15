@@ -56,11 +56,31 @@ chmod 777 flux-*.sh
 ./flux-start-all.sh
 tail -f ./nohup.out
 ```
+Note:  Sometimes the Kafka Rest Proxy service does not start cleanly.
+Use the following to start it manually:
+```
+nohup kafka-rest-start ~/pipeline/config/kafka-rest/kafka-rest.properties &
+tail -f ./nohup.out
+```
 
 ## Initialize the Pipeline Data
-Before initializing, check that the processes are all running as expected:
+Before initializing, check that the processes are all running as expected using the following:
 ```
 jps
+```
+The output of jps should look something like the following:
+```
+1972 -- process information unavailable
+2151 Kafka
+3592 Jps
+3134 Main
+2402 ZeppelinServer
+430 QuorumPeerMain
+2380 Master
+2328 SparkSubmit
+2439 Worker
+2152 Main
+2123 -- process information unavailable
 ```
 
 Initialize and Monitor
