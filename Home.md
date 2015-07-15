@@ -66,24 +66,26 @@ tail -f ./nohup.out
 ## Initialize the Pipeline Data
 Before initializing, check that the processes are all running as expected using the following:
 ```
-jps
+jps -l
 ```
 The output of jps should look something like the following:
 ```
-1972 -- process information unavailable
-2151 Kafka
-3592 Jps
-3134 Main
-2402 ZeppelinServer
-430 QuorumPeerMain
-2380 Master
-2328 SparkSubmit
-2439 Worker
-2152 Main
-2123 -- process information unavailable
+1972 -- process information unavailable <-- Either ElasticSearch or Cassandra
+2151 kafka.Kafka <-- Kafka Server
+3134 io.confluent.kafkarest.Main <-- Kafka Rest Proxy
+2402 org.apache.zeppelin.server.ZeppelinServer <-- Zeppelin WebApp
+430 org.apache.zookeeper.server.quorum.QuorumPeerMain <-- ZooKeeper
+2380 org.apache.spark.deploy.master.Master <-- Spark Master
+2328 org.apache.spark.deploy.SparkSubmit <-- Spark Submit Daemon
+2439 org.apache.spark.deploy.worker.Worker <-- Spark Worker
+3618 sun.tools.jps.Jps <-- This jps process
+2152 io.confluent.kafka.schemaregistry.rest.Main <-- Kafka Schema Registry
+2123 -- process information unavailable <-- Either ElasticSearch or Cassandra
 ```
+Note that the "process information unavailable" message appears to be an OpenJDK [bug](https://bugs.openjdk.java.net/browse/JDK-8075773)
 
-Initialize and Monitor
+
+## Initialize Pipeline Data 
 ```
 ./flux-init-all.sh
 tail -f ./nohup.out
