@@ -113,8 +113,9 @@ Apache Spark REST API (6066):  36066
 Spark Notebook (9000):  39000
 Tachyon (19999):  39999
 Redis (6379):  36379
-Neo4j (7474):  37474
 Apache Kafka Schema Registry:  (6081):  36081
+Neo4j (7474):  37474
+RStudio Server (8787):  38787
 ```
 
 ## Test the Services and Pipeline Data
@@ -172,6 +173,9 @@ curl 'localhost:9200/_cat/indices?v'
 
 # Spark Submit
 [TODO] ./bin/spark-submit --class org.apache.spark.examples.SparkPi --master spark://localhost:7077 ~/spark-1.4.0-bin-hadoop2.6/lib/spark-examples-1.4.0-hadoop2.6.0.jar 10 
+
+# RStudio Server
+curl 'localhost:7575'
 ```
 
 ## Stop the Pipeline Services
