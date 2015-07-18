@@ -146,6 +146,9 @@ curl "http://localhost:19999"
 # Redis
 redis-cli
 
+# Neo4j
+curl 'localhost:7474'
+
 # JDBC/ODBC Hive ThriftServer
 ~/spark-1.4.0-bin-hadoop2.6/bin/beeline
 beeline> !connect jdbc:hive2://localhost:10000 hive ''
