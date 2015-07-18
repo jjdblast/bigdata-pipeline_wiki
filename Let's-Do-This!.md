@@ -41,7 +41,7 @@ Note:  If you run out of memory while building the image, you need re-initialize
 
 ## Run Docker Container with the Image and Get a Bash Prompt within the Container
 ```
-docker run -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:38080 -p 38081:38081 -p 36060:6060 -p 36061:6061 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -p 36066:6066 39000:9000 -it fluxcapacitor/pipeline bash
+docker run -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:38080 -p 38081:38081 -p 36060:6060 -p 36061:6061 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -p 36066:6066 -p 39000:9000 -p 39999:19999 -p 36379:6739 -p 37474:7474 -it fluxcapacitor/pipeline bash
 ```
 
 ## Update the Pipeline Scripts to the Latest
@@ -111,6 +111,9 @@ Apache Hadoop (50070, 50090):  30070, 30090
 Apache Kafka (9092):  39092
 Apache Spark REST API (6066):  36066
 Spark Notebook (9000):  39000
+Tachyon (19999):  39999
+Redis (6379):  36379
+Neo4j (7474):  37474
 ```
 
 ## Test the Services and Pipeline Data
@@ -136,6 +139,12 @@ curl "http://localhost:6060"
 
 # Apache Spark Worker Admin Web UI
 curl "http://localhost:6061"
+
+# Tachyon Web UI
+curl "http://localhost:19999"
+
+# Redis
+redis-cli
 
 # JDBC/ODBC Hive ThriftServer
 ~/spark-1.4.0-bin-hadoop2.6/bin/beeline
