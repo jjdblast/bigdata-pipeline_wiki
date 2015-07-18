@@ -5,7 +5,7 @@ Welcome to the pipeline wiki!
 If you have Virtual Box already installed, it's best if you could remove it (assuming you're not using it!)
 boot2docker expects a certain version of Virtual Box, otherwise things won't work.
 
-## Initialize boot2docker with enough memory (4-6 GB minimum)
+## Initialize boot2docker with enough memory (5-6 GB minimum)
 Units are Megabytes
 `boot2docker init -m 6144`
 
@@ -36,7 +36,7 @@ docker build -t fluxcapacitor/pipeline .
 ```
 Note:  If you run out of memory while building the image, you need re-initialize boot2docker with more memory (4-6GB) per a previous step.
 
-## Option 2:  Download the Image (2-3GB) from the Docker Hub Repo
+## Option 2:  Download the Image (3-4GB) from the Docker Hub Repo
 ```docker pull fluxcapacitor/pipeline```
 
 ## Run Docker Container with the Image and Get a Bash Prompt within the Container
