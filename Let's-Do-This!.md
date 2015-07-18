@@ -41,7 +41,7 @@ Note:  If you run out of memory while building the image, you need re-initialize
 
 ## Run Docker Container with the Image and Get a Bash Prompt within the Container
 ```
-docker run -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:8080 -p 38081:8081 -p 36060:6060 -p 36061:6061 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -p 36066:6066 -it fluxcapacitor/pipeline bash
+docker run -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:38080 -p 38081:38081 -p 36060:6060 -p 36061:6061 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -p 36066:6066 -it fluxcapacitor/pipeline bash
 ```
 
 ## Update the Pipeline Scripts to the Latest
@@ -56,12 +56,14 @@ chmod 777 flux-*.sh
 ./flux-start-all.sh
 tail -f ./nohup.out
 ```
-Note:  Sometimes the Kafka Rest Proxy service does not start cleanly.
+Notes
+* Sometimes the Kafka Rest Proxy service does not start cleanly due to dependency race conditions.  
 Use the following to start it manually:
 ```
 nohup kafka-rest-start ~/pipeline/config/kafka-rest/kafka-rest.properties &
 tail -f ./nohup.out
 ```
+* Zeppelin has been explicitly configured to run on port 38080 versus the default of 8080.  We do this because Zeppelin automatically starts a Web Socket connection on http port + 1 (38081 in this case).  If we use the default port 8080, and map port 8080 to 38080 from the `docker run` command, Zeppelin will create a Web Socket connection 8081 instead of 38081 because it is not aware of the Docker mapping.
 
 ## Initialize the Pipeline Data
 Before initializing, check that the processes are all running as expected using the following:
