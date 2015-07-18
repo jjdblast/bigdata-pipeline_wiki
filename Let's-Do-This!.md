@@ -126,7 +126,7 @@ Use this IP instead of "localhost" below.
 curl "http://localhost:4042/topics"
 
 # Apache Zeppelin Web UI
-curl "http://localhost:8080/topics"
+curl "http://localhost:8080"
 
 # Apache Spark Master Admin Web UI
 curl "http://localhost:6060"
