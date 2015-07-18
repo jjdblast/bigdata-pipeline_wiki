@@ -153,7 +153,7 @@ curl 'localhost:7474'
 
 # JDBC/ODBC Hive ThriftServer
 ~/spark-1.4.0-bin-hadoop2.6/bin/beeline
-beeline> !connect jdbc:hive2://localhost:10000 hive ''
+beeline> !connect jdbc:hive2://localhost:10000 hiveuser ''
 
 # Cassandra
 cqlsh
