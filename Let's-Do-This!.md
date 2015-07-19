@@ -88,9 +88,9 @@ The output of jps should look something like the following:
 Note that the "process information unavailable" message appears to be an OpenJDK [bug](https://bugs.openjdk.java.net/browse/JDK-8075773).
 
 
-## Initialize Pipeline Data 
+## Create Data 
 ```
-./flux-init-all.sh
+./flux-create-data.sh
 tail -f ./nohup.out
 ```
 
