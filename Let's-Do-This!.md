@@ -7,7 +7,7 @@ boot2docker expects a certain version of Virtual Box, otherwise things won't wor
 
 ## Initialize boot2docker with enough memory (10-12GB minimum)
 Units are Megabytes
-`boot2docker init -m 6144`
+`boot2docker init -m 12288`
 
 ## Run boot2docker and ssh into it
 ```
