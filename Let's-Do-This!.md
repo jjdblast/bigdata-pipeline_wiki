@@ -94,7 +94,7 @@ tail -f ./nohup.out
 ```
 
 ## Ports
-In order to reduce the likelihood of port collisions on your local machine, we've mapped the relatively-common container service ports to relatively-uncommon ports in the `30000` range below.
+In order to reduce the likelihood of port collisions on your local machine, we've mapped the relatively-common container service ports to relatively-uncommon ports in the >30000 range below.
 
 ```
 Apache Httpd (80):  30080
@@ -120,14 +120,13 @@ RStudio Server (8787):  38787
 
 ## Test the Services and Pipeline Data
 Notes:
-* From within the running Docker container, use the relatively-common ports above.
-* Use the equivalent relatively-uncommon 30000+ ports above from **outside** the Docker container - either still within boot2docker or outside completely on your local laptop.
+* From within the running Docker container, use the relatively-common <30000 ports above.
+* Use the equivalent relatively-uncommon >30000 ports above from **outside** the Docker container - either still within boot2docker or outside completely on your local laptop.
 * If you're outside completely on your local laptop, you'll need to get the IP of your boot2docker VM using the following:
 ```
 local-laptop$ boot2docker ip
 ```
-
-Use this IP instead of "localhost" below.
+Use the boot2docker IP above plus the >30000 port instead of localhost and <30000 below.
 
 ```
 # Kafka REST API
@@ -152,7 +151,7 @@ redis-cli
 curl 'localhost:7474'
 
 # JDBC/ODBC Hive ThriftServer
-~/spark-1.4.0-bin-hadoop2.6/bin/beeline
+~/spark-1.4.1-bin-hadoop2.6/bin/beeline
 beeline> !connect jdbc:hive2://localhost:10000 hiveuser ''
 
 # Cassandra
@@ -176,6 +175,9 @@ curl 'localhost:9200/_cat/indices?v'
 
 # RStudio Server
 curl 'localhost:7575'
+
+# Spark Notebook
+curl 'localhost:9000'
 ```
 
 ## Stop the Pipeline Services
