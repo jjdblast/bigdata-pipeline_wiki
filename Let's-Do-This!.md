@@ -5,9 +5,9 @@ Welcome to the pipeline wiki!
 If you have Virtual Box already installed, it's best if you could remove it (assuming you're not using it!)
 boot2docker expects a certain version of Virtual Box, otherwise things won't work.
 
-## Initialize boot2docker with enough memory (10-12GB minimum)
+## Initialize boot2docker with enough memory (~4GB)
 Units are Megabytes
-`boot2docker init -m 12288`
+`boot2docker init -m 4096`
 
 ## Run boot2docker and ssh into it
 ```
@@ -26,7 +26,7 @@ The following is a path that will persist after a Docker restart:
 
 ## Create or Download the Flux Capacitor Docker Image
 ### Option 1:  Create an Image from the Dockerfile Provided in this Github Repo
-This will take about 10-15 mins to build - and lots of internet traffic - as dependent binaries and libraries will be retrieved from the internet.
+This will take about 10 mins to build - and lots of internet traffic - as dependent binaries and libraries will be retrieved from the internet.
 
 (You can also pull the image from the Docker Hub Repository detailed in Option 2 below.)
 
@@ -37,7 +37,7 @@ docker build -t fluxcapacitor/pipeline .
 ```
 Note:  If you run out of memory while building the image, you need re-initialize boot2docker with more memory (4-6GB) per a previous step.
 
-### Option 2:  Download the Image (3-4GB) from the Docker Hub Repo
+### Option 2:  Download the Image (~1.5GB) from the Docker Hub Repo
 ```docker pull fluxcapacitor/pipeline```
 
 ## Run Docker Container with the Image and Get a Bash Prompt within the Container
