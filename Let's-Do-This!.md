@@ -24,7 +24,8 @@ The following is a path that will persist after a boot2docker restart:
 The following is a path that will persist after a Docker restart:
 `/var/lib/docker`
 
-## Option 1:  Create an Image from the Dockerfile Provided in this Github Repo
+## Create or Download the Flux Capacitor Docker Image
+### Option 1:  Create an Image from the Dockerfile Provided in this Github Repo
 This will take about 10-15 mins to build - and lots of internet traffic - as dependent binaries and libraries will be retrieved from the internet.
 
 (You can also pull the image from the Docker Hub Repository detailed in Option 2 below.)
@@ -36,7 +37,7 @@ docker build -t fluxcapacitor/pipeline .
 ```
 Note:  If you run out of memory while building the image, you need re-initialize boot2docker with more memory (4-6GB) per a previous step.
 
-## Option 2:  Download the Image (3-4GB) from the Docker Hub Repo
+### Option 2:  Download the Image (3-4GB) from the Docker Hub Repo
 ```docker pull fluxcapacitor/pipeline```
 
 ## Run Docker Container with the Image and Get a Bash Prompt within the Container
