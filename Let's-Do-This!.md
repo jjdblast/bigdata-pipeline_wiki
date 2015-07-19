@@ -41,7 +41,7 @@ Note:  If you run out of memory while building the image, you need re-initialize
 
 ## Run Docker Container with the Image and Get a Bash Prompt within the Container
 ```
-docker run -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:38080 -p 38081:38081 -p 36060:6060 -p 36061:6061 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -p 36066:6066 -p 39000:9000 -p 39999:19999 -p 36379:6739 -p 36081:6081 -p 37474:7474 -p 38787:8787 -it fluxcapacitor/pipeline bash
+docker run -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:38080 -p 38081:38081 -p 36060:6060 -p 36061:6061 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -p 36066:6066 -p 39000:9000 -p 39999:19999 -p 36379:6739 -p 36081:6081 -p 37474:7474 -p 38787:8787 -p 35601:5601 -it fluxcapacitor/pipeline bash
 ```
 
 ## Update the Pipeline Scripts to the Latest
@@ -116,6 +116,7 @@ Redis (6379):  36379
 Apache Kafka Schema Registry:  (6081):  36081
 Neo4j (7474):  37474
 RStudio Server (8787):  38787
+Kibana (5601):  35601
 ```
 
 ## Test the Services and Pipeline Data
@@ -130,19 +131,19 @@ Use the boot2docker IP above plus the >30000 port instead of localhost and <3000
 
 ```
 # Kafka REST API
-curl "http://localhost:4042/topics"
+curl 'http://localhost:4042/topics'
 
 # Apache Zeppelin Web UI
-curl "http://localhost:8080"
+curl 'http://localhost:8080'
 
 # Apache Spark Master Admin Web UI
-curl "http://localhost:6060"
+curl 'http://localhost:6060'
 
 # Apache Spark Worker Admin Web UI
-curl "http://localhost:6061"
+curl 'http://localhost:6061'
 
 # Tachyon Web UI
-curl "http://localhost:19999"
+curl 'http://localhost:19999'
 
 # Redis
 redis-cli
