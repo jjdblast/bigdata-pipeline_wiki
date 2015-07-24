@@ -180,6 +180,10 @@ curl 'localhost:7575'
 
 # Spark Notebook
 curl 'localhost:9000'
+
+# MySQL
+mysql -u root -p
+Enter password: password
 ```
 
 ## Stop the Pipeline Services
