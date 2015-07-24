@@ -50,7 +50,7 @@ docker run -m 8g -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:
 Additional `run` sessions should not specify the ports as follows:
 
 ```
-docker run -it fluxcapacitor/pipeline bash
+docker run -m 8g -it fluxcapacitor/pipeline bash
 ```
 
 ## Update the Pipeline Scripts to the Latest
