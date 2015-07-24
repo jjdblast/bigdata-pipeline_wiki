@@ -41,8 +41,16 @@ Note:  If you run out of memory while building the image, you need re-initialize
 ```docker pull fluxcapacitor/pipeline```
 
 ## Run Docker Container with the Image and Get a Bash Prompt within the Container
+The first `run` bash session should declare the port mappings as follows: 
+
 ```
 docker run -m 8g -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:38080 -p 38081:38081 -p 36060:6060 -p 36061:6061 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -p 36066:6066 -p 39000:9000 -p 39999:19999 -p 36379:6739 -p 36081:6081 -p 37474:7474 -p 38787:8787 -p 35601:5601 -it fluxcapacitor/pipeline bash
+```
+
+Additional `run` sessions should not specify the ports as follows:
+
+```
+docker run -it fluxcapacitor/pipeline bash
 ```
 
 ## Update the Pipeline Scripts to the Latest
