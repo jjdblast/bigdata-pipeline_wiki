@@ -5,9 +5,9 @@ Welcome to the pipeline wiki!
 If you have Virtual Box already installed, it's best if you could remove it (assuming you're not using it!)
 boot2docker expects a certain version of Virtual Box, otherwise things won't work.
 
-## Initialize boot2docker with enough memory (~4GB) and disk space (~100GB)
+## Initialize boot2docker with enough memory (~8GB) and disk space (~50GB)
 Units are Megabytes
-`boot2docker init -m 8192 -s 100000`
+`boot2docker init --memory=8192 --disksize=50000`
 
 Verify that these settings worked
 `boot2docker config`
@@ -17,13 +17,26 @@ If you need to change these settings at some point later, you'll need to do the 
 boot2docker stop
 boot2docker destroy
 boot2docker init <new settings>
-boot2docker config
 ```
 
 ## Run boot2docker and ssh into it
 ```
 boot2docker up
 boot2docker ssh
+```
+
+## Make sure the init config changes worked
+
+Check disk space is near the chosen setting
+
+```
+df -h
+```
+
+Check memory is near the chosen setting
+
+```
+cat /proc/meminfo
 ```
 
 ## Find the Docker Container IP
@@ -53,9 +66,9 @@ git clone https://github.com/fluxcapacitor/pipeline.git
 cd pipeline
 docker build -t fluxcapacitor/pipeline .
 ```
-Note:  If you run out of memory while building the image, you need re-initialize boot2docker with more memory (4-6GB) per a previous step.
+Note:  If you run out of memory or disk space while building or running the image, you need to re-initialize boot2docker per the steps above.
 
-### Option 2:  Download the Image (~1.5GB) from the Docker Hub Repo
+### Option 2:  Download the Image (~2.5GB) from the Docker Hub Repo
 ```docker pull fluxcapacitor/pipeline```
 
 ## Run Docker Container with the Image and Get a Bash Prompt within the Container
