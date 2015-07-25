@@ -57,7 +57,7 @@ docker run -m 8g -it fluxcapacitor/pipeline bash
 ```
 cd ~/pipeline
 git reset --hard && git pull
-chmod 777 flux-*.sh
+chmod a+rx flux-*.sh
 ```
 
 ## Start the Pipeline Services 
