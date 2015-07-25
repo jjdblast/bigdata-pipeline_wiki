@@ -5,9 +5,12 @@ Welcome to the pipeline wiki!
 If you have Virtual Box already installed, it's best if you could remove it (assuming you're not using it!)
 boot2docker expects a certain version of Virtual Box, otherwise things won't work.
 
-## Initialize boot2docker with enough memory (~4GB)
+## Initialize boot2docker with enough memory (~4GB) and disk space (~100GB)
 Units are Megabytes
-`boot2docker init -m 4096`
+`boot2docker init -m 4096 -s 100000`
+
+Verify that these settings worked
+`boot2docker init -m 4096 -s 100000`
 
 ## Run boot2docker and ssh into it
 ```
