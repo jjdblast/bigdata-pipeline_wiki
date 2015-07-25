@@ -7,16 +7,13 @@ boot2docker expects a certain version of Virtual Box, otherwise things won't wor
 
 ## Initialize boot2docker with enough memory (~8GB) and disk space (~50GB)
 Units are Megabytes
-`boot2docker init --memory=8192 --disksize=50000`
-
-Verify that these settings worked
-`boot2docker config`
+`boot2docker --memory=8192 --disksize=50000 init` 
 
 If you need to change these settings at some point later, you'll need to do the following:
 ```
 boot2docker stop
 boot2docker destroy
-boot2docker init <new settings>
+boot2docker <new settings> init
 ```
 
 ## Run boot2docker and ssh into it
@@ -75,7 +72,7 @@ Note:  If you run out of memory or disk space while building or running the imag
 The first `run` bash session should declare the port mappings as follows: 
 
 ```
-docker run -m 8g -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:38080 -p 38081:38081 -p 36060:6060 -p 36061:6061 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -p 36066:6066 -p 39000:9000 -p 39999:19999 -p 36379:6739 -p 36081:6081 -p 37474:7474 -p 38787:8787 -p 35601:5601 -p 37979:7979 -p 38989:8989 -p 34040:4040 -it fluxcapacitor/pipeline bash
+docker run -m 8g -v ~/pipeline/ -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:38080 -p 38081:38081 -p 36060:6060 -p 36061:6061 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -p 36066:6066 -p 39000:9000 -p 39999:19999 -p 36379:6739 -p 36081:6081 -p 37474:7474 -p 38787:8787 -p 35601:5601 -p 37979:7979 -p 38989:8989 -p 34040:4040 -it fluxcapacitor/pipeline bash
 ```
 
 Additional `run` sessions should not specify the ports as follows:
