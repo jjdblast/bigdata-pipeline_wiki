@@ -37,10 +37,8 @@ cat /proc/meminfo
 ```
 
 ## Find the Docker Container IP
-Look for `HostIP` in the output of the following command:
-
 ```
-boot2docker config
+docker inspect -f '{{ .NetworkSettings.IPAddress }}' <container-id>
 ``` 
 
 ## Persistent and Non-Persistent Container Directories
