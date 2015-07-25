@@ -141,6 +141,9 @@ local-laptop$ boot2docker ip
 Use the boot2docker IP above plus the >30000 port instead of localhost and <30000 below.
 
 ```
+# Apache2 Httpd
+curl 'http://localhost:80/'
+
 # Kafka REST API
 curl 'http://localhost:4042/topics'
 
