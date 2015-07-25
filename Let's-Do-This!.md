@@ -29,7 +29,9 @@ boot2docker ssh
 ## Find the Docker Container IP
 Look for `HostIP` in the output of the following command:
 
-`boot2docker config` 
+```
+boot2docker config
+``` 
 
 ## Persistent and Non-Persistent Container Directories
 Consider everything you do in a boot2docker or docker session to be scoped to the life of just that session.
