@@ -157,8 +157,8 @@ curl 'http://localhost:19999'
 # Redis
 redis-cli
 
-# Neo4j
-curl 'localhost:7474'
+# Neo4j [TODO]
+#curl 'localhost:7474'
 
 # JDBC/ODBC Hive ThriftServer
 ~/spark-1.4.1-bin-hadoop2.6/bin/beeline
@@ -181,10 +181,10 @@ zookeeper-shell localhost:2181
 curl 'localhost:9200/_cat/indices?v'
 
 # Spark Submit
-[TODO] ./bin/spark-submit --class org.apache.spark.examples.SparkPi --master spark://localhost:7077 ~/spark-1.4.0-bin-hadoop2.6/lib/spark-examples-1.4.0-hadoop2.6.0.jar 10 
+./bin/spark-submit --class org.apache.spark.examples.SparkPi --master spark://localhost:7077 ~/spark-1.4.1-bin-hadoop2.6/lib/spark-examples-1.4.1-hadoop2.6.0.jar 10 
 
-# RStudio Server
-curl 'localhost:7575'
+# RStudio Server [TODO]
+#curl 'localhost:7575'
 
 # Spark Notebook
 curl 'localhost:9000'
