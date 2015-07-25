@@ -150,13 +150,13 @@ Apache Spark ThriftServer Admin UI (4040): 34040
 Notes:
 * From within the running Docker container, use the relatively-common <30000 ports above.
 * Use the equivalent relatively-uncommon >30000 ports above from **outside** the Docker container - either still within boot2docker or outside completely on your local laptop.
-* If you're outside of boot2docker on your local laptop, you'll need to get the IP of your boot2docker VM using the following:
+* If you're testing outside of boot2docker on your local laptop, you'll need to get the IP of your boot2docker VM using the following:
 ```
 local-laptop$ boot2docker ip
 ```
-* Otherwise, if you're within boot2docker, you can use the following:
+* Otherwise, if you're testing within boot2docker, you can use the following:
 ```
-docker inspect -f '{{ .NetworkSettings.IPAddress }}' <container-id>
+boot2docker$ docker inspect -f '{{ .NetworkSettings.IPAddress }}' <container-id>
 ``` 
 
 Use the boot2docker IP above plus the >30000 port instead of localhost and <30000 below.
