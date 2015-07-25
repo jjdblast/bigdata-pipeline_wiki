@@ -7,16 +7,29 @@ boot2docker expects a certain version of Virtual Box, otherwise things won't wor
 
 ## Initialize boot2docker with enough memory (~4GB) and disk space (~100GB)
 Units are Megabytes
-`boot2docker init -m 4096 -s 100000`
+`boot2docker init -m 8192 -s 100000`
 
 Verify that these settings worked
-`boot2docker init -m 4096 -s 100000`
+`boot2docker config`
+
+If you need to change these settings at some point later, you'll need to do the following:
+```
+boot2docker stop
+boot2docker destroy
+boot2docker init <new settings>
+boot2docker config
+```
 
 ## Run boot2docker and ssh into it
 ```
-boot2docker start
+boot2docker up
 boot2docker ssh
 ```
+
+## Find the Docker Container IP
+Look for `HostIP` in the output of the following command:
+
+`boot2docker config` 
 
 ## Persistent and Non-Persistent Container Directories
 Consider everything you do in a boot2docker or docker session to be scoped to the life of just that session.
