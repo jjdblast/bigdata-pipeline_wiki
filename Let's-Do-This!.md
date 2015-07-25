@@ -36,11 +36,6 @@ Check memory is near the chosen setting
 cat /proc/meminfo
 ```
 
-## Find the Docker Container IP
-```
-docker inspect -f '{{ .NetworkSettings.IPAddress }}' <container-id>
-``` 
-
 ## Persistent and Non-Persistent Container Directories
 Consider everything you do in a boot2docker or docker session to be scoped to the life of just that session.
 
@@ -155,10 +150,15 @@ Apache Spark ThriftServer Admin UI (4040): 34040
 Notes:
 * From within the running Docker container, use the relatively-common <30000 ports above.
 * Use the equivalent relatively-uncommon >30000 ports above from **outside** the Docker container - either still within boot2docker or outside completely on your local laptop.
-* If you're outside completely on your local laptop, you'll need to get the IP of your boot2docker VM using the following:
+* If you're outside of boot2docker on your local laptop, you'll need to get the IP of your boot2docker VM using the following:
 ```
 local-laptop$ boot2docker ip
 ```
+* Otherwise, if you're within boot2docker, you can use the following:
+```
+docker inspect -f '{{ .NetworkSettings.IPAddress }}' <container-id>
+``` 
+
 Use the boot2docker IP above plus the >30000 port instead of localhost and <30000 below.
 
 ```
