@@ -229,6 +229,7 @@ The ThriftServer should already be running on port 30000 outside the Docker cont
 
 ### Tableau Integration
 Connect Tableau to SparkSQL using the following properties
+* Server:  IP of the Docker Container
 * Port:  30000 (Assuming Tableau is running outside the docker container)
 * Username:  hiveuser
 * Password:  <empty>
@@ -240,7 +241,7 @@ Run the following commands on port 3000 outside the Docker Container (port 10000
 
 ```
 ~/spark-1.4.1-bin-hadoop2.6/bin/beeline
-beeline> !connect jdbc:hive2://localhost:30000 hiveuser ''
+beeline> !connect jdbc:hive2://<ip-of-docker-container>:30000 hiveuser ''
 ```
 
 ## Stop the Pipeline Services
