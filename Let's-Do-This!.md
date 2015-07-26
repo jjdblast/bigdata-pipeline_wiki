@@ -147,48 +147,45 @@ Apache Spark ThriftServer Admin UI (4040): 34040
 ```
 
 ## Test the Services and Pipeline Data
-Notes:
-* From within the running Docker container, use the relatively-common <30000 ports above.
-* Use the equivalent relatively-uncommon >30000 ports above from **outside** the Docker container - either still within boot2docker or outside completely on your local laptop.
-* If you're testing outside of boot2docker on your local laptop, you'll need to get the IP of your boot2docker VM using the following:
+
+First, get the IP of your boot2docker VM from your local laptop (not within boot2docker or the Docker Container) using the following:
+
 ```
 local-laptop$ boot2docker ip
+192.168.59.103
 ```
-* Otherwise, if you're testing within boot2docker, you can use the following:
-```
-boot2docker$ docker inspect -f '{{ .NetworkSettings.IPAddress }}' <container-id>
-``` 
 
-Use the boot2docker IP above plus the >30000 port instead of localhost and <30000 below.
-
+Test from Outside the Docker Container (ie. your local laptop, but not within boot2docker).
 ```
 # Apache2 Httpd
-curl 'http://localhost:80/'
+http://192.168.59.103:30080
 
 # Kafka REST API
-curl 'http://localhost:4042/topics'
+http://192.168.59.103:34042/topics
 
 # Apache Zeppelin Web UI
-curl 'http://localhost:8080'
+http://192.168.59.103:38080
 
 # Apache Spark Master Admin Web UI
-curl 'http://localhost:6060'
+http://192.168.59.103:36060
 
 # Apache Spark Worker Admin Web UI
-curl 'http://localhost:6061'
+http://192.168.59.103:36061
 
 # Tachyon Web UI
-curl 'http://localhost:19999'
+http://192.168.59.103:39999
 
-# Redis
-redis-cli
+# ElasticSearch REST API
+http://192.168.59.103:39200/_cat/indices?v
 
-# Neo4j [TODO]
-#curl 'localhost:7474'
+# Spark Notebook
+http://192.168.59.103:39000
+```
 
-# JDBC/ODBC Hive ThriftServer
-~/spark-1.4.1-bin-hadoop2.6/bin/beeline
-beeline> !connect jdbc:hive2://localhost:10000 hiveuser ''
+## Test From Inside the Docker Container
+```
+# [TODO] Spark Submit
+./bin/spark-submit --class org.apache.spark.examples.SparkPi --master spark://192.168.59.103:37077 ~/spark-1.4.1-bin-hadoop2.6/lib/spark-examples-1.4.1-hadoop2.6.0.jar 10 
 
 # Cassandra
 cqlsh
@@ -201,27 +198,23 @@ cqlsh:sparkafterdark> select * from real_time_likes;
 (0 rows)
 
 # ZooKeeper
-zookeeper-shell localhost:2181
-
-# ElasticSearch
-curl 'localhost:9200/_cat/indices?v'
-
-# Spark Submit
-./bin/spark-submit --class org.apache.spark.examples.SparkPi --master spark://localhost:7077 ~/spark-1.4.1-bin-hadoop2.6/lib/spark-examples-1.4.1-hadoop2.6.0.jar 10 
-
-# RStudio Server [TODO]
-#curl 'localhost:7575'
-
-# Spark Notebook
-curl 'localhost:9000'
+zookeeper-shell 192.168.59.103:2181
 
 # MySQL
 mysql -u root -p
 Enter password: password
+```
+[TODO] Coming Soon
+```
+# [TODO] Neo4j Server
+http://192.168.59.103:37474
 
-# Netflix-Hystrix [TODO]
-#curl 'localhost:8989'
-#curl 'localhost:7979'
+# [TODO] RStudio Server
+http://192.168.59.103:37575
+
+# [TODO] Netflix-Hystrix Demo
+http://192.168.59.103:38989
+http://192.168.59.103:37979
 ```
 
 ## JDBC/ODBC Integration (Tableau, MicroStrategy, Beeline, etc)
@@ -229,19 +222,19 @@ The ThriftServer should already be running on port 30000 outside the Docker cont
 
 ### Tableau Integration
 Connect Tableau to SparkSQL using the following properties
-* Server:  IP of the Docker Container
-* Port:  30000 (Assuming Tableau is running outside the docker container)
+* Server:  192.168.59.103
+* Port:  30000
 * Username:  hiveuser
 * Password:  <empty>
 * Schema:  Default
 * Table:  <Your Spark SQL Table> 
 
 ### Beeline
-Run the following commands on port 3000 outside the Docker Container (port 10000 inside the Docker container):
+Run the following commands on port 30000 outside the Docker Container (port 10000 inside the Docker container):
 
 ```
 ~/spark-1.4.1-bin-hadoop2.6/bin/beeline
-beeline> !connect jdbc:hive2://<ip-of-docker-container>:30000 hiveuser ''
+beeline> !connect jdbc:hive2://192.168.59.103:30000 hiveuser ''
 ```
 
 ## Stop the Pipeline Services
