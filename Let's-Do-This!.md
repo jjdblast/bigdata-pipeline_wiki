@@ -146,7 +146,29 @@ Netflix-Hystrix Dashboard (7979):  37979
 Apache Spark ThriftServer Admin UI (4040): 34040
 ```
 
-## Test the Services and Pipeline Data
+## Test from Inside the Docker Container
+```
+Spark Submit
+~/spark-1.4.1-bin-hadoop2.6/bin/spark-submit --class org.apache.spark.examples.SparkPi --master spark://127.0.0.1:7077 ~/spark-1.4.1-bin-hadoop2.6/lib/spark-examples-1.4.1-hadoop2.6.0.jar 10 
+
+# Cassandra
+cqlsh
+cqlsh> use sparkafterdark;
+cqlsh:sparkafterdark> select * from real_time_likes;
+
+ fromuserid | touserid | batchtime
+------------+----------+-----------
+
+(0 rows)
+
+# ZooKeeper
+zookeeper-shell 127.0.0.1:2181
+
+# MySQL
+mysql -u root -p
+Enter password: password
+
+## Test the Services from Outside the Docker Container (local browser)
 
 First, get the IP of your boot2docker VM from your local laptop (not within boot2docker or the Docker Container) using the following:
 
@@ -180,41 +202,16 @@ http://192.168.59.103:39200/_cat/indices?v
 
 # Spark Notebook
 http://192.168.59.103:39000
-```
 
-## Test From Inside the Docker Container
-```
-# [TODO] Spark Submit
-./bin/spark-submit --class org.apache.spark.examples.SparkPi --master spark://192.168.59.103:37077 ~/spark-1.4.1-bin-hadoop2.6/lib/spark-examples-1.4.1-hadoop2.6.0.jar 10 
-
-# Cassandra
-cqlsh
-cqlsh> use sparkafterdark;
-cqlsh:sparkafterdark> select * from real_time_likes;
-
- fromuserid | touserid | batchtime
-------------+----------+-----------
-
-(0 rows)
-
-# ZooKeeper
-zookeeper-shell 192.168.59.103:2181
-
-# MySQL
-mysql -u root -p
-Enter password: password
-```
-[TODO] Coming Soon
-```
-# [TODO] Neo4j Server
+# Neo4j Server
 http://192.168.59.103:37474
 
-# [TODO] RStudio Server
+# RStudio Server
 http://192.168.59.103:37575
 
-# [TODO] Netflix-Hystrix Demo
-http://192.168.59.103:38989
-http://192.168.59.103:37979
+# Netflix-Hystrix Demo
+* Sample WebApp:  http://192.168.59.103:38989/hystrix-examples-webapp/
+* Dashboard:  http://192.168.59.103:37979/hystrix-dashboard/monitor/monitor.html?stream=http%3A%2F%2F192.168.59.103%3A38989%2Fhystrix-examples-webapp%2Fhystrix.stream
 ```
 
 ## JDBC/ODBC Integration (Tableau, MicroStrategy, Beeline, etc)
@@ -230,7 +227,7 @@ Connect Tableau to SparkSQL using the following properties
 * Table:  <Your Spark SQL Table> 
 
 ### Beeline
-Run the following commands on port 30000 outside the Docker Container (port 10000 inside the Docker container):
+Run the following commands outside the Docker Container (otherwise, use 127.0.0.1:10000 inside Docker Container):
 
 ```
 ~/spark-1.4.1-bin-hadoop2.6/bin/beeline
