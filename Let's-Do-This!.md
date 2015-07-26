@@ -206,6 +206,9 @@ http://192.168.59.103:39000
 # Neo4j Server
 http://192.168.59.103:37474
 
+# Kibana and Logstash
+http://192.168.59.103:35601
+
 # RStudio Server
 http://192.168.59.103:37575
 
