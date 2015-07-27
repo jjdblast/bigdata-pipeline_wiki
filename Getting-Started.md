@@ -67,13 +67,15 @@ docker pull fluxcapacitor/pipeline
 
 Setup and Run the Docker Container.
 
-Notes: 
-* The `-v ~/pipeline/notebooks` below maps to a persistent path inside the Docker Container.  This way, you won't lose changes to your Apache Zeppelin or Spark-Notebook notebooks while running inside Docker.
-* Apache Zeppelin is explicitly configured to run on port 38080 in the Docker container versus the default of 8080.  We do this because Apache Zeppelin automatically starts a Web Socket connection on http port + 1; where + 1 is relative to the Docker Container port (38081, in this case).  If we use the default port 8080, and map port 8080 to 38080 from the `docker run` command, Zeppelin will create a Web Socket connection of 8080 + 1 = 8081 instead of 38081 because it is not aware of the `docker run` mapping.
-
 ```
 docker run -it -m 8g -v ~/pipeline/notebooks:/root/pipeline/notebooks -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:38080 -p 38081:38081 -p 36060:6060 -p 36061:6061 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -p 36066:6066 -p 39000:9000 -p 39999:19999 -p 36379:6739 -p 36081:6081 -p 37474:7474 -p 35601:5601 -p 37979:7979 -p 38989:8989 -p 34040:4040 -p 31337:1337 fluxcapacitor/pipeline bash
 ```
+
+Notes: 
+* The `-v ~/pipeline/notebooks` below maps to a persistent path inside the Docker Container.  This way, you won't lose changes to your Apache Zeppelin or Spark-Notebook notebooks while running inside Docker.
+* Apache Zeppelin is explicitly configured to run on port 38080 in the Docker container versus the default of 8080.  We do this because Apache Zeppelin automatically starts a Web Socket connection on http port + 1; where + 1 is relative to the Docker Container port (38081, in this case).  If we use the default port 8080, and map port 8080 to 38080 from the `docker run` command, Zeppelin will create a Web Socket connection of 8080 + 1 = 8081 instead of 38081 because it is not aware of the `docker run` mapping.
+* If you are running this on an EC2 ubuntu instance through Docker, you'll need to do `su -` after you login.  
+
 
 ## Update the Pipeline Scripts to the Latest
 ```
