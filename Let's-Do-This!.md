@@ -96,22 +96,29 @@ jps -l
 ```
 The output of jps should look something like the following:
 ```
-1972 -- process information unavailable <-- Either ElasticSearch or Cassandra
-2151 kafka.Kafka <-- Kafka Server
-3134 io.confluent.kafkarest.Main <-- Kafka Rest Proxy
-2402 org.apache.zeppelin.server.ZeppelinServer <-- Zeppelin WebApp
-430 org.apache.zookeeper.server.quorum.QuorumPeerMain <-- ZooKeeper
-2380 org.apache.spark.deploy.master.Master <-- Spark Master
-2328 org.apache.spark.deploy.SparkSubmit <-- Spark Submit Daemon
-2439 org.apache.spark.deploy.worker.Worker <-- Spark Worker
-3618 sun.tools.jps.Jps <-- This jps process
-2152 io.confluent.kafka.schemaregistry.rest.Main <-- Kafka Schema Registry
-2123 -- process information unavailable <-- Either ElasticSearch or Cassandra
+2374 kafka.Kafka <-- Kafka Server
+3764 io.confluent.kafka.schemaregistry.rest.Main <-- Kafka Schema Registry
+1492 org.gradle.wrapper.GradleWrapperMain <-- Either Hystrix sample webapp or dashboard
+2373 org.apache.zookeeper.server.quorum.QuorumPeerMain <-- ZooKeeper
+3765 io.confluent.kafkarest.Main <-- Kafka Rest Proxy
+3762 play.core.server.NettyServer <-- Spark-Notebook
+3641 org.apache.spark.executor.CoarseGrainedExecutorBackend <-- Long-running Executor for ThriftServer
+2435 org.apache.zeppelin.server.ZeppelinServer <-- Zeppelin WebApp
+2743 org.apache.spark.deploy.master.Master <-- Spark Master
+4074 sun.tools.jps.Jps <-- This jps Process
+1573 org.gradle.wrapper.GradleWrapperMain  <-- Either Hystrix sample webapp or dashboard
+3047 org.apache.spark.deploy.SparkSubmit  <-- Long-running Spark Submit Process for ThriftServer
+1637 org.jruby.Main <-- Redis Server
+1658 -- process information unavailable <-- Either ElasticSearch or Cassandra
+3599 tachyon.master.TachyonMaster <-- Tachyon Master
+3718 tachyon.worker.TachyonWorker <-- Tachyon Worker
+2908 org.apache.spark.deploy.worker.Worker <-- Spark Worker
+
 ```
 Note that the "process information unavailable" message appears to be an OpenJDK [bug](https://bugs.openjdk.java.net/browse/JDK-8075773).
 
-
 ## Create Data 
+The following script will setup and populate Cassandra, Kafka, and Hive with sample data.
 ```
 ./flux-create-data.sh
 tail -f ./nohup.out
