@@ -65,7 +65,7 @@ Note:  If you run out of memory or disk space while building or running the imag
 Setup and Run the Docker Container
 
 ```
-docker run -it -m 8g -v ~/pipeline/ -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:38080 -p 38081:38081 -p 36060:6060 -p 36061:6061 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -p 36066:6066 -p 39000:9000 -p 39999:19999 -p 36379:6739 -p 36081:6081 -p 37474:7474 -p 38787:8787 -p 35601:5601 -p 37979:7979 -p 38989:8989 -p 34040:4040 fluxcapacitor/pipeline bash
+docker run -it -m 8g -v ~/pipeline/ -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:38080 -p 38081:38081 -p 36060:6060 -p 36061:6061 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -p 36066:6066 -p 39000:9000 -p 39999:19999 -p 36379:6739 -p 36081:6081 -p 37474:7474 -p 35601:5601 -p 37979:7979 -p 38989:8989 -p 34040:4040 fluxcapacitor/pipeline bash
 
 ```
 ## Update the Pipeline Scripts to the Latest
@@ -91,25 +91,20 @@ tail -f ./nohup.out
 
 ## Initialize the Pipeline Data
 Before initializing, check that the processes are all running as expected using the following:
-```
-jps -l
-```
-The output of jps should look something like the following:
+Before continuing, make sure the output of `jps -l` looks something like the following:
 ```
 2374 kafka.Kafka <-- Kafka Server
 3764 io.confluent.kafka.schemaregistry.rest.Main <-- Kafka Schema Registry
-1492 org.gradle.wrapper.GradleWrapperMain <-- Either Hystrix sample webapp or dashboard
 2373 org.apache.zookeeper.server.quorum.QuorumPeerMain <-- ZooKeeper
+95 -- process information unavailable <-- Either ElasticSearch or Cassandra*
 3765 io.confluent.kafkarest.Main <-- Kafka Rest Proxy
 3762 play.core.server.NettyServer <-- Spark-Notebook
+919 -- process information unavailable <-- Either ElasticSearch or Cassandra*
 3641 org.apache.spark.executor.CoarseGrainedExecutorBackend <-- Long-running Executor for ThriftServer
 2435 org.apache.zeppelin.server.ZeppelinServer <-- Zeppelin WebApp
 2743 org.apache.spark.deploy.master.Master <-- Spark Master
 4074 sun.tools.jps.Jps <-- This jps Process
-1573 org.gradle.wrapper.GradleWrapperMain  <-- Either Hystrix sample webapp or dashboard
 3047 org.apache.spark.deploy.SparkSubmit  <-- Long-running Spark Submit Process for ThriftServer
-1637 org.jruby.Main <-- Redis Server
-1658 -- process information unavailable <-- Either ElasticSearch or Cassandra
 3599 tachyon.master.TachyonMaster <-- Tachyon Master
 3718 tachyon.worker.TachyonWorker <-- Tachyon Worker
 2908 org.apache.spark.deploy.worker.Worker <-- Spark Worker
@@ -146,7 +141,6 @@ Tachyon (19999):  39999
 Redis (6379):  36379
 Apache Kafka Schema Registry:  (6081):  36081
 Neo4j (7474):  37474
-RStudio Server (8787):  38787
 Kibana (5601):  35601
 Netflix-Hystrix WebSocket Stream (8989):  38989
 Netflix-Hystrix Dashboard (7979):  37979
@@ -186,7 +180,7 @@ local-laptop$ boot2docker ip
 
 Test from Outside the Docker Container (ie. your local laptop, but not within boot2docker).
 ```
-# Apache2 Httpd
+# Apache2 HTTP Server
 http://192.168.59.103:30080
 
 # Kafka REST API
@@ -216,21 +210,20 @@ http://192.168.59.103:37474
 # Kibana and Logstash
 http://192.168.59.103:35601
 
-# RStudio Server
-http://192.168.59.103:37575
+# [Work In Progress] Netflix-Hystrix Demo
 
-# Netflix-Hystrix Demo
+https://github.com/Netflix/Hystrix/
 
-## Sample WebApp
+## Hystrix Sample WebApp
 http://192.168.59.103:38989/hystrix-examples-webapp/
 
-## Generating Sample Data
+## Generating Sample Data for Hystrix WebApp
 cd ~/Hystrix/hystrix-examples
 ./gradlew run &
 
-## Circuit Breaker Dashboard
+## Hystrix Circuit Breaker Dashboard
 http://192.168.59.103:37979/hystrix-dashboard/monitor/monitor.html?stream=http%3A%2F%2F192.168.59.103%3A38989%2Fhystrix-examples-webapp%2Fhystrix.stream
-```
+
 
 ## JDBC/ODBC Integration (Tableau, MicroStrategy, Beeline, etc)
 The ThriftServer should already be running on port 30000 outside the Docker container (port 10000 inside the Docker container.)
