@@ -117,8 +117,10 @@ Before continuing, make sure the output of `jps -l` looks something like the fol
 ```
 Note that the "process information unavailable" message appears to be an OpenJDK [bug](https://bugs.openjdk.java.net/browse/JDK-8075773).
 
-## Create Data 
-The following script will setup and populate Cassandra, Kafka, and Hive with sample data.
+## Populate Sample Data 
+The following script will setup and populate sample data for Cassandra, Kafka, and Hive.
+
+Note:  This will throw errors when running the `DROP TABLE IF EXISTS` calls.  You can safely ignore those.
 ```
 ./flux-create-data.sh
 tail -f ./nohup.out
