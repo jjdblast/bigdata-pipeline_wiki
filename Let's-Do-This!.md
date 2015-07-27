@@ -65,9 +65,9 @@ Note:  If you run out of memory or disk space while building or running the imag
 Setup and Run the Docker Container
 
 ```
-docker run -it -m 8g -v ~/pipeline/ -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:38080 -p 38081:38081 -p 36060:6060 -p 36061:6061 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -p 36066:6066 -p 39000:9000 -p 39999:19999 -p 36379:6739 -p 36081:6081 -p 37474:7474 -p 35601:5601 -p 37979:7979 -p 38989:8989 -p 34040:4040 fluxcapacitor/pipeline bash
-
+docker run -it -m 8g -v ~/pipeline/ -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:38080 -p 38081:38081 -p 36060:6060 -p 36061:6061 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -p 36066:6066 -p 39000:9000 -p 39999:19999 -p 36379:6739 -p 36081:6081 -p 37474:7474 -p 35601:5601 -p 37979:7979 -p 38989:8989 -p 34040:4040 -p 31337:1337 fluxcapacitor/pipeline bash
 ```
+
 ## Update the Pipeline Scripts to the Latest
 ```
 cd ~/pipeline
@@ -140,11 +140,12 @@ Spark Notebook (9000):  39000
 Tachyon (19999):  39999
 Redis (6379):  36379
 Apache Kafka Schema Registry:  (6081):  36081
-Neo4j (7474):  37474
+Neo4j Admin UI (7474):  37474
 Kibana (5601):  35601
 Netflix-Hystrix WebSocket Stream (8989):  38989
 Netflix-Hystrix Dashboard (7979):  37979
 Apache Spark ThriftServer Admin UI (4040): 34040
+Neo4j CLI (1337):  31337
 ```
 
 ## Test from Inside the Docker Container
@@ -204,25 +205,14 @@ http://192.168.59.103:39200/_cat/indices?v
 # Spark Notebook
 http://192.168.59.103:39000
 
-# Neo4j Server
+# Neo4j Admin UI
 http://192.168.59.103:37474
+
+# Neo4j CLI
+neo4j-shell -host 192.168.59.103 -port 31337
 
 # Kibana and Logstash
 http://192.168.59.103:35601
-
-# [Work In Progress] Netflix-Hystrix Demo
-
-https://github.com/Netflix/Hystrix/
-
-## Hystrix Sample WebApp
-http://192.168.59.103:38989/hystrix-examples-webapp/
-
-## Generating Sample Data for Hystrix WebApp
-cd ~/Hystrix/hystrix-examples
-./gradlew run &
-
-## Hystrix Circuit Breaker Dashboard
-http://192.168.59.103:37979/hystrix-dashboard/monitor/monitor.html?stream=http%3A%2F%2F192.168.59.103%3A38989%2Fhystrix-examples-webapp%2Fhystrix.stream
 
 
 ## JDBC/ODBC Integration (Tableau, MicroStrategy, Beeline, etc)
