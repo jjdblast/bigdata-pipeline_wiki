@@ -220,8 +220,16 @@ http://192.168.59.103:35601
 http://192.168.59.103:37575
 
 # Netflix-Hystrix Demo
-* Sample WebApp:  http://192.168.59.103:38989/hystrix-examples-webapp/
-* Dashboard:  http://192.168.59.103:37979/hystrix-dashboard/monitor/monitor.html?stream=http%3A%2F%2F192.168.59.103%3A38989%2Fhystrix-examples-webapp%2Fhystrix.stream
+
+## Sample WebApp
+http://192.168.59.103:38989/hystrix-examples-webapp/
+
+## Generating Sample Data
+cd ~/Hystrix/hystrix-examples
+./gradlew run &
+
+## Circuit Breaker Dashboard
+http://192.168.59.103:37979/hystrix-dashboard/monitor/monitor.html?stream=http%3A%2F%2F192.168.59.103%3A38989%2Fhystrix-examples-webapp%2Fhystrix.stream
 ```
 
 ## JDBC/ODBC Integration (Tableau, MicroStrategy, Beeline, etc)
