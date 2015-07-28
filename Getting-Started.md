@@ -208,9 +208,6 @@ http://192.168.59.103:39200/_cat/indices?v
 # Spark Notebook
 http://192.168.59.103:39000
 
-# Neo4j Admin UI
-http://192.168.59.103:37474
-
 # Neo4j CLI
 neo4j-shell -host 192.168.59.103 -port 31337
 
