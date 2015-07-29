@@ -93,7 +93,7 @@ docker run -it -m 8g -v ~/pipeline/notebooks:/root/pipeline/notebooks -p 30080:8
 Notes: 
 * The `-v ~/pipeline/notebooks` maps persistent path inside the Docker Container.  This way, you won't lose changes to your Apache Zeppelin or Spark-Notebook notebooks while running inside Docker.
 * Apache Zeppelin is explicitly configured to run on port 38080 in the Docker container versus the default of 8080.  We do this because Apache Zeppelin automatically starts a Web Socket connection on http port + 1; where + 1 is relative to the Docker Container port (38081, in this case).  If we use the default port 8080, and map port 8080 to 38080 from the `docker run` command, Zeppelin will create a Web Socket connection of 8080 + 1 = 8081 instead of 38081 because it is not aware of the `docker run` mapping.
-* If you are running this on an AWS EC2 instance through Docker - and haven't added the user to the docker group - you'll need to do the following after you login:
+* If you are running this on an AWS EC2 instance through Docker, you'll need to do the following after you login:
 ```
 sudo su -
 ```
