@@ -173,11 +173,14 @@ Neo4j CLI (1337):  31337
 ```
 
 ## Test from Inside the Docker Container
-```
-Spark Submit
-~/spark-1.4.1-bin-hadoop2.6/bin/spark-submit --class org.apache.spark.examples.SparkPi --master spark://127.0.0.1:7077 ~/spark-1.4.1-bin-hadoop2.6/lib/spark-examples-1.4.1-hadoop2.6.0.jar 10 
 
-# Cassandra
+### Spark Submit
+```
+~/spark-1.4.1-bin-hadoop2.6/bin/spark-submit --class org.apache.spark.examples.SparkPi --master spark://127.0.0.1:7077 ~/spark-1.4.1-bin-hadoop2.6/lib/spark-examples-1.4.1-hadoop2.6.0.jar 10 
+```
+
+### Cassandra
+```
 cqlsh
 cqlsh> use sparkafterdark;
 cqlsh:sparkafterdark> select * from real_time_likes;
@@ -186,13 +189,17 @@ cqlsh:sparkafterdark> select * from real_time_likes;
 ------------+----------+-----------
 
 (0 rows)
-
-# ZooKeeper
+```
+### ZooKeeper
+```
 zookeeper-shell 127.0.0.1:2181
+```
 
-# MySQL
+### MySQL
+```
 mysql -u root -p
 Enter password: password
+```
 
 ## Test the Services from Outside the Docker Container (local browser)
 
@@ -203,38 +210,49 @@ local-laptop$ boot2docker ip
 192.168.59.103
 ```
 
-Test from Outside the Docker Container (ie. your local laptop, but not within boot2docker).
+## Test from Outside the Docker Container (ie. your local laptop, but not within boot2docker).
 ```
-# Apache2 HTTP Server
+### Apache2 HTTP Server
+```
 http://192.168.59.103:30080
-
-# Kafka REST API
+```
+### Kafka REST API
+```
 http://192.168.59.103:34042/topics
-
-# Apache Zeppelin Web UI
+```
+### Apache Zeppelin Web UI
+```
 http://192.168.59.103:38080
-
-# Apache Spark Master Admin Web UI
+```
+### Apache Spark Master Admin Web UI
+```
 http://192.168.59.103:36060
-
-# Apache Spark Worker Admin Web UI
+```
+### Apache Spark Worker Admin Web UI
+```
 http://192.168.59.103:36061
-
-# Tachyon Web UI
+```
+### Tachyon Web UI
+```
 http://192.168.59.103:39999
-
-# ElasticSearch REST API
+```
+### ElasticSearch REST API
+```
 http://192.168.59.103:39200/_cat/indices?v
-
-# Spark Notebook
+```
+### Spark Notebook
+```
 http://192.168.59.103:39000
-
-# Neo4j CLI
+```
+### Neo4j CLI
+```
 neo4j-shell -host 192.168.59.103 -port 31337
+```
 
-# Kibana and Logstash
+### Kibana and Logstash
+```
 http://192.168.59.103:35601
-
+```
 
 ## JDBC/ODBC Integration (Tableau, MicroStrategy, Beeline, etc)
 The ThriftServer should already be running on port 30000 outside the Docker container (port 10000 inside the Docker container.)
