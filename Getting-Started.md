@@ -84,7 +84,7 @@ Note:  If you run out of memory or disk space while building or running the imag
 ## Run Docker Container with the Image
 
 ```
-docker run -it -m 8g -v ~/pipeline/notebooks:/root/pipeline/notebooks -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:38080 -p 38081:38081 -p 36060:6060 -p 36061:6061 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -p 36066:6066 -p 39000:9000 -p 39999:19999 -p 36379:6739 -p 36081:6081 -p 37474:7474 -p 35601:5601 -p 37979:7979 -p 38989:8989 -p 34040:4040 -p 31337:1337 fluxcapacitor/pipeline bash
+docker run -it -m 12g -v ~/pipeline/notebooks:/root/pipeline/notebooks -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:38080 -p 38081:38081 -p 36060:6060 -p 36061:6061 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -p 36066:6066 -p 39000:9000 -p 39999:19999 -p 36379:6739 -p 36081:6081 -p 37474:7474 -p 35601:5601 -p 37979:7979 -p 38989:8989 -p 34040:4040 -p 31337:1337 fluxcapacitor/pipeline bash
 ```
 
 Notes: 
@@ -221,7 +221,7 @@ Notes:
 
 ### Apache2 HTTP Server
 ```
-http://52.27.56.210:30080
+http://52.27.56.210:80
 ```
 ### Kafka REST API
 ```
@@ -255,7 +255,6 @@ http://52.27.56.210:39000
 ```
 neo4j-shell -host 52.27.56.210 -port 31337
 ```
-
 ### Kibana and Logstash
 ```
 http://52.27.56.210:35601
@@ -266,16 +265,17 @@ The ThriftServer should already be running on port 30000 outside the Docker cont
 
 ### Tableau Integration
 Connect Tableau to SparkSQL using the following properties
-* Server:  52.27.56.210
-* Port:  30000
-* Username:  hiveuser
-* Password:  <empty>
-* Schema:  Default
-* Table:  <Your Spark SQL Table> 
+```
+Server:  52.27.56.210
+Port:  30000
+Username:  hiveuser
+Password:  <empty>
+Schema:  Default
+Table:  <Your Spark SQL Table> 
+```
 
 ### Beeline
 Run the following commands outside the Docker Container (otherwise, use 127.0.0.1:10000 inside Docker Container):
-
 ```
 ~/spark-1.4.1-bin-hadoop2.6/bin/beeline
 beeline> !connect jdbc:hive2://52.27.56.210:30000 hiveuser ''
@@ -285,7 +285,7 @@ beeline> !connect jdbc:hive2://52.27.56.210:30000 hiveuser ''
 ```
 ./flux-stop-all.sh
 ```
-Note:  Sometimes the Zookeeper Service does not shutdown.
+Note:  Sometimes the a couple of the Service do not shutdown.
 You'll need to use `jps` and `kill` the process manually.
 
 ## Help Me!
