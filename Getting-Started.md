@@ -211,7 +211,6 @@ local-laptop$ boot2docker ip
 ```
 
 ## Test from Outside the Docker Container (ie. your local laptop, but not within boot2docker).
-```
 ### Apache2 HTTP Server
 ```
 http://192.168.59.103:30080
