@@ -1,13 +1,18 @@
 Welcome to the Flux Capacitor Data Pipeline Wiki!
 
 # Getting Started
-## Install latest boot2docker (1.7+) 
-If you have Virtual Box already installed, it's best if you could remove it (assuming you're not using it!)
-boot2docker expects a certain version of Virtual Box, otherwise things won't work.
+## Setup the Docker Environment
+### MacOS X
+Install latest boot2docker (1.7+).
 
-## Initialize boot2docker with enough memory (~8GB) and disk space (~50GB)
+If you have Virtual Box already installed, it's best if you could remove it (assuming you're not using it!)
+boot2docker expects a certain version of Virtual Box, otherwise things get ugly.
+
+Initialize boot2docker with enough memory (~8GB) and disk space (~50GB)
 Units are Megabytes
-`boot2docker --memory=8192 --disksize=50000 init` 
+```
+boot2docker --memory=8192 --disksize=50000 init
+``` 
 
 If you need to change these settings at some point later, you'll need to do the following:
 ```
@@ -16,34 +21,48 @@ boot2docker destroy
 boot2docker <new settings> init
 ```
 
-## Run boot2docker and ssh into it
+Run boot2docker and ssh into it
 ```
 boot2docker up
 boot2docker ssh
 ```
 
-## Make sure the init config changes worked
-
 Check disk space is near the chosen setting
-
 ```
 df -h
 ```
 
 Check memory is near the chosen setting
-
 ```
 cat /proc/meminfo
+```
+
+### Linux (ie. AWS EC2 Ubuntu 14.04)
+
+Install docker:
+```
+wget -qO- https://get.docker.com/ | sh
+```
+
+Add your user (ie. ubuntu) to the docker group:
+```
+sudo usermod -aG docker ubuntu
+(logout and login for this to take effect)
 ```
 
 ## Persistent and Non-Persistent Container Directories
 Consider everything you do in a boot2docker or docker session to be scoped to the life of just that session.
 
+### boot2docker
 The following is a path that will persist after a boot2docker restart:
-`/var/lib/boot2docker`
+```
+/var/lib/boot2docker
+```
 
 The following is a path that will persist after a Docker restart:
-`/var/lib/docker`
+```
+/var/lib/docker
+```
 
 ## Create or Download the Flux Capacitor Docker Image
 ### Option 1:  Create an Image from the Dockerfile Provided in this Github Repo
@@ -74,7 +93,7 @@ docker run -it -m 8g -v ~/pipeline/notebooks:/root/pipeline/notebooks -p 30080:8
 Notes: 
 * The `-v ~/pipeline/notebooks` maps persistent path inside the Docker Container.  This way, you won't lose changes to your Apache Zeppelin or Spark-Notebook notebooks while running inside Docker.
 * Apache Zeppelin is explicitly configured to run on port 38080 in the Docker container versus the default of 8080.  We do this because Apache Zeppelin automatically starts a Web Socket connection on http port + 1; where + 1 is relative to the Docker Container port (38081, in this case).  If we use the default port 8080, and map port 8080 to 38080 from the `docker run` command, Zeppelin will create a Web Socket connection of 8080 + 1 = 8081 instead of 38081 because it is not aware of the `docker run` mapping.
-* If you are running this on an AWS EC2 instance through Docker, you'll need to do the following after you login:
+* If you are running this on an AWS EC2 instance through Docker - and haven't added the user to the docker group - you'll need to do the following after you login:
 ```
 sudo su -
 ```
