@@ -3,7 +3,7 @@ Welcome to the Flux Capacitor Data Pipeline Wiki!
 # Getting Started
 ## Setup the Docker Environment
 ### MacOS X
-Install latest boot2docker (1.7+) from [the boot2docker website](http://boot2docker.io/)
+Install latest boot2docker (1.7+) from [the Boot2docker website](http://boot2docker.io/)
 
 If you have Virtual Box already installed, it's best if you could remove it (assuming you're not using it!)
 boot2docker expects a certain version of Virtual Box, otherwise things get ugly.
