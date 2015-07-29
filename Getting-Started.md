@@ -39,7 +39,7 @@ cat /proc/meminfo
 
 ### Linux (ie. AWS EC2 Ubuntu 14.04)
 
-Install docker:
+Install docker
 ```
 wget -qO- https://get.docker.com/ | sh
 ```
@@ -51,40 +51,37 @@ sudo usermod -aG docker ubuntu
 ```
 
 ## Persistent and Non-Persistent Container Directories
-Consider everything you do in a boot2docker or docker session to be scoped to the life of just that session.
+Consider everything you do - in memory or on-disk - in Docker Container to be scoped to the life of just that Container.
+**Note: This could lead to data loss if your Docker Container crashes!**
 
-### boot2docker
-The following is a path that will persist after a boot2docker restart:
+### [MacOS X Only] boot2docker Persistent Path
 ```
 /var/lib/boot2docker
 ```
 
-The following is a path that will persist after a Docker restart:
+### Docker Persistent Path
 ```
 /var/lib/docker
 ```
 
-## Create or Download the Flux Capacitor Docker Image
-### Option 1:  Create an Image from the Dockerfile Provided in this Github Repo
-This will take about 10 mins to build - and lots of internet traffic - as dependent binaries and libraries will be retrieved from the internet.
+## Download or Create the Flux Capacitor Docker Image
+### [Download] the Image (~2.5GB) from the Docker Hub Repo
+```
+docker pull fluxcapacitor/pipeline
+```
 
-(You can also pull the image from the Docker Hub Repository detailed in Option 2 below.)
+### [Create] an Image from the Dockerfile Provided in this Github Repo
+This will take about 15 mins to build - and lots of internet traffic - as dependent binaries and libraries are retrieved from the internet.
 
 ```
 git clone https://github.com/fluxcapacitor/pipeline.git
 cd pipeline
 docker build -t fluxcapacitor/pipeline .
 ```
-Note:  If you run out of memory or disk space while building or running the image, you need to re-initialize boot2docker per the steps above.
+Note:  If you run out of memory or disk space while building or running the image, you need to re-initialize boot2docker with larger `--memory` and `--disk-size` per the steps above.
 
-### Option 2:  Download the Image (~2.5GB) from the Docker Hub Repo
-```
-docker pull fluxcapacitor/pipeline
-```
 
-## Run Docker Container with the Image and Get a Bash Prompt within the Container
-
-Setup and Run the Docker Container.
+## Run Docker Container with the Image
 
 ```
 docker run -it -m 8g -v ~/pipeline/notebooks:/root/pipeline/notebooks -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:38080 -p 38081:38081 -p 36060:6060 -p 36061:6061 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -p 36066:6066 -p 39000:9000 -p 39999:19999 -p 36379:6739 -p 36081:6081 -p 37474:7474 -p 35601:5601 -p 37979:7979 -p 38989:8989 -p 34040:4040 -p 31337:1337 fluxcapacitor/pipeline bash
@@ -98,7 +95,7 @@ Notes:
 sudo su -
 ```
 
-## Update the Pipeline Scripts to the Latest
+## Update to the Latest Pipeline Scripts and Data
 ```
 cd ~/pipeline
 git reset --hard && git pull
@@ -111,8 +108,6 @@ chmod a+rx flux-*.sh
 tail -f ./nohup.out
 ```
 
-## Initialize the Pipeline Data
-Before initializing, check that the processes are all running as expected using the following:
 Before continuing, make sure the output of `jps -l` looks something like the following:
 ```
 2374 kafka.Kafka <-- Kafka Server
@@ -130,23 +125,24 @@ Before continuing, make sure the output of `jps -l` looks something like the fol
 3599 tachyon.master.TachyonMaster <-- Tachyon Master
 3718 tachyon.worker.TachyonWorker <-- Tachyon Worker
 2908 org.apache.spark.deploy.worker.Worker <-- Spark Worker
-
 ```
 Note that the "process information unavailable" message appears to be an OpenJDK [bug](https://bugs.openjdk.java.net/browse/JDK-8075773).
 
-## Populate Sample Data 
-The following script will setup and populate sample data for Cassandra, Kafka, and Hive.
-
-Note:  This will throw errors when running the `DROP TABLE IF EXISTS` calls.  You can safely ignore those.
+## Initialize the Pipeline Data
+### Cassandra, Kafka, and Hive
 ```
 ./flux-create-data.sh
 tail -f ./nohup.out
 ```
+Notes:
+* This script may throw errors during the `DROP TABLE IF EXISTS` if the tables do no exist.  You can safely ignore those.
 
 ## Ports
 In order to reduce the likelihood of port collisions on your local machine, we've mapped the relatively-common container service ports to relatively-uncommon ports in the >30000 range below.
 
 ```
+Service (Inside Docker Container Port):  Outside Docker Container Port
+
 Apache Httpd (80):  30080
 Apache Kafka Rest Proxy (4042):  34042
 Apache Cassandra (9160, 9042):  39160, 39042
@@ -166,8 +162,8 @@ Redis (6379):  36379
 Apache Kafka Schema Registry:  (6081):  36081
 Neo4j Admin UI (7474):  37474
 Kibana (5601):  35601
-Netflix-Hystrix WebSocket Stream (8989):  38989
-Netflix-Hystrix Dashboard (7979):  37979
+[TODO] Netflix-Hystrix WebSocket Stream (8989):  38989
+[TODO] Netflix-Hystrix Dashboard (7979):  37979
 Apache Spark ThriftServer Admin UI (4040): 34040
 Neo4j CLI (1337):  31337
 ```
@@ -190,6 +186,7 @@ cqlsh:sparkafterdark> select * from real_time_likes;
 
 (0 rows)
 ```
+
 ### ZooKeeper
 ```
 zookeeper-shell 127.0.0.1:2181
@@ -201,56 +198,67 @@ mysql -u root -p
 Enter password: password
 ```
 
-## Test the Services from Outside the Docker Container (local browser)
-
-First, get the IP of your boot2docker VM from your local laptop (not within boot2docker or the Docker Container) using the following:
+## Find the IP
+### [MacOS X] First, get the IP of your boot2docker VM from your local laptop (not within boot2docker or the Docker Container)
 
 ```
 local-laptop$ boot2docker ip
-192.168.59.103
+<public-ipv4>
 ```
 
-## Test from Outside the Docker Container (ie. your local laptop, but not within boot2docker).
+### [Linux] Use the IP of your Linux machine (ie. AWS EC2 Elastic or Dynamic IP) 
+If you're on an AWS EC2 instance, you can use the following to discover the public IP:
+```
+ec2$ curl http://169.254.169.254/latest/meta-data/
+<public-ipv4>
+```
+
+## Test from Outside the Docker Container (and Outside boot2docker)
+
+Notes:
+* The IP below is a demo server that has been setup for Flux Capacitor
+* Substitute your own IP as appropriate 
+
 ### Apache2 HTTP Server
 ```
-http://192.168.59.103:30080
+http://52.27.56.210:30080
 ```
 ### Kafka REST API
 ```
-http://192.168.59.103:34042/topics
+http://52.27.56.210:34042/topics
 ```
 ### Apache Zeppelin Web UI
 ```
-http://192.168.59.103:38080
+http://52.27.56.210:38080
 ```
 ### Apache Spark Master Admin Web UI
 ```
-http://192.168.59.103:36060
+http://52.27.56.210:36060
 ```
 ### Apache Spark Worker Admin Web UI
 ```
-http://192.168.59.103:36061
+http://52.27.56.210:36061
 ```
 ### Tachyon Web UI
 ```
-http://192.168.59.103:39999
+http://52.27.56.210:39999
 ```
 ### ElasticSearch REST API
 ```
-http://192.168.59.103:39200/_cat/indices?v
+http://52.27.56.210:39200/_cat/indices?v
 ```
 ### Spark Notebook
 ```
-http://192.168.59.103:39000
+http://52.27.56.210:39000
 ```
 ### Neo4j CLI
 ```
-neo4j-shell -host 192.168.59.103 -port 31337
+neo4j-shell -host 52.27.56.210 -port 31337
 ```
 
 ### Kibana and Logstash
 ```
-http://192.168.59.103:35601
+http://52.27.56.210:35601
 ```
 
 ## JDBC/ODBC Integration (Tableau, MicroStrategy, Beeline, etc)
@@ -258,7 +266,7 @@ The ThriftServer should already be running on port 30000 outside the Docker cont
 
 ### Tableau Integration
 Connect Tableau to SparkSQL using the following properties
-* Server:  192.168.59.103
+* Server:  52.27.56.210
 * Port:  30000
 * Username:  hiveuser
 * Password:  <empty>
@@ -270,7 +278,7 @@ Run the following commands outside the Docker Container (otherwise, use 127.0.0.
 
 ```
 ~/spark-1.4.1-bin-hadoop2.6/bin/beeline
-beeline> !connect jdbc:hive2://192.168.59.103:30000 hiveuser ''
+beeline> !connect jdbc:hive2://52.27.56.210:30000 hiveuser ''
 ```
 
 ## Stop the Pipeline Services
