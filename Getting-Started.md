@@ -11,9 +11,9 @@ Notes:
 boot2docker expects a certain version of VirtualBox, otherwise things get ugly
 * Installing boot2docker will also install docker
 
-Initialize boot2docker with enough memory (~16GB) and disk space (~20GB)
+Initialize boot2docker with enough memory (~16GB) and disk space (~30GB)
 ```
-macosx-laptop$ boot2docker --memory=16384 --disksize=20000 init
+macosx-laptop$ boot2docker --memory=16384 --disksize=30000 init
 ``` 
 
 If you need to change these settings at some point later, you'll need to do the following
@@ -48,14 +48,25 @@ ec2-linux$ wget -qO- https://get.docker.com/ | sh
 Add your user (ie. ubuntu) to the docker group:
 ```
 ec2-linux$ sudo usermod -aG docker ubuntu
-(logout and login for this to take effect)
 ```
 
+Notes:
+* **You need to logout and login for the ubuntu user to get added to the docker group**
+
 ## Download (or Create) the Flux Capacitor Docker Image
+[MacOS X] Notes
+* If you're using MacOS X, you should `exit` boot2docker back to your macosx-laptop.
+* At this point the boot2docker VirtualBox VM docker daemon will be running
+* The docker daemon within the boot2docker VirtualBox VM will broker all docker calls from your macosx-laptop
 
-If you're using MacOS X, you should `exit` boot2docker back to your macosx laptop.
+[EC2 Linux] Notes
+* If you see the following error when running the `docker` commands below, you likely did not logout and login for the ubuntu user to be added to the docker group.  Please do this, otherwise you'll need to prepend `sudo` to all of your docker commands.
+```
+dial unix /var/run/docker.sock: permission denied. Are you trying to connect to a TLS-enabled daemon without TLS?
+```
+You did likely did not logout and login again
 
-### [Download] the Image (~2.5GB) from the Docker Hub Repo
+### [Download] the Image (~2GB) from the Docker Hub Repo
 ```
 ec2-linux or macosx-laptop$ docker pull fluxcapacitor/pipeline
 ```
