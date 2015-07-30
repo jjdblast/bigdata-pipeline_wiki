@@ -333,13 +333,23 @@ $ec2-linux or macosx-laptop$ ~/spark-1.4.1-bin-fluxcapacitor/bin/beeline
 beeline> !connect jdbc:hive2://52.27.56.210:30000 hiveuser ''
 ```
 
-## Stop the Pipeline Services
+## Stopping the Pipeline Services
 The following must be done within the Docker Container.
 ```
 root@[docker-container-id]$ ./flux-stop-all.sh
 ```
 Note:  Sometimes the a couple of the Service do not shutdown.
-You'll need to use `jps` and `kill` the process manually.
+You'll need to use `jps -l` and `kill` these processes manually until we make these start/stop scripts more robust.
+```
+root@[docker-container-id]:~/pipeline# jps
+4856 Main <-- kill
+10059 Jps <-- do not kill
+3770 Main <-- kill
+5201 QuorumPeerMain <-- kill
+root@[docker-container-id]:~/pipeline# kill -9 5201
+root@[docker-container-id]:~/pipeline# kill -9 4856
+root@[docker-container-id]:~/pipeline# kill -9 3770 
+```
 
 ## Stopping the Docker Container
 From outside the Docker Container either ec2-linux or macosx-laptop, do the following
