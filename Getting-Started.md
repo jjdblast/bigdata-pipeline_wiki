@@ -342,10 +342,10 @@ Note:  Sometimes the a couple of the Service do not shutdown.
 You'll need to use `jps -l` and `kill` these processes manually until we make these start/stop scripts more robust.
 ```
 root@[docker-container-id]:~/pipeline# jps
-4856 Main <-- kill
+4856 org.jruby.Main <-- kill
 10059 Jps <-- do not kill
 3770 Main <-- kill
-5201 QuorumPeerMain <-- kill
+5201 org.apache.zookeeper.server.quorum.QuorumPeerMain <-- kill
 root@[docker-container-id]:~/pipeline# kill -9 5201
 root@[docker-container-id]:~/pipeline# kill -9 4856
 root@[docker-container-id]:~/pipeline# kill -9 3770 
