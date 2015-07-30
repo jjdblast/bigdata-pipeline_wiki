@@ -97,9 +97,9 @@ ec2-linux or macosx-laptop$ docker run -it -m 12g -v ~/pipeline/notebooks:/root/
 ```
 At this point, you are inside of the Docker Container.
 
-If you are running this on an AWS EC2 instance through Docker, you'll need to do the following each time you do `docker run ..something.something.. bash':
+[EC2-Linux] You'll need to do the following wgeb first login to docker using the `docker run ..something.something.. bash' command above:
 ```
-docker$ sudo su -
+root@[docker-container-id]$ sudo su -
 ```
 
 From a different terminal, check that the Docker Container (instance) is running
@@ -128,16 +128,18 @@ The following paths will be shared between the Host (ec2-linux or macosx-laptop)
 ```
 
 ## Update to the Latest Pipeline Scripts and Data
+You only need to do this the first time you login to the Docker Container instance - or whenever there are changes.
 ```
-docker$ cd ~/pipeline
-docker$ git reset --hard && git pull
-docker$ chmod a+rx flux-*.sh
+root@[docker-container-id]$ cd ~/pipeline
+root@[docker-container-id]$ git reset --hard && git pull
+root@[docker-container-id]$ chmod a+rx flux-*.sh
 ```
 
 ## Start the Pipeline Services 
 ```
-docker$ ./flux-start-all.sh
-docker$ tail -f ./nohup.out
+root@[docker-container-id]$ ./flux-start-all.sh
+[...wait for the start scripts to settle...]
+root@[docker-container-id]$ tail -f ./nohup.out
 ```
 
 Before continuing, make sure the output of `jps -l` looks something like the following:
@@ -163,8 +165,8 @@ Note that the "process information unavailable" message appears to be an OpenJDK
 ## Initialize the Pipeline Data
 ### Cassandra, Kafka, and Hive
 ```
-docker$ ./flux-create-data.sh
-docker$ tail -f ./nohup.out
+root@[docker-container-id]$ ./flux-create-data.sh
+root@[docker-container-id]$ tail -f ./nohup.out
 ```
 Notes:
 * This script may throw errors during the `DROP TABLE IF EXISTS` if the tables do no exist.  You can safely ignore those.
@@ -204,12 +206,12 @@ Neo4j CLI (1337):  31337
 
 ### Spark Submit
 ```
-docker$ ~/spark-1.4.1-bin-hadoop2.6-fluxcapacitor/bin/spark-submit --class org.apache.spark.examples.SparkPi --master spark://127.0.0.1:7077 ~/spark-1.4.1-bin-hadoop2.6-fluxcapacitor/lib/spark-examples-1.4.1-hadoop2.6.0.jar 10 
+root@[docker-container-id]docker$ ~/spark-1.4.1-bin-hadoop2.6-fluxcapacitor/bin/spark-submit --class org.apache.spark.examples.SparkPi --master spark://127.0.0.1:7077 ~/spark-1.4.1-bin-hadoop2.6-fluxcapacitor/lib/spark-examples-1.4.1-hadoop2.6.0.jar 10 
 ```
 
 ### Cassandra
 ```
-docker$ cqlsh
+root@[docker-container-id]$ cqlsh
 cqlsh> use sparkafterdark;
 cqlsh:sparkafterdark> select * from real_time_likes;
 
@@ -221,12 +223,12 @@ cqlsh:sparkafterdark> select * from real_time_likes;
 
 ### ZooKeeper
 ```
-docker$ zookeeper-shell 127.0.0.1:2181
+root@[docker-container-id]$ zookeeper-shell 127.0.0.1:2181
 ```
 
 ### MySQL
 ```
-docker$ mysql -u root -p
+root@[docker-container-id]$ mysql -u root -p
 Enter password: password
 ```
 
@@ -334,10 +336,29 @@ beeline> !connect jdbc:hive2://52.27.56.210:30000 hiveuser ''
 ## Stop the Pipeline Services
 The following must be done within the Docker Container.
 ```
-docker$ ./flux-stop-all.sh
+root@[docker-container-id]$ ./flux-stop-all.sh
 ```
 Note:  Sometimes the a couple of the Service do not shutdown.
 You'll need to use `jps` and `kill` the process manually.
+
+## Stopping the Docker Container
+From outside the Docker Container either ec2-linux or macosx-laptop, do the following
+```
+$ec2-linux or macosx-laptop$ docker ps
+[copy the container-instance-id]
+$ec2-linux or macosx-laptop$ docker stop [container-instance-id]
+```
+
+## [MacOS X] Stopping boot2docker 
+The following will stop the boot2docker VirtualBox VM docker daemon.
+```
+macosx-laptop$ boot2docker stop
+```
+
+You can also tear down boot2docker completely as follows
+```
+boot2docker destroy
+```
 
 ## Help Me!
 Feel free to email help@fluxcapacitor.com for help.  We love questions.
