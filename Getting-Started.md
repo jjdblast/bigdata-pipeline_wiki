@@ -290,3 +290,26 @@ You'll need to use `jps` and `kill` the process manually.
 
 ## Help Me!
 Feel free to email help@fluxcapacitor.com for help.  We love questions.
+
+## Custom Distributions
+### Spark 1.4.1
+* Tachyon
+* Hadoop 2.6
+* Hive
+* Hive ThriftServer
+* Ganglia
+* Kinesis
+
+```
+export MAVEN_OPTS="-Xmx16g -XX:MaxPermSize=512M -XX:ReservedCodeCacheSize=512m" && ./make-distribution.sh --name fluxcapacitor --tgz --with-tachyon --skip-java-test -Phadoop-2.6 -Dhadoop.version=2.6.0 -Phive -Phive-thriftserver -Pspark-ganglia-lgpl -Pkinesis-asl -DskipTests
+```
+
+### Zeppelin 0.5.2
+* Help Widget in Lower Right
+
+### Spark-Notebook
+* Tachyon
+* Hadoop 2.6
+* Hive
+* Parquet
+* (Whatever else Andy did)
