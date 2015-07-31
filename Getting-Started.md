@@ -93,7 +93,7 @@ Notes:
 
 Think of a Docker Container as a running Docker instance of a static Docker image.
 ```
-ec2-linux or macosx-laptop$ docker run -it -m 12g -v ~/pipeline/notebooks:/root/pipeline/notebooks -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:38080 -p 38081:38081 -p 36060:6060 -p 36061:6061 -p 32181:2181 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -p 36066:6066 -p 39000:9000 -p 39999:19999 -p 36379:6739 -p 36081:6081 -p 37474:7474 -p 35601:5601 -p 37979:7979 -p 38989:8989 -p 34040:4040 -p 31337:1337 fluxcapacitor/pipeline bash
+ec2-linux or macosx-laptop$ docker run -it -m 12g -v ~/pipeline/notebooks:/root/pipeline/notebooks -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:38080 -p 38081:38081 -p 36060:6060 -p 36061:6061 -p 32181:2181 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -p 36066:6066 -p 39000:9000 -p 39999:19999 -p 36081:6081 -p 35601:5601 -p 37979:7979 -p 38989:8989 -p 34040:4040 fluxcapacitor/pipeline bash
 ```
 At this point, you are inside of the Docker Container.
 
@@ -192,14 +192,11 @@ Apache Kafka (9092):  39092
 Apache Spark REST API (6066):  36066
 Spark Notebook (9000):  39000
 Tachyon (19999):  39999
-Redis (6379):  36379
 Apache Kafka Schema Registry:  (6081):  36081
-Neo4j Admin UI (7474):  37474
 Kibana (5601):  35601
 [TODO] Netflix-Hystrix WebSocket Stream (8989):  38989
 [TODO] Netflix-Hystrix Dashboard (7979):  37979
 Apache Spark ThriftServer Admin UI (4040): 34040
-Neo4j CLI (1337):  31337
 ```
 
 ## Test from Inside the Docker Container
@@ -305,11 +302,6 @@ http://52.27.56.210:35601
 ### Ganglia
 ```
 http://52.27.56.210:80/ganglia
-```
-
-### Neo4j CLI
-```
-ec2-linux or macosx-laptop$: neo4j-shell -host 52.27.56.210 -port 31337
 ```
 
 ## JDBC/ODBC Integration (Tableau, MicroStrategy, Beeline, etc)
