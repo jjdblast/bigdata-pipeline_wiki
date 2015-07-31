@@ -206,7 +206,7 @@ Neo4j CLI (1337):  31337
 
 ### Spark Submit
 ```
-root@[docker-container-id]docker$ ~/spark-1.4.1-bin-fluxcapacitor/bin/spark-submit --class org.apache.spark.examples.SparkPi --master spark://127.0.0.1:7077 ~/spark-1.4.1-bin-hadoop2.6-fluxcapacitor/lib/spark-examples-1.4.1-hadoop2.6.0.jar 10 
+root@[docker-container-id]docker$ ~/spark-1.4.1-bin-fluxcapacitor/bin/spark-submit --class org.apache.spark.examples.SparkPi --master spark://127.0.0.1:7077 ~/spark-1.4.1-bin-fluxcapacitor/lib/spark-examples-1.4.1-hadoop2.6.0.jar 10 
 ```
 
 ### Cassandra
