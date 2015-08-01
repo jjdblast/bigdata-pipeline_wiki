@@ -2,14 +2,13 @@ Welcome to the Flux Capacitor Data Pipeline Wiki!
 
 # Getting Started
 ## Setup the Docker Environment
-### MacOS X
-Install latest boot2docker (1.7+) from [the Boot2docker website](http://boot2docker.io/)
 
+Install latest boot2docker (1.7+) from [the Boot2docker website](http://boot2docker.io/)
 Notes:
 * This is needed on MacOS X to simulate a Linux VM (using VirtualBox)
 * If you have Virtual Box already installed, it's best if you could remove it (assuming you're not using it!)
 boot2docker expects a certain version of VirtualBox, otherwise things get ugly
-* Installing boot2docker will also install docker
+* Installing boot2docker will also install Docker
 
 Initialize boot2docker with enough memory (~16GB) and disk space (~30GB)
 ```
@@ -35,28 +34,27 @@ macosx-laptop$ boot2docker <new settings> init
 macosx-laptop$ boot2docker up
 ```
 
-## Download the Flux Capacitor Docker Image
-* Using MacOS X, you should `exit` boot2docker back to your macosx-laptop.
+Notes:
+* Using MacOS X, you should `exit` boot2docker back to your local laptop as everything should be run from there
+```
+boot2docker$ exit
+```
 * At this point the boot2docker VirtualBox VM docker daemon will be running
-* The docker daemon within the boot2docker VirtualBox VM will broker all docker calls from your macosx-laptop
+* The docker daemon within the boot2docker VirtualBox VM will broker all Docker calls from your local laptop to Docker
 
-
-### Download the Image (~2GB) from the Docker Hub Repo
+## Download the Docker Image (~2GB) from the DockerHub Registry
 ```
 macosx-laptop$ docker pull fluxcapacitor/pipeline
 ```
 
-### Verify that the docker image has been downloaded or created
+### Verify that the docker image has been downloaded
 ```
 macosx-laptop$ docker images
 ```
-Notes:
-* Once the docker image is in your local image repository, it no longer needs to be downloaded or created.
-
 
 ## Run a Docker Container with the Image
 
-Think of a Docker Container as a running Docker instance of a static Docker image.
+A Docker Container is a running instance (ie. EC2 instance) of a static Docker image (EC2 AMI)
 ```
 macosx-laptop$ docker run -it -m 12g -v ~/pipeline/notebooks:/root/pipeline/notebooks -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:38080 -p 38081:38081 -p 36060:6060 -p 36061:6061 -p 32181:2181 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -p 36066:6066 -p 39000:9000 -p 39999:19999 -p 36081:6081 -p 35601:5601 -p 37979:7979 -p 38989:8989 -p 34040:4040 fluxcapacitor/pipeline bash
 ```
@@ -64,36 +62,28 @@ At this point, you are inside of the Docker Container.
 
 From a different terminal, check that the Docker Container (instance) is running
 ```
-...different terminal outside of the Docker Container...
+*...different terminal outside of the Docker Container..*
 macosx-laptop$ docker ps
 ```
-Notes: 
-* The `-v ~/pipeline/notebooks` maps persistent path inside the Docker Container.  This way, you won't lose changes to your Apache Zeppelin or Spark-Notebook notebooks while running inside Docker.
-* Consider everything - both in-memory or on-disk - inside the Docker Container to be scoped to the life of just that Container.
-* **If the Docker Container crashes or you exit the bash session, you will lose data if you're not using VOLUMES (-v)!**
-* If you're creating notebooks or other assets that you want to persist, make sure to commit/push them to git or otherwise save them outside of the ephemeral Docker Container.
-
-## Default Persistent Paths 
-
 
 ## Update to the Latest Pipeline Scripts and Data
-You only need to do this the first time you login to the Docker Container instance - or whenever there are changes.
+You only need to do this the first time you login to the Docker Container instance - or whenever there are changes that need to be sync'd.
 ```
-root@[docker-container-internal-hostname]$ cd ~/pipeline
-root@[docker-container-internal-hostname]$ git reset --hard && git pull
-root@[docker-container-internal-hostname]$ chmod a+rx flux-*.sh
+root@[docker]$ cd ~/pipeline
+root@[docker]$ git reset --hard && git pull
+root@[docker]$ chmod a+rx flux-*.sh
 ```
 
-## Configure the Environment 
+## Configure the Environment
 ```
-root@[docker-container-internal-hostname]$ ./flux-config.sh
+root@[docker]$ ./flux-config.sh
 ```
 
 ## Start the Pipeline Services 
 ```
-root@[docker-container-internal-hostname]$ ./flux-start.sh
+root@[docker]$ ./flux-start.sh
 [...wait for the start scripts to settle...]
-root@[docker-container-internal-hostname]$ tail -f ./nohup.out
+root@[docker]$ tail -f ./nohup.out
 ```
 
 Before continuing, make sure the output of `jps -l` looks something like the following:
@@ -119,7 +109,7 @@ Note that the "process information unavailable" message appears to be an OpenJDK
 ## Initialize the Pipeline Data
 ### Cassandra, Kafka, and Hive
 ```
-root@[docker]$ ./flux-create-data.sh
+root@[docker]$ ./flux-create.sh
 root@[docker]$ tail -f ./nohup.out
 ```
 Notes:
@@ -157,12 +147,12 @@ Apache Spark ThriftServer Admin UI (4040): 34040
 
 ### Spark Submit
 ```
-root@[docker]docker$ spark-submit --class org.apache.spark.examples.SparkPi --master spark://127.0.0.1:7077 $SPARK_HOME/lib/spark-examples-1.4.1-hadoop2.6.0.jar 10 
+root@[docker]docker$ spark-submit --class org.apache.spark.examples.SparkPi --master spark://127.0.0.1:7077 $SPARK_EXAMPLES_JAR 10 
 ```
 
 ### Cassandra
 ```
-root@[docker-container-id]$ cqlsh
+root@[docker]$ cqlsh
 cqlsh> use pipeline;
 cqlsh:pipeline> select * from gender;
 
@@ -183,30 +173,32 @@ root@[docker]$ mysql -u root -p
 Enter password: password
 ```
 
-## Find the IP
-### [MacOS X] First, get the IP of your **boot2docker** VM from your MacOs X laptop (not within boot2docker or the Docker Container)
-
+## Find the Host IP
+Find the IP of the boot2docker host from your MacOs X laptop (not within boot2docker or the Docker Container)
 ```
 macosx-laptop$ boot2docker ip
 <public-ipv4>
 ```
-Note:  This is most-likely `192.168.59.103`
+Notes:  
+* This is most-likely `192.168.59.103`
+* The "host" in this case is actually the boot2docker VirtualBox VM - not your local laptop
 
 ## Test from Outside the Docker Container (and Outside boot2docker)
-
-Use your browser to test the following URLs.
-Notes:
-* I'm using the most-likely IP of 192.168.59.103
-* Substitute your own IP as determined by the previous step
+Use your browser to test the following URLs using the IP found from the previous step if it differs:
 
 ### Apache2 HTTP Server
 ```
 http://192.168.59.103:30080
 ```
 
-### Kafka REST API
+### Kafka REST API Proxy
 ```
 http://192.168.59.103:34042/topics
+```
+
+### Kafka Native
+```
+./kafka-topics --zookeeper 192.168.59.103:32181 —list
 ```
 
 ### Apache Zeppelin Web UI
@@ -271,6 +263,9 @@ beeline> !connect jdbc:hive2://192.168.59.103:30000 hiveuser ''
 SELECT * FROM gender LIMIT 100
 ```
 
+** IF ANY OF THE ABOVE DON'T WORK, PLEASE CREATE A GITHUB ISSUE AND/OR EMAIL help@fluxcapacitor.com FOR A QUICK RESPONSE.**
+
+
 ## Stopping the Pipeline Services
 The following must be done within the Docker Container.
 ```
@@ -300,12 +295,14 @@ macosx-laptop$ docker ps
 macosx-laptop$ docker stop [container-instance-id]
 ```
 
-## [MacOS X] Stopping boot2docker 
+## Stopping boot2docker 
 The following will stop the boot2docker VirtualBox VM docker daemon.
 ```
 macosx-laptop$ boot2docker stop
 ```
 
+
+## Removing boot2docker 
 You can also tear down boot2docker completely as follows
 ```
 boot2docker destroy
@@ -313,4 +310,3 @@ boot2docker destroy
 
 ## Help Me!
 Feel free to email help@fluxcapacitor.com for help.  We love questions.
-
