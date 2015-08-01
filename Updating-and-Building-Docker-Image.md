@@ -19,7 +19,7 @@ An error occurred trying to connect: Post https://192.168.59.103:2376/v1.19/buil
 ```
 macosx-laptop$ boot2docker stop
 macosx-laptop$ boot2docker destroy
-macosx-laptop$ boot2docker <new settings> init
+macosx-laptop$ boot2docker --memory=16384 --disksize=30000 init
 macosx-laptop$ boot2docker up
 ```
 * **You may lose data that is stored within boot2docker - including persistent volumes!**
