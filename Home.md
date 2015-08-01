@@ -122,33 +122,6 @@ root@[docker]$ tail -f ./nohup.out
 Notes:
 * This script may throw errors during the `DROP TABLE IF EXISTS` if the tables do no exist.  You can safely ignore those.
 
-## Ports
-In order to reduce the likelihood of port collisions on the host machine, we've mapped the relatively-common container service ports to relatively-uncommon ports in the >30000 range below.
-
-```
-Service (Inside Docker Container Port):  Outside Docker Container Port
-
-Apache Httpd (80):  30080
-Apache Kafka Rest Proxy (4042):  34042
-Apache Cassandra (9160, 9042):  39160, 39042
-ElasticSearch (9200):  39200
-Apache Spark Master (7077):  37077
-Apache Zeppelin (38080, 38081):  38080, 38081
-Apache Spark Master Admin UI (6060):  36060
-Apache Spark Worker Admin UI (6061):  36061
-Apache ZooKeeper (2181):  32181
-Apache Spark JDBC/ODBC Hive ThriftServer (10000):  30000
-Apache Hadoop (50070, 50090):  30070, 30090
-Apache Kafka (9092):  39092
-Apache Spark REST API (6066):  36066
-Spark Notebook (9000):  39000
-Tachyon (19999):  39999
-Apache Kafka Schema Registry:  (6081):  36081
-Kibana (5601):  35601
-[TODO] Netflix-Hystrix WebSocket Stream (8989):  38989
-[TODO] Netflix-Hystrix Dashboard (7979):  37979
-Apache Spark ThriftServer Admin UI (4040): 34040
-```
 
 ## Test from Inside the Docker Container
 
