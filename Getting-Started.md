@@ -50,7 +50,7 @@ ec2-linux$ sudo usermod -aG docker ubuntu
 Notes:
 * **You need to logout and login for the ubuntu user to get added to the docker group**
 
-## Download (or Create) the Flux Capacitor Docker Image
+## Download the Flux Capacitor Docker Image
 [MacOS X] Notes
 * If you're using MacOS X, you should `exit` boot2docker back to your macosx-laptop.
 * At this point the boot2docker VirtualBox VM docker daemon will be running
@@ -63,21 +63,10 @@ dial unix /var/run/docker.sock: permission denied. Are you trying to connect to 
 ```
 You did likely did not logout and login again
 
-### [Download] the Image (~2GB) from the Docker Hub Repo
+### Download the Image (~2GB) from the Docker Hub Repo
 ```
 ec2-linux or macosx-laptop$ docker pull fluxcapacitor/pipeline
 ```
-
-### [Create] an Image from the Dockerfile Provided in this Github Repo
-This will take about 15 mins to build - and lots of internet traffic - as dependent binaries and libraries are retrieved from the internet.
-
-```
-ec2-linux or macosx-laptop$ git clone https://github.com/fluxcapacitor/pipeline.git
-ec2-linux or macosx-laptop$ cd pipeline
-ec2-linux or macosx-laptop$ docker build -t fluxcapacitor/pipeline .
-```
-Notes
-* If you run out of memory or disk space while building or running the image, you need to re-initialize boot2docker with larger `--memory` and `--disk-size` per the steps above.
 
 ### Verify that the docker image has been downloaded or created
 ```
