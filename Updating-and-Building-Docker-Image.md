@@ -1,9 +1,12 @@
-## Building a Docker Image from the Dockerfile
+## Building a Docker Image
 This will take about 15 mins to build - and lots of internet traffic - as dependent binaries and libraries are retrieved from the internet.
 
 ```
 $ git clone https://github.com/fluxcapacitor/pipeline.git
 $ cd pipeline
+
+[... Make Changes ...]
+
 $ docker build -t fluxcapacitor/pipeline .
 ```
 Notes
