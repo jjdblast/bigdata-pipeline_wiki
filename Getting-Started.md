@@ -179,7 +179,7 @@ Apache Kafka Rest Proxy (4042):  34042
 Apache Cassandra (9160, 9042):  39160, 39042
 ElasticSearch (9200):  39200
 Apache Spark Master (7077):  37077
-Apache Zeppelin (8080, 8081):  38080, 38081
+Apache Zeppelin (38080, 38081):  38080, 38081
 Apache Spark Master Admin UI (6060):  36060
 Apache Spark Worker Admin UI (6061):  36061
 Apache ZooKeeper (2181):  32181
