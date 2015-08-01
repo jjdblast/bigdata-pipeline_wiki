@@ -182,16 +182,16 @@ Notes:
 * The "host" in this case is actually the boot2docker VirtualBox VM - not your local laptop
 
 ## Test from Outside the Docker Container (and Outside boot2docker)
-Use your browser to test the following URLs using the IP found from the previous step if it differs:
+Use `curl` (and/or your browser) to test the following URLs using the IP found from the previous step (`192.168.59.103` is shown below):
 
 ### Apache2 HTTP Server
 ```
-http://192.168.59.103:30080
+curl '192.168.59.103:30080`
 ```
 
 ### Kafka REST API Proxy
 ```
-http://192.168.59.103:34042/topics
+curl '192.168.59.103:34042/topics'
 ```
 
 ### Kafka Native
@@ -201,42 +201,42 @@ http://192.168.59.103:34042/topics
 
 ### Apache Zeppelin Web UI
 ```
-http://192.168.59.103:38080
+curl '192.168.59.103:38080'
 ```
 
 ### Apache Spark Master Admin Web UI
 ```
-http://192.168.59.103:36060
+curl '192.168.59.103:36060'
 ```
 
 ### Apache Spark Worker Admin Web UI
 ```
-http://192.168.59.103:36061
+curl '192.168.59.103:36061'
 ```
 
 ### Tachyon Web UI
 ```
-http://192.168.59.103:39999
+curl '192.168.59.103:39999'
 ```
 
 ### ElasticSearch REST API
 ```
-http://192.168.59.103:39200/_cat/indices?v
+curl '192.168.59.103:39200/_cat/indices?v'
 ```
 
 ### Spark Notebook
 ```
-http://192.168.59.103:39000
+curl '192.168.59.103:39000'
 ```
 
 ### Kibana and Logstash
 ```
-http://192.168.59.103:35601
+curl '192.168.59.103:35601'
 ```
 
 ### Ganglia
 ```
-http://192.168.59.103:80/ganglia
+curl '192.168.59.103:80/ganglia'
 ```
 
 ## JDBC/ODBC Integration (Tableau, MicroStrategy, Beeline, etc)
