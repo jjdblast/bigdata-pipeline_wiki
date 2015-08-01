@@ -50,9 +50,13 @@ boot2docker$ exit
 * The docker daemon within the boot2docker VirtualBox VM will broker all Docker calls from your local laptop to Docker
 
 ## Download the Docker Image (~2GB) from the DockerHub Registry
+
+TODO:  Change this command to pull from the USB repository?
+
 ```
 macosx-laptop$ docker pull fluxcapacitor/pipeline
 ```
+
 
 ### Verify that the docker image has been downloaded
 ```
