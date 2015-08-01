@@ -69,7 +69,8 @@ At this point, you are inside of the Docker Container.
 
 From a different terminal, check that the Docker Container (instance) is running
 ```
-*...different terminal outside of the Docker Container..*
+...different terminal outside of the Docker Container..
+
 macosx-laptop$ docker ps
 ```
 
@@ -89,7 +90,9 @@ root@[docker]$ ./flux-config.sh
 ## Start the Pipeline Services 
 ```
 root@[docker]$ ./flux-start.sh
+
 [...wait for the start scripts to settle...]
+
 root@[docker]$ tail -f ./nohup.out
 ```
 
