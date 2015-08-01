@@ -156,6 +156,8 @@ cqlsh:pipeline> select * from real_time_likes;
 ------------+----------+--------+-----------
 
 (0 rows)
+
+cqlsh:pipeline> exit;
 ```
 
 ### ZooKeeper
