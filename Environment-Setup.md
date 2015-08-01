@@ -3,8 +3,8 @@
 ### boot2docker and Docker
 Install latest boot2docker (1.7+) from [the boot2docker website](http://boot2docker.io/)
 
-[TODO:  Add boot2docker for Mac and Windows to the USB.]
-[TODO:  Add VirtualBox 4.3.30 for Mac and Windows to the USB.] 
+* [TODO:  Add boot2docker for Mac and Windows to the USB.]
+* [TODO:  Add VirtualBox 4.3.30 for Mac and Windows to the USB.] 
 
 Notes:
 * This is needed on MacOS X to simulate a Linux VM (using VirtualBox)
