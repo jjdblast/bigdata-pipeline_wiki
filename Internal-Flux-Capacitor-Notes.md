@@ -1,3 +1,5 @@
+(These are here for us to remember what we did!)
+
 ## Building the Flux Capacitor Custom Distributions
 This section is to remind me how we built the custom distributions for the versions of everything that we're using (Hadoop, Tachyon, etc)
 
