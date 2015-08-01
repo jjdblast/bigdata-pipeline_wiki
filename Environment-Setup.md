@@ -83,8 +83,14 @@ root@[docker]$ chmod a+rx flux-*.sh
 ```
 
 ## Configure the Environment
+### Source flux-setenv.sh
 ```
-root@[docker]$ ./flux-config.sh
+root@[docker]$ . ~/pipeline/flux-setenv.sh
+```
+
+### Configure the various tools
+```
+root@[docker]$ ~/pipeline/flux-config.sh
 ```
 
 ## Start the Pipeline Services 
