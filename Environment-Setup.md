@@ -142,10 +142,18 @@ root@[docker]docker$ spark-submit --class org.apache.spark.examples.SparkPi --ma
 ```
 root@[docker]$ cqlsh
 cqlsh> use pipeline;
-cqlsh:pipeline> select * from gender;
+cqlsh:pipeline> select * from real_time_ratings;
 
-id | gender 
----+-------
+ fromuserid | touserid | batchtime
+------------+----------+-----------
+
+(0 rows)
+
+
+cqlsh:pipeline> select * from real_time_likes;
+
+ fromuserid | touserid | rating | batchtime
+------------+----------+--------+-----------
 
 (0 rows)
 ```
