@@ -21,6 +21,7 @@ macosx-laptop$ boot2docker up
 ssh into boot2docker and check that the disk space and memory are near the chosen settings
 ```
 macosx-laptop$ boot2docker ssh
+
 boot2docker$ df -h
 boot2docker$ cat /proc/meminfo
 ```
