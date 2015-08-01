@@ -14,29 +14,26 @@ boot2docker expects a certain version of VirtualBox, otherwise things get ugly
 Initialize boot2docker with enough memory (~16GB) and disk space (~30GB)
 ```
 macosx-laptop$ boot2docker --memory=16384 --disksize=30000 init
+macosx-laptop$ boot2docker up
 ``` 
 
-If you need to change these settings at some point later, you'll need to do the following
+ssh into boot2docker and check that the disk space and memory are near the chosen settings
+```
+macosx-laptop$ boot2docker ssh
+boot2docker$ df -h
+boot2docker$ cat /proc/meminfo
+```
+
+Notes:
+* The settings above are for the boot2docker VirtualBox Linux VM only - not the Docker Container itself.
+* At this point, you have both boot2docker (VirtualBox Linux VM) and docker installed.
+* If you need to change these settings at some point later, you'll need to do the following
 ```
 macosx-laptop$ boot2docker stop
 macosx-laptop$ boot2docker destroy
 macosx-laptop$ boot2docker <new settings> init
-```
-
-Run boot2docker and ssh into it
-```
 macosx-laptop$ boot2docker up
-macosx-laptop$ boot2docker ssh
 ```
-
-Inside boot2docker, check that the disk space and memory are near the chosen settings
-```
-boot2docker$ df -h
-boot2docker$ cat /proc/meminfo
-```
-Notes:
-* The settings above are for the boot2docker VirtualBox Linux VM only - not the Docker Container itself.
-* At this point, you have both boot2docker (VirtualBox Linux VM) and docker installed.
 
 ### Linux (ie. AWS EC2 Ubuntu 14.04)
 
