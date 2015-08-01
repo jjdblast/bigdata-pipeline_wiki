@@ -1,1 +1,6 @@
-Welcome to the pipeline wiki!
+Welcome to the Flux Capacitor Big Data Pipeline Wiki!
+
+8/1/2015 @ 1:45pm PT:
+THESE ARE IN PROGRESS - DO NOT FOLLOW THESE INSTRUCTIONS AT THE MOMENT.
+BACK ONLINE SOON.
+
