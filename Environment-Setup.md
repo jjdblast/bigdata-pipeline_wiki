@@ -126,7 +126,6 @@ Note that the "process information unavailable" message appears to be an OpenJDK
 ### Cassandra, Kafka, and Hive
 ```
 root@[docker]$ ./flux-create.sh
-root@[docker]$ tail -f ./nohup.out
 ```
 Notes:
 * This script may throw errors during the `DROP TABLE IF EXISTS` if the tables do no exist.  You can safely ignore those.
