@@ -87,9 +87,9 @@ root@[docker]$ chmod a+rx flux-*.sh
 ```
 
 ## Configure the Environment
-### Source ~/pipeline/config/bash/.bash_profile 
+### Source ~/pipeline/config/bash/.profile 
 ```
-root@[docker]$ . ~/pipeline/config/bash/.bash_profile
+root@[docker]$ . ~/pipeline/config/bash/.profile
 ```
 --->>>  Don't forget **^** the dot  <<<---
 
