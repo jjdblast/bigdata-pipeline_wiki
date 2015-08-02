@@ -88,11 +88,14 @@ root@[docker]$ chmod a+rx flux-*.sh
 ```
 
 ## Configure the Environment
-### Source flux-setenv.sh
+### Source ~/pipeline/config/bash/.bash_profile 
 ```
-root@[docker]$ . ~/pipeline/flux-setenv.sh
+root@[docker]$ . ~/pipeline/config/bash/.bash_profile
 ```
 --->>>  Don't forget **^** the dot  <<<---
+
+Note:
+* This step will go away once we update the Docker image symlink this as `~/.bash_profile`
 
 ### Configure the various tools
 ```
