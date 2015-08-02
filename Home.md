@@ -7,9 +7,9 @@ BACK ONLINE SOON.
 
 [Architecture Overview](https://github.com/fluxcapacitor/pipeline/wiki/Architecture-Overview)
 
-[Environment Setup](https://github.com/fluxcapacitor/pipeline/wiki/Environment-Setup)
-
 [Tools Overview](https://github.com/fluxcapacitor/pipeline/wiki/Architecture-Overview)
+
+[Environment Setup](https://github.com/fluxcapacitor/pipeline/wiki/Environment-Setup)
 
 [Feed the Pipeline](https://github.com/fluxcapacitor/pipeline/wiki/Feed-the-Pipeline)
 
