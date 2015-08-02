@@ -45,8 +45,7 @@ boot2docker$ exit
 * At this point the boot2docker VirtualBox VM docker daemon will be running
 * The docker daemon within the boot2docker VirtualBox VM will broker all Docker calls from your local laptop to Docker
 
-[TODO:  CAF:  Understand this as I've never had to do this, so something is different between my env and yours]
-* To run the docker commands on your mac you will need to setup the environment with the following command:
+* To run the docker commands on your local MacOS X you will need to setup the environment with the following command:
 ```
  eval $(boot2docker shellinit)
 ```
