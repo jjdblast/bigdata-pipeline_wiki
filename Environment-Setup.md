@@ -91,12 +91,12 @@ root@[docker]$ . ~/pipeline/flux-setenv.sh
 
 ### Configure the various tools
 ```
-root@[docker]$ ~/pipeline/flux-config.sh
+root@[docker]$ $PIPELINE_HOME/flux-config.sh
 ```
 
 ## Start the Pipeline Services 
 ```
-root@[docker]$ cd ~/pipeline
+root@[docker]$ cd $PIPELINE_HOME
 root@[docker]$ ./flux-start.sh
 
 [...wait for the start scripts to settle...]
