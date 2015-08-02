@@ -191,61 +191,71 @@ Notes:
 * The "host" in this case is actually the boot2docker VirtualBox VM - not your local laptop
 
 ## Test from Outside the Docker Container (and Outside boot2docker)
-Use `curl` (and/or your browser) to test the following URLs using the IP found from the previous step (`192.168.59.103` is shown below):
+Use `curl` or `open` to confirm that your tools have started correctly.
 
 ### Apache2 HTTP Server
 ```
-curl '192.168.59.103:30080`
+curl '$(boot2docker ip 2>/dev/null):30080`
+open http://$(boot2docker ip 2>/dev/null):30080/
 ```
 
 ### Kafka REST API Proxy
 ```
-curl '192.168.59.103:34042/topics'
+curl 'http://$(boot2docker ip 2>/dev/null):34042/topics'
+open http://$(boot2docker ip 2>/dev/null):34042/topics
 ```
 
 ### Kafka Native
 ```
-./kafka-topics --zookeeper 192.168.59.103:32181 —list
+./kafka-topics --zookeeper $(boot2docker ip 2>/dev/null):32181 —list
 ```
 
 ### Apache Zeppelin Web UI
 ```
-curl '192.168.59.103:38080'
+curl '$(boot2docker ip 2>/dev/null):38080'
+open http://$(boot2docker ip 2>/dev/null):38080/topics
 ```
 
 ### Apache Spark Master Admin Web UI
 ```
-curl '192.168.59.103:36060'
+curl '$(boot2docker ip 2>/dev/null):36060'
+open http://$(boot2docker ip 2>/dev/null):36060
 ```
 
 ### Apache Spark Worker Admin Web UI
 ```
-curl '192.168.59.103:36061'
+curl '$(boot2docker ip 2>/dev/null):36061'
+open http://$(boot2docker ip 2>/dev/null):36061
 ```
 
 ### Tachyon Web UI
 ```
-curl '192.168.59.103:39999'
+curl '$(boot2docker ip 2>/dev/null):39999'
+open http://$(boot2docker ip 2>/dev/null):39999
 ```
 
 ### ElasticSearch REST API
 ```
-curl '192.168.59.103:39200/_cat/indices?v'
+curl '$(boot2docker ip 2>/dev/null):39200/_cat/indices?v'
+open $(boot2docker ip 2>/dev/null):39200/_cat/indices?v
 ```
 
 ### Spark Notebook
 ```
-curl '192.168.59.103:39000'
+curl '$(boot2docker ip 2>/dev/null):39000'
+open $(boot2docker ip 2>/dev/null):39000
 ```
 
 ### Kibana and Logstash
 ```
-curl '192.168.59.103:35601'
+curl '$(boot2docker ip 2>/dev/null):35601'
+open $(boot2docker ip 2>/dev/null):35601
 ```
 
 ### Ganglia
 ```
-curl '192.168.59.103:80/ganglia'
+curl '$(boot2docker ip 2>/dev/null):30080/ganglia'
+open $(boot2docker ip 2>/dev/null):30080/ganglia
 ```
 
 ## JDBC/ODBC Integration (Tableau, MicroStrategy, Beeline, etc)
@@ -254,7 +264,7 @@ The ThriftServer should already be running on port 30000 outside the Docker cont
 ### Tableau Integration
 Connect Tableau to SparkSQL using the following properties
 ```
-Server:  192.168.59.103
+Server:  Result of `boot2docker ip` (ie. 192.168.59.103)
 Port:  30000
 Username:  hiveuser
 Password:  <empty>
@@ -265,8 +275,7 @@ Table:  <Your Spark SQL Table>
 ### Beeline
 Run the following to test with Beeline
 ```
-$macosx-laptop$ $SPARK_HOME/bin/beeline
-beeline> !connect jdbc:hive2://192.168.59.103:30000 hiveuser ''
+$macosx-laptop$ $SPARK_HOME/bin/beeline -u jdbc:hive2://$(boot2docker ip 2>/dev/null):30000 -n hiveuser -p ''
 SELECT * FROM gender LIMIT 100
 ```
 
