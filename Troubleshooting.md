@@ -7,6 +7,10 @@ docker rm `docker ps -aq`
 ```
 
 ## error in run: Machine "boot2docker-vm" does not exist.
-* If you see this error, you've got big issues.  
-* Trying to work through this on my own laptop!
+Run the following to repair a busted boot2docker:
+```
+macosx-laptop$ sudo /Library/Application\ Support/VirtualBox/LaunchDaemons/VirtualBoxStartup.sh restart
+```
 
+## More Troubleshooting from boot2docker's Github
+* https://github.com/boot2docker/boot2docker#boot2docker-up-doesnt-work-osx
