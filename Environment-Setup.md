@@ -7,6 +7,7 @@ Install latest boot2docker (1.7+) from [the boot2docker website](http://boot2doc
 * [TODO:  Add VirtualBox 4.3.30 for Mac and Windows to the USB.] 
 
 Notes:
+* boot2docker is a tiny Linux VM that runs a docker daemon.  boot2docker VirtualBox VM will broker all Docker calls from your local laptop to Docker.  Once you setup and run boot2docker all commands will be run directly from your local laptop terminal.
 * This is needed on MacOS X to simulate a Linux VM (using VirtualBox)
 * If you have Virtual Box already installed, it's best if you could remove it (assuming you're not using it!)
 boot2docker expects a certain version of VirtualBox, otherwise things get ugly
@@ -44,6 +45,10 @@ boot2docker$ exit
 ```
 * At this point the boot2docker VirtualBox VM docker daemon will be running
 * The docker daemon within the boot2docker VirtualBox VM will broker all Docker calls from your local laptop to Docker
+* To run the docker commands on your mac you will need to setup the environment with the following command:
+```
+ eval $(boot2docker shellinit)
+```
 
 ## Download the Docker Image (~2GB) from the DockerHub Registry
 
