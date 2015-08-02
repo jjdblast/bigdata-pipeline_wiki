@@ -42,17 +42,17 @@ Exit boot2docker back to your local laptop and run everything from there.
 ```
 boot2docker$ exit
 ```
-* At this point the boot2docker VirtualBox VM docker daemon will be running
-* The docker daemon within the boot2docker VirtualBox VM will broker all Docker calls from your local laptop to Docker
+At this point the boot2docker VirtualBox VM Docker daemon will be running.
 
-* To run the docker commands on your local MacOS X you will need to setup the environment with the following command:
+Run the following command to enable Docker commands from any terminal:
 ```
- eval $(boot2docker shellinit)
+macosx-laptop$ eval $(boot2docker shellinit)
 ```
+At this point, the boot2docker VirtualBox VM will broker all Docker calls from your local laptop to the Docker daemon.
 
 ## Download the Docker Image (~2GB) from the DockerHub Registry
 
-TODO:  Change this command to pull from the USB repository?
+[TODO:  Change this command to pull from the USB repository?]
 
 ```
 macosx-laptop$ docker pull fluxcapacitor/pipeline
