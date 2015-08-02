@@ -87,7 +87,7 @@ root@[docker]$ chmod a+rx flux-*.sh
 ```
 root@[docker]$ . ~/pipeline/flux-setenv.sh
 ```
---> Don't forget **^** the dot <--
+--->  Don't forget **^** the dot  <---
 
 ### Configure the various tools
 ```
