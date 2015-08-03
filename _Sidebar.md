@@ -10,4 +10,6 @@
 
 [Metrics and Monitoring](https://github.com/fluxcapacitor/pipeline/wiki/Metrics-and-Monitoring)
 
+[Troubleshooting](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshooting)
+
 [Wrap Up](https://github.com/fluxcapacitor/pipeline/wiki/Wrap-Up)
