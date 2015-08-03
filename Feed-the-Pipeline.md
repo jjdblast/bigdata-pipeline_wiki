@@ -22,7 +22,7 @@ Submit the Spark Streaming job
 
 Note:  This is currently broken as we need to build an uber jar with the spark-kafka library and such (see build.sbt file)
 ```
-spark-submit --class com.fluxcapacitor.pipeline.spark.streaming.StreamingRatings $PIPELINE_HOME/target/scala-2.10/feedsimulator_2.10-1.0.jar
+spark-submit --class com.fluxcapacitor.pipeline.spark.streaming.StreamingRatings $PIPELINE_HOME/target/scala-2.10/PipelineUberJar-assembly-1.0.jar
 ```
 
 ## Run Feeder
