@@ -165,13 +165,22 @@ cqlsh:pipeline> select * from real_time_likes;
 ------------+----------+--------+-----------
 
 (0 rows)
-
+cqlsh> describe pipeline;
+...
 cqlsh:pipeline> exit;
 ```
 
 ### ZooKeeper
 ```
 root@[docker]$ zookeeper-shell 127.0.0.1:2181
+
+Connecting to 127.0.0.1:2181
+Welcome to ZooKeeper!
+JLine support is disabled
+
+WATCHER::
+
+WatchedEvent state:SyncConnected type:None path:null
 ```
 
 ### MySQL
