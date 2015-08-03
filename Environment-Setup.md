@@ -1,5 +1,7 @@
 ## Setup the Flux Environment
 
+NOTE: If you are running a Linux environment, you do not need boot2docker.  boot2docker is for Mac's and Windows.  Instead, run `wget -qO- https://get.docker.com/ | sh` to install the latest Docker version.
+
 ### boot2docker and Docker
 Install latest boot2docker (1.7+) from [the boot2docker website](http://boot2docker.io/)
 
