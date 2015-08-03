@@ -25,11 +25,6 @@ Note:  This is currently broken as we need to build an uber jar with the spark-k
 spark-submit --class com.fluxcapacitor.pipeline.spark.streaming.StreamingRatings $PIPELINE_HOME/target/scala-2.10/feedsimulator_2.10-1.0.jar
 ```
 
-
-
-
-
-```
 ## Run Feeder
 ```
 $PIPELINE_HOME/flux-feed.sh
@@ -44,5 +39,3 @@ Multiple main classes detected, select one to run:
 
 Enter number: *1* <-- Select 1
 ```
-
-
