@@ -8,6 +8,12 @@
 docker rm `docker ps -aq`
 ```
 
+NOTE: If docker fills up the root partition of your VM, then docker daemon might not start, in which case running any docker commands will tell you that the daemon is not running.  
+
+1. Confirm out of disk space using `df -l`
+2. Blow away the Docker working dirs `sudo rm -rf /var/lib/docker`
+3. Pull the pipeline image again and start over.
+
 ### Machine "boot2docker-vm" does not exist.
 * Run the following to repair your busted boot2docker:
 ```
