@@ -16,7 +16,7 @@ Create the jar to be used for `spark-submit`
 ```
 $PIPELINE_HOME/sbt assembly
 ```
-This creates `/root/pipeline/target/scala-2.10/feedsimulator_2.10-1.0.jar`
+This creates `/root/pipeline/target/scala-2.10/PipelineUberJar-assembly-1.0.jar`
 
 Submit the Spark Streaming job
 
