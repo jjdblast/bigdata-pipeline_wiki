@@ -20,6 +20,19 @@ Initialize boot2docker with enough memory (~16GB) and disk space (~30GB)
 macosx-laptop$ boot2docker --memory=16384 --disksize=30000 init
 macosx-laptop$ boot2docker up
 ``` 
+* After running boot2docker it displays the envrionment variables that need to be set.  Be sure to use one of the methods specified:
+
+```
+    export DOCKER_TLS_VERIFY=1
+    export DOCKER_HOST=tcp://192.168.59.103:2376
+    export DOCKER_CERT_PATH=/Users/ryanknight/.boot2docker/certs/boot2docker-vm
+``` 
+
+or run:
+
+```
+`eval "$(boot2docker shellinit)"`
+``` 
 
 ssh into boot2docker and check that the disk space and memory are near the chosen settings
 ```
@@ -46,10 +59,8 @@ boot2docker$ exit
 ```
 At this point the boot2docker VirtualBox VM Docker daemon will be running.
 
-Run the following command to enable Docker commands from any terminal:
-```
-macosx-laptop$ eval $(boot2docker shellinit)
-```
+If you have any errors running the docker commands be sure you have set the environment variables specific for your setup as specified above.
+
 At this point, the boot2docker VirtualBox VM will broker all Docker calls from your local laptop to the Docker daemon.
 
 ## Download the Docker Image (~2GB) from the DockerHub Registry
