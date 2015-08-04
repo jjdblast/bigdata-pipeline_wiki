@@ -88,16 +88,6 @@ root@[docker]$ git reset --hard && git pull
 root@[docker]$ chmod a+rx flux-*.sh
 ```
 
-## Configure the Environment
-### Source ~/pipeline/config/bash/.profile 
-```
-root@[docker]$ . ~/pipeline/config/bash/.profile
-```
---->>>  Don't forget **^** the dot  <<<---
-
-Note:
-* This step will go away once we update the Docker image symlink this as `~/.bash_profile`
-
 ### Configure the various tools
 ```
 root@[docker]$ $PIPELINE_HOME/flux-config.sh
@@ -106,10 +96,13 @@ root@[docker]$ $PIPELINE_HOME/flux-config.sh
 ## Start the Pipeline Services 
 ```
 root@[docker]$ cd $PIPELINE_HOME
-root@[docker]$ ./pipeline-start.sh
+root@[docker]$ ./flux-start.sh
 ```
 
-You will start to see tailed output of services starting.
+Watch the tailed output of services starting
+```
+tail -f nohup.out
+```
 
 Before continuing, make sure the output of `jps -l` looks something like the following:
 ```
