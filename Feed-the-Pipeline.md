@@ -29,13 +29,4 @@ spark-submit --class com.fluxcapacitor.pipeline.spark.streaming.StreamingRatings
 ```
 $PIPELINE_HOME/flux-feed.sh
 Starting Feeder
-[info] Set current project to FeedSimulator (in build file:/root/pipeline/)
-[warn] Multiple main classes detected.  Run 'show discoveredMainClasses' to see the list
-
-Multiple main classes detected, select one to run:
-
- [1] com.fluxcapacitor.pipeline.akka.feeder.FeederMain
- [2] com.fluxcapacitor.pipeline.spark.streaming.StreamingRatings
-
-Enter number: *1* <-- Select 1
 ```
