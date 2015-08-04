@@ -86,7 +86,18 @@ You only need to do this the first time you login to the Docker Container instan
 root@[docker]$ cd ~/pipeline
 root@[docker]$ git reset --hard && git pull
 root@[docker]$ chmod a+rx *.sh
+
 ```
+
+### Source ~/pipeline/config/bash/.profile 
+```
+root@[docker]$ . ~/.profile
+```
+--->>>  Don't forget **^** the dot  <<<---
+
+Note:
+* This step will go away once we update the Docker image symlink this as `~/.bash_profile`
+
 
 ### Configure the various tools
 ```
