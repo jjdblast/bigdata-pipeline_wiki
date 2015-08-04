@@ -14,7 +14,7 @@ Something along these lines (need to test and finish this)
 Create the jar to be used for `spark-submit`
 
 ```
-$PIPELINE_HOME/sbt assembly
+/root/sbt/bin/sbt assembly assembly
 ```
 This creates `/root/pipeline/target/scala-2.10/PipelineUberJar-assembly-1.0.jar`
 
