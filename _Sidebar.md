@@ -2,7 +2,7 @@
 
 [Tools Overview](https://github.com/fluxcapacitor/pipeline/wiki/Architecture-Overview)
 
-[By The Bay Workshop](https://github.com/fluxcapacitor/pipeline/wiki/ByTheBay-Training-Workshop) 
+[By The Bay Workshop](https://github.com/fluxcapacitor/pipeline/wiki/ByTheBay-Big-Data-Workshop) 
 
 [Environment Setup](https://github.com/fluxcapacitor/pipeline/wiki/Environment-Setup)
 
