@@ -106,12 +106,10 @@ root@[docker]$ $PIPELINE_HOME/flux-config.sh
 ## Start the Pipeline Services 
 ```
 root@[docker]$ cd $PIPELINE_HOME
-root@[docker]$ ./flux-start.sh
-
-[...wait for the start scripts to settle...]
-
-root@[docker]$ tail -f ./nohup.out
+root@[docker]$ ./pipeline-start.sh
 ```
+
+You will start to see tailed output of services starting.
 
 Before continuing, make sure the output of `jps -l` looks something like the following:
 ```
