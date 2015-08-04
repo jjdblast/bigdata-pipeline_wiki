@@ -26,7 +26,7 @@ macosx-laptop$ sudo /Library/Application\ Support/VirtualBox/LaunchDaemons/Virtu
 ```
 eval $(boot2docker shellinit)
 ```
-or export the following in your `.bash_profile`
+You should also add the following exports the following in your MacOS X `~/.bash_profile`
 ```
 export DOCKER_TLS_VERIFY=1
 export DOCKER_HOST=tcp://192.168.59.103:2376
