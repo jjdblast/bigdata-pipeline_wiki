@@ -85,7 +85,7 @@ You only need to do this the first time you login to the Docker Container instan
 ```
 root@[docker]$ cd ~/pipeline
 root@[docker]$ git reset --hard && git pull
-root@[docker]$ chmod a+rx flux-*.sh
+root@[docker]$ chmod a+rx *.sh
 ```
 
 ### Configure the various tools
