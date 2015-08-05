@@ -6,6 +6,8 @@
 
 [Environment Setup](https://github.com/fluxcapacitor/pipeline/wiki/Environment-Setup)
 
+[Pipeline Setup](https://github.com/fluxcapacitor/pipeline/wiki/Pipeline-Setup)
+
 [Feed the Pipeline](https://github.com/fluxcapacitor/pipeline/wiki/Feed-the-Pipeline)
 
 [Analyze the Data](https://github.com/fluxcapacitor/pipeline/wiki/Analyze-the-Data)
