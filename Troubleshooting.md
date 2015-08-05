@@ -72,4 +72,5 @@ rm -rf /Users/<your-username>/.boot2docker/certs/boot2docker-vm/
 
 Re-initialize boot2docker
 ```
-boot2docker -v --memory=8192 --disksize=30000 init```
+boot2docker -v --memory=8192 --disksize=30000 init
+```
