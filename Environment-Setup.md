@@ -17,7 +17,7 @@ boot2docker expects a certain version of VirtualBox, otherwise things get ugly
 
 Initialize boot2docker with enough memory (~16GB) and disk space (~30GB)
 ```
-macosx-laptop$ boot2docker --memory=16384 --disksize=30000 init
+macosx-laptop$ boot2docker --memory=8192 --disksize=30000 init
 macosx-laptop$ boot2docker up
 ``` 
 * After running boot2docker it displays the envrionment variables that need to be set.  Be sure to use one of the methods specified (you will need to copy the actual variables from your terminal:
