@@ -19,3 +19,8 @@ sudo rm /usr/local/bin/docker
 # Remove keys
 rm -rf ~/.ssh/id_boot2docker*
 ```
+
+## Removing VirtualBox
+1. Double-click on the VirtualBox dmg
+
+2. Double-click the uninstall tool
