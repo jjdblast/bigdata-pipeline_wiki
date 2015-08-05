@@ -58,3 +58,19 @@ Caused by: java.io.FileNotFoundException: datasets/dating/ratings.csv (No such f
 	at com.bythebay.pipeline.akka.feeder.FeederActor.<init>(FeederActor.scala:23)
 ```
 * You likely have not run `bythebay-config.sh` or `bythebay-setup.sh` as the required datasets have not been uncompressed.
+
+### Failed to initialize machine "boot2docker-vm": exit status 1
+Re-run the following including the `-v` flag
+```
+boot2docker -v init
+```
+
+You likely need to remove an existing directory such as the following:
+```
+rm -rf /Users/<your-username>/.boot2docker/certs/boot2docker-vm/
+```
+
+Re-run `boot2docker init`
+```
+boot2docker init
+```
