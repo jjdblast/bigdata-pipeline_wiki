@@ -34,7 +34,6 @@ export DOCKER_CERT_PATH=/Users/[YOUR_USERNAME]/.boot2docker/certs/boot2docker-vm
 ```
 
 ### java.nio.channels.ClosedChannelException
-This is part of the larger stack trace below
 ```
 java.nio.channels.ClosedChannelException
 	at org.apache.spark.streaming.kafka.KafkaUtils$$anonfun$createDirectStream$2.apply(KafkaUtils.scala:416)
@@ -46,3 +45,16 @@ java.nio.channels.ClosedChannelException
 ```
 * You likely have not started your services using `flux-start.sh`.
 * Or there was an issue starting your Spark Master and Worker services. 
+
+### Caused by: java.io.FileNotFoundException: datasets/dating/ratings.csv (No such file or directory)
+```
+Caused by: java.io.FileNotFoundException: datasets/dating/ratings.csv (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:146)
+	at scala.io.Source$.fromFile(Source.scala:90)
+	at scala.io.Source$.fromFile(Source.scala:75)
+	at scala.io.Source$.fromFile(Source.scala:53)
+	at com.bythebay.pipeline.akka.feeder.FeederActor.initData(FeederActor.scala:34)
+	at com.bythebay.pipeline.akka.feeder.FeederActor.<init>(FeederActor.scala:23)
+```
+* You likely have not run `bythebay-config.sh` or `bythebay-setup.sh` as the required datasets have not been uncompressed.
