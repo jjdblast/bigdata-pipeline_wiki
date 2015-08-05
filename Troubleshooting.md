@@ -32,3 +32,17 @@ export DOCKER_TLS_VERIFY=1
 export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_CERT_PATH=/Users/[YOUR_USERNAME]/.boot2docker/certs/boot2docker-vm
 ```
+
+### java.nio.channels.ClosedChannelException
+This is part of the larger stack trace below
+```
+java.nio.channels.ClosedChannelException
+	at org.apache.spark.streaming.kafka.KafkaUtils$$anonfun$createDirectStream$2.apply(KafkaUtils.scala:416)
+	at org.apache.spark.streaming.kafka.KafkaUtils$$anonfun$createDirectStream$2.apply(KafkaUtils.scala:416)
+	at scala.util.Either.fold(Either.scala:97)
+	at org.apache.spark.streaming.kafka.KafkaUtils$.createDirectStream(KafkaUtils.scala:415)
+	at com.bythebay.pipeline.spark.streaming.StreamingRatings$.main(StreamingRatings.scala:39)
+	at com.bythebay.pipeline.spark.streaming.StreamingRatings.main(StreamingRatings.scala)
+```
+* You likely have not started your services using `flux-start.sh`.
+* Or there was an issue starting your Spark Master and Worker services. 
