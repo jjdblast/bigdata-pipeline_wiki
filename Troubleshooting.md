@@ -14,13 +14,6 @@ NOTE: If docker fills up the root partition of your VM, then docker daemon might
 2. Blow away the Docker working dirs `sudo rm -rf /var/lib/docker`
 3. Pull the pipeline image again and start over.
 
-### Machine "boot2docker-vm" does not exist.
-* Run the following to repair your busted boot2docker:
-```
-macosx-laptop$ sudo /Library/Application\ Support/VirtualBox/LaunchDaemons/VirtualBoxStartup.sh restart
-```
-* More docs [here](https://github.com/boot2docker/boot2docker#boot2docker-up-doesnt-work-osx)
-
 ### Are you trying to connect to a TLS-enabled daemon without TLS?  
 * Make sure you've run the following
 ```
@@ -60,17 +53,23 @@ Caused by: java.io.FileNotFoundException: datasets/dating/ratings.csv (No such f
 * You likely have not run `bythebay-config.sh` or `bythebay-setup.sh` as the required datasets have not been uncompressed.
 
 ### Failed to initialize machine "boot2docker-vm": exit status 1
-Re-run the following including the `-v` flag
+* Run the following to repair your busted boot2docker:
+```
+macosx-laptop$ sudo /Library/Application\ Support/VirtualBox/LaunchDaemons/VirtualBoxStartup.sh restart
+```
+More docs [here](https://github.com/boot2docker/boot2docker#boot2docker-up-doesnt-work-osx)
+
+* Re-run the following including the `-v` flag
 ```
 boot2docker -v --memory=8192 --disksize=30000 init
 ```
 
-You likely need to remove an existing directory such as the following:
+* You likely need to remove an existing directory such as the following:
 ```
 rm -rf /Users/<your-username>/.boot2docker/certs/boot2docker-vm/
 ```
 
-Re-initialize boot2docker
+* Re-initialize boot2docker
 ```
 boot2docker -v --memory=8192 --disksize=30000 init
 ```
