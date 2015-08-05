@@ -1,4 +1,4 @@
-# Real-time Rating Simulator
+# Setup Real-time Rating Feeder and Spark Streaming Listener
 
 ## Prerequisites
 * ZooKeeper is running on 'localhost:2181'
@@ -22,12 +22,12 @@ This creates `/root/pipeline/target/scala-2.10/PipelineUberJar-assembly-1.0.jar`
 ### Submit the Spark Streaming Job
 (This is a single command.)
 ```
-spark-submit --class com.fluxcapacitor.pipeline.spark.streaming.StreamingRatings $PIPELINE_HOME/target/scala-2.10/PipelineUberJar-assembly-1.0.jar
+root@[docker]$ spark-submit --class com.fluxcapacitor.pipeline.spark.streaming.StreamingRatings $PIPELINE_HOME/target/scala-2.10/PipelineUberJar-assembly-1.0.jar
 ...Starting Spark Streaming...
 ```
 
 ## Run Feeder
 ```
-$PIPELINE_HOME/flux-feed.sh
+root@[docker]$ $PIPELINE_HOME/flux-feed.sh
 ...Starting Feeder...
 ```
