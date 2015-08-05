@@ -62,7 +62,7 @@ Caused by: java.io.FileNotFoundException: datasets/dating/ratings.csv (No such f
 ### Failed to initialize machine "boot2docker-vm": exit status 1
 Re-run the following including the `-v` flag
 ```
-boot2docker -v init
+boot2docker -v --memory=8192 --disksize=30000 init
 ```
 
 You likely need to remove an existing directory such as the following:
@@ -70,7 +70,6 @@ You likely need to remove an existing directory such as the following:
 rm -rf /Users/<your-username>/.boot2docker/certs/boot2docker-vm/
 ```
 
-Re-run `boot2docker init`
+Re-initialize boot2docker
 ```
-boot2docker init
-```
+boot2docker -v --memory=8192 --disksize=30000 init```
