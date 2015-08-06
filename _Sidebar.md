@@ -4,15 +4,15 @@
 
 [Test Environment](https://github.com/fluxcapacitor/pipeline/wiki/Test-Environment)
 
-[Start Streaming](https://github.com/fluxcapacitor/pipeline/wiki/Start-Streaming)
+[Submit Streaming App](https://github.com/fluxcapacitor/pipeline/wiki/Submit-Streaming-App)
 
 [View Spark UI](https://github.com/fluxcapacitor/pipeline/wiki/View-Spark-UI)
 
-[Feed Pipeline](https://github.com/fluxcapacitor/pipeline/wiki/Feed-Pipeline)
+[Simulate Ratings](https://github.com/fluxcapacitor/pipeline/wiki/Simulate-Ratings)
 
 [Analyze Data](https://github.com/fluxcapacitor/pipeline/wiki/Analyze-Data)
 
-[Metrics and Monitoring](https://github.com/fluxcapacitor/pipeline/wiki/Analyze-Metrics)
+[Monitor Metrics](https://github.com/fluxcapacitor/pipeline/wiki/Monitor-Metrics)
 
 [Troubleshoot](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshoot)
 
