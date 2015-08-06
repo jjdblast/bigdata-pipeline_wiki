@@ -83,3 +83,6 @@ macosx-laptop$ boot2docker destroy
 macosx-laptop$ boot2docker -v --memory=8192 --disksize=20000 init
 macosx-laptop$ boot2docker up
 ```
+
+### Help Me!
+Feel free to email help@fluxcapacitor.com for help.  We love questions.
