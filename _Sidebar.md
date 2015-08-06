@@ -4,9 +4,11 @@
 
 [Environment Setup](https://github.com/fluxcapacitor/pipeline/wiki/Environment-Setup)
 
-[Feed the Pipeline](https://github.com/fluxcapacitor/pipeline/wiki/Feed-the-Pipeline)
+[Test Services](https://github.com/fluxcapacitor/pipeline/wiki/Test-Services)
 
-[Analyze the Data](https://github.com/fluxcapacitor/pipeline/wiki/Analyze-the-Data)
+[Feed Pipeline](https://github.com/fluxcapacitor/pipeline/wiki/Feed-Pipeline)
+
+[Analyze Data](https://github.com/fluxcapacitor/pipeline/wiki/Analyze-Data)
 
 [Metrics and Monitoring](https://github.com/fluxcapacitor/pipeline/wiki/Metrics-and-Monitoring)
 
