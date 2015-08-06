@@ -1,4 +1,3 @@
-Start the Pipeline Services
 * At this point, you are inside of the Docker Container.
 * Source the following script to setup and start the pipeline services.
 ```
