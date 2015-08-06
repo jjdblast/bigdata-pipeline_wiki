@@ -1,4 +1,3 @@
-## Wrapping Up
 ### Stop the Pipeline Services
 * The following must be done within the Docker Container.
 ```
