@@ -2,7 +2,7 @@
 
 [Environment Setup](https://github.com/fluxcapacitor/pipeline/wiki/Environment-Setup)
 
-[Test Setup](https://github.com/fluxcapacitor/pipeline/wiki/Test-Setup)
+[Test Environment](https://github.com/fluxcapacitor/pipeline/wiki/Test-Environment)
 
 [Spark UI](https://github.com/fluxcapacitor/pipeline/wiki/Spark-UI)
 
