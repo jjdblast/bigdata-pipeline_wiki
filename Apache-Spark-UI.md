@@ -1,4 +1,3 @@
-## Apache Spark UI
 The IP of boot2docker (and therefore your Docker container) is as follows
 ```
 macosx-laptop$ boot2docker ip
