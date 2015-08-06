@@ -65,7 +65,7 @@ At this point, you are inside of the Docker Container.
 ```
 root@[docker]$ . ~/pipeline/flux-setup.sh
 ```
-###-->  Don't **^** Forget the Dot  <--
+###--->  Don't **^** Forget the Dot  <---
 
 ### Verify the Following:
 * The output of `export` contains $PIPELINE_HOME
@@ -91,10 +91,17 @@ Note that the "process information unavailable" message appears to be an OpenJDK
 
 
 ## Test from Inside the Docker Container
+### Kafka Native
+```
+root@[docker]$ kafka-topics --zookeeper 127.0.0.1:2181 --list
+_schemas
+likes
+ratings
+```
 
 ### Spark Submit
 ```
-root@[docker]docker$ spark-submit --class org.apache.spark.examples.SparkPi --master spark://127.0.0.1:7077 $SPARK_EXAMPLES_JAR 10 
+root@[docker]$ spark-submit --class org.apache.spark.examples.SparkPi --master spark://127.0.0.1:7077 $SPARK_EXAMPLES_JAR 10 
 ```
 
 ### Cassandra
@@ -141,16 +148,25 @@ root@[docker]$ mysql -u root -p
 Enter password:  password
 ```
 
+### Beeline Integration with JDBC ODBC Hive ThriftServer
+Run the following to test with Beeline
+```
+root@[docker]$ beeline -u jdbc:hive2://127.0.0.1:10000 -n hiveuser -p ''
+0: jdbc:hive2://127.0.0.1:10000> SELECT id, gender FROM gender LIMIT 100;
+```
+
 ## Test from Outside boot2docker and the Docker Container
-* Keep your Docker Container running
-* Launch a new terminal
-* Run the following commands to test that your services have started properly
+* **DO NOT TYPE `exit` AS THIS WILL STOP YOUR CONTAINER**
+* Launch a new macosx-laptop$ terminal
+* Run the commands below to verify your setup
 * `open` opens a browser on a Mac
-* `curl` is pretty standard
+* The IP of boot2docker (and therefore your Docker container) is as follows
+```
+macosx-laptop$ boot2docker ip
+```
 
 ### Apache2 HTTP Server
 ```
-macosx-laptop$ curl '$(boot2docker ip 2>/dev/null):30080`
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):30080
 ```
 
@@ -208,16 +224,9 @@ macosx-laptop$ curl '$(boot2docker ip 2>/dev/null):30080/ganglia'
 macosx-laptop$ open $(boot2docker ip 2>/dev/null):30080/ganglia
 ```
 
-### Kafka Native
-```
-macosx-laptop$ ./kafka-topics --zookeeper $(boot2docker ip 2>/dev/null):32181 —list
-```
-
-## JDBC/ODBC Integration (Tableau, MicroStrategy, Beeline, etc)
-The ThriftServer should already be running on port 30000 outside the Docker container (port 10000 inside the Docker container.)
-
-### Tableau Integration
-Connect Tableau to SparkSQL using the following properties
+## Tableau Integration with JDBC/ODBC Hive ThriftServer
+* The ThriftServer should already be running on port 30000 outside the Docker container.
+* Connect Tableau to SparkSQL using the following properties
 ```
 Server:  Result of `boot2docker ip` (ie. 192.168.59.103)
 Port:  30000
@@ -225,13 +234,6 @@ Username:  hiveuser
 Password:  <empty>
 Schema:  Default
 Table:  <Your Spark SQL Table> 
-```
-
-### Beeline
-Run the following to test with Beeline
-```
-$macosx-laptop$ $SPARK_HOME/bin/beeline -u jdbc:hive2://$(boot2docker ip 2>/dev/null):30000 -n hiveuser -p ''
-SELECT * FROM gender LIMIT 100
 ```
 
 ** IF ANY OF THE ABOVE DON'T WORK, PLEASE CREATE A GITHUB ISSUE AND/OR EMAIL help@fluxcapacitor.com FOR A QUICK RESPONSE.**
