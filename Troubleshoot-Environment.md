@@ -1,4 +1,4 @@
-## Troubleshooting Common Errors
+## Common Errors
 
 ### Running out of disk space
 * It's likely that you have old, unused containers from each `docker run` command
