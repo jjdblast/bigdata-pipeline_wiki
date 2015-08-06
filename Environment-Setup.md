@@ -65,7 +65,7 @@ At this point, you are inside of the Docker Container.
 ```
 root@[docker]$ . ~/pipeline/flux-setup.sh
 ```
-###-> Don't **^** forget the dot <-
+###-->  Don't **^** Forget the Dot  <--
 
 ### Verify the Following:
 * The output of `export` contains $PIPELINE_HOME
