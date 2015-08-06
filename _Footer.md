@@ -1,1 +1,1 @@
-Continue Following the Sidebar -->
+Continue Following the Sidebar From Top to Bottom -->
