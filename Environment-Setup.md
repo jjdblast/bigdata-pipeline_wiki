@@ -102,14 +102,14 @@ root@[docker]docker$ spark-submit --class org.apache.spark.examples.SparkPi --ma
 root@[docker]$ cqlsh
 cqlsh> use pipeline;
 
-cqlsh:pipeline> select fromuserid, touserid, rating, batchtime from likes;
+cqlsh:pipeline> select fromuserid, touserid, rating, batchtime from ratings;
 
  fromuserid | touserid | rating | batchtime
 ------------+----------+--------+-----------
 
 (0 rows)
 
-cqlsh:pipeline> select fromuserid, touserid, batchtime from ratings;
+cqlsh:pipeline> select fromuserid, touserid, batchtime from likes;
 
  fromuserid | touserid | batchtime
 ------------+----------+-----------
