@@ -1,11 +1,10 @@
 ## Setup the Flux Environment
 
-NOTE: If you are running a Linux environment, you do not need boot2docker.  boot2docker is for Mac's and Windows.  Instead, run `wget -qO- https://get.docker.com/ | sh` to install the latest Docker version.
-
 ### Install VirtualBox, boot2docker, and Docker from USB or Internet
 ### From USB
-* Find and open `<USB_DRIVE>/pipeline/<operating-system/boot2docker/Boot2Docker-1.7.1.pkg` or `docker-install.exe`
-* Copy `/pipeline/boot2docker.iso` from the USB to `/Users/<user-name>/pipeline/`
+* Install `<USB_DRIVE>/pipeline/Boot2Docker-1.7.1.pkg` (MacOS X) or `docker-install.exe` (Windows)
+* Copy `/pipeline/boot2docker.iso` from the USB to `/Users/<user-name>/pipeline/` on your laptop.
+* Initialize boot2docker
 ```
 macosx-laptop$ boot2docker --iso=/Users/<user-name>/pipeline/boot2docker.iso --memory=8192 --disksize=20000 init
 ``` 
@@ -13,6 +12,7 @@ macosx-laptop$ boot2docker --iso=/Users/<user-name>/pipeline/boot2docker.iso --m
 ### From Internet
 * Download and Install latest boot2docker (1.7+) from [the boot2docker website](http://boot2docker.io/)
 * This will install everything including VirtualBox, boot2docker, and Docker
+* Initialize boot2docker
 ```
 macosx-laptop$ boot2docker --memory=8192 --disksize=20000 init
 ``` 
