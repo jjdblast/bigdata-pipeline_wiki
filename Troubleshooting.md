@@ -61,15 +61,17 @@ More docs [here](https://github.com/boot2docker/boot2docker#boot2docker-up-doesn
 
 * Re-run the following including the `-v` flag
 ```
-boot2docker -v --memory=8192 --disksize=30000 init
+macosx-laptop$ boot2docker stop
+macosx-laptop$ boot2docker destroy
+macosx-laptop$ boot2docker -v --memory=8192 --disksize=20000 init
+macosx-laptop$ boot2docker up
 ```
 
-* You likely need to remove an existing directory such as the following:
+* You likely need to remove an existing directory and re-initialize boot2docker:
 ```
-rm -rf /Users/<your-username>/.boot2docker/certs/boot2docker-vm/
-```
-
-* Re-initialize boot2docker
-```
-boot2docker -v --memory=8192 --disksize=30000 init
+macosx-laptop$ rm -rf /Users/<user-name>/.boot2docker/certs/boot2docker-vm/
+macosx-laptop$ boot2docker stop
+macosx-laptop$ boot2docker destroy
+macosx-laptop$ boot2docker -v --memory=8192 --disksize=20000 init
+macosx-laptop$ boot2docker up
 ```
