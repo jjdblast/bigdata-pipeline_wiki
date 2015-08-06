@@ -1,7 +1,7 @@
 ## Install VirtualBox, boot2docker, and Docker from USB or Internet
 ### From USB
-* Install `<USB_DRIVE>/pipeline/Boot2Docker-1.7.1.pkg` (MacOS X) or `docker-install.exe` (Windows)
-* Copy `<USB_DRIVE>/pipeline/boot2docker.iso` from the USB to `/Users/<user-name>/pipeline/` on your laptop.
+* Click on `<USB_DRIVE>/pipeline/Boot2Docker-1.7.1.pkg` (MacOS X) or `<USB_DRIVE>/pipeline/docker-install.exe` (Windows)
+* Copy `<USB_DRIVE>/pipeline/boot2docker.iso` to `/Users/<username>/pipeline/` on your laptop.
 * Initialize boot2docker as follows
 ```
 macosx-laptop$ boot2docker --iso=/Users/<user-name>/pipeline/boot2docker.iso --memory=8192 --disksize=20000 init
