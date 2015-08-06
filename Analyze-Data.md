@@ -30,10 +30,3 @@ Password:  <empty>
 Schema:  Default
 Table:  <Your Spark SQL Table> 
 ```
-
-## Other Relevant Links
-### Spark Admin UI
-```
-macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):36060
-```
-
