@@ -8,6 +8,14 @@
 docker rm `docker ps -aq`
 ```
 
+### Verify boot2docker Disk and Memory Settings are Correct
+```
+macosx-laptop$ boot2docker ssh
+
+boot2docker$ df -h
+boot2docker$ cat /proc/meminfo
+```
+
 NOTE: If docker fills up the root partition of your VM, then docker daemon might not start, in which case running any docker commands will tell you that the daemon is not running.  
 
 1. Confirm out of disk space using `df -l`
