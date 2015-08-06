@@ -75,6 +75,7 @@ mysql>
 root@[docker]$ redis-cli
 127.0.0.1:6379> ping
 PONG
+```
 
 ### Beeline Integration with JDBC ODBC Hive ThriftServer
 Run the following to test with Beeline
