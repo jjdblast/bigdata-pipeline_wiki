@@ -157,7 +157,7 @@ macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):30080
 ### Kafka REST API Proxy
 ```
 macosx-laptop$ curl 'http://$(boot2docker ip 2>/dev/null):34042/topics'
-macosx-laptop$ open 'http://$(boot2docker ip 2>/dev/null):34042/topics'
+macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):34042/topics
 ```
 
 ### Apache Zeppelin Web UI
