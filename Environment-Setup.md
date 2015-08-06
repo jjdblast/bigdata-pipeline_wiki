@@ -53,13 +53,6 @@ boot2docker$ cat /proc/meminfo
 Notes:
 * The settings above are for the boot2docker VirtualBox VM only - not the Docker Container itself.
 * At this point, you have both boot2docker, VirtualBox, and Docker installed.
-* If you need to change these settings at some point later, you'll need to do the following
-```
-macosx-laptop$ boot2docker stop
-macosx-laptop$ boot2docker destroy
-macosx-laptop$ boot2docker <new settings> init
-macosx-laptop$ boot2docker up
-```
 
 Exit boot2docker back to your local laptop and run everything from there.
 ```
@@ -67,7 +60,7 @@ boot2docker$ exit
 ```
 At this point the boot2docker VirtualBox VM Docker daemon will be running.
 
-If you have any errors running the Docker commands, be sure you have set the environment variables specific for your setup as specified above.
+If you have any errors running subsequent Docker commands, be sure you have set the environment variables specific for your setup as specified above.
 
 At this point, the boot2docker VirtualBox VM will broker all Docker calls from your local laptop to the Docker daemon.
 
