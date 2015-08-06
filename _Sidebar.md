@@ -4,6 +4,8 @@
 
 [Test Setup](https://github.com/fluxcapacitor/pipeline/wiki/Test-Setup)
 
+[Spark UI](https://github.com/fluxcapacitor/pipeline/wiki/Spark-UI)
+
 [Feed Pipeline](https://github.com/fluxcapacitor/pipeline/wiki/Feed-Pipeline)
 
 [Analyze Data](https://github.com/fluxcapacitor/pipeline/wiki/Analyze-Data)
