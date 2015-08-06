@@ -38,7 +38,7 @@ export DOCKER_CERT_PATH=/Users/ ....  /.boot2docker/certs/boot2docker-vm
 
 ## Export your Docker-specific Variables
 ```
-`eval "$(boot2docker shellinit)"`
+eval "$(boot2docker shellinit)"
 ``` 
 
 ## Verify Disk Space and Memory are Set Properly
