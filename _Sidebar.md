@@ -14,6 +14,6 @@
 
 [Monitor Metrics](https://github.com/fluxcapacitor/pipeline/wiki/Monitor-Metrics)
 
-[Troubleshoot](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshoot)
+[Troubleshoot Environment](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshoot-Environment)
 
 [Wrap Up](https://github.com/fluxcapacitor/pipeline/wiki/Wrap-Up)
