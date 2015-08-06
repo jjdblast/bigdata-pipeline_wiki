@@ -4,7 +4,7 @@
 
 [Environment Setup](https://github.com/fluxcapacitor/pipeline/wiki/Environment-Setup)
 
-[Test Services](https://github.com/fluxcapacitor/pipeline/wiki/Test-Services)
+[Test Setup](https://github.com/fluxcapacitor/pipeline/wiki/Test-Setup)
 
 [Feed Pipeline](https://github.com/fluxcapacitor/pipeline/wiki/Feed-Pipeline)
 
