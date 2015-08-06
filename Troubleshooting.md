@@ -85,4 +85,4 @@ macosx-laptop$ boot2docker up
 ```
 
 ### Help Me!
-Feel free to email help@fluxcapacitor.com for help.  We love questions.
+Feel free to email help@fluxcapacitor.com for help.  We love to help!
