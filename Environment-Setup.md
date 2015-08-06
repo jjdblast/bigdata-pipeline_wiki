@@ -61,7 +61,7 @@ root@[docker]$ . ~/pipeline/flux-setup.sh
 ###--->  Don't **^** Forget the Dot `.` Above!  <---
 
 ### Verify the Following:
-* The output of `export` contains $PIPELINE_HOME
+* The output of `export` contains `$PIPELINE_HOME` among many other new exports
 * The output of `jps -l` looks something like this:
 ```
 2374 kafka.Kafka <-- Kafka Server
