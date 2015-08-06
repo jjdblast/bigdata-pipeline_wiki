@@ -1,6 +1,8 @@
 [Architecture Overview](https://github.com/fluxcapacitor/pipeline/wiki/Architecture-Overview)
 
-[Setup Environment](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Environment)
+[Setup Docker](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Docker)
+
+[Start Services](https://github.com/fluxcapacitor/pipeline/wiki/Start-Services)
 
 [Test Environment](https://github.com/fluxcapacitor/pipeline/wiki/Test-Environment)
 
