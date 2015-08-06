@@ -4,7 +4,7 @@
 
 [Test Environment](https://github.com/fluxcapacitor/pipeline/wiki/Test-Environment)
 
-[Submit Streaming App](https://github.com/fluxcapacitor/pipeline/wiki/Submit-Streaming-App)
+[Start Spark Streaming](https://github.com/fluxcapacitor/pipeline/wiki/Start-Spark-Streaming)
 
 [View Spark UI](https://github.com/fluxcapacitor/pipeline/wiki/View-Spark-UI)
 
