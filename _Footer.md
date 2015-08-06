@@ -1,1 +1,1 @@
-Please Follow the Sidebar -->
+Continue Following the Sidebar -->
