@@ -2,10 +2,8 @@
 
 NOTE: If you are running a Linux environment, you do not need boot2docker.  boot2docker is for Mac's and Windows.  Instead, run `wget -qO- https://get.docker.com/ | sh` to install the latest Docker version.
 
-### [MacOS X or Windows] Installing VirtualBox, boot2docker, and Docker from the internet
-* Install latest boot2docker (1.7+) from [the boot2docker website](http://boot2docker.io/)
-
-### [MacOS X or Windows] Installing VirtualBox, boot2docker, and Docker from USB
+### Installing VirtualBox, boot2docker, and Docker from USB or Internet
+### From USB
 ## Install VirtualBox
 * Find and open `<USB_DRIVE>/pipeline/<operating-system>/virtualbox/VirtualBox-5.0.0-101573.dmg` or `*-Win.exe`.
 * Double-click on VirtualBox.pkg and install VirtualBox
@@ -15,40 +13,31 @@ NOTE: If you are running a Linux environment, you do not need boot2docker.  boot
 * Install boot2docker
 * Copy `boot2docker.iso` from the USB to `/Users/<user-name>/pipeline/``
 
+### From Internet
+* Download and Install latest boot2docker (1.7+) from [the boot2docker website](http://boot2docker.io/)
+* This will install everything including VirtualBox, boot2docker, and Docker
+
 Notes:
-* boot2docker is a tiny Linux VM that runs a docker daemon.  boot2docker VirtualBox VM will broker all Docker calls from your local laptop to Docker. 
-* Once you setup and run boot2docker, all commands can be run directly from your local laptop terminal (not within boot2docker)
-* This is needed on MacOS X to simulate a Linux VM (using VirtualBox)
-* If you have Virtual Box already installed, it's best if you could remove it (assuming you're not using it!)
+* boot2docker is needed on MacOS X to simulate a Linux VM using VirtualBox
+* boot2docker is a tiny Linux VM that runs a Docker daemon
+* boot2docker will broker all Docker calls from your macosx-laptop$ to the Docker daemon running within the Linux VM
+* Once you setup and run boot2docker, all commands can be run directly from macosx-laptop$ terminal
+* If you have VirtualBox already installed, it's best if you could remove it (assuming you're not using it!)
 * boot2docker expects a certain version of VirtualBox, otherwise things may get ugly
 * Installing boot2docker will also install VirtualBox and Docker
 
-## Initialize boot2docker with enough memory (~8GB) and disk space (~20GB)
+## Initialize boot2docker from USB
+* You can skip this step if you're installing from the internet
+* Reminder to copy `boot2docker.iso` from USB to `/Users/<user-name>/pipeline/` if you haven't done so already
+* Point to the boot2docker.iso that you just copied from USB
 ```
 macosx-laptop$ boot2docker --iso=/Users/<user-name>/pipeline/boot2docker.iso --memory=8192 --disksize=20000 init
-macosx-laptop$ boot2docker up
-``` 
-* After running boot2docker it displays the environment variables that need to be set.  Be sure to use one of the methods specified (you will need to copy the actual variables from your terminal:
-
-```
-export DOCKER_TLS_VERIFY=1
-export DOCKER_HOST=tcp://  ......
-export DOCKER_CERT_PATH=/Users/ ....  /.boot2docker/certs/boot2docker-vm
 ``` 
 
-## Export your Docker-specific Variables
+## Export Docker Variables to your Terminals
 ```
 eval "$(boot2docker shellinit)"
 ``` 
-
-## Verify Disk Space and Memory are Set Properly
-ssh into boot2docker and verify your settings
-```
-macosx-laptop$ boot2docker ssh
-
-boot2docker$ df -h
-boot2docker$ cat /proc/meminfo
-```
 
 Notes:
 * The settings above are for the boot2docker VirtualBox VM only - not the Docker Container itself.
