@@ -4,11 +4,11 @@ NOTE: If you are running a Linux environment, you do not need boot2docker.  boot
 
 ### Installing VirtualBox, boot2docker, and Docker from USB or Internet
 ### From USB
-## Install VirtualBox
+Install VirtualBox
 * Find and open `<USB_DRIVE>/pipeline/<operating-system>/virtualbox/VirtualBox-5.0.0-101573.dmg` or `*-Win.exe`.
 * Double-click on VirtualBox.pkg and install VirtualBox
 
-## Install boot2docker
+Install boot2docker
 * Find and open `<USB_DRIVE>/pipeline/<operating-system/boot2docker/Boot2Docker-1.7.1.pkg` or `docker-install.exe`
 * Install boot2docker
 * Copy `boot2docker.iso` from the USB to `/Users/<user-name>/pipeline/``
@@ -42,25 +42,18 @@ eval "$(boot2docker shellinit)"
 Notes:
 * The settings above are for the boot2docker VirtualBox VM only - not the Docker Container itself.
 * At this point, you have both boot2docker, VirtualBox, and Docker installed.
+* If you have any errors running subsequent Docker commands, be sure you have set the environment variables specific for your setup as specified above.
 
-Exit boot2docker back to your local laptop and run everything from there.
-```
-boot2docker$ exit
-```
-At this point the boot2docker VirtualBox VM Docker daemon will be running.
+## Load the Docker Image from USB or Internet
 
-If you have any errors running subsequent Docker commands, be sure you have set the environment variables specific for your setup as specified above.
+### Load from USB
 
-At this point, the boot2docker VirtualBox VM will broker all Docker calls from your local laptop to the Docker daemon.
-
-## Download the Docker Image (~2GB) from the DockerHub Registry
-
-[TODO:  Change this command to pull from the USB repository?]
+### Load from Internet (DockerHub Registry)
 ```
 macosx-laptop$ docker pull fluxcapacitor/pipeline
 ```
 
-### Verify that the docker image has been downloaded
+## Verify that the Docker Image is Loaded
 ```
 macosx-laptop$ docker images
 ```
@@ -68,51 +61,29 @@ macosx-laptop$ docker images
 ## Run a Docker Container with the Image
 
 A Docker Container is a running instance (ie. EC2 instance) of a static Docker image (EC2 AMI)
+NOTE:  THIS A VERY LONG COMMAND - BE SURE TO COPY/PASTE ALL OF IT!
 ```
 macosx-laptop$ docker run -it -m 12g -v ~/pipeline/notebooks:/root/pipeline/notebooks -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:38080 -p 38081:38081 -p 36060:6060 -p 36061:6061 -p 32181:2181 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -p 36066:6066 -p 39000:9000 -p 39999:19999 -p 36081:6081 -p 35601:5601 -p 37979:7979 -p 38989:8989 -p 34040:4040 fluxcapacitor/pipeline bash
 ```
 At this point, you are inside of the Docker Container.
 
-From a different terminal, check that the Docker Container (instance) is running
-```
-...different terminal outside of the Docker Container..
-
-macosx-laptop$ docker ps
-```
-
 ## Update to the Latest Pipeline Scripts and Data
-You only need to do this the first time you login to the Docker Container instance - or whenever there are changes that need to be sync'd.
+You only need to do this the first time you login to the Docker Container - or whenever there are changes that need to be sync'd.
 ```
 root@[docker]$ cd ~/pipeline
 root@[docker]$ git reset --hard && git pull
 root@[docker]$ chmod a+rx *.sh
-
 ```
 
-### Source ~/pipeline/config/bash/.profile 
+## Configure and Start the Pipeline Services
 ```
-root@[docker]$ . ~/.profile
+root@[docker]$ . ~/pipeline/flux-setup.sh
 ```
 --->>>  Don't forget **^** the dot  <<<---
 
-
-### Configure the various tools
-```
-root@[docker]$ $PIPELINE_HOME/flux-config.sh
-```
-
-## Start the Pipeline Services 
-```
-root@[docker]$ cd $PIPELINE_HOME
-root@[docker]$ ./flux-start.sh
-```
-
-Watch the tailed output of services starting
-```
-tail -f nohup.out
-```
-
-Before continuing, make sure the output of `jps -l` looks something like the following:
+Before continuing, check the following:
+* The output of `export` contains $PIPELINE_HOME
+* The output of `jps -l` looks something like this:
 ```
 2374 kafka.Kafka <-- Kafka Server
 3764 io.confluent.kafka.schemaregistry.rest.Main <-- Kafka Schema Registry
@@ -132,14 +103,6 @@ Before continuing, make sure the output of `jps -l` looks something like the fol
 ```
 Note that the "process information unavailable" message appears to be an OpenJDK [bug](https://bugs.openjdk.java.net/browse/JDK-8075773).
 
-## Initialize the Pipeline Data
-### Cassandra, Kafka, and Hive
-```
-root@[docker]$ ./flux-create.sh
-```
-Notes:
-* This script may throw errors during the `DROP TABLE IF EXISTS` if the tables do no exist.  You can safely ignore those.
-
 
 ## Test from Inside the Docker Container
 
@@ -152,7 +115,7 @@ root@[docker]docker$ spark-submit --class org.apache.spark.examples.SparkPi --ma
 ```
 root@[docker]$ cqlsh
 cqlsh> use pipeline;
-cqlsh:pipeline> select * from real_time_ratings;
+cqlsh:pipeline> select * from ratings;
 
  fromuserid | touserid | batchtime
 ------------+----------+-----------
@@ -160,7 +123,7 @@ cqlsh:pipeline> select * from real_time_ratings;
 (0 rows)
 
 
-cqlsh:pipeline> select * from real_time_likes;
+cqlsh:pipeline> select * from likes;
 
  fromuserid | touserid | rating | batchtime
 ------------+----------+--------+-----------
@@ -168,6 +131,7 @@ cqlsh:pipeline> select * from real_time_likes;
 (0 rows)
 cqlsh> describe pipeline;
 ...
+
 cqlsh:pipeline> exit;
 ```
 
@@ -186,8 +150,8 @@ WatchedEvent state:SyncConnected type:None path:null
 
 ### MySQL
 ```
-root@[docker]$ mysql -u root -p
-Enter password: password
+root@[docker]$ mysql -u root -p 
+Enter password:  password
 ```
 
 ## Find the Host IP
@@ -199,6 +163,7 @@ macosx-laptop$ boot2docker ip
 Notes:  
 * This is most-likely `192.168.59.103`
 * The "host" in this case is actually the boot2docker VirtualBox VM - not your local laptop
+
 
 ## Test from Outside the Docker Container (and Outside boot2docker)
 Use `curl` or `open` to confirm that your tools have started correctly.
@@ -290,48 +255,3 @@ SELECT * FROM gender LIMIT 100
 ```
 
 ** IF ANY OF THE ABOVE DON'T WORK, PLEASE CREATE A GITHUB ISSUE AND/OR EMAIL help@fluxcapacitor.com FOR A QUICK RESPONSE.**
-
-
-## Stopping the Pipeline Services
-The following must be done within the Docker Container.
-```
-root@[docker]$ ./flux-stop.sh
-```
-Note:  Sometimes the a couple of the Service do not shutdown.
-You'll need to use `jps -l` and `kill` these processes manually until we make these start/stop scripts more robust.
-```
-root@[docker]:~/pipeline# jps
-4856 org.jruby.Main  <-- kill (Kibana)
-10059 Jps <-- do not kill (innocent jps process)
-3770 Main <-- kill (not sure)
-5201 org.apache.zookeeper.server.quorum.QuorumPeerMain <-- kill (ZooKeeper)
-13394 -- process information unavailable <-- kill (not sure)
-
-root@[docker]:~/pipeline# kill -9 5201
-root@[docker]:~/pipeline# kill -9 4856
-root@[docker]:~/pipeline# kill -9 3770 
-root@[docker]:~/pipeline# kill -9 13394 
-```
-
-## Stopping the Docker Container
-From outside the Docker Container either ec2-linux or macosx-laptop, do the following
-```
-macosx-laptop$ docker ps
-[copy the container-instance-id]
-macosx-laptop$ docker stop [container-instance-id]
-```
-
-## Stopping boot2docker 
-The following will stop the boot2docker VirtualBox VM docker daemon.
-```
-macosx-laptop$ boot2docker stop
-```
-
-## Removing boot2docker 
-You can also tear down boot2docker completely as follows
-```
-boot2docker destroy
-```
-
-## Help Me!
-Feel free to email help@fluxcapacitor.com for help.  We love questions.
