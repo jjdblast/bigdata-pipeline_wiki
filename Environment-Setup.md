@@ -7,12 +7,13 @@ NOTE: If you are running a Linux environment, you do not need boot2docker.  boot
 
 ### [MacOS X or Windows] Installing VirtualBox, boot2docker, and Docker from USB
 ## Install VirtualBox
-* Find and open `pipeline/<operating-system>/virtualbox/VirtualBox-5.0.0-101573.dmg` or `*-Win.exe`.
+* Find and open `<USB_DRIVE>/pipeline/<operating-system>/virtualbox/VirtualBox-5.0.0-101573.dmg` or `*-Win.exe`.
 * Double-click on VirtualBox.pkg and install VirtualBox
 
 ## Install boot2docker
-* Find and open `pipeline/<operating-system/boot2docker/Boot2Docker-1.7.1.pkg` or `docker-install.exe`
+* Find and open `<USB_DRIVE>/pipeline/<operating-system/boot2docker/Boot2Docker-1.7.1.pkg` or `docker-install.exe`
 * Install boot2docker
+* Copy `boot2docker.iso` from the USB to `/Users/<user-name>/pipeline/``
 
 Notes:
 * boot2docker is a tiny Linux VM that runs a docker daemon.  boot2docker VirtualBox VM will broker all Docker calls from your local laptop to Docker. 
@@ -20,19 +21,19 @@ Notes:
 * This is needed on MacOS X to simulate a Linux VM (using VirtualBox)
 * If you have Virtual Box already installed, it's best if you could remove it (assuming you're not using it!)
 * boot2docker expects a certain version of VirtualBox, otherwise things may get ugly
-* Installing boot2docker will also install VirtualBox and Docker 
+* Installing boot2docker will also install VirtualBox and Docker
 
-## Initialize boot2docker with enough memory (~16GB) and disk space (~30GB)
+## Initialize boot2docker with enough memory (~8GB) and disk space (~20GB)
 ```
-macosx-laptop$ boot2docker --memory=8192 --disksize=30000 init
+macosx-laptop$ boot2docker --iso=/Users/<user-name>/pipeline/boot2docker.iso --memory=8192 --disksize=20000 init
 macosx-laptop$ boot2docker up
 ``` 
 * After running boot2docker it displays the environment variables that need to be set.  Be sure to use one of the methods specified (you will need to copy the actual variables from your terminal:
 
 ```
-    export DOCKER_TLS_VERIFY=1
-    export DOCKER_HOST=tcp://  ......
-    export DOCKER_CERT_PATH=/Users/ ....  /.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
+export DOCKER_HOST=tcp://  ......
+export DOCKER_CERT_PATH=/Users/ ....  /.boot2docker/certs/boot2docker-vm
 ``` 
 
 ## Export your Docker-specific Variables
@@ -66,7 +67,7 @@ boot2docker$ exit
 ```
 At this point the boot2docker VirtualBox VM Docker daemon will be running.
 
-If you have any errors running the Docker commandsm be sure you have set the environment variables specific for your setup as specified above.
+If you have any errors running the Docker commands, be sure you have set the environment variables specific for your setup as specified above.
 
 At this point, the boot2docker VirtualBox VM will broker all Docker calls from your local laptop to the Docker daemon.
 
