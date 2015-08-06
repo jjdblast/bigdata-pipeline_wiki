@@ -1,8 +1,8 @@
+[Environment Setup](https://github.com/fluxcapacitor/pipeline/wiki/Environment-Setup)
+
 [Architecture Overview](https://github.com/fluxcapacitor/pipeline/wiki/Architecture-Overview)
 
 [Tools Overview](https://github.com/fluxcapacitor/pipeline/wiki/Architecture-Overview)
-
-[Environment Setup](https://github.com/fluxcapacitor/pipeline/wiki/Environment-Setup)
 
 [Feed the Pipeline](https://github.com/fluxcapacitor/pipeline/wiki/Feed-the-Pipeline)
 
