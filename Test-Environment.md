@@ -54,7 +54,27 @@ WatchedEvent state:SyncConnected type:None path:null
 ```
 root@[docker]$ mysql -u root -p 
 Enter password:  password
+
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 47
+Server version: 5.5.44-0ubuntu0.14.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql>
 ```
+
+### Redis
+```
+root@[docker]$ redis-cli
+127.0.0.1:6379> ping
+PONG
 
 ### Beeline Integration with JDBC ODBC Hive ThriftServer
 Run the following to test with Beeline
