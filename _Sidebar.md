@@ -8,7 +8,7 @@
 
 [View Spark UI](https://github.com/fluxcapacitor/pipeline/wiki/View-Spark-UI)
 
-[Simulate Ratings](https://github.com/fluxcapacitor/pipeline/wiki/Simulate-Ratings)
+[Feed Ratings](https://github.com/fluxcapacitor/pipeline/wiki/Feed-Ratings)
 
 [Analyze Data](https://github.com/fluxcapacitor/pipeline/wiki/Analyze-Data)
 
