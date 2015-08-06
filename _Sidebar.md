@@ -1,7 +1,5 @@
 [Architecture Overview](https://github.com/fluxcapacitor/pipeline/wiki/Architecture-Overview)
 
-[Tools Overview](https://github.com/fluxcapacitor/pipeline/wiki/Architecture-Overview)
-
 [Environment Setup](https://github.com/fluxcapacitor/pipeline/wiki/Environment-Setup)
 
 [Test Setup](https://github.com/fluxcapacitor/pipeline/wiki/Test-Setup)
