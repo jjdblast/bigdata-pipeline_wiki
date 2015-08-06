@@ -21,9 +21,8 @@ Spark Notebook (9000):  39000
 Tachyon (19999):  39999
 Apache Kafka Schema Registry:  (6081):  36081
 Kibana (5601):  35601
-[TODO] Netflix-Hystrix WebSocket Stream (8989):  38989
-[TODO] Netflix-Hystrix Dashboard (7979):  37979
 Apache Spark ThriftServer Admin UI (4040): 34040
+Redis (6379): 36379
 ```
 
 ## Apache Zeppelin Ports
