@@ -2,39 +2,30 @@
 
 NOTE: If you are running a Linux environment, you do not need boot2docker.  boot2docker is for Mac's and Windows.  Instead, run `wget -qO- https://get.docker.com/ | sh` to install the latest Docker version.
 
-### Installing VirtualBox, boot2docker, and Docker from USB or Internet
+### Install VirtualBox, boot2docker, and Docker from USB or Internet
 ### From USB
-Install VirtualBox
-* Find and open `<USB_DRIVE>/pipeline/<operating-system>/virtualbox/VirtualBox-5.0.0-101573.dmg` or `*-Win.exe`.
-* Double-click on VirtualBox.pkg and install VirtualBox
-
-Install boot2docker
 * Find and open `<USB_DRIVE>/pipeline/<operating-system/boot2docker/Boot2Docker-1.7.1.pkg` or `docker-install.exe`
-* Install boot2docker
-* Copy `boot2docker.iso` from the USB to `/Users/<user-name>/pipeline/``
+* Copy `/pipeline/boot2docker.iso` from the USB to `/Users/<user-name>/pipeline/`
+```
+macosx-laptop$ boot2docker --iso=/Users/<user-name>/pipeline/boot2docker.iso --memory=8192 --disksize=20000 init
+``` 
 
 ### From Internet
 * Download and Install latest boot2docker (1.7+) from [the boot2docker website](http://boot2docker.io/)
 * This will install everything including VirtualBox, boot2docker, and Docker
+```
+macosx-laptop$ boot2docker --memory=8192 --disksize=20000 init
+``` 
 
 Notes:
 * boot2docker is needed on MacOS X to simulate a Linux VM using VirtualBox
 * boot2docker is a tiny Linux VM that runs a Docker daemon
 * boot2docker will broker all Docker calls from your macosx-laptop$ to the Docker daemon running within the Linux VM
-* Once you setup and run boot2docker, all commands can be run directly from macosx-laptop$ terminal
+* Once you setup and run boot2docker, all commands can be run directly from your macosx-laptop$ terminal
 * If you have VirtualBox already installed, it's best if you could remove it (assuming you're not using it!)
-* boot2docker expects a certain version of VirtualBox, otherwise things may get ugly
-* Installing boot2docker will also install VirtualBox and Docker
+* boot2docker will install a fresh version of VirtualBox and Docker
 
-## Initialize boot2docker from USB
-* You can skip this step if you're installing from the internet
-* Reminder to copy `boot2docker.iso` from USB to `/Users/<user-name>/pipeline/` if you haven't done so already
-* Point to the boot2docker.iso that you just copied from USB
-```
-macosx-laptop$ boot2docker --iso=/Users/<user-name>/pipeline/boot2docker.iso --memory=8192 --disksize=20000 init
-``` 
-
-## Export Docker Variables to your Terminals
+### Export Docker Variables to your Terminals
 ```
 eval "$(boot2docker shellinit)"
 ``` 
@@ -46,7 +37,10 @@ Notes:
 
 ## Load the Docker Image from USB or Internet
 
-### Load from USB
+### From USB
+```
+macosx-laptop$ docker load < /Users/<user-name>/pipeline/fluxcapacitor-pipeline.tar
+```
 
 ### Load from Internet (DockerHub Registry)
 ```
@@ -63,17 +57,9 @@ macosx-laptop$ docker images
 A Docker Container is a running instance (ie. EC2 instance) of a static Docker image (EC2 AMI)
 NOTE:  THIS A VERY LONG COMMAND - BE SURE TO COPY/PASTE ALL OF IT!
 ```
-macosx-laptop$ docker run -it -m 12g -v ~/pipeline/notebooks:/root/pipeline/notebooks -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:38080 -p 38081:38081 -p 36060:6060 -p 36061:6061 -p 32181:2181 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -p 36066:6066 -p 39000:9000 -p 39999:19999 -p 36081:6081 -p 35601:5601 -p 37979:7979 -p 38989:8989 -p 34040:4040 fluxcapacitor/pipeline bash
+macosx-laptop$ docker run -it -m 8g -v ~/pipeline/notebooks:/root/pipeline/notebooks -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:38080 -p 38081:38081 -p 36060:6060 -p 36061:6061 -p 32181:2181 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -p 36066:6066 -p 39000:9000 -p 39999:19999 -p 36081:6081 -p 35601:5601 -p 37979:7979 -p 38989:8989 -p 34040:4040 fluxcapacitor/pipeline bash
 ```
 At this point, you are inside of the Docker Container.
-
-## Update to the Latest Pipeline Scripts and Data
-You only need to do this the first time you login to the Docker Container - or whenever there are changes that need to be sync'd.
-```
-root@[docker]$ cd ~/pipeline
-root@[docker]$ git reset --hard && git pull
-root@[docker]$ chmod a+rx *.sh
-```
 
 ## Configure and Start the Pipeline Services
 ```
@@ -81,7 +67,7 @@ root@[docker]$ . ~/pipeline/flux-setup.sh
 ```
 --->>>  Don't forget **^** the dot  <<<---
 
-Before continuing, check the following:
+### Verify the Following:
 * The output of `export` contains $PIPELINE_HOME
 * The output of `jps -l` looks something like this:
 ```
@@ -115,20 +101,21 @@ root@[docker]docker$ spark-submit --class org.apache.spark.examples.SparkPi --ma
 ```
 root@[docker]$ cqlsh
 cqlsh> use pipeline;
-cqlsh:pipeline> select * from ratings;
+
+cqlsh:pipeline> select fromuserid, touserid, rating, batchtime from likes;
+
+ fromuserid | touserid | rating | batchtime
+------------+----------+--------+-----------
+
+(0 rows)
+
+cqlsh:pipeline> select fromuserid, touserid, batchtime from ratings;
 
  fromuserid | touserid | batchtime
 ------------+----------+-----------
 
 (0 rows)
 
-
-cqlsh:pipeline> select * from likes;
-
- fromuserid | touserid | rating | batchtime
-------------+----------+--------+-----------
-
-(0 rows)
 cqlsh> describe pipeline;
 ...
 
@@ -154,83 +141,76 @@ root@[docker]$ mysql -u root -p
 Enter password:  password
 ```
 
-## Find the Host IP
-Find the IP of the boot2docker host from your MacOs X laptop (not within boot2docker or the Docker Container)
-```
-macosx-laptop$ boot2docker ip
-<public-ipv4>
-```
-Notes:  
-* This is most-likely `192.168.59.103`
-* The "host" in this case is actually the boot2docker VirtualBox VM - not your local laptop
-
-
-## Test from Outside the Docker Container (and Outside boot2docker)
-Use `curl` or `open` to confirm that your tools have started correctly.
+## Test from Outside boot2docker and the Docker Container
+* Keep your Docker Container running
+* Launch a new terminal
+* Run the following commands to test that your services have started properly
+* `open` opens a browser on a Mac
+* `curl` is pretty standard
 
 ### Apache2 HTTP Server
 ```
-curl '$(boot2docker ip 2>/dev/null):30080`
-open http://$(boot2docker ip 2>/dev/null):30080/
+macosx-laptop$ curl '$(boot2docker ip 2>/dev/null):30080`
+macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):30080
 ```
 
 ### Kafka REST API Proxy
 ```
-curl 'http://$(boot2docker ip 2>/dev/null):34042/topics'
-open http://$(boot2docker ip 2>/dev/null):34042/topics
-```
-
-### Kafka Native
-```
-./kafka-topics --zookeeper $(boot2docker ip 2>/dev/null):32181 —list
+macosx-laptop$ curl 'http://$(boot2docker ip 2>/dev/null):34042/topics'
+macosx-laptop$ open 'http://$(boot2docker ip 2>/dev/null):34042/topics'
 ```
 
 ### Apache Zeppelin Web UI
 ```
-curl '$(boot2docker ip 2>/dev/null):38080'
-open http://$(boot2docker ip 2>/dev/null):38080/topics
+macosx-laptop$ curl '$(boot2docker ip 2>/dev/null):38080'
+macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):38080
 ```
 
 ### Apache Spark Master Admin Web UI
 ```
-curl '$(boot2docker ip 2>/dev/null):36060'
-open http://$(boot2docker ip 2>/dev/null):36060
+macosx-laptop$ curl '$(boot2docker ip 2>/dev/null):36060'
+macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):36060
 ```
 
 ### Apache Spark Worker Admin Web UI
 ```
-curl '$(boot2docker ip 2>/dev/null):36061'
-open http://$(boot2docker ip 2>/dev/null):36061
+macosx-laptop$ curl '$(boot2docker ip 2>/dev/null):36061'
+macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):36061
 ```
 
 ### Tachyon Web UI
 ```
-curl '$(boot2docker ip 2>/dev/null):39999'
-open http://$(boot2docker ip 2>/dev/null):39999
+macosx-laptop$ curl '$(boot2docker ip 2>/dev/null):39999'
+macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):39999
 ```
 
 ### ElasticSearch REST API
 ```
-curl '$(boot2docker ip 2>/dev/null):39200/_cat/indices?v'
-open $(boot2docker ip 2>/dev/null):39200/_cat/indices?v
+macosx-laptop$ curl '$(boot2docker ip 2>/dev/null):39200/_cat/indices?v'
+macosx-laptop$ open $(boot2docker ip 2>/dev/null):39200/_cat/indices?v
 ```
 
 ### Spark Notebook
 ```
-curl '$(boot2docker ip 2>/dev/null):39000'
-open $(boot2docker ip 2>/dev/null):39000
+macosx-laptop$ curl '$(boot2docker ip 2>/dev/null):39000'
+macosx-laptop$ open $(boot2docker ip 2>/dev/null):39000
 ```
 
 ### Kibana and Logstash
 ```
-curl '$(boot2docker ip 2>/dev/null):35601'
-open $(boot2docker ip 2>/dev/null):35601
+macosx-laptop$ curl '$(boot2docker ip 2>/dev/null):35601'
+macosx-laptop$ open $(boot2docker ip 2>/dev/null):35601
 ```
 
 ### Ganglia
 ```
-curl '$(boot2docker ip 2>/dev/null):30080/ganglia'
-open $(boot2docker ip 2>/dev/null):30080/ganglia
+macosx-laptop$ curl '$(boot2docker ip 2>/dev/null):30080/ganglia'
+macosx-laptop$ open $(boot2docker ip 2>/dev/null):30080/ganglia
+```
+
+### Kafka Native
+```
+macosx-laptop$ ./kafka-topics --zookeeper $(boot2docker ip 2>/dev/null):32181 —list
 ```
 
 ## JDBC/ODBC Integration (Tableau, MicroStrategy, Beeline, etc)
