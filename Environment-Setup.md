@@ -1,6 +1,4 @@
-## Setup the Flux Environment
-
-### Install VirtualBox, boot2docker, and Docker from USB or Internet
+## Install VirtualBox, boot2docker, and Docker from USB or Internet
 ### From USB
 * Install `<USB_DRIVE>/pipeline/Boot2Docker-1.7.1.pkg` (MacOS X) or `docker-install.exe` (Windows)
 * Copy `<USB_DRIVE>/pipeline/boot2docker.iso` from the USB to `/Users/<user-name>/pipeline/` on your laptop.
@@ -17,26 +15,22 @@ macosx-laptop$ boot2docker --iso=/Users/<user-name>/pipeline/boot2docker.iso --m
 macosx-laptop$ boot2docker --memory=8192 --disksize=20000 init
 ``` 
 
-### Notes on boot2docker
-* boot2docker is needed on MacOS X to simulate a Linux VM using VirtualBox
-* boot2docker is a tiny Linux VM that runs a Docker daemon
-* boot2docker will broker all Docker calls from your macosx-laptop$ to the Docker daemon running within the Linux VM
-* Once you setup and run boot2docker, all commands can be run directly from your macosx-laptop$ terminal
-* If you have VirtualBox already installed, it's best if you could remove it (assuming you're not using it!)
-* boot2docker will install a fresh version of VirtualBox and Docker
-
-### Export Docker Variables to your Terminals
+## Export Docker Variables to your Terminals
 ```
 eval "$(boot2docker shellinit)"
 ``` 
 
-Notes:
-* The settings above are for the boot2docker VirtualBox VM only - not the Docker Container itself.
+## Notes on boot2docker
+* boot2docker is needed on MacOS X to simulate a Linux VM using VirtualBox
+* boot2docker will install Docker as well as a fresh version of VirtualBox if one doesn't exist
+* boot2docker is a tiny Linux VM that runs a Docker daemon
+* boot2docker will send all Docker calls from your macosx-laptop$ to the Docker daemon running within the Linux VM
+* Once you setup and run `boot2docker up`, all commands can be run directly from your macosx-laptop$ terminal
+* The init settings above are for the boot2docker VirtualBox VM only - not the Docker Container.  Those are specific on a subsequent `docker run`
 * At this point, you have both boot2docker, VirtualBox, and Docker installed.
-* If you have any errors running subsequent Docker commands, be sure you have set the environment variables specific for your setup as specified above.
+
 
 ## Load the Docker Image from USB or Internet
-
 ### From USB
 ```
 macosx-laptop$ docker load < /Users/<user-name>/pipeline/fluxcapacitor-pipeline.tar
