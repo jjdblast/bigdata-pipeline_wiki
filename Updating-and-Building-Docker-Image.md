@@ -31,3 +31,8 @@ For now, just overwrite the `latest` tag with the following
 ```
 $ docker push fluxcapacitor/pipeline
 ```
+
+## Export the Docker Image as a .tar
+```
+docker export --output="fluxcapacitor-pipeline.tar" fluxcapacitor/pipeline
+```
