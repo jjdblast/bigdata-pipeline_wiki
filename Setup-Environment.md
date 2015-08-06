@@ -1,10 +1,18 @@
 ## Install VirtualBox, boot2docker, and Docker from USB or Internet
 ### From USB
-* Click on `<USB_DRIVE>/pipeline/Boot2Docker-1.7.1.pkg` (MacOS X) or `<USB_DRIVE>/pipeline/docker-install.exe` (Windows)
-* Copy `<USB_DRIVE>/pipeline/boot2docker.iso` to `/Users/<username>/pipeline/` on your laptop.
-* Initialize boot2docker as follows
+* Copy `/pipeline` folder to your home directory
 ```
-macosx-laptop$ boot2docker --iso=/Users/<user-name>/pipeline/boot2docker.iso --memory=8192 --disksize=20000 init
+macosx-laptop$ cp -R /Volumes/USB20FD ~/
+```
+* Install boot2docker
+```
+macosx-laptop$ cd ~/pipeline
+macosx-laptop$ open Boot2Docker-1.7.1.pkg
+```
+Setup boot2docker completely using installation wizard.
+* Initialize boot2docker and Start the Pipeline Docker Container
+```
+macosx-laptop$ ./init.sh
 ``` 
 
 ### From Internet
@@ -34,6 +42,7 @@ eval "$(boot2docker shellinit)"
 ### From USB
 ```
 macosx-laptop$ docker load < /Users/<user-name>/pipeline/fluxcapacitor-pipeline.tar
+macosx-laptop$ docker pull fluxcapacitor/pipeline
 ```
 
 ### Load from Internet (DockerHub Registry)
