@@ -1,17 +1,19 @@
 [Architecture Overview](https://github.com/fluxcapacitor/pipeline/wiki/Architecture-Overview)
 
-[Environment Setup](https://github.com/fluxcapacitor/pipeline/wiki/Environment-Setup)
+[Setup Environment](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Environment)
 
 [Test Environment](https://github.com/fluxcapacitor/pipeline/wiki/Test-Environment)
 
-[Apache Spark UI](https://github.com/fluxcapacitor/pipeline/wiki/Apache-Spark-UI)
+[Start Streaming](https://github.com/fluxcapacitor/pipeline/wiki/Start-Streaming)
+
+[View Spark UI](https://github.com/fluxcapacitor/pipeline/wiki/View-Spark-UI)
 
 [Feed Pipeline](https://github.com/fluxcapacitor/pipeline/wiki/Feed-Pipeline)
 
 [Analyze Data](https://github.com/fluxcapacitor/pipeline/wiki/Analyze-Data)
 
-[Metrics and Monitoring](https://github.com/fluxcapacitor/pipeline/wiki/Metrics-and-Monitoring)
+[Metrics and Monitoring](https://github.com/fluxcapacitor/pipeline/wiki/Analyze-Metrics)
 
-[Troubleshooting](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshooting)
+[Troubleshoot](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshoot)
 
 [Wrap Up](https://github.com/fluxcapacitor/pipeline/wiki/Wrap-Up)
