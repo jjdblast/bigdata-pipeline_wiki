@@ -80,66 +80,45 @@ macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):30080
 
 ### Kafka REST API Proxy
 ```
-macosx-laptop$ curl 'http://$(boot2docker ip 2>/dev/null):34042/topics'
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):34042/topics
 ```
 
 ### Apache Zeppelin Web UI
 ```
-macosx-laptop$ curl '$(boot2docker ip 2>/dev/null):38080'
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):38080
 ```
 
 ### Apache Spark Master Admin Web UI
 ```
-macosx-laptop$ curl '$(boot2docker ip 2>/dev/null):36060'
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):36060
 ```
 
 ### Apache Spark Worker Admin Web UI
 ```
-macosx-laptop$ curl '$(boot2docker ip 2>/dev/null):36061'
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):36061
 ```
 
 ### Tachyon Web UI
 ```
-macosx-laptop$ curl '$(boot2docker ip 2>/dev/null):39999'
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):39999
 ```
 
 ### ElasticSearch REST API
 ```
-macosx-laptop$ curl '$(boot2docker ip 2>/dev/null):39200/_cat/indices?v'
 macosx-laptop$ open $(boot2docker ip 2>/dev/null):39200/_cat/indices?v
 ```
 
 ### Spark Notebook
 ```
-macosx-laptop$ curl '$(boot2docker ip 2>/dev/null):39000'
 macosx-laptop$ open $(boot2docker ip 2>/dev/null):39000
 ```
 
 ### Kibana and Logstash
 ```
-macosx-laptop$ curl '$(boot2docker ip 2>/dev/null):35601'
 macosx-laptop$ open $(boot2docker ip 2>/dev/null):35601
 ```
 
 ### Ganglia
 ```
-macosx-laptop$ curl '$(boot2docker ip 2>/dev/null):30080/ganglia'
 macosx-laptop$ open $(boot2docker ip 2>/dev/null):30080/ganglia
-```
-
-## Tableau Integration with JDBC/ODBC Hive ThriftServer
-* The ThriftServer should already be running on port 30000 outside the Docker container.
-* Connect Tableau to SparkSQL using the following properties
-```
-Server:  Result of `boot2docker ip` (ie. 192.168.59.103)
-Port:  30000
-Username:  hiveuser
-Password:  <empty>
-Schema:  Default
-Table:  <Your Spark SQL Table> 
 ```
