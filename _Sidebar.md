@@ -4,7 +4,7 @@
 
 [Test Environment](https://github.com/fluxcapacitor/pipeline/wiki/Test-Environment)
 
-[Spark UI](https://github.com/fluxcapacitor/pipeline/wiki/Spark-UI)
+[Apache Spark UI](https://github.com/fluxcapacitor/pipeline/wiki/Apache-Spark-UI)
 
 [Feed Pipeline](https://github.com/fluxcapacitor/pipeline/wiki/Feed-Pipeline)
 
