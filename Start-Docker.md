@@ -56,7 +56,7 @@ local-windows$ boot2docker up
 ### Linux
 * Run the Docker installation script downloaded from `get.docker.com`
 ```
-wget -qO- https://get.docker.com/ | sh
+local-linux$ wget -qO- https://get.docker.com/ | sh
 ```
 * Add your user to the `docker` group to avoid having to 
 ```
