@@ -14,6 +14,8 @@ Setup boot2docker completely using installation wizard.
 macosx-laptop$ boot2docker --iso=boot2docker.iso --memory=8192 --disksize=20000 init
 macosx-laptop$ boot2docker up
 macosx-laptop$ docker load < fluxcapacitor-pipeline.tar
+[TODO:  Add Tag]
+macosx-laptop$ docker pull fluxcapacitor/pipeline
 ``` 
 
 * Verify that the Docker Image is Loaded
