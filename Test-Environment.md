@@ -140,20 +140,20 @@ macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):39999
 
 ### ElasticSearch REST API
 ```
-macosx-laptop$ open $(boot2docker ip 2>/dev/null):39200/_cat/indices?v
+macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):39200/_cat/indices?v
 ```
 
 ### Spark Notebook
 ```
-macosx-laptop$ open $(boot2docker ip 2>/dev/null):39000
+macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):39000
 ```
 
 ### Kibana and Logstash
 ```
-macosx-laptop$ open $(boot2docker ip 2>/dev/null):35601
+macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):35601
 ```
 
 ### Ganglia
 ```
-macosx-laptop$ open $(boot2docker ip 2>/dev/null):30080/ganglia
+macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):30080/ganglia
 ```
