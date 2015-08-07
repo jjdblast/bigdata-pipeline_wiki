@@ -1,5 +1,3 @@
-# Install boot2docker+Docker (MacOS X and Windows) or just Docker (Linux)
-
 ## USB-based Installation
 
 ### MacOS X 
