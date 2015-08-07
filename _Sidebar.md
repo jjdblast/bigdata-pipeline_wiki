@@ -1,6 +1,4 @@
-[Architecture Overview](https://github.com/fluxcapacitor/pipeline/wiki/Architecture-Overview)
-
-[Setup Docker](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Docker)
+[Start Docker](https://github.com/fluxcapacitor/pipeline/wiki/Start-Docker)
 
 [Start Services](https://github.com/fluxcapacitor/pipeline/wiki/Start-Services)
 
