@@ -11,11 +11,11 @@ local-macosx$ boot2docker up
 ```
 
 ### Windows 
-* Using Windows Explorer, copy the contents of the USB to the `\Users\<your-username\` home directory on your local laptop
-* Run the `\Users\<your-username>\docker-install.exe` file that was copied into your home directory from the USB and complete the installation of boot2docker.
+* Using Windows Explorer, copy the contents of the USB to the `%USERPROFILE%` home directory on your local laptop
+* Run the `%USERPROFILE%\docker-install.exe` file that was copied into your home directory from the USB and complete the installation of boot2docker.
 * Initialize and start the boot2docker VM that contains the Docker daemon
 ```
-local-windows$ boot2docker --iso=\Users\<your-username>\pipeline\boot2docker.iso --memory=8192 --disksize=20000 init
+local-windows$ boot2docker --iso=%USERPROFILE%\pipeline\boot2docker.iso --memory=8192 --disksize=20000 init
 local-windows$ boot2docker up
 ```
 
