@@ -1,19 +1,21 @@
-[Start Docker](https://github.com/fluxcapacitor/pipeline/wiki/Start-Docker)
+[0. Architecture Overview](https://github.com/fluxcapacitor/pipeline/wiki/Architecture-Overview)
 
-[Start Services](https://github.com/fluxcapacitor/pipeline/wiki/Start-Services)
+[1. Start Docker](https://github.com/fluxcapacitor/pipeline/wiki/Start-Docker)
 
-[Test Environment](https://github.com/fluxcapacitor/pipeline/wiki/Test-Environment)
+[2. Start Services](https://github.com/fluxcapacitor/pipeline/wiki/Start-Services)
 
-[Start Spark Streaming](https://github.com/fluxcapacitor/pipeline/wiki/Start-Spark-Streaming)
+[3. Test Environment](https://github.com/fluxcapacitor/pipeline/wiki/Test-Environment)
 
-[View Spark UI](https://github.com/fluxcapacitor/pipeline/wiki/View-Spark-UI)
+[4. Start Spark Streaming](https://github.com/fluxcapacitor/pipeline/wiki/Start-Spark-Streaming)
 
-[Feed Data](https://github.com/fluxcapacitor/pipeline/wiki/Feed-Data)
+[5. View Spark UI](https://github.com/fluxcapacitor/pipeline/wiki/View-Spark-UI)
 
-[Analyze Data](https://github.com/fluxcapacitor/pipeline/wiki/Analyze-Data)
+[6. Feed Data](https://github.com/fluxcapacitor/pipeline/wiki/Feed-Data)
 
-[Monitor Metrics](https://github.com/fluxcapacitor/pipeline/wiki/Monitor-Metrics)
+[7. Analyze Data](https://github.com/fluxcapacitor/pipeline/wiki/Analyze-Data)
 
-[Troubleshoot Environment](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshoot-Environment)
+[8. Monitor Metrics](https://github.com/fluxcapacitor/pipeline/wiki/Monitor-Metrics)
 
-[Wrap Up](https://github.com/fluxcapacitor/pipeline/wiki/Wrap-Up)
+[9. Troubleshoot Environment](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshoot-Environment)
+
+[10. Wrap Up](https://github.com/fluxcapacitor/pipeline/wiki/Wrap-Up)
