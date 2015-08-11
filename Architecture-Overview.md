@@ -1,1 +1,1 @@
-TODO
+![Big Data Pipeline Overview](https://s3.amazonaws.com/fluxcapacitor.com/img/FluxCapacitorBigDataPipelineArchitectureOverview.png)
