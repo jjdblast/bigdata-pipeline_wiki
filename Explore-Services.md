@@ -138,14 +138,14 @@ macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):36061
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):39999
 ```
 
-### ElasticSearch REST API
-```
-macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):39200/_cat/indices?v
-```
-
 ### Spark Notebook
 ```
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):39000
+```
+
+### ElasticSearch REST API
+```
+macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):39200/_cat/indices?v
 ```
 
 ### Kibana and Logstash
