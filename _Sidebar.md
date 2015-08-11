@@ -4,7 +4,7 @@
 
 [2. Start Services](https://github.com/fluxcapacitor/pipeline/wiki/Start-Services)
 
-[3. Test Environment](https://github.com/fluxcapacitor/pipeline/wiki/Test-Environment)
+[3. Explore Services](https://github.com/fluxcapacitor/pipeline/wiki/Explore-Services)
 
 [4. Start Spark Streaming](https://github.com/fluxcapacitor/pipeline/wiki/Start-Spark-Streaming)
 
