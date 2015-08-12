@@ -69,9 +69,9 @@ local-linux$ sudo usermod -aG docker ubuntu
 
 ## USB-based Installation
 
-### MacOS X 
+### MacOS X or Linux
 ```
-local-macosx$ docker load < ~/pipeline/fluxcapacitor-pipeline.tar
+local-macosx-or-linux$ docker load < ~/pipeline/fluxcapacitor-pipeline.tar
 ``` 
 * Allow any terminal to run Docker commands
 ```
