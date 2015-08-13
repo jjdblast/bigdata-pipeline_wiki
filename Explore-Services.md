@@ -1,7 +1,7 @@
 ## Test from Inside the Docker Container
 ### Kafka Native
 ```
-root@[docker]$ kafka-topics --zookeeper 127.0.0.1:2181 --list
+root@docker$ kafka-topics --zookeeper 127.0.0.1:2181 --list
 _schemas
 likes
 ratings
@@ -9,12 +9,12 @@ ratings
 
 ### Spark Submit
 ```
-root@[docker]$ spark-submit --class org.apache.spark.examples.SparkPi --master spark://127.0.0.1:7077 $SPARK_EXAMPLES_JAR 10 
+root@docker$ spark-submit --class org.apache.spark.examples.SparkPi --master spark://127.0.0.1:7077 $SPARK_EXAMPLES_JAR 10 
 ```
 
 ### Cassandra
 ```
-root@[docker]$ cqlsh
+root@docker$ cqlsh
 cqlsh> use pipeline;
 
 cqlsh:pipeline> select fromuserid, touserid, rating, batchtime from ratings;
@@ -39,7 +39,7 @@ cqlsh:pipeline> exit;
 
 ### ZooKeeper
 ```
-root@[docker]$ zookeeper-shell 127.0.0.1:2181
+root@docker$ zookeeper-shell 127.0.0.1:2181
 
 Connecting to 127.0.0.1:2181
 Welcome to ZooKeeper!
@@ -52,7 +52,7 @@ WatchedEvent state:SyncConnected type:None path:null
 
 ### MySQL
 ```
-root@[docker]$ mysql -u root -p 
+root@docker$ mysql -u root -p 
 Enter password:  password
 
 Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -72,7 +72,7 @@ mysql>
 
 ### Redis
 ```
-root@[docker]$ redis-cli
+root@docker$ redis-cli
 127.0.0.1:6379> ping
 PONG
 ```
@@ -80,7 +80,7 @@ PONG
 ### JDBC ODBC Hive ThriftServer
 Run the following to test with Beeline
 ```
-root@[docker]$ beeline -u jdbc:hive2://127.0.0.1:10000 -n hiveuser -p ''
+root@docker$ beeline -u jdbc:hive2://127.0.0.1:10000 -n hiveuser -p ''
 0: jdbc:hive2://127.0.0.1:10000> SELECT id, gender FROM gender LIMIT 10;
 +-----+---------+
 | id  | gender  |
@@ -125,7 +125,7 @@ macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):38080
 
 ### iPython Notebook
 ```
-open http://$(boot2docker ip 2>/dev/null):38888
+macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):38888
 ```
 
 ### Spark Notebook
@@ -135,7 +135,7 @@ macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):39000
 
 ### H2O Flow
 ```
-open http://$(boot2docker ip 2>/dev/null)/flow:34321
+macosx-laptop$ open http://$(boot2docker ip 2>/dev/null)/flow:34321
 ```
 
 ### Apache Spark Master Admin Web UI
