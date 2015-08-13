@@ -56,35 +56,24 @@ openchrome http://$(docker-machine ip pipelinebythebay):39000
 
 The installer will work offline but will throw an error at the end.
 
-##VPN USERs
+## VPN USERs
 
-There is a known issue with the cisco anyconnect client screwing up the networking in virtualbox.  The workaround that has worked best for me is to use openconnect instead of anyconnect.  There is a brew formula for openconnect.  ``` brew install openconnect ```
-openconnect requires that you have the [OSX tap/tun](http://tuntaposx.sourceforge.net/) driver installed beforehand.
+* There is a known issue with the Cisco AnyConnect client screwing up the networking in VirtualBox.  
+* The workaround that has worked best for me is to use OpenConnect instead of AnyConnect.  
+* There is a brew formula for OpenConnect
+```
+brew install openconnect
+```
+OpenConnect requires that you have the [OSX tap/tun](http://tuntaposx.sourceforge.net/) driver installed beforehand.
 
-[Install openconnect instructions](https://gist.github.com/moklett/3170636)
+[Install OpenConnect instructions](https://gist.github.com/moklett/3170636)
 
-
-
-
-##Windows
-
-Run this exe
-
-```sh
-windows/DockerToolbox-1.8.0a.exe
+## Windows
+```
+DockerToolbox-1.8.0a.exe
 ```
 
 ## Linux
-
-If you are running a newer version of ubuntu the install is as simple as. This also assumes you have curl.
-
-
-```sh
-curl -sSL https://get.docker.com/ | sh
 ```
-
-#Install using the ova method.
-
-```sh
-VBoxManage import bythebay-pipeline.ova
+curl -sSL https://get.docker.com/ | sh
 ```
