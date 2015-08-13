@@ -128,6 +128,11 @@ macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):38080
 open http://$(boot2docker ip 2>/dev/null):38888
 ```
 
+### Spark Notebook
+```
+macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):39000
+```
+
 ### H2O Flow
 ```
 open http://$(boot2docker ip 2>/dev/null)/flow:34321
@@ -146,11 +151,6 @@ macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):36061
 ### Tachyon Web UI
 ```
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):39999
-```
-
-### Spark Notebook
-```
-macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):39000
 ```
 
 ### ElasticSearch REST API
