@@ -1,4 +1,3 @@
-# Install Docker
 ## USB-based Installation
 
 ### MacOS X 
