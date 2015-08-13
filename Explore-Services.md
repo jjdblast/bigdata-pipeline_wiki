@@ -123,6 +123,16 @@ macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):34042/topics
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):38080
 ```
 
+### iPython Notebook
+```
+open http://$(boot2docker ip 2>/dev/null):38888
+```
+
+### H2O Flow
+```
+open http://$(boot2docker ip 2>/dev/null)/flow:34321
+```
+
 ### Apache Spark Master Admin Web UI
 ```
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):36060
