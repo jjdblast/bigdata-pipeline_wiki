@@ -18,4 +18,4 @@
 
 [9. Troubleshoot Environment](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshoot-Environment)
 
-[10. Wrap Up](https://github.com/fluxcapacitor/pipeline/wiki/Wrap-Up)
+[10. Stop Services](https://github.com/fluxcapacitor/pipeline/wiki/Stop-Services)
