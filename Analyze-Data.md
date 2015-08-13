@@ -6,7 +6,7 @@ root@[docker]$ cqlsh
 
 cqlsh> USE pipeline; SELECT fromuserid, touserid, rating, batchtime FROM ratings LIMIT 10;
 
- fromuserid | touserid | rating   | batchtime
+ fromuserid | touserid | batchtime|    rating
 ------------+----------+----------+-----------
           1 |      133 | 24671840 |         8
           1 |      720 | 24671840 |         6
