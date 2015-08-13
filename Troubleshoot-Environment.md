@@ -84,5 +84,14 @@ macosx-laptop$ boot2docker -v --memory=8192 --disksize=20000 init
 macosx-laptop$ boot2docker up
 ```
 
+### TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+* You likely have not configured your VM environment to have enough cores to run the Spark jobs
+* Also, check spark-defaults.conf has the following:
+```
+spark.executor.cores=2
+spark.executor.memory=512m
+spark.cores.max=2
+```
+
 ### Help Me!
 Feel free to email help@fluxcapacitor.com for help.  We love to help!
