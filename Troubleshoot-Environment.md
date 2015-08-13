@@ -89,7 +89,6 @@ macosx-laptop$ boot2docker up
 * Also, check spark-defaults.conf has the following:
 ```
 spark.executor.cores=2
-spark.executor.memory=512m
 spark.cores.max=2
 ```
 
