@@ -77,7 +77,7 @@ root@[docker]$ redis-cli
 PONG
 ```
 
-### Beeline Integration with JDBC ODBC Hive ThriftServer
+### JDBC ODBC Hive ThriftServer
 Run the following to test with Beeline
 ```
 root@[docker]$ beeline -u jdbc:hive2://127.0.0.1:10000 -n hiveuser -p ''
