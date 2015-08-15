@@ -1,9 +1,9 @@
 * At this point, you are inside of the Docker Container.
 * `source` the following script to setup and start the pipeline services.
 ```
-root@docker$ source ~/pipeline/flux-setup.sh
+root@docker$ cd ~/pipeline && source ~/pipeline/flux-setup.sh
 ```
-### --> ^^ Don't forget the `source` <--
+### --> ^^ Don't forget the `source` ^^ <--
 
 ### Verify the Following:
 * The output of `export` 
