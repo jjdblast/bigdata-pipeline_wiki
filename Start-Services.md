@@ -3,6 +3,7 @@
 ```
 root@docker$ source ~/pipeline/flux-setup.sh
 ```
+** --> ^^ Don't forget the `source` <-- **
 
 ### Verify the Following:
 * The output of `export` 
