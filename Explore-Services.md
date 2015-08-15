@@ -123,7 +123,7 @@ macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):34042/topics
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):38080
 ```
 
-### iPython Notebook
+### TODO:  iPython Notebook
 ```
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):38888
 ```
@@ -133,7 +133,7 @@ macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):38888
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):39000
 ```
 
-### H2O Flow
+### TODO:  H2O Flow
 ```
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null)/flow:34321
 ```
