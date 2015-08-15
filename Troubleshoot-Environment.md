@@ -8,6 +8,9 @@
 docker rm `docker ps -aq`
 ```
 
+### Your kernel does not support swap limit capabilities, memory limited without swap
+* Just ignore this error
+
 ### Verify boot2docker Disk and Memory Settings are Correct
 ```
 macosx-laptop$ boot2docker ssh
