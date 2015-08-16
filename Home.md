@@ -4,4 +4,4 @@
 ![Apache Cassandra](https://upload.wikimedia.org/wikipedia/commons/a/a0/Cassandra_logo.png)
 ![Docker](http://blog.docker.com/wp-content/uploads/2013/08/KuDr42X_ITXghJhSInDZekNEF0jLt3NeVxtRye3tqco.png)
 ![Apache Kafka](http://www.bogotobogo.com/Hadoop/images/Ecosystem/Kafka.png)
-![ElasticSearch Logstash Kibana](https://www.enalean.com/sites/default/files/field/image/elk-logos.png) ![Apache Zeppelin](http://4.bp.blogspot.com/-rsc3t_dZmBg/VbPDwhb_IBI/AAAAAAAABeY/9zKUjK4VFbQ/s1600/zeppelin-bl.png) ![Ganglia](https://developer.nvidia.com/sites/default/files/akamai/cuda/images/Ganglia-logo-small-rs.jpg)
+![ElasticSearch Logstash Kibana](https://www.enalean.com/sites/default/files/field/image/elk-logos.png) ![Apache Zeppelin](http://4.bp.blogspot.com/-rsc3t_dZmBg/VbPDwhb_IBI/AAAAAAAABeY/9zKUjK4VFbQ/s1600/zeppelin-bl.png) ![Ganglia](https://developer.nvidia.com/sites/default/files/akamai/cuda/images/Ganglia-logo-small-rs.jpg) ![Hadoop HDFS](http://datatechblog.com/wp-content/uploads/2014/04/HadoopHive.png)
