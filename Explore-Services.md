@@ -77,27 +77,6 @@ root@docker$ redis-cli
 PONG
 ```
 
-### JDBC ODBC Hive ThriftServer
-Run the following to test with Beeline
-```
-root@docker$ beeline -u jdbc:hive2://127.0.0.1:10000 -n hiveuser -p ''
-0: jdbc:hive2://127.0.0.1:10000> SELECT id, gender FROM gender LIMIT 10;
-+-----+---------+
-| id  | gender  |
-+-----+---------+
-| 1   | F       |
-| 2   | F       |
-| 3   | U       |
-| 4   | F       |
-| 5   | F       |
-| 6   | F       |
-| 7   | F       |
-| 8   | M       |
-| 9   | M       |
-| 10  | M       |
-+-----+---------+
-```
-
 ## Test from Outside boot2docker and the Docker Container
 * **DO NOT TYPE `exit` AS THIS WILL STOP YOUR CONTAINER**
 * Launch a new macosx-laptop$ terminal
