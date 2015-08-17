@@ -76,6 +76,44 @@ root@docker$ redis-cli
 127.0.0.1:6379> ping
 PONG
 ```
+### JDBC ODBC Hive ThriftServer
+Start the Hive ThriftServer Service
+```
+root@docker$ cd ~/pipeline && $SPARK_HOME/sbin/start-thriftserver.sh
+```
+Verify that the following 2 new processes have been added:
+
+```
+root@docker$ jps -l
+3641 org.apache.spark.executor.CoarseGrainedExecutorBackend <-- Long-running Executor for ThriftServer
+3047 org.apache.spark.deploy.SparkSubmit  <-- Long-running Spark Submit Process for ThriftServer
+```
+
+Run the following to query with the Beeline Hive client 
+```
+root@docker$ beeline -u jdbc:hive2://127.0.0.1:10000 -n hiveuser -p ''
+0: jdbc:hive2://127.0.0.1:10000> SELECT id, gender FROM gender LIMIT 10;
++-----+---------+
+| id  | gender  |
++-----+---------+
+| 1   | F       |
+| 2   | F       |
+| 3   | U       |
+| 4   | F       |
+| 5   | F       |
+| 6   | F       |
+| 7   | F       |
+| 8   | M       |
+| 9   | M       |
+| 10  | M       |
++-----+---------+
+```
+
+* **Make sure that you stop the Hive Thrift Server before continuing as this process occupies to 2 Spark CPU cores which may cause starvation later in your exploration**:
+```
+$SPARK_HOME/sbin/stop-thriftserver.sh
+```
+* Verify that the 2 processes identified above for the Hive ThriftServer have been removed with `jps -l`.
 
 ## Test from Outside boot2docker and the Docker Container
 * **DO NOT TYPE `exit` AS THIS WILL STOP YOUR CONTAINER**
