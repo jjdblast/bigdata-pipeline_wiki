@@ -79,7 +79,7 @@ PONG
 ### JDBC ODBC Hive ThriftServer
 Start the [Hive ThriftServer](https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients) Service
 ```
-root@docker$ cd ~/pipeline && $SPARK_HOME/sbin/start-thriftserver.sh
+root@docker$ cd ~/pipeline && ./flux-start-hive-thriftserver.sh
 ```
 Verify that the following 2 new processes have been added:
 
