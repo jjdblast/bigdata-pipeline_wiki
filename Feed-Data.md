@@ -1,5 +1,6 @@
-The following Akka App puts data from `datasets/dating/ratings.csv` onto the `ratings` Kafka topic to simulate real-time streaming ratings from users.
+* The following Akka-based App puts data from `datasets/dating/ratings.csv` onto the `ratings` Kafka topic to simulate real-time streaming ratings from users.  
+* Note:  Akka is not required, but it's cool, so we used it.
 ```
-root@docker$ cd $PIPELINE_HOME && ./flux-akka-ratings-producer.sh
+root@docker$ cd $PIPELINE_HOME && ./flux-ratings-kafka-producer.sh
 ...Starting Ratings Producer...
 ```
