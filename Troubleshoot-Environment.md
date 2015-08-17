@@ -89,10 +89,18 @@ macosx-laptop$ boot2docker up
 
 ### TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
 * You likely have not configured your VM environment to have enough cores to run the Spark jobs
-* Also, check spark-defaults.conf has the following:
+* Check spark-defaults.conf has the following:
 ```
 spark.executor.cores=2
 spark.cores.max=2
+```
+* Check Number of CPU Cores for your Docker Container
+```
+lscpus
+```
+* Check the Spark Admin UI to see if a Job is pending/waiting for resources
+```
+macosx-or-windows-linux-laptop$ open http://<ip-address-of-docker-container>:36060
 ```
 
 ### Help Me!
