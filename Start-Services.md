@@ -26,11 +26,9 @@ looks something like this:
 3765 io.confluent.kafkarest.Main <-- Kafka Rest Proxy
 3762 play.core.server.NettyServer <-- Spark-Notebook
 919 -- process information unavailable <-- Either ElasticSearch or Cassandra*
-3641 org.apache.spark.executor.CoarseGrainedExecutorBackend <-- Long-running Executor for ThriftServer
 2435 org.apache.zeppelin.server.ZeppelinServer <-- Zeppelin WebApp
 2743 org.apache.spark.deploy.master.Master <-- Spark Master
 4074 sun.tools.jps.Jps <-- This jps Process
-3047 org.apache.spark.deploy.SparkSubmit  <-- Long-running Spark Submit Process for ThriftServer
 3599 tachyon.master.TachyonMaster <-- Tachyon Master
 3718 tachyon.worker.TachyonWorker <-- Tachyon Worker
 2908 org.apache.spark.deploy.worker.Worker <-- Spark Worker
