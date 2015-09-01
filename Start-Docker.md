@@ -2,7 +2,7 @@
 
 ### MacOS X 
 * Using MacOS X Finder, copy the contents of the USB to the `~` home directory on your local laptop
-* Run the `~/Boot2Docker-1.7.1.pkg` file to complete the installation of boot2docker
+* Run the `~/Boot2Docker-1.8.1.pkg` file to complete the installation of boot2docker
 * Initialize and start the boot2docker VM that contains the Docker daemon
 ```
 local-macosx$ boot2docker --iso=~/pipeline/boot2docker.iso --memory=8192 --disksize=20000 init
