@@ -1,4 +1,4 @@
-# Flux Capacitor Big Data Pipeline
+# Big Data Pipeline in a [Docker] Box
 
 ![Apache Spark](http://spark.apache.org/images/spark-logo.png) ![Redis](https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Redis_Logo.svg/200px-Redis_Logo.svg.png)
 ![Apache Cassandra](https://upload.wikimedia.org/wikipedia/commons/a/a0/Cassandra_logo.png)
