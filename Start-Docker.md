@@ -34,7 +34,7 @@ local-linux$ sudo usermod -aG docker ubuntu
 
 ### MacOS X
 
-* Download and install the latest boot2docker for MacOS X from [here](http://boot2docker.io/)
+* Download and install boot2docker v1.7.1 for MacOS X from [here](https://github.com/boot2docker/osx-installer/releases/tag/v1.7.1)
 * This will install everything including VirtualBox, boot2docker, and Docker
 * Initialize and start the boot2docker VM that contains the Docker daemon
 ```
@@ -43,7 +43,7 @@ local-macosx$ boot2docker up
 ```
 
 ### Windows
-* Download and install the latest boot2docker for Windows from [here](http://boot2docker.io/)
+* Download and install the latest boot2docker for Windows from [here](https://github.com/boot2docker/windows-installer/releases/tag/v1.7.1)
 * This will install everything including VirtualBox, boot2docker, and Docker
 * Initialize and start the boot2docker VM that contains the Docker daemon
 ```
