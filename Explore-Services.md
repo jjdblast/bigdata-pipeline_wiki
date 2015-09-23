@@ -16,7 +16,7 @@ root@docker$ cd ~/pipeline && spark-submit --class org.apache.spark.examples.Spa
 ```
 root@docker$ cd ~/pipeline && spark-sql --jars $MYSQL_CONNECTOR_JAR
 ...
-spark-sql> describe genders;
+spark-sql> show tables;
 ```
 
 ### Cassandra
