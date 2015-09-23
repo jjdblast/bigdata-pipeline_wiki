@@ -9,7 +9,14 @@ ratings
 
 ### Spark Submit
 ```
-root@docker$ spark-submit --class org.apache.spark.examples.SparkPi --master spark://127.0.0.1:7077 $SPARK_EXAMPLES_JAR 10 
+root@docker$ cd ~/pipeline && spark-submit --class org.apache.spark.examples.SparkPi --master spark://127.0.0.1:7077 $SPARK_EXAMPLES_JAR 10 
+```
+
+### Spark SQL
+```
+root@docker$ cd ~/pipeline && spark-sql --jars $MYSQL_CONNECTOR_JAR
+...
+spark-sql> describe genders;
 ```
 
 ### Cassandra
@@ -109,9 +116,9 @@ root@docker$ beeline -u jdbc:hive2://127.0.0.1:10000 -n hiveuser -p ''
 +-----+---------+
 ```
 
-* **Make sure that you stop the Hive Thrift Server before continuing as this process occupies to 2 Spark CPU cores which may cause starvation later in your exploration**:
+* **Make sure that you stop the Hive Thrift Server before continuing as this process occupies Spark CPU cores which may cause CPU starvation later in your exploration**:
 ```
-$SPARK_HOME/sbin/stop-thriftserver.sh
+root@docker$ cd ~/pipeline && $SPARK_HOME/sbin/stop-thriftserver.sh
 ```
 * Verify that the 2 processes identified above for the Hive ThriftServer have been removed with `jps -l`.
 
@@ -147,9 +154,9 @@ curl -d "input.string = a b c a b see" 'localhost:8099/jobs?appName=test&classPa
   }
 }
 ```
-* **Make sure that you stop the Spark Job Server before continuing as this process occupies to 2 Spark CPU cores which may cause starvation later in your exploration**:
+* **Make sure that you stop the Spark Job Server before continuing as this process occupies 2 Spark CPU cores which may cause starvation later in your exploration**:
 ```
-$SPARK_HOME/sbin/stop-sparksubmit.sh
+root@docker$ cd ~/pipeline && $SPARK_HOME/sbin/stop-sparksubmit.sh
 ```
 * Verify that the 2 processes identified above for the Hive ThriftServer have been removed with `jps -l`.
 
