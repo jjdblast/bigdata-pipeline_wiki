@@ -99,7 +99,7 @@ root@docker$ jps -l
 Run the following to query with the Beeline Hive client 
 ```
 root@docker$ beeline -u jdbc:hive2://127.0.0.1:10000 -n hiveuser -p ''
-0: jdbc:hive2://127.0.0.1:10000> SELECT id, gender FROM gender LIMIT 10;
+0: jdbc:hive2://127.0.0.1:10000> SELECT id, gender FROM genders LIMIT 10;
 +-----+---------+
 | id  | gender  |
 +-----+---------+
@@ -156,7 +156,7 @@ curl -d "input.string = a b c a b see" 'localhost:8099/jobs?appName=test&classPa
 ```
 * **Make sure that you stop the Spark Job Server before continuing as this process occupies 2 Spark CPU cores which may cause starvation later in your exploration**:
 ```
-root@docker$ cd ~/pipeline && $SPARK_HOME/sbin/stop-sparksubmit.sh
+root@docker$ cd ~/pipeline && $SPARK_HOME/sbin/stop-sparksubmitted-job.sh
 ```
 * Verify that the 2 processes identified above for the Hive ThriftServer have been removed with `jps -l`.
 
