@@ -1,5 +1,7 @@
 * **At this point, you are inside of the Docker Container.**
 * Keep an eye on the prompt:  `root@docker$` means that you're inside docker, otherwise, you're on your local laptop.
+
+### Setup the Environment
 * You must `source` the following script to setup and start the pipeline services.
 --> Don't forget the `source` below! <--
 ```
@@ -7,7 +9,7 @@ root@docker$ cd ~/pipeline && source ~/pipeline/flux-source-me-once-to-set-every
 ```
 ### --> ^^ Don't forget the `source` above! ^^ <--
 
-### Verify that Startup worker correctly:
+### Verify that Setup Worked Correctly
 * Verify that the output of `export` contains `$PIPELINE_HOME` among many other new exports
 ```
 root@docker$ export
