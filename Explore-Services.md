@@ -22,26 +22,26 @@ spark-sql> show tables;
 ### Cassandra
 ```
 root@docker$ cqlsh
-cqlsh> use pipeline;
+cqlsh> use fluxcapacitor;
 
-cqlsh:pipeline> select fromuserid, touserid, rating, batchtime from ratings;
+cqlsh:fluxcapacitor> select fromuserid, touserid, rating, batchtime from ratings;
 
  fromuserid | touserid | rating | batchtime
 ------------+----------+--------+-----------
 
 (0 rows)
 
-cqlsh:pipeline> select fromuserid, touserid, batchtime from likes;
+cqlsh:fluxcapacitor> select fromuserid, touserid, batchtime from likes;
 
  fromuserid | touserid | batchtime
 ------------+----------+-----------
 
 (0 rows)
 
-cqlsh> describe pipeline;
+cqlsh> describe fluxcapacitor;
 ...
 
-cqlsh:pipeline> exit;
+cqlsh:fluxcapacitor> exit;
 ```
 
 ### ZooKeeper
