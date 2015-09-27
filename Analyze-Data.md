@@ -1,10 +1,10 @@
 ## Command Line
-### Cassandra's CQLSH
+### Cassandra's cqlsh CLI
 * Query Cassandra directly inside of Docker
 ```
 root@[docker]$ cqlsh
 
-cqlsh> USE pipeline; SELECT fromuserid, touserid, rating, batchtime FROM ratings LIMIT 10;
+cqlsh> USE fluxcapacitor; SELECT fromuserid, touserid, rating, batchtime FROM ratings LIMIT 10;
 
  fromuserid | touserid | batchtime|    rating
 ------------+----------+----------+-----------
