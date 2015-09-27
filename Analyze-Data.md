@@ -41,16 +41,19 @@ Password:  <empty>
 Schema:  Default
 Table:  <Your Spark SQL Table> 
 ```
-
+Notes:
+* Tableau creates a single SQLContext within Spark
+* This SQLContext gives you full access to permanent tables that are created (ie. DataFrame.saveAsTable("ratings_perm")
+* Temp tables are not accessible since they are only specific to the SQLContext that they are created in
 
 ## Using Notebooks for Ad Hoc Data Analysis
-
 ### Apache Zeppelin
 ```
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):38080
 ```
-
 ### Spark-Notebook
 ```
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):39000
-``
+```
+Notes:
+* All notebooks are in `~/pipeline/notebooks/...` and are mounted from Docker through to the Host OS at `~/pipeline/notebooks/... using the `docker run -v` volume mapping command.
