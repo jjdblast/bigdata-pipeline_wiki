@@ -16,7 +16,7 @@ root@docker$ export
 ```
 * If not, you'll need to do the following again:
 ```
-source ~/.profile
+root@docker source ~/.profile
 ```
 
 * Verify the output of `jps -l` looks something like this
