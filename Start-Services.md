@@ -5,7 +5,7 @@
 * You must `source` the following script to setup and start the pipeline services.
 --> Don't forget the `source` below! <--
 ```
-root@docker$ cd ~/pipeline && source ~/pipeline/flux-source-me-once-to-set-everything-up.sh.sh
+root@docker$ cd ~/pipeline && source ~/pipeline/flux-one-time-setup.sh
 ```
 ### --> ^^ Don't forget the `source` above! ^^ <--
 
