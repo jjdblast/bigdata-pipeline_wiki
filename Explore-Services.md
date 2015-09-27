@@ -118,7 +118,7 @@ root@docker$ beeline -u jdbc:hive2://127.0.0.1:10000 -n hiveuser -p ''
 
 * **Make sure that you stop the Hive Thrift Server before continuing as this process occupies Spark CPU cores which may cause CPU starvation later in your exploration**:
 ```
-root@docker$ cd ~/pipeline && $SPARK_HOME/sbin/stop-thriftserver.sh
+root@docker$ cd ~/pipeline && $SPARK_HOME/sbin/flux-spark-submitted-job.sh
 ```
 * Verify that the 2 processes identified above for the Hive ThriftServer have been removed with `jps -l`.
 
