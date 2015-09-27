@@ -3,14 +3,18 @@
 * You must `source` the following script to setup and start the pipeline services.
 --> Don't forget the `source` below! <--
 ```
-root@docker$ cd ~/pipeline && source ~/pipeline/flux-setup.sh
+root@docker$ cd ~/pipeline && source ~/pipeline/flux-source-me-once-to-set-everything-up.sh.sh
 ```
 ### --> ^^ Don't forget the `source` above! ^^ <--
 
-### Verify the Startup:
+### Verify that Startup worker correctly:
 * Verify that the output of `export` contains `$PIPELINE_HOME` among many other new exports
 ```
 root@docker$ export
+```
+* If not, you'll need to do the following again:
+```
+source ~/.profile
 ```
 
 * Verify the output of `jps -l` looks something like this
