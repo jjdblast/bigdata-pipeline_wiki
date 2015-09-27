@@ -1,7 +1,7 @@
 ### Stop the Pipeline Services
 * The following must be done within the Docker Container.
 ```
-root@[docker]$ ./flux-stop.sh
+root@[docker]$ ./flux-stop-services.sh
 ```
 
 ### Stop the Docker Container
