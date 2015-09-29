@@ -206,7 +206,11 @@ macosx-laptop$ open http://$(boot2docker ip 2>/dev/null)/flow:34321
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):36060
 ```
 
-### Apache Spark Driver Admin Web UI (Environment Variables, etc)
+### Apache Spark Driver Admin Web UI
+* Jobs, Stages, Tasks
+* Environment Variables
+* Event Timeline
+* Streaming Tab
 ```
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):34040
 ```
