@@ -1,7 +1,8 @@
-The IP of boot2docker (and therefore your Docker container) is as follows
+Obtain the IP of boot2docker (and therefore your Docker container)
 ```
 macosx-laptop$ boot2docker ip
 ```
+* Use this ^ IP or `$(boot2docker ip 2>/dev/null)` in subsequent commands
 
 ### Apache Spark Master Admin Web UI
 ```
@@ -13,7 +14,11 @@ macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):36060
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):36061
 ```
 
-### Apache Spark Jobs Admin Web UI
+### Apache Spark Driver Admin Web UI
+* Jobs, Stages, Tasks
+* Environment Variables
+* Event Timeline
+* Streaming Tab
 ```
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):34040
 ```
