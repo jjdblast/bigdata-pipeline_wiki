@@ -13,6 +13,11 @@ macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):36060
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):36061
 ```
 
+### Apache Spark Jobs Admin Web UI
+```
+macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):34040
+```
+
 ### Tachyon Web UI
 ```
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):39999
