@@ -112,4 +112,4 @@ local-windows$ docker run -it -h docker -m 8g -v %USERPROFILE%\notebooks:/root/p
 ```
 
 # Building a New Docker Image
-* For more info, check out this [doc](https://github.com/fluxcapacitor/pipeline/wiki/Build-Docker-Image)
+* For more info, check out this [doc](https://github.com/fluxcapacitor/pipeline/wiki/Build-Docker-Image).
