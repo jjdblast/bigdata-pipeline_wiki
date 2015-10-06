@@ -16,8 +16,12 @@ Build Command (Very Long...)
 export MAVEN_OPTS="-Xmx16g -XX:MaxPermSize=512M -XX:ReservedCodeCacheSize=512m" && ./make-distribution.sh --name fluxcapacitor --tgz --with-tachyon --skip-java-test -Phadoop-2.6 -Dhadoop.version=2.6.0 -Phive -Phive-thriftserver -Pspark-ganglia-lgpl -Pkinesis-asl -DskipTests
 ```
 
-### Zeppelin 0.5.2
-* Added Custom Help Widget in Lower Right of Notebooks
+### Zeppelin 0.6.0-incubating
+* Hadoop 2.6.0
+* Spark 1.5.1
+```
+mvn clean package -Pspark-1.5.1 -Dhadoop.version=2.6.0 -Phadoop-2.6 -DskipTests
+```
 
 ### Spark-Notebook
 * Tachyon
