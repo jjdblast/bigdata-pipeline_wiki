@@ -122,7 +122,7 @@ root@docker$ cd ~/pipeline && $SPARK_HOME/sbin/flux-spark-submitted-job.sh
 ```
 * Verify that the 2 processes identified above for the Hive ThriftServer have been removed with `jps -l`.
 
-### Spark JobServer
+### Spark JobServer (Disabled for Now)
 
 [Spark Job Server](http://github.com/spark-jobserver/spark-jobserver) provides a REST service for sharing and managing Spark jobs.
 
@@ -186,7 +186,7 @@ macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):34042/topics
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):38080
 ```
 
-### TODO:  iPython Notebook
+### iPython Notebook (Disabled for Now)
 ```
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):38888
 ```
@@ -196,7 +196,7 @@ macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):38888
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):39000
 ```
 
-### TODO:  H2O Flow
+### H2O Flow (Disabled for Now)
 ```
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null)/flow:34321
 ```
