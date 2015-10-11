@@ -55,6 +55,8 @@ JLine support is disabled
 WATCHER::
 
 WatchedEvent state:SyncConnected type:None path:null
+
+quit
 ```
 
 ### MySQL
