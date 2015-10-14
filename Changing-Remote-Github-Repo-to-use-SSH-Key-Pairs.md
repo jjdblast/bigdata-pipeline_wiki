@@ -18,3 +18,16 @@ Run this command to start the authentication agent and try again:
 ```
 eval $(ssh-agent -s)
 ```
+* If you see this error when trying to run `ssh-add`:
+```
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Permissions 0644 for '/root/.ssh/github_rsa' are too open.
+It is required that your private key files are NOT accessible by others.
+This private key will be ignored.
+```
+Run the following command to tighten up access to the private key:
+```
+chmod 600 ~/.ssh/github_rsa
+```
