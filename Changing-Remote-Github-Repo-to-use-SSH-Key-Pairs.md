@@ -31,3 +31,4 @@ Run the following command to tighten up access to the private key:
 ```
 chmod 600 ~/.ssh/github_rsa
 ```
+* Start at the top with the `ssh-add` command.
