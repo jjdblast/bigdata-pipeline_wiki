@@ -1,9 +1,9 @@
-# Update the Remote Origin URL
+## Update the Remote Origin URL
 ```
 local-laptop$ git remote set-url origin git@github.com:fluxcapacitor/pipeline.git
 ```
 
-# Register SSH Keys Locally
+## Register SSH Keys Locally
 * Put your private (github_rsa) and public (github_rsa.pub) keys are in the `~/.ssh/` directory.
 * Run the following command and enter the passphrase used when you created the key pair:
 ```
@@ -31,4 +31,10 @@ Run the following command to tighten up access to the private key:
 ```
 chmod 600 ~/.ssh/github_rsa
 ```
-* Start at the top with the `ssh-add` command.
+Then start at the top with the `ssh-add` command.
+
+## Configure Git with your Email and Name
+```
+git config --global user.email "chris@fregly.com"
+git config --global user.name "Chris Fregly"
+```
