@@ -1,6 +1,6 @@
 # USB-based Installation (THIS ONLY APPLIES DURING A TRAINING CLASS WHERE YOU'VE BEEN GIVEN A USB!!)
 
-## Install Docker
+# Installing Docker
 ### MacOS X 
 * Using MacOS X Finder, copy the contents of the USB to the `~` home directory on your local laptop
 * Run the `~/Boot2Docker-1.7.1.pkg` file to complete the installation of boot2docker
@@ -31,7 +31,7 @@ local-linux$ sudo usermod -aG docker ubuntu
 ```
 * **Log out and log back in or the changes will not take effect**
 
-## Load the Pipeline Docker Image 
+# Load the Pipeline Docker Image 
 * At this point, you should have boot2docker and/or Docker installed on your laptop.
 * Next, we'll load and run the Pipeline Docker Image
 
