@@ -94,10 +94,33 @@ eval "$(boot2docker shellinit)"
 local-windows$ docker load < %USERPROFILE%\pipeline\fluxcapacitor-pipeline.tar
 ``` 
 
-## Verify the Pipeline Docker Image was Loaded Successfully
+# Verify the Pipeline Docker Image was Loaded Successfully
 ### MacOS X or Windows or Linux
 ```
 local-macosx-or-windows-or-linux$ docker images
 REPOSITORY               TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
 fluxcapacitor/pipeline   latest              b62e5d6e385f        36 hours ago        3.653 GB
+```
+
+# Verify the Pipeline Docker Image was Loaded Successfully
+### MacOS X or Windows or Linux
+```
+local-macosx-or-windows-or-linux$ docker images
+REPOSITORY               TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+fluxcapacitor/pipeline   latest              b62e5d6e385f        36 hours ago        3.653 GB
+```
+
+### MacOS X or Linux
+**THIS A VERY LONG COMMAND.  BE SURE TO COPY/PASTE ALL OF IT!**
+```
+local-macosx-or-linux$ docker run -it --privileged --name pipeline -h docker -m 8g -v ~/pipeline/notebooks:/root/pipeline/notebooks -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:38080 -p 38081:38081 -p 36060:6060 -p 36061:6061 -p 32181:2181 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -p 36066:6066 -p 39000:9000 -p 39999:19999 -p 36081:6081 -p 35601:5601 -p 37979:7979 -p 38989:8989 -p 34040:4040 -p 36379:6379 -p 38888:8888 -p 34321:54321 -p 38099:8099 fluxcapacitor/pipeline bash
+```
+Note:  Ignore this message if you see it.
+```
+WARNING: Your kernel does not support swap limit capabilities, memory limited without swap.
+```
+### Windows
+**THIS A VERY LONG COMMAND.  BE SURE TO COPY/PASTE ALL OF IT!**
+```
+local-windows$ docker run -it --privileged --name pipeline -h docker -m 8g -v %USERPROFILE%\notebooks:/root/pipeline/notebooks -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:38080 -p 38081:38081 -p 36060:6060 -p 36061:6061 -p 32181:2181 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -p 36066:6066 -p 39000:9000 -p 39999:19999 -p 36081:6081 -p 35601:5601 -p 37979:7979 -p 38989:8989 -p 34040:4040 -p 36379:6379 -p 38888:8888 -p 34321:54321 -p 38099:8099 fluxcapacitor/pipeline bash
 ```
