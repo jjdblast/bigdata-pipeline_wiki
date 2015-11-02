@@ -1,8 +1,11 @@
-Obtain the IP of boot2docker (and therefore your Docker container)
+## Obtain <docker-hostname-or-ip> using one of the following:
 ```
 macosx-laptop$ boot2docker ip
 ```
-Use this ^ IP or `$(boot2docker ip 2>/dev/null)` to find the <docker-hostname-or-ip>
+or
+```
+macosx-laptop$ `$(boot2docker ip 2>/dev/null)`
+```
 
 ### Apache Spark Master Admin Web UI
 ```
