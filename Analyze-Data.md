@@ -49,11 +49,11 @@ Notes:
 ## Using Notebooks for Ad Hoc Data Analysis
 ### Apache Zeppelin
 ```
-macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):38080
+macosx-laptop$ open http://<docker-hostname-or-ip>:38080
 ```
 ### Spark-Notebook
 ```
-macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):39000
+macosx-laptop$ open http://<docker-hostname-or-ip>:39000
 ```
 Notes:
 * All notebooks are in `~/pipeline/notebooks/...` and are mounted from Docker through to the Host OS at `~/pipeline/notebooks/... using the `docker run -v` volume mapping command.
