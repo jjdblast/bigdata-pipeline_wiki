@@ -1,35 +1,3 @@
-## USB-based Installation
-
-### MacOS X 
-* Using MacOS X Finder, copy the contents of the USB to the `~` home directory on your local laptop
-* Run the `~/Boot2Docker-1.7.1.pkg` file to complete the installation of boot2docker
-* Initialize and start the boot2docker VM that contains the Docker daemon
-```
-local-macosx$ boot2docker --iso=~/pipeline/boot2docker.iso --memory=8192 --disksize=20000 init
-local-macosx$ boot2docker up
-```
-
-### Windows 
-* Using Windows Explorer, copy the contents of the USB to the `%USERPROFILE%` home directory on your local laptop
-* Run the `%USERPROFILE%\docker-install.exe` file that was copied into your home directory from the USB and complete the installation of boot2docker.
-* Initialize and start the boot2docker VM that contains the Docker daemon
-```
-local-windows$ boot2docker --iso=%USERPROFILE%\pipeline\boot2docker.iso --memory=8192 --disksize=20000 init
-local-windows$ boot2docker up
-```
-
-### Linux
-* Copy the contents of the USB to the `~` home directory on your local laptop
-* Run the Docker installation script that was copied into your home directory from the USB.
-```
-local-linux$ ~\docker-install-linux.sh
-```
-* Add your user to the `docker` group to avoid having to 
-```
-local-linux$ sudo usermod -aG docker ubuntu
-```
-* **Log out and log back in or the changes will not take effect**
-
 ## Internet-based Installation
 
 ### MacOS X
@@ -118,3 +86,35 @@ local-windows$ docker run -it --privileged --name pipeline -h docker -m 8g -v %U
 
 # Building a New Docker Image
 * For more info, check out this [doc](https://github.com/fluxcapacitor/pipeline/wiki/Build-Docker-Image).
+
+## USB-based Installation (THIS ONLY APPLIES DURING A TRAINING CLASS WHERE YOU'VE BEEN GIVEN A USB!!)
+
+### MacOS X 
+* Using MacOS X Finder, copy the contents of the USB to the `~` home directory on your local laptop
+* Run the `~/Boot2Docker-1.7.1.pkg` file to complete the installation of boot2docker
+* Initialize and start the boot2docker VM that contains the Docker daemon
+```
+local-macosx$ boot2docker --iso=~/pipeline/boot2docker.iso --memory=8192 --disksize=20000 init
+local-macosx$ boot2docker up
+```
+
+### Windows 
+* Using Windows Explorer, copy the contents of the USB to the `%USERPROFILE%` home directory on your local laptop
+* Run the `%USERPROFILE%\docker-install.exe` file that was copied into your home directory from the USB and complete the installation of boot2docker.
+* Initialize and start the boot2docker VM that contains the Docker daemon
+```
+local-windows$ boot2docker --iso=%USERPROFILE%\pipeline\boot2docker.iso --memory=8192 --disksize=20000 init
+local-windows$ boot2docker up
+```
+
+### Linux
+* Copy the contents of the USB to the `~` home directory on your local laptop
+* Run the Docker installation script that was copied into your home directory from the USB.
+```
+local-linux$ ~\docker-install-linux.sh
+```
+* Add your user to the `docker` group to avoid having to 
+```
+local-linux$ sudo usermod -aG docker ubuntu
+```
+* **Log out and log back in or the changes will not take effect**
