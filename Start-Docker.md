@@ -1,4 +1,4 @@
-# Building a New Docker Image
+# Installing Docker
 
 ### MacOS X
 
@@ -30,7 +30,7 @@ local-linux$ sudo usermod -aG docker ubuntu
 ```
 * **Log out and log back in or the changes will not take effect**
 
-## Load the Pipeline Docker Image 
+# Load the Pipeline Docker Image 
 * At this point, you should have boot2docker and/or Docker installed on your laptop.
 * Next, we'll load and run the Pipeline Docker Image
 
