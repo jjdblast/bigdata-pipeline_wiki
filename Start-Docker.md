@@ -54,7 +54,7 @@ fluxcapacitor/pipeline   latest              b62e5d6e385f        36 hours ago   
 * **THE RUN COMMAND IS VERY LONG GIVEN ALL OF THE `-p` PORT MAPPINGS.  BE SURE TO COPY/PASTE ALL OF IT!**
 * If running on a large-memory host, you may want to increase the `-m 8g` value to something higher.
 * If you plan to mimic my live presentation demo, you may want to change the `-p 30080:80` http port mapping to `-p 80:80`.
-** Obviously, you still need to setup CNAME's and customize `config/apache2` and `config/fluxcapacitor`.
+** Obviously, you still need to setup CNAME's and customize `config/apache2` and `config/fluxcapacitor` Apache Httpd configs.
 * Contact me with any questions or create a Github issue and I'll answer as quickly as possible.
 
 ### MacOS X or Linux
