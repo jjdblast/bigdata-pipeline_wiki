@@ -9,12 +9,13 @@
 ** This will install everything including VirtualBox, boot2docker, and Docker
 * Initialize and start the boot2docker VM that contains the Docker daemon as follows:
 ** If you are planning to run a large-memory or large-disk Docker Container, you may want to bump up `--memory` and `--disksize`
-*** Linux:
+
+* Linux:
 ```
 local-macosx$ boot2docker --iso=~/pipeline/boot2docker.iso --memory=8192 --disksize=20000 init
 local-macosx$ boot2docker up
 ```
-*** Windows:
+* Windows:
 ```
 local-windows$ boot2docker --iso=%USERPROFILE%\pipeline\boot2docker.iso --memory=8192 --disksize=20000 init
 local-windows$ boot2docker up
