@@ -64,3 +64,5 @@ eval "$(boot2docker shellinit)"
 ```
 local-windows$ docker load < %USERPROFILE%\pipeline\fluxcapacitor-pipeline.tar
 ``` 
+
+** Start Docker [here](https://github.com/fluxcapacitor/pipeline/wiki/Start-Docker)
