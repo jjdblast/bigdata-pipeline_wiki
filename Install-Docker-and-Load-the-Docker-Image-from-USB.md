@@ -6,9 +6,12 @@
 * Copy the contents of the USB to the home directory (Linux: `~`, Windows: `%USERPROFILE%` on your local machine
 * Remove (and return or pass on) the USB to make sure you're not running anything off of the USB from this point on
 * Run `~/Boot2Docker-1.7.1.pkg` or `%USERPROFILE%\docker-install.exe` to complete the installation of boot2docker
-** This will install everything including VirtualBox, boot2docker, and Docker
+
+**This will install everything including VirtualBox, boot2docker, and Docker**
+
 * Initialize and start the boot2docker VM that contains the Docker daemon as follows:
-** If you are planning to run a large-memory or large-disk Docker Container, you may want to bump up `--memory` and `--disksize`
+
+**If you are planning to run a large-memory or large-disk Docker Container, you may want to bump up `--memory` and `--disksize`**
 
 * Linux:
 ```
