@@ -22,4 +22,4 @@
 
 [11. Stop Services](https://github.com/fluxcapacitor/pipeline/wiki/Stop-Services)
 
-[12. Miscellaneous Useful Links](https://github.com/fluxcapacitor/pipeline/wiki/Misc-Links)
+[12. Miscellaneous Useful Links](https://github.com/fluxcapacitor/pipeline/wiki/Miscellaneous-Useful-Links)
