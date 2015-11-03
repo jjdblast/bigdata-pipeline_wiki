@@ -1,7 +1,7 @@
 # Installing Docker
 * We have not yet upgraded to Docker 1.8.  
 * boot2docker + Docker 1.7 works for now, so we're sticking with it in the short-term.
-* If you have been provided a USB with Docker and the Docker image, please follow [these](https://github.com/fluxcapacitor/pipeline/wiki/Install-Docker-and-Load-the-Docker-Image-from-USB) instructions.
+* **If you have been provided a USB with Docker and the Docker image, please follow [these](https://github.com/fluxcapacitor/pipeline/wiki/Install-Docker-and-Load-the-Docker-Image-from-USB) instructions.**
 
 ### MacOS X
 * Download and install boot2docker v1.7.1 for MacOS X from [here](https://github.com/boot2docker/osx-installer/releases/tag/v1.7.1)
