@@ -1,4 +1,4 @@
-## Persistent Paths 
+## Docker Volumes (Persistent Paths)
 
 The following paths will be shared between the Host (ec2-linux or macosx-laptop) and the Docker Container:
 ### [MacOS X Only] boot2docker Persistent Path
