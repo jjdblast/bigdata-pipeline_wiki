@@ -19,6 +19,7 @@ local-macosx-or-windows$ boot2docker up
 
 ### Linux
 * Run the Docker installation script downloaded from `get.docker.com`
+
 **This will install everything you need to run Docker on Linux**
 ```
 local-linux$ wget -qO- https://get.docker.com/ | sh
