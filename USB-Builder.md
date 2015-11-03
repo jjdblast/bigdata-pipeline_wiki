@@ -1,21 +1,27 @@
-#USB Builder
+# USB Builder for Docker 1.8
+**Work In Progress.  This Does Not Currently Work!!**
 
-##Prep the stick or just download dependencies
-A quick note:  The paths to everything are relative.  This means you should be inside the 'usbstick' folder when executing any of the scripts.
+## Prep the USB Stick
+** The paths to everything are relative to the `usbstick/` path**
+** Make sure you are in `usbstick/` before running any scripts**
 
-
-1. run ```./download-deps.sh```
-2. copy the folder usbstick onto usbstick
-
-3. pull the pipeline image from docker hub.  This requires you already have docker setup.
-
-```sh
-docker pull bythebay/pipeline
-docker save aeab7cca3c8c > pipelinebythebay.tar
+*  Download the Dependencies 
+```
+./download-deps.sh
+```
+* Copy the Dependencies onto the USB Stick
+```
+TODO
 ```
 
+* Pull the Docker image from DockerHub
+**This assumes you already have Docker installed**
+```
+$local-laptop$ docker pull fluxcapacitor/pipeline
+$local-laptop$ docker save fluxcapacitor/pipeline > fluxcapacitor-pipeline.tar
+```
 
-#Install docker locally using usbstick
+# Install Docker Locally using usbstick
 If you do not have virtualbox installed already it should be on the usbstick.  Please install that first so you don't need to download it from the internet as bandwidth is limited.
 
 ##OSX
@@ -33,23 +39,23 @@ This script will do everything for you.
 ./install-pipeline.sh
 ```
 
-After the script creates a docker-machine called pipelinebythebay with 5gb of ram allocated you will need to setup your shell environment by running 
+After the script creates a docker-machine called fluxcapacitor-pipeline with 5gb of ram allocated you will need to setup your shell environment by running 
 
 ```sh
-eval "$(docker-machine env pipelinebythebay)"
+eval "$(docker-machine env fluxcapacitor-pipeline)"
 ```
 
 If you need the external IP address of your docker-machine to access services on it you can use this command.
 
 ```sh
-docker-machine ip pipelinebythebay
+docker-machine ip fluxcapacitor-pipeline
 ```
 
 Another example of using it in a script might be.  Since I have a bash alias to open chrome. This opens the spark notebook in crhome.
 
 ```sh
 alias openchrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --kiosk'
-openchrome http://$(docker-machine ip pipelinebythebay):39000
+openchrome http://$(docker-machine ip fluxcapacitor-pipeline):39000
 ```
 
 ###Of note
