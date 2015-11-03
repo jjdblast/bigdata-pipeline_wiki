@@ -3,11 +3,13 @@
 
 # Installing Docker
 ### MacOS X or Windows 
-* Copy the contents of the USB to the home directory (Linux: `~`, Windows: `%USERPROFILE%` on your local machine
-* Remove (and return or pass on) the USB to make sure you're not running anything off of the USB from this point on
+* Copy the contents of the USB to the **home** directory (Linux: `~`, Windows: `%USERPROFILE%` on your local machine
+
+**Remove (and return or pass on) the USB to make sure you're not running anything off of the USB from this point on**
+
 * Run `~/Boot2Docker-1.7.1.pkg` or `%USERPROFILE%\docker-install.exe` to complete the installation of boot2docker
 
-**This will install everything including VirtualBox, boot2docker, and Docker**
+**This will install everything needed to run Docker including VirtualBox, boot2docker, and Docker**
 
 * Initialize and start the boot2docker VM that contains the Docker daemon as follows:
 
@@ -26,8 +28,13 @@ local-windows$ boot2docker up
 
 ### Linux
 * Copy the contents of the USB to the `~` home directory on your local laptop
-* Remove (and return or pass on) the USB to make sure you're not running anything off of the USB from this point on
+
+**Remove (and return or pass on) the USB to make sure you're not running anything off of the USB from this point on**
+
 * Run the Docker installation script in your home directory 
+
+**This will install everything needed to run Docker on Linux**
+
 ```
 local-linux$ ~\docker-install-linux.sh
 ```
@@ -38,7 +45,7 @@ local-linux$ sudo usermod -aG docker ubuntu
 * **Log out and log back in or the changes will not take effect**
 
 # Load the Pipeline Docker Image 
-* At this point, you should have boot2docker and/or Docker installed on your laptop.
+* At this point, you should have installed everything needed to run Docker
 * Next, we'll load and run the Pipeline Docker Image
 
 ### MacOS X or Linux
