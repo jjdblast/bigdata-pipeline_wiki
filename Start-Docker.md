@@ -6,7 +6,7 @@
 ### MacOS X and Windows
 * Download and install boot2docker v1.7.1 for MacOS X from [here](https://github.com/boot2docker/osx-installer/releases/tag/v1.7.1) or Windows from [here](https://github.com/boot2docker/windows-installer/releases/tag/v1.7.1)
 
-**This will install everything you ned to run Docker on MacOS X or Windows including VirtualBox, boot2docker, and Docker**
+**This will install everything needed to run Docker on MacOS X or Windows including VirtualBox, boot2docker, and Docker**
 
 * Initialize and start the boot2docker VM that contains the Docker daemon as follows:
 
@@ -20,7 +20,7 @@ local-macosx-or-windows$ boot2docker up
 ### Linux
 * Run the Docker installation script downloaded from `get.docker.com`
 
-**This will install everything you need to run Docker on Linux**
+**This will install everything needed to run Docker on Linux**
 ```
 local-linux$ wget -qO- https://get.docker.com/ | sh
 ```
@@ -31,7 +31,9 @@ local-linux$ sudo usermod -aG docker ubuntu
 * **Log out and log back in or the changes will not take effect**
 
 # Load the Pipeline Docker Image 
-* At this point, you should have boot2docker and/or Docker installed on your laptop.
+
+**At this point, you should have installed everything needed to run Docker**
+
 * Next, we'll load and run the Pipeline Docker Image
 
 ### MacOS X or Windows or Linux
