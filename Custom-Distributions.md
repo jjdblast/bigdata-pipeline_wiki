@@ -1,5 +1,5 @@
-# Custom FluxCapacitor Distributions
-* Not really that custom, just with many options turned on
+# Custom Distributions
+* Not really *custom*, just with many options turned on
 * This section helps remind us how we built specific versions of our tools (Spark, Zeppelin, Spark Notebook, etc)
 
 ## Spark 1.5.1
