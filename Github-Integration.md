@@ -6,7 +6,7 @@ git config --global user.name "Chris Fregly"
 
 ## Update the Remote Origin URL
 ```
-local-laptop$ git remote set-url origin git@github.com:fluxcapacitor/pipeline.git
+git remote set-url origin git@github.com:fluxcapacitor/pipeline.git
 ```
 
 ## Start your SSH Authentication Agent
