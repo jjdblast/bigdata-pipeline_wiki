@@ -15,9 +15,9 @@ eval $(ssh-agent -s)
 ```
 
 
-## Copy/Paste your Private (github_rsa) and Public (github_rsa.pub) Keys into `~/.ssh/`
-* Put your private (github_rsa) and public (github_rsa.pub) keys are in `~/.ssh/`.
-* Run the following command to tighten up access to the private key:
+## Setup Private (github_rsa) and Public (github_rsa.pub) Keys
+* Put your private (github_rsa) and public (github_rsa.pub) keys in `~/.ssh/`.
+**You must modify the permissions**
 ```
 chmod 600 ~/.ssh/github_rsa
 ```
