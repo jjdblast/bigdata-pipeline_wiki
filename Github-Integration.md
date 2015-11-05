@@ -18,7 +18,7 @@ eval $(ssh-agent -s)
 ## Setup Private (github_rsa) and Public (github_rsa.pub) Keys
 * Put your private (github_rsa) and public (github_rsa.pub) keys in `~/.ssh/`.
 
-**You must modify the permissions**
+**You must modify the permissions.**
 ```
 chmod 600 ~/.ssh/github_rsa
 ```
@@ -26,7 +26,7 @@ chmod 600 ~/.ssh/github_rsa
 ## Register SSH Keys Locally
 * Run `ssh-add` and enter the passphrase used when creating the key pair
 
-**If you see the following error, make sure you ran the `chmod 600` command above**
+**If you see the following error, make sure you ran the `chmod 600` command above.**
 ```
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
