@@ -120,48 +120,9 @@ root@docker$ beeline -u jdbc:hive2://127.0.0.1:10000 -n hiveuser -p ''
 
 * **Make sure that you stop the Hive Thrift Server before continuing as this process occupies Spark CPU cores which may cause CPU starvation later in your exploration**:
 ```
-root@docker$ cd ~/pipeline && $SPARK_HOME/sbin/flux-spark-submitted-job.sh
+root@docker$ cd ~/pipeline && $SPARK_HOME/sbin/flux-stop-sparksubmitted-job.sh
 ```
 * Verify that the 2 processes identified above for the Hive ThriftServer have been removed with `jps -l`.
-
-### Spark JobServer (Disabled for Now)
-
-[Spark Job Server](http://github.com/spark-jobserver/spark-jobserver) provides a REST service for sharing and managing Spark jobs.
-
-* Start the JobServer
-* Note:  This uploads two jars for testing
-```
-cd ~/pipeline && ./flux-start-jobserver.sh
-```
-
-* From within the Docker container
-```
-root@docker$ curl localhost:8099/jars
-```
-* Verify  you should see two JSON elements, one for "test" and one for "streaming".
-
-* Run the Test Job
-```
-curl -d "input.string = a b c a b see" 'localhost:8099/jobs?appName=test&classPath=spark.jobserver.WordCountExample&sync=true'
-```
-* Verify the results look similar to this
-```
-{
-  "status": "OK",
-  "result": {
-    "b": 2,
-    "a": 2,
-    "see": 1,
-    "c": 1
-  }
-}
-```
-* **Make sure that you stop the Spark Job Server before continuing as this process occupies 2 Spark CPU cores which may cause starvation later in your exploration**:
-```
-root@docker$ cd ~/pipeline && $SPARK_HOME/sbin/stop-sparksubmitted-job.sh
-```
-* Verify that the 2 processes identified above for the Hive ThriftServer have been removed with `jps -l`.
-
 
 ## Test from Outside boot2docker and the Docker Container
 * **DO NOT TYPE `exit` AS THIS WILL STOP YOUR CONTAINER**
@@ -188,19 +149,14 @@ macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):34042/topics
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):38080
 ```
 
-### iPython Notebook (Disabled for Now)
+### iPython Notebook
 ```
-macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):38888
+macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):37777
 ```
 
 ### Spark Notebook
 ```
 macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):39000
-```
-
-### H2O Flow (Disabled for Now)
-```
-macosx-laptop$ open http://$(boot2docker ip 2>/dev/null)/flow:34321
 ```
 
 ### Apache Spark Master Admin Web UI
