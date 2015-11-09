@@ -44,8 +44,8 @@ java.nio.channels.ClosedChannelException
 	at org.apache.spark.streaming.kafka.KafkaUtils$$anonfun$createDirectStream$2.apply(KafkaUtils.scala:416)
 	at scala.util.Either.fold(Either.scala:97)
 	at org.apache.spark.streaming.kafka.KafkaUtils$.createDirectStream(KafkaUtils.scala:415)
-	at com.bythebay.pipeline.spark.streaming.StreamingRatings$.main(StreamingRatings.scala:39)
-	at com.bythebay.pipeline.spark.streaming.StreamingRatings.main(StreamingRatings.scala)
+	at com.fluxcapacitor.pipeline.spark.streaming.StreamingRatings$.main(StreamingRatings.scala:39)
+	at com.fluxcapacitor.pipeline.spark.streaming.StreamingRatings.main(StreamingRatings.scala)
 ```
 * You likely have not started your services using `flux-start.sh`.
 * Or there was an issue starting your Spark Master and Worker services. 
@@ -58,10 +58,10 @@ Caused by: java.io.FileNotFoundException: datasets/dating/ratings.csv (No such f
 	at scala.io.Source$.fromFile(Source.scala:90)
 	at scala.io.Source$.fromFile(Source.scala:75)
 	at scala.io.Source$.fromFile(Source.scala:53)
-	at com.bythebay.pipeline.akka.feeder.FeederActor.initData(FeederActor.scala:34)
-	at com.bythebay.pipeline.akka.feeder.FeederActor.<init>(FeederActor.scala:23)
+	at com.fluxcapacitor.pipeline.akka.feeder.FeederActor.initData(FeederActor.scala:34)
+	at com.fluxcapacitor.pipeline.akka.feeder.FeederActor.<init>(FeederActor.scala:23)
 ```
-* You likely have not run `bythebay-config.sh` or `bythebay-setup.sh` as the required datasets have not been uncompressed.
+* You likely have not run `flux-config-before-starting-services.sh` as the required datasets have not been uncompressed.
 
 ### Failed to initialize machine "boot2docker-vm": exit status 1
 * Run the following to repair your busted boot2docker:
