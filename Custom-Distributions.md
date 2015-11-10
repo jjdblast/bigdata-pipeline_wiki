@@ -21,7 +21,7 @@ export MAVEN_OPTS="-Xmx16g -XX:MaxPermSize=512M -XX:ReservedCodeCacheSize=512m" 
 
 ### Build Command
 ```
-mvn clean package -Pspark-1.5.1 -Dhadoop.version=2.6.0 -Phadoop-2.6 -DskipTests
+mvn clean package install -Pspark-1.5.1 -Dhadoop.version=2.6.0 -Phadoop-2.6 -DskipTests
 ```
 
 ## Spark-Notebook 0.6.0
