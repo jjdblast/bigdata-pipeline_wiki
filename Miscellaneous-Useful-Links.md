@@ -3,6 +3,5 @@
 * [Github Integration](https://github.com/fluxcapacitor/pipeline/wiki/Github-Integration)
 * [Ports and Networking](https://github.com/fluxcapacitor/pipeline/wiki/Ports-and-Networking)
 * [Setup from USB - Docker 1.7](https://github.com/fluxcapacitor/pipeline/wiki/Setup-from-USB-Docker-1.7)
-* [Building the USB for Training](https://github.com/fluxcapacitor/pipeline/wiki/USB-Builder-1.8)
 * [Docker Volumes and Persistent Paths](https://github.com/fluxcapacitor/pipeline/wiki/Docker-Volumes)
 * [Removing boot2docker and VirtualBox](https://github.com/fluxcapacitor/pipeline/wiki/Removing-boot2docker-and-VirtualBox)
