@@ -28,13 +28,17 @@ local-macosx-or-windows$ boot2docker up
 
 ## Tag and Push the Docker Image to the DockerHub Registry
 [TODO] Tagging
-
 For now, just overwrite the `latest` tag with the following
 ```
 $ docker push fluxcapacitor/pipeline
 ```
 
 ## Export the Docker Image as a .tar
+```
+$ docker save --output="fluxcapacitor-pipeline.tar" fluxcapacitor/pipeline
+```
+
+## Export a Docker Container as a .tar
 ```
 $ docker export --output="fluxcapacitor-pipeline.tar" fluxcapacitor/pipeline
 ```
