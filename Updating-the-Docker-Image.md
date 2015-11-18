@@ -36,5 +36,5 @@ $ docker push fluxcapacitor/pipeline
 
 ## Export the Docker Image as a .tar
 ```
-docker export --output="fluxcapacitor-pipeline.tar" fluxcapacitor/pipeline
+$ docker export --output="fluxcapacitor-pipeline.tar" fluxcapacitor/pipeline
 ```
