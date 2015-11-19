@@ -34,8 +34,10 @@ windows> %USERPROFILE%\fluxcapacitor\docker\win\docker-install.exe
 * Mac OS
 ```
 local-macosx$ cd ~
-local-macosx$ boot2docker --iso=fluxcapacitor/docker/boot2docker.iso --memory=8192 --disksize=20000 --lowerip=127.0.0.1 --upperip=127.0.0.1 --hostip=127.0.0.1 init
+local-macosx$ boot2docker --iso=fluxcapacitor/docker/boot2docker.iso --memory=8192 --disksize=20000 --lowerip=127.0.0.1 --upperip=127.0.0.1 init
 local-macosx$ vboxmanage modifyvm "boot2docker-vm" --natpf1 "docker,tcp,127.0.0.1,2376,,2376"
+local-macosx$ vboxmanage modifyvm "boot2docker-vm" --natpf1 "apache,tcp,127.0.0.1,30080,,30080"
+
 local-macosx$ boot2docker up
 local-macosx$ eval "$(boot2docker shellinit)"
 local-macosx$ docker version
@@ -56,7 +58,7 @@ Try shutting down the VPN and restarting your system with a clean start (and no 
 * Windows:
 ```
 local-windows> cd %USERPROFILE%
-local-windows> boot2docker --iso=fluxcapacitor\docker\boot2docker.iso --memory=8192 --disksize=20000 --lowerip=127.0.0.1 --upperip=127.0.0.1 --hostip=127.0.0.1 init
+local-windows> boot2docker --iso=fluxcapacitor\docker\boot2docker.iso --memory=8192 --disksize=20000 --lowerip=127.0.0.1 --upperip=127.0.0.1 init
 local-windows> boot2docker up
 ```
 
