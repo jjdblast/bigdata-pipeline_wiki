@@ -13,8 +13,14 @@
 
 ### Setup boot2Docker
 Run one of the following (MacOS and Windows Only):
-* MacOS:  `~/fluxcapacitor/docker/mac/Boot2Docker-1.7.1.pkg` 
-* Windows:  `%USERPROFILE%\fluxcapacitor\docker\win\docker-install.exe`
+* MacOS
+```
+local-macosx$ open ~/fluxcapacitor/docker/mac/Boot2Docker-1.7.1.pkg
+``` 
+* Windows
+```
+windows> %USERPROFILE%\fluxcapacitor\docker\win\docker-install.exe
+```
 
 **This will install everything needed to run Docker including VirtualBox, boot2docker, and Docker**
 
@@ -22,15 +28,15 @@ Run one of the following (MacOS and Windows Only):
 
 **If you are planning to run a large-memory or large-disk Docker Container, you may want to bump up `--memory` and `--disksize`**
 
-* Mac OS:
+* Mac OS
 ```
 local-macosx$ boot2docker --iso=~/fluxcapacitor/docker/boot2docker.iso --memory=8192 --disksize=20000 init
 local-macosx$ boot2docker up
 ```
 * Windows:
 ```
-local-windows$ boot2docker --iso=%USERPROFILE%\fluxcapacitor\docker\boot2docker.iso --memory=8192 --disksize=20000 init
-local-windows$ boot2docker up
+local-windows> boot2docker --iso=%USERPROFILE%\fluxcapacitor\docker\boot2docker.iso --memory=8192 --disksize=20000 init
+local-windows> boot2docker up
 ```
 
 ## Linux
@@ -61,12 +67,12 @@ local-macosx-or-linux$ docker pull fluxcapacitor/pipeline
 ``` 
 * Allow any terminal to run Docker commands
 ```
-eval "$(boot2docker shellinit)"
+local-macosx-or-linux$ eval "$(boot2docker shellinit)"
 ``` 
 
 ### Windows 
 ```
-local-windows$ docker load < %USERPROFILE%\fluxcapacitor\pipeline\fluxcapacitor-pipeline.tar
+local-windows> docker load < %USERPROFILE%\fluxcapacitor\pipeline\fluxcapacitor-pipeline.tar
 ``` 
 
 ### Start Docker [Here](https://github.com/fluxcapacitor/pipeline/wiki/Start-Docker)
