@@ -5,7 +5,7 @@
 
 # Installing Docker
 ## MacOS X or Windows 
-### Copy USB Contents to **home** Directory 
+### Copy USB Contents to **Home** Directory 
 * MacOS X, Linux:  `~`
 * Windows:  `%USERPROFILE%`
 
