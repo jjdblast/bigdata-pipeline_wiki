@@ -4,20 +4,24 @@
 **OTHERWISE, FOLLOW [THESE](https://github.com/fluxcapacitor/pipeline/wiki/Start-Docker) INSTRUCTIONS.**
 
 # Installing Docker
-### MacOS X or Windows 
-* Copy the contents of the USB to the **home** directory `~` (MacOS X, Linux) or `%USERPROFILE%` (Windows) on your local machine
+## MacOS X or Windows 
+### Copy USB Contents to **home** Directory 
+* MacOS X, Linux:  `~`
+* Windows:  `%USERPROFILE%`
 
-**Remove (and return or pass on) the USB to make sure you're not running anything off of the USB from this point on**
+**Remove the USB**
 
-* Run `~/Boot2Docker-1.7.1.pkg` (Linux) or `%USERPROFILE%\docker-install.exe` (Windows) to complete the installation of boot2docker
+### Setup Docker
+* MacOS:  `~/docker/mac/Boot2Docker-1.7.1.pkg` 
+* Windows:  `%USERPROFILE%\docker-install.exe`
 
 **This will install everything needed to run Docker including VirtualBox, boot2docker, and Docker**
 
-* Initialize and start the boot2docker VM that contains the Docker daemon as follows:
+### Start Docker
 
 **If you are planning to run a large-memory or large-disk Docker Container, you may want to bump up `--memory` and `--disksize`**
 
-* Linux:
+* Mac OS:
 ```
 local-macosx$ boot2docker --iso=~/pipeline/boot2docker.iso --memory=8192 --disksize=20000 init
 local-macosx$ boot2docker up
@@ -28,24 +32,22 @@ local-windows$ boot2docker --iso=%USERPROFILE%\pipeline\boot2docker.iso --memory
 local-windows$ boot2docker up
 ```
 
-### Linux
-* Copy the contents of the USB to the `~` home directory on your local laptop
+## Linux
+### Copy USB Contents to **home** Directory 
+* Linux:  `~`
 
-**Remove (and return or pass on) the USB to make sure you're not running anything off of the USB from this point on**
+**Remove the USB**
 
-* Run the Docker installation script in your home directory 
-
-**This will install everything needed to run Docker on Linux**
-
+### Setup Docker
+* **This will install everything needed to run Docker on Linux**
 ```
-local-linux$ ~\docker-install-linux.sh
+local-linux$ ~/docker/linux/docker-install-linux.sh
 ```
 * Add your user to the `docker` group to avoid having to 
 ```
 local-linux$ sudo usermod -aG docker ubuntu
 ```
-
-**Log out and log back in or the changes will not take effect**
+* **Log out and log back in or the changes will not take effect**
 
 # Load the Pipeline Docker Image 
 * At this point, you should have installed everything needed to run Docker
@@ -53,7 +55,7 @@ local-linux$ sudo usermod -aG docker ubuntu
 
 ### MacOS X or Linux
 ```
-local-macosx-or-linux$ docker load < ~/pipeline/fluxcapacitor-pipeline.tar
+local-macosx-or-linux$ ~/pipeline/start-pipeline.sh
 ``` 
 * Allow any terminal to run Docker commands
 ```
@@ -62,7 +64,9 @@ eval "$(boot2docker shellinit)"
 
 ### Windows 
 ```
-local-windows$ docker load < %USERPROFILE%\pipeline\fluxcapacitor-pipeline.tar
+local-windows$ cd %USERPROFILE%\pipeline
+local-windows$ unzip fluxcapacitor-pipeline.tar.gz
+docker load < %USERPROFILE%\pipeline\fluxcapacitor-pipeline.tar
 ``` 
 
 ### Start Docker [Here](https://github.com/fluxcapacitor/pipeline/wiki/Start-Docker)
