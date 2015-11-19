@@ -3,21 +3,26 @@
 
 ### Setup the Environment
 * You must `source` the following script to setup and start the pipeline services.
---> Don't forget the `source` below! <--
+
+**--> Don't forget the `source` below! <--**
+
 ```
 root@docker$ cd ~/pipeline && source ~/pipeline/flux-one-time-setup.sh
 ```
-### --> ^^ Don't forget the `source` above! ^^ <--
+
+**--> ^^ Don't forget the `source` above! ^^ <--**
 
 ### Verify that Setup Worked Correctly
 * Verify that the output of `export` contains `$PIPELINE_HOME` among many other new exports
 ```
 root@docker$ export
 ```
-* If not, you'll need to do the following again:
+
+* TROUBLESHOOTING ONLY:  If you don't see PIPELINE_HOME defined above, you'll need to do the following:
 ```
 root@docker source ~/.profile
 ```
+**Note:  This is likely an issue from an earlier step, so proceed at your own risk.**
 
 * Verify the output of `jps -l` looks something like this
 ```
