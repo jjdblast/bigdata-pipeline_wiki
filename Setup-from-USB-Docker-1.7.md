@@ -69,6 +69,23 @@ local-linux$ sudo usermod -aG docker ubuntu
 local-macosx-or-linux$ docker load < ~/fluxcapacitor/pipeline/fluxcapacitor-pipeline.tar
 local-macosx-or-linux$ docker pull fluxcapacitor/pipeline
 ``` 
+* Troubleshooting
+
+If you see an error similar to the following:
+```
+An error occurred trying to connect: Post https://192.168.59.103:2376/v1.19/images/load: dial tcp 192.168.59.103:2376: i/o timeout
+```
+This likely means you a firewall is preventing the connection to Docker - likely a VPN.
+
+In this case, the following may help:
+```
+local-macosx-or-linux$ boot2docker down
+local-macosx-or-linux$ vboxmanage modifyvm "boot2docker-vm" --natpf1 "docker,tcp,127.0.0.1,2376,,2376"
+local-macosx-or-linux$ boot2docker up
+local-macosx-or-linux$ eval $(boot2docker shellinit)
+local-macosx-or-linux$ export DOCKER_HOST=tcp://127.0.0.1:2376
+```
+Note:  At this point, your DOCKER_HOST is `127.0.0.1` instead of the default `192.168.59.103`.
 
 ### Windows 
 ```
