@@ -34,14 +34,29 @@ windows> %USERPROFILE%\fluxcapacitor\docker\win\docker-install.exe
 * Mac OS
 ```
 local-macosx$ cd ~
-local-macosx$ boot2docker --iso=fluxcapacitor/docker/boot2docker.iso --memory=8192 --disksize=20000 --lowerip=127.0.0.1 --upperip=127.0.0.1 init
+local-macosx$ boot2docker --iso=fluxcapacitor/docker/boot2docker.iso --memory=8192 --disksize=20000 --lowerip=127.0.0.1 --upperip=127.0.0.1 --hostip=127.0.0.1 init
+local-macosx$ vboxmanage modifyvm "boot2docker-vm" --natpf1 "docker,tcp,127.0.0.1,2376,,2376"
 local-macosx$ boot2docker up
 local-macosx$ eval "$(boot2docker shellinit)"
-``` 
+local-macosx$ docker version
+```
+**Troubleshooting**
+
+If you see an error similar to one of the following:
+```
+Cannot connect to the Docker daemon. Is 'docker -d' running on this host?
+```
+```
+An error occurred trying to connect: Post https://127.0.0.1:2376/v1.19/images/load: dial tcp 127.0.0.1:2376: i/o timeout
+```
+There is likely a firewall (VPN) preventing the connection to Docker.
+
+Try shutting down the VPN and restarting your system with a clean start (and no VPN).
+
 * Windows:
 ```
 local-windows> cd %USERPROFILE%
-local-windows> boot2docker --iso=fluxcapacitor\docker\boot2docker.iso --memory=8192 --disksize=20000 --lowerip=127.0.0.1 --upperip=127.0.0.1 init
+local-windows> boot2docker --iso=fluxcapacitor\docker\boot2docker.iso --memory=8192 --disksize=20000 --lowerip=127.0.0.1 --upperip=127.0.0.1 --hostip=127.0.0.1 init
 local-windows> boot2docker up
 ```
 
@@ -70,20 +85,6 @@ local-linux$ sudo usermod -aG docker ubuntu
 ```
 local-macosx-or-linux$ docker load < ~/fluxcapacitor/pipeline/fluxcapacitor-pipeline.tar
 ``` 
-
-**Troubleshooting**
-
-If you see an error similar to the following:
-```
-An error occurred trying to connect: Post https://127.0.0.1:2376/v1.19/images/load: dial tcp 127.0.0.1:2376: i/o timeout
-```
-This likely means you a firewall is preventing the connection to Docker - likely a VPN.
-If shutting down the VPN and restarting your system with a clean start (and no VPN) doesn't help, you can try the following:
-```
-local-macosx-or-linux$ boot2docker down
-local-macosx-or-linux$ vboxmanage modifyvm "boot2docker-vm" --natpf1 "docker,tcp,127.0.0.1,2376,,2376"
-local-macosx-or-linux$ boot2docker up
-```
 
 ### Windows 
 ```
