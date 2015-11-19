@@ -5,7 +5,7 @@
 
 # Installing Docker
 ## MacOS X or Windows 
-### Copy USB Contents to **Home** Directory 
+### Copy USB Contents to Home Directory 
 * MacOS X, Linux:  `~`
 * Windows:  `%USERPROFILE%`
 
@@ -13,7 +13,7 @@
 
 ### Setup boot2Docker
 * MacOS:  `~/docker/mac/Boot2Docker-1.7.1.pkg` 
-* Windows:  `%USERPROFILE%\docker-install.exe`
+* Windows:  `%USERPROFILE%\docker\win\docker-install.exe`
 
 **This will install everything needed to run Docker including VirtualBox, boot2docker, and Docker**
 
@@ -33,7 +33,7 @@ local-windows$ boot2docker up
 ```
 
 ## Linux
-### Copy USB Contents to **home** Directory 
+### Copy USB Contents to Home Directory 
 * Linux:  `~`
 
 **Remove the USB**
@@ -55,7 +55,7 @@ local-linux$ sudo usermod -aG docker ubuntu
 
 ### MacOS X or Linux
 ```
-local-macosx-or-linux$ docker load < ~/pipdline/fluxcapacitor-pipeline.tar
+local-macosx-or-linux$ docker load < ~/pipeline/fluxcapacitor-pipeline.tar
 local-macosx-or-linux$ docker pull fluxcapacitor/pipeline
 ``` 
 * Allow any terminal to run Docker commands
