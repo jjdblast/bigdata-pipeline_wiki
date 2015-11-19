@@ -14,7 +14,7 @@
 **If you are planning to run a large-memory or large-disk Docker Container, you may want to bump up `--memory` and `--disksize`**
 
 ```
-local-macosx-or-windows$ boot2docker --memory=8192 --disksize=20000 init
+local-macosx-or-windows$ boot2docker --memory=8192 --disksize=20000 --lowerip=127.0.0.1 --upperip=127.0.0.1 init
 local-macosx-or-windows$ boot2docker up
 ```
 
@@ -39,5 +39,5 @@ local-linux$ sudo usermod -aG docker ubuntu
 
 ### MacOS X or Windows or Linux
 ```
-local-macosx-or-windows-or-linux$ docker pull fluxcapacitor/pipeline
+local-macosx-or-linux-or-windows$ docker pull fluxcapacitor/pipeline
 ```
