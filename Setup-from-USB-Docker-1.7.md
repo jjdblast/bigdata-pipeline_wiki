@@ -33,13 +33,15 @@ windows> %USERPROFILE%\fluxcapacitor\docker\win\docker-install.exe
 
 * Mac OS
 ```
-local-macosx$ boot2docker --iso=~/fluxcapacitor/docker/boot2docker.iso --memory=8192 --disksize=20000 init
+local-macosx$ cd ~
+local-macosx$ boot2docker --iso=fluxcapacitor/docker/boot2docker.iso --memory=8192 --disksize=20000 init
 local-macosx$ boot2docker up
 local-macosx$ eval "$(boot2docker shellinit)"
 ``` 
 * Windows:
 ```
-local-windows> boot2docker --iso=%USERPROFILE%\fluxcapacitor\docker\boot2docker.iso --memory=8192 --disksize=20000 init
+local-windows> cd %USERPROFILE%
+local-windows> boot2docker --iso=fluxcapacitor\docker\boot2docker.iso --memory=8192 --disksize=20000 init
 local-windows> boot2docker up
 ```
 
@@ -85,6 +87,7 @@ local-macosx-or-linux$ eval $(boot2docker shellinit)
 local-macosx-or-linux$ export DOCKER_HOST=tcp://127.0.0.1:2376
 ```
 Note:  At this point, your DOCKER_HOST is `127.0.0.1` instead of the default `192.168.59.103`.
+This difference will be significant later.
 
 ### Windows 
 ```
