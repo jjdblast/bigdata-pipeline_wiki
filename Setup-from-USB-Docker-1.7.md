@@ -67,7 +67,6 @@ local-linux$ sudo usermod -aG docker ubuntu
 ### MacOS X or Linux
 ```
 local-macosx-or-linux$ docker load < ~/fluxcapacitor/pipeline/fluxcapacitor-pipeline.tar
-local-macosx-or-linux$ docker pull fluxcapacitor/pipeline
 ``` 
 * Troubleshooting
 
@@ -90,7 +89,6 @@ Note:  At this point, your DOCKER_HOST is `127.0.0.1` instead of the default `19
 ### Windows 
 ```
 local-windows> docker load < %USERPROFILE%\fluxcapacitor\pipeline\fluxcapacitor-pipeline.tar
-local-windows> docker pull fluxcapacitor/pipeline
 ``` 
 
 ### Start Docker [Here](https://github.com/fluxcapacitor/pipeline/wiki/Start-Docker)
