@@ -14,7 +14,7 @@
 **If you are planning to run a large-memory or large-disk Docker Container, you may want to bump up `--memory` and `--disksize`**
 
 ```
-local-macosx-or-windows$ boot2docker --memory=8192 --disksize=20000 --lowerip=127.0.0.1 --upperip=127.0.0.1 --hostip=127.0.0.1 init
+local-macosx-or-windows$ boot2docker --memory=8192 --disksize=20000 --lowerip=127.0.0.1 --upperip=127.0.0.1 init
 local-macosx-or-windows$ vboxmanage modifyvm "boot2docker-vm" --natpf1 "docker,tcp,127.0.0.1,2376,,2376"
 local-macosx-or-windows$ boot2docker up
 local-macosx-or-windows$ docker version
