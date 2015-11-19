@@ -75,7 +75,7 @@ local-macosx-or-linux$ docker load < ~/fluxcapacitor/pipeline/fluxcapacitor-pipe
 
 If you see an error similar to the following:
 ```
-An error occurred trying to connect: Post https://192.168.59.103:2376/v1.19/images/load: dial tcp 192.168.59.103:2376: i/o timeout
+An error occurred trying to connect: Post https://127.0.0.1:2376/v1.19/images/load: dial tcp 127.0.0.1:2376: i/o timeout
 ```
 This likely means you a firewall is preventing the connection to Docker - likely a VPN.
 If shutting down the VPN and restarting your system with a clean start (and no VPN) doesn't help, you can try the following:
