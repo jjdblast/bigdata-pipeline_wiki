@@ -5,15 +5,15 @@
 
 # Installing Docker
 ## MacOS X or Windows 
-### Copy USB Contents to Home Directory 
+### Copy `fluxcapacitor` folder from USB to Laptop Home Directory 
 * MacOS X, Linux:  `~`
 * Windows:  `%USERPROFILE%`
 
 **Remove the USB**
 
 ### Setup boot2Docker
-* MacOS:  `~/docker/mac/Boot2Docker-1.7.1.pkg` 
-* Windows:  `%USERPROFILE%\docker\win\docker-install.exe`
+* MacOS:  `~/fluxcapacitor/docker/mac/Boot2Docker-1.7.1.pkg` 
+* Windows:  `%USERPROFILE%\fluxcapacitor\docker\win\docker-install.exe`
 
 **This will install everything needed to run Docker including VirtualBox, boot2docker, and Docker**
 
@@ -23,12 +23,12 @@
 
 * Mac OS:
 ```
-local-macosx$ boot2docker --iso=~/docker/boot2docker.iso --memory=8192 --disksize=20000 init
+local-macosx$ boot2docker --iso=~/fluxcapacitor/docker/boot2docker.iso --memory=8192 --disksize=20000 init
 local-macosx$ boot2docker up
 ```
 * Windows:
 ```
-local-windows$ boot2docker --iso=%USERPROFILE%\docker\boot2docker.iso --memory=8192 --disksize=20000 init
+local-windows$ boot2docker --iso=%USERPROFILE%\fluxcapacitor\docker\boot2docker.iso --memory=8192 --disksize=20000 init
 local-windows$ boot2docker up
 ```
 
@@ -41,7 +41,7 @@ local-windows$ boot2docker up
 ### Setup Docker
 * **This will install everything needed to run Docker on Linux**
 ```
-local-linux$ ~/docker/linux/docker-install-linux.sh
+local-linux$ ~/fluxcapacitor/docker/linux/docker-install-linux.sh
 ```
 * Add your user to the `docker` group to avoid having to 
 ```
@@ -55,7 +55,7 @@ local-linux$ sudo usermod -aG docker ubuntu
 
 ### MacOS X or Linux
 ```
-local-macosx-or-linux$ docker load < ~/pipeline/fluxcapacitor-pipeline.tar
+local-macosx-or-linux$ docker load < ~/fluxcapacitor/pipeline/fluxcapacitor-pipeline.tar
 local-macosx-or-linux$ docker pull fluxcapacitor/pipeline
 ``` 
 * Allow any terminal to run Docker commands
@@ -65,7 +65,7 @@ eval "$(boot2docker shellinit)"
 
 ### Windows 
 ```
-local-windows$ docker load < %USERPROFILE%\pipeline\fluxcapacitor-pipeline.tar
+local-windows$ docker load < %USERPROFILE%\fluxcapacitor\pipeline\fluxcapacitor-pipeline.tar
 ``` 
 
 ### Start Docker [Here](https://github.com/fluxcapacitor/pipeline/wiki/Start-Docker)
