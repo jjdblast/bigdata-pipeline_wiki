@@ -15,7 +15,37 @@
 
 ```
 local-macosx-or-windows$ boot2docker --memory=8192 --disksize=20000 --lowerip=127.0.0.1 --upperip=127.0.0.1 init
+
 local-macosx-or-windows$ vboxmanage modifyvm "boot2docker-vm" --natpf1 "docker,tcp,127.0.0.1,2376,,2376"
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "apache,tcp,127.0.0.1,30080,,30080"
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "34042,tcp,127.0.0.1,34042,,34042"
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "39160,tcp,127.0.0.1,39160,,39160"
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "39042,tcp,127.0.0.1,39042,,39042"
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "39200,tcp,127.0.0.1,39200,,39200"
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "37077,tcp,127.0.0.1,37077,,37077"
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "38080,tcp,127.0.0.1,38080,,38080"
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "38081,tcp,127.0.0.1,38081,,38081"
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "36060,tcp,127.0.0.1,36060,,36060"
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "36061,tcp,127.0.0.1,36061,,36061"
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "32181,tcp,127.0.0.1,32181,,32181"
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "38090,tcp,127.0.0.1,38090,,38090"
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "30000,tcp,127.0.0.1,30000,,30000"
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "30070,tcp,127.0.0.1,30070,,30070"
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "30090,tcp,127.0.0.1,30090,,30090"
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "39092,tcp,127.0.0.1,39092,,39092"
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "36066,tcp,127.0.0.1,36066,,36066"
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "39000,tcp,127.0.0.1,39000,,39000"
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "39999,tcp,127.0.0.1,39999,,39999"
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "35601,tcp,127.0.0.1,35601,,35601"
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "37979,tcp,127.0.0.1,37979,,37979"
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "38989,tcp,127.0.0.1,38989,,38989"
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "34040,tcp,127.0.0.1,34040,,34040"
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "36379,tcp,127.0.0.1,36379,,36379"
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "38888,tcp,127.0.0.1,38888,,38888"
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "34321,tcp,127.0.0.1,34321,,34321"
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "38099,tcp,127.0.0.1,38099,,38099"
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "37777,tcp,127.0.0.1,37777,,37777"
+
 local-macosx-or-windows$ boot2docker up
 local-macosx-or-windows$ docker version
 ```
