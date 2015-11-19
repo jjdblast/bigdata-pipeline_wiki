@@ -20,6 +20,19 @@ local-macosx-or-windows$ boot2docker up
 local-macosx-or-windows$ docker version
 ```
 
+**Troubleshooting**
+
+If you see an error similar to one of the following:
+```
+Cannot connect to the Docker daemon. Is 'docker -d' running on this host?
+```
+```
+An error occurred trying to connect: Post https://127.0.0.1:2376/v1.19/images/load: dial tcp 127.0.0.1:2376: i/o timeout
+```
+There is likely a firewall (VPN) preventing the connection to Docker.
+
+Try shutting down the VPN and restarting your system with a clean start (and no VPN).
+
 ### Linux
 * Run the Docker installation script downloaded from `get.docker.com`
 
