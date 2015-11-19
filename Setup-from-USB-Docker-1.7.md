@@ -35,7 +35,8 @@ windows> %USERPROFILE%\fluxcapacitor\docker\win\docker-install.exe
 ```
 local-macosx$ boot2docker --iso=~/fluxcapacitor/docker/boot2docker.iso --memory=8192 --disksize=20000 init
 local-macosx$ boot2docker up
-```
+local-macosx$ eval "$(boot2docker shellinit)"
+``` 
 * Windows:
 ```
 local-windows> boot2docker --iso=%USERPROFILE%\fluxcapacitor\docker\boot2docker.iso --memory=8192 --disksize=20000 init
@@ -67,10 +68,6 @@ local-linux$ sudo usermod -aG docker ubuntu
 ```
 local-macosx-or-linux$ docker load < ~/fluxcapacitor/pipeline/fluxcapacitor-pipeline.tar
 local-macosx-or-linux$ docker pull fluxcapacitor/pipeline
-``` 
-* Allow any terminal to run Docker commands
-```
-local-macosx-or-linux$ eval "$(boot2docker shellinit)"
 ``` 
 
 ### Windows 
