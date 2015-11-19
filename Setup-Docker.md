@@ -41,3 +41,17 @@ local-linux$ sudo usermod -aG docker ubuntu
 ```
 local-macosx-or-linux-or-windows$ docker pull fluxcapacitor/pipeline
 ```
+
+**Troubleshooting**
+
+If you see an error similar to the following:
+```
+An error occurred trying to connect: Post https://127.0.0.1:2376/v1.19/images/load: dial tcp 127.0.0.1:2376: i/o timeout
+```
+This likely means you a firewall is preventing the connection to Docker - likely a VPN.
+If shutting down the VPN and restarting your system with a clean start (and no VPN) doesn't help, you can try the following:
+```
+local-macosx-or-linux$ boot2docker down
+local-macosx-or-linux$ vboxmanage modifyvm "boot2docker-vm" --natpf1 "docker,tcp,127.0.0.1,2376,,2376"
+local-macosx-or-linux$ boot2docker up
+```
