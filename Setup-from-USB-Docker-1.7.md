@@ -12,6 +12,7 @@
 **Remove the USB**
 
 ### Setup boot2Docker
+Run one of the following (MacOS and Windows Only):
 * MacOS:  `~/fluxcapacitor/docker/mac/Boot2Docker-1.7.1.pkg` 
 * Windows:  `%USERPROFILE%\fluxcapacitor\docker\win\docker-install.exe`
 
