@@ -13,6 +13,22 @@ root@docker$ cd ~/pipeline && source ~/pipeline/flux-one-time-setup.sh
 **--> ^^ Don't forget the `source` above! ^^ <--**
 
 ### Verify that Setup Worked Correctly
+* Verify the output of the script above looks something like this:
+```
+...Show Running Java Processes...
+737 org.elasticsearch.bootstrap.Elasticsearch           <-- ElasticSearch
+738 org.jruby.Main                                      <-- Logstash
+1987 org.apache.zeppelin.server.ZeppelinServer          <-- Zeppelin 
+2243 org.apache.spark.deploy.worker.Worker              <-- Spark Worker
+1973 kafka.Kafka                                        <-- Kafka
+3479 sun.tools.jps.Jps                                  <-- this (jps)
+2391 org.apache.spark.deploy.history.HistoryServer      <-- Spark History Server
+2408 play.core.server.NettyServer                       <-- Spark Notebook
+1529 org.apache.zookeeper.server.quorum.QuorumPeerMain  <-- ZooKeeper
+2555 io.confluent.kafka.schemaregistry.rest.Main        <-- Kafka SchemaRegistry
+2123 org.apache.spark.deploy.master.Master              <-- Spark Master
+2556 io.confluent.kafkarest.Main                        <-- Kafka
+```
 * Verify that the output of `export` contains `$PIPELINE_HOME` among many other new exports
 ```
 root@docker$ export
@@ -24,27 +40,9 @@ root@docker source ~/.profile
 ```
 **Note:  This is likely an issue from an earlier step, so proceed at your own risk.**
 
-* Verify the output of `jps -l` looks something like this
-```
-root@docker$ jps -l
-2374 kafka.Kafka <-- Kafka Server
-3764 io.confluent.kafka.schemaregistry.rest.Main <-- Kafka Schema Registry
-2373 org.apache.zookeeper.server.quorum.QuorumPeerMain <-- ZooKeeper
-95 -- process information unavailable <-- Either ElasticSearch or Cassandra*
-3765 io.confluent.kafkarest.Main <-- Kafka Rest Proxy
-3762 play.core.server.NettyServer <-- Spark-Notebook
-919 -- process information unavailable <-- Either ElasticSearch or Cassandra*
-2435 org.apache.zeppelin.server.ZeppelinServer <-- Zeppelin WebApp
-2743 org.apache.spark.deploy.master.Master <-- Spark Master
-4074 sun.tools.jps.Jps <-- This jps Process
-3599 tachyon.master.TachyonMaster <-- Tachyon Master
-3718 tachyon.worker.TachyonWorker <-- Tachyon Worker
-2908 org.apache.spark.deploy.worker.Worker <-- Spark Worker
-```
-Note that the "process information unavailable" message appears to be an OpenJDK [bug](https://bugs.openjdk.java.net/browse/JDK-8075773).
-
 * Verify the number of CPU cores matches what you expect (at least 4 CPU cores or things won't work right)
-* Note:  Knowing this number will help you troubleshoot Spark problems later as you may hit Spark Job resource starvation issues if you run too many long-running jobs at the same time (ie. Hive ThriftServer, Spark Streaming, Spark Job Server).
+
+Note:  Knowing this number will help you troubleshoot Spark problems later as you may hit Spark Job resource starvation issues if you run too many long-running jobs at the same time (ie. Hive ThriftServer, Spark Streaming, Spark Job Server).
 ```
 root@docker$ lscpu
 Architecture:          x86_64
