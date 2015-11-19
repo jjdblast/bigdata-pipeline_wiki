@@ -34,14 +34,14 @@ windows> %USERPROFILE%\fluxcapacitor\docker\win\docker-install.exe
 * Mac OS
 ```
 local-macosx$ cd ~
-local-macosx$ boot2docker --iso=fluxcapacitor/docker/boot2docker.iso --memory=8192 --disksize=20000 init
+local-macosx$ boot2docker --iso=fluxcapacitor/docker/boot2docker.iso --memory=8192 --disksize=20000 --lowerip=127.0.0.1 --upperip=127.0.0.1 init
 local-macosx$ boot2docker up
 local-macosx$ eval "$(boot2docker shellinit)"
 ``` 
 * Windows:
 ```
 local-windows> cd %USERPROFILE%
-local-windows> boot2docker --iso=fluxcapacitor\docker\boot2docker.iso --memory=8192 --disksize=20000 init
+local-windows> boot2docker --iso=fluxcapacitor\docker\boot2docker.iso --memory=8192 --disksize=20000 --lowerip=127.0.0.1 --upperip=127.0.0.1 init
 local-windows> boot2docker up
 ```
 
@@ -82,11 +82,7 @@ If shutting down the VPN and restarting your system with a clean start (and no V
 local-macosx-or-linux$ boot2docker down
 local-macosx-or-linux$ vboxmanage modifyvm "boot2docker-vm" --natpf1 "docker,tcp,127.0.0.1,2376,,2376"
 local-macosx-or-linux$ boot2docker up
-local-macosx-or-linux$ eval $(boot2docker shellinit)
-local-macosx-or-linux$ export DOCKER_HOST=tcp://127.0.0.1:2376
 ```
-Note:  At this point, your DOCKER_HOST is `127.0.0.1` instead of the default `192.168.59.103`.
-This is an unstable configuration and will likely affect you later.  Run at your own risk!
 
 ### Windows 
 ```
