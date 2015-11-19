@@ -70,7 +70,8 @@ local-linux$ sudo usermod -aG docker ubuntu
 ```
 local-macosx-or-linux$ docker load < ~/fluxcapacitor/pipeline/fluxcapacitor-pipeline.tar
 ``` 
-* Troubleshooting
+
+**Troubleshooting**
 
 If you see an error similar to the following:
 ```
