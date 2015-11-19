@@ -11,7 +11,10 @@
 
 **Remove the USB**
 
-### Setup boot2Docker
+### Setup boot2docker
+* If VirtualBox or boot2docker has been installed already, this will cause a problem.
+* The best route is to uninstall VirtualBox and boot2docker before proceeding
+
 Run one of the following (MacOS and Windows Only):
 * MacOS
 ```
