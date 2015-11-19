@@ -3,13 +3,15 @@
 ```
 root@docker$ kafka-topics --zookeeper 127.0.0.1:2181 --list
 _schemas
-likes
 ratings
 ```
 
 ### Spark Submit
 ```
 root@docker$ cd ~/pipeline && spark-submit --class org.apache.spark.examples.SparkPi --master spark://127.0.0.1:7077 $SPARK_EXAMPLES_JAR 10 
+15/11/19 13:21:34 INFO DAGScheduler: Job 0 finished: reduce at SparkPi.scala:36, took 3.483164 s
+Pi is roughly 3.14134  <-------   The value of Pi based on Monte Carlo Simulation of 10 iterations
+15/11/19 13:21:34 INFO SparkUI: Stopped Spark web UI at http://172.17.0.2:4040
 ```
 
 ### Spark SQL
@@ -17,6 +19,11 @@ root@docker$ cd ~/pipeline && spark-submit --class org.apache.spark.examples.Spa
 root@docker$ cd ~/pipeline && spark-sql --jars $MYSQL_CONNECTOR_JAR
 ...
 spark-sql> show tables;
+15/11/19 13:22:44 INFO DAGScheduler: Job 0 finished: processCmd at CliDriver.java:376, took 1.626844 s
+genders	false   <------   genders table registered with Hive (isTemporary == false)
+ratings	false   <------   ratings table registered with Hive (isTemporary == false)
+Time taken: 2.179 seconds, Fetched 2 row(s)
+15/11/19 13:22:44 INFO CliDriver: Time taken: 2.179 seconds, Fetched 2 row(s)
 ```
 
 ### Cassandra
@@ -31,14 +38,8 @@ cqlsh:fluxcapacitor> select fromuserid, touserid, rating, batchtime from ratings
 
 (0 rows)
 
-cqlsh:fluxcapacitor> select fromuserid, touserid, batchtime from likes;
-
- fromuserid | touserid | batchtime
-------------+----------+-----------
-
-(0 rows)
-
 cqlsh> describe fluxcapacitor;
+CREATE KEYSPACE fluxcapacitor WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}  AND durable_writes = true;
 ...
 
 cqlsh:fluxcapacitor> exit;
@@ -56,7 +57,9 @@ WATCHER::
 
 WatchedEvent state:SyncConnected type:None path:null
 
-quit
+<-- Hit Enter a Few Times
+
+quit  <-- Type quit to Exit
 ```
 
 ### MySQL
@@ -76,7 +79,16 @@ owners.
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-mysql>
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| hive_metastore     |  <---  Hive Metastore
+| mysql              |
+| performance_schema |
++--------------------+
+4 rows in set (0.01 sec)
 ```
 
 ### Redis
@@ -94,8 +106,24 @@ Verify that the following 2 new processes have been added:
 
 ```
 root@docker$ jps -l
-3641 org.apache.spark.executor.CoarseGrainedExecutorBackend <-- Long-running Executor for ThriftServer
-3047 org.apache.spark.deploy.SparkSubmit  <-- Long-running Spark Submit Process for ThriftServer
+3641 org.apache.spark.executor.CoarseGrainedExecutorBackend 
+3047 org.apache.spark.deploy.SparkSubmit  
+
+root@docker:~/pipeline# jps -l
+737 org.elasticsearch.bootstrap.Elasticsearch
+738 org.jruby.Main
+1987 org.apache.zeppelin.server.ZeppelinServer
+2243 org.apache.spark.deploy.worker.Worker
+2408 play.core.server.NettyServer
+2123 org.apache.spark.deploy.master.Master
+4177 org.apache.spark.deploy.SparkSubmit                     <-- Long-running Spark Submit Process for ThriftServer
+4370 sun.tools.jps.Jps
+1973 kafka.Kafka
+2391 org.apache.spark.deploy.history.HistoryServer
+1529 org.apache.zookeeper.server.quorum.QuorumPeerMain
+2555 io.confluent.kafka.schemaregistry.rest.Main
+4284 org.apache.spark.executor.CoarseGrainedExecutorBackend  <-- Long-running Executor for ThriftServer
+2556 io.confluent.kafkarest.Main
 ```
 
 Run the following to query with the Beeline Hive client 
@@ -118,11 +146,26 @@ root@docker$ beeline -u jdbc:hive2://127.0.0.1:10000 -n hiveuser -p ''
 +-----+---------+
 ```
 
-* **Make sure that you stop the Hive Thrift Server before continuing as this process occupies Spark CPU cores which may cause CPU starvation later in your exploration**:
+* **Make sure that you STOP the Hive Thrift Server before continuing as this process occupies Spark CPU cores which may cause CPU starvation later in your exploration**:
 ```
-root@docker$ cd ~/pipeline && $SPARK_HOME/sbin/flux-stop-sparksubmitted-job.sh
+root@docker$ cd ~/pipeline && ./flux-stop-sparksubmitted-job.sh
 ```
 * Verify that the 2 processes identified above for the Hive ThriftServer have been removed with `jps -l`.
+```
+root@docker:~/pipeline# jps -l
+737 org.elasticsearch.bootstrap.Elasticsearch
+4545 sun.tools.jps.Jps
+738 org.jruby.Main
+1987 org.apache.zeppelin.server.ZeppelinServer
+2243 org.apache.spark.deploy.worker.Worker
+1973 kafka.Kafka
+2391 org.apache.spark.deploy.history.HistoryServer
+2408 play.core.server.NettyServer
+1529 org.apache.zookeeper.server.quorum.QuorumPeerMain
+2555 io.confluent.kafka.schemaregistry.rest.Main
+2123 org.apache.spark.deploy.master.Master
+2556 io.confluent.kafkarest.Main
+```
 
 ## Test from Outside boot2docker and the Docker Container
 * **DO NOT TYPE `exit` AS THIS WILL STOP YOUR CONTAINER**
