@@ -194,38 +194,14 @@ macosx-laptop$ open http://127.0.0.1:34042/topics
 macosx-laptop$ open http://127.0.0.1:38080
 ```
 
-### iPython Notebook
-```
-macosx-laptop$ open http://127.0.0.1:37777
-```
-
-### Spark Notebook
-```
-macosx-laptop$ open http://127.0.0.1:39000
-```
-
 ### Apache Spark Master Admin Web UI
 ```
 macosx-laptop$ open http://127.0.0.1:36060
 ```
 
-### Apache Spark Driver Admin Web UI
-* Jobs, Stages, Tasks
-* Environment Variables
-* Event Timeline
-* Streaming Tab
-```
-macosx-laptop$ open http://127.0.0.1:34040
-```
-
 ### Apache Spark Worker Admin Web UI
 ```
 macosx-laptop$ open http://127.0.0.1:36061
-```
-
-### Tachyon Web UI
-```
-macosx-laptop$ open http://127.0.0.1:39999
 ```
 
 ### ElasticSearch REST API
