@@ -11,24 +11,24 @@
 
 **Remove the USB**
 
-### Setup Docker
+### Setup boot2Docker
 * MacOS:  `~/docker/mac/Boot2Docker-1.7.1.pkg` 
 * Windows:  `%USERPROFILE%\docker-install.exe`
 
 **This will install everything needed to run Docker including VirtualBox, boot2docker, and Docker**
 
-### Start Docker
+### Start boot2Docker
 
 **If you are planning to run a large-memory or large-disk Docker Container, you may want to bump up `--memory` and `--disksize`**
 
 * Mac OS:
 ```
-local-macosx$ boot2docker --iso=~/pipeline/boot2docker.iso --memory=8192 --disksize=20000 init
+local-macosx$ boot2docker --iso=~/docker/boot2docker.iso --memory=8192 --disksize=20000 init
 local-macosx$ boot2docker up
 ```
 * Windows:
 ```
-local-windows$ boot2docker --iso=%USERPROFILE%\pipeline\boot2docker.iso --memory=8192 --disksize=20000 init
+local-windows$ boot2docker --iso=%USERPROFILE%\docker\boot2docker.iso --memory=8192 --disksize=20000 init
 local-windows$ boot2docker up
 ```
 
@@ -51,11 +51,12 @@ local-linux$ sudo usermod -aG docker ubuntu
 
 # Load the Pipeline Docker Image 
 * At this point, you should have installed everything needed to run Docker
-* Next, we'll load and run the Pipeline Docker Image
+* Next, we'll load prepare the Pipeline Docker Image for use
 
 ### MacOS X or Linux
 ```
-local-macosx-or-linux$ ~/pipeline/start-pipeline.sh
+local-macosx-or-linux$ docker load < ~/pipdline/fluxcapacitor-pipeline.tar
+local-macosx-or-linux$ docker pull fluxcapacitor/pipeline
 ``` 
 * Allow any terminal to run Docker commands
 ```
@@ -64,9 +65,7 @@ eval "$(boot2docker shellinit)"
 
 ### Windows 
 ```
-local-windows$ cd %USERPROFILE%\pipeline
-local-windows$ unzip fluxcapacitor-pipeline.tar.gz
-docker load < %USERPROFILE%\pipeline\fluxcapacitor-pipeline.tar
+local-windows$ docker load < %USERPROFILE%\pipeline\fluxcapacitor-pipeline.tar
 ``` 
 
 ### Start Docker [Here](https://github.com/fluxcapacitor/pipeline/wiki/Start-Docker)
