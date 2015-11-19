@@ -77,8 +77,7 @@ If you see an error similar to the following:
 An error occurred trying to connect: Post https://192.168.59.103:2376/v1.19/images/load: dial tcp 192.168.59.103:2376: i/o timeout
 ```
 This likely means you a firewall is preventing the connection to Docker - likely a VPN.
-
-In this case, the following may help:
+If shutting down the VPN and restarting your system with a clean start (and no VPN) doesn't help, you can try the following:
 ```
 local-macosx-or-linux$ boot2docker down
 local-macosx-or-linux$ vboxmanage modifyvm "boot2docker-vm" --natpf1 "docker,tcp,127.0.0.1,2376,,2376"
@@ -87,7 +86,7 @@ local-macosx-or-linux$ eval $(boot2docker shellinit)
 local-macosx-or-linux$ export DOCKER_HOST=tcp://127.0.0.1:2376
 ```
 Note:  At this point, your DOCKER_HOST is `127.0.0.1` instead of the default `192.168.59.103`.
-This difference will be significant later.
+This is an unstable configuration and will likely affect you later.  Run at your own risk!
 
 ### Windows 
 ```
