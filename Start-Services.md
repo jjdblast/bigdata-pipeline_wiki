@@ -25,9 +25,9 @@ root@docker$ cd ~/pipeline && source ~/pipeline/flux-one-time-setup.sh
 2391 org.apache.spark.deploy.history.HistoryServer      <-- Spark History Server
 2408 play.core.server.NettyServer                       <-- Spark Notebook
 1529 org.apache.zookeeper.server.quorum.QuorumPeerMain  <-- ZooKeeper
-2555 io.confluent.kafka.schemaregistry.rest.Main        <-- Kafka SchemaRegistry
+2555 io.confluent.kafka.schemaregistry.rest.Main        <-- Kafka SchemaRegistry (Avro)
 2123 org.apache.spark.deploy.master.Master              <-- Spark Master
-2556 io.confluent.kafkarest.Main                        <-- Kafka
+2556 io.confluent.kafkarest.Main                        <-- Kafka REST API
 ```
 * Verify that the output of `export` contains `$PIPELINE_HOME` among many other new exports
 ```
