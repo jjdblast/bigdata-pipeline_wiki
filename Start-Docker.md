@@ -1,7 +1,7 @@
 # Verify the Docker Image was Loaded Successfully
 ### MacOS X or Windows or Linux
 ```
-local-macosx-or-windows-or-linux$ docker images
+local-macosx-or-linux-or-windows$ docker images
 REPOSITORY               TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
 fluxcapacitor/pipeline   latest              b62e5d6e385f        36 hours ago        3.653 GB
 ```
