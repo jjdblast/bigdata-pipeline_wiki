@@ -1,4 +1,4 @@
-## Test from Inside the Docker Container
+## Test Services Inside Docker Container
 ### Kafka Native
 ```
 root@docker$ kafka-topics --zookeeper 127.0.0.1:2181 --list
@@ -167,44 +167,46 @@ root@docker:~/pipeline# jps -l
 2556 io.confluent.kafkarest.Main
 ```
 
-## Test from Outside boot2docker and the Docker Container
-* **DO NOT TYPE `exit` AS THIS WILL STOP YOUR CONTAINER**
-* Launch a new macosx-laptop$ terminal
-* Run the commands below to verify your setup
-* `open` opens a browser on a Mac
-* The IP of boot2docker (and therefore your Docker Container) is as follows
+## Test Services Outside Docker Container
+**DO NOT TYPE `exit` AS THIS WILL STOP YOUR CONTAINER**
+
+* Launch a new `macosx-laptop$` terminal
+* Run the commands below to verify your setup 
+
+Make sure the boot2docker IP (and therefore your Docker Container) is `127.0.0.1`.  Otherwise, use the ip returned here. 
 ```
 macosx-laptop$ boot2docker ip
+127.0.0.1
 ```
 
 ### Apache2 HTTP Server
 ```
-macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):30080
+macosx-laptop$ open http://127.0.0.1:30080
 ```
 
 ### Kafka REST API Proxy
 ```
-macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):34042/topics
+macosx-laptop$ open http://127.0.0.1:34042/topics
 ```
 
 ### Apache Zeppelin Web UI
 ```
-macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):38080
+macosx-laptop$ open http://127.0.0.1:38080
 ```
 
 ### iPython Notebook
 ```
-macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):37777
+macosx-laptop$ open http://127.0.0.1:37777
 ```
 
 ### Spark Notebook
 ```
-macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):39000
+macosx-laptop$ open http://127.0.0.1:39000
 ```
 
 ### Apache Spark Master Admin Web UI
 ```
-macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):36060
+macosx-laptop$ open http://127.0.0.1:36060
 ```
 
 ### Apache Spark Driver Admin Web UI
@@ -213,30 +215,30 @@ macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):36060
 * Event Timeline
 * Streaming Tab
 ```
-macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):34040
+macosx-laptop$ open http://127.0.0.1:34040
 ```
 
 ### Apache Spark Worker Admin Web UI
 ```
-macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):36061
+macosx-laptop$ open http://127.0.0.1:36061
 ```
 
 ### Tachyon Web UI
 ```
-macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):39999
+macosx-laptop$ open http://127.0.0.1:39999
 ```
 
 ### ElasticSearch REST API
 ```
-macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):39200/_cat/indices?v
+macosx-laptop$ open http://127.0.0.1:39200/_cat/indices?v
 ```
 
 ### Kibana and Logstash
 ```
-macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):35601
+macosx-laptop$ open http://127.0.0.1:35601
 ```
 
 ### Ganglia
 ```
-macosx-laptop$ open http://$(boot2docker ip 2>/dev/null):30080/ganglia
+macosx-laptop$ open http://127.0.0.1:30080/ganglia
 ```
