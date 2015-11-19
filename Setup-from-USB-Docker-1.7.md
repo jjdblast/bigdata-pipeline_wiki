@@ -5,7 +5,7 @@
 
 # Installing Docker
 ## MacOS X or Windows 
-### Copy USB/`fluxcapacitor` folder to Laptop Home Directory 
+### Copy USB `fluxcapacitor` folder to Laptop Home Directory 
 * MacOS X, Linux:  `~`
 * Windows:  `%USERPROFILE%`
 
