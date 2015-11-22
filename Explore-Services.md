@@ -6,17 +6,46 @@ _schemas
 ratings
 ```
 
-### Spark Submit
+### Spark Job Submit Script
 ```
-root@docker$ cd ~/pipeline && spark-submit --class org.apache.spark.examples.SparkPi --master spark://127.0.0.1:7077 $SPARK_EXAMPLES_JAR 10 
+root@docker$ spark-submit --class org.apache.spark.examples.SparkPi --master spark://127.0.0.1:7077 $SPARK_EXAMPLES_JAR 10 
 15/11/19 13:21:34 INFO DAGScheduler: Job 0 finished: reduce at SparkPi.scala:36, took 3.483164 s
 Pi is roughly 3.14134  <-------   The value of Pi based on Monte Carlo Simulation of 10 iterations
 15/11/19 13:21:34 INFO SparkUI: Stopped Spark web UI at http://172.17.0.2:4040
 ```
 
-### Spark SQL
+### Spark Job Submit REST API
 ```
-root@docker$ cd ~/pipeline && spark-sql --jars $MYSQL_CONNECTOR_JAR
+root@docker$ flux-rest-submit-sparkpi-job.sh
+...
+{
+  "action" : "CreateSubmissionResponse",
+  "message" : "Driver successfully submitted as driver-20151122184642-0000",
+  "serverSparkVersion" : "1.5.1",
+  "submissionId" : "driver-20151122184642-0000",
+  "success" : true
+}```
+
+### Spark Shell
+We've created a separate `flux-spark-shell.sh` script for the sole purpose of pre-configuring `--jars` and `--packages`.
+You can certainly use the regular `spark-shell.sh` that comes with Spark.  The $PATH env variable includes the Spark scripts.
+```
+root@docker$ flux-spark-shell.sh
+...
+spark-sql> show tables;
+...
+15/11/19 13:22:44 INFO DAGScheduler: Job 0 finished: processCmd at CliDriver.java:376, took 1.626844 s
+genders	false   <------   genders table registered with Hive (isTemporary == false)
+ratings	false   <------   ratings table registered with Hive (isTemporary == false)
+Time taken: 2.179 seconds, Fetched 2 row(s)
+15/11/19 13:22:44 INFO CliDriver: Time taken: 2.179 seconds, Fetched 2 row(s)
+```
+
+### Spark SQL Shell
+We've created a separate `flux-spark-sql.sh` script for the sole purpose of pre-configuring `--jars` and `--packages`.
+You can certainly use the regular `spark-sql.sh` that comes with Spark.  The $PATH env variable includes the Spark scripts.
+```
+root@docker$ flux-spark-sql.sh
 ...
 spark-sql> show tables;
 15/11/19 13:22:44 INFO DAGScheduler: Job 0 finished: processCmd at CliDriver.java:376, took 1.626844 s
@@ -48,37 +77,24 @@ cqlsh:fluxcapacitor> exit;
 ### ZooKeeper
 ```
 root@docker$ zookeeper-shell 127.0.0.1:2181
-
-Connecting to 127.0.0.1:2181
-Welcome to ZooKeeper!
-JLine support is disabled
-
+...
 WATCHER::
 
 WatchedEvent state:SyncConnected type:None path:null
 
-<-- Hit Enter a Few Times
+  <-- Hit Enter a Few Times
 
 quit  <-- Type quit to Exit
 ```
 
 ### MySQL
+We use MySQL for the Hive Metastore instead of the default, file-based Derby because we were noticing concurrency/locking issues when running both queries through the Hive ThriftServer as well as regular Spark jobs.
+
+Any serious production use case should use MySQL for the Hive Metastore and not rely on the default, file-based Derby implementation.
 ```
 root@docker$ mysql -u root -p 
 Enter password:  password
-
-Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 47
-Server version: 5.5.44-0ubuntu0.14.04.1 (Ubuntu)
-
-Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
-
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
-
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-
+...
 mysql> show databases;
 +--------------------+
 | Database           |
