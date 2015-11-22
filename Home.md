@@ -6,6 +6,37 @@
 
 ### Screen Shots
 
+**Apache Zeppelin Notebooks**
+![Apache Zeppelin Notebooks](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-zeppelin.png)
+
+**Tableau Integration**
+
+![Tableau Integration](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-tableau.png)
+
+**Beeline Command-line Hive Client**
+
+![Beeline Command-line Hive Client](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-beeline.png)
+
+**Log Visualization with Kibana & Logstash**
+
+![Log Visualization with Kibana & Logstash](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-kibana.png)
+
+**Spark Admin UI**
+
+![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-1.png)
+![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-2.png)
+![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-3.png)
+![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-4.png)
+![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-5.png)
+
+**Ganglia System and JVM Metrics Monitoring UI**
+
+![Ganglia Metrics UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-ganglia-1.png)
+![Ganglia Metrics UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-ganglia-2.png)
+![Ganglia Metrics UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-ganglia-3.png)
+![Ganglia Metrics UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-ganglia-4.png)
+![Ganglia Metrics UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-ganglia-5.png)
+
 ### Tools Overview
 ![Apache Spark](http://spark.apache.org/images/spark-logo.png) ![Redis](https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Redis_Logo.svg/200px-Redis_Logo.svg.png)
 ![Apache Cassandra](https://upload.wikimedia.org/wikipedia/commons/a/a0/Cassandra_logo.png)
