@@ -30,11 +30,11 @@ root@[docker]$ beeline -u jdbc:hive2://127.0.0.1:10000 -n hiveuser -p ''
 ```
 
 ### Tableau Integration
-* Query the Hive ThriftServer outside of Docker on port 30000
+* Query the Hive ThriftServer from *outside* of Docker on port `30000`
 * Connect Tableau to Spark SQL using the following
 ```
 Select Spark SQL Integration 
-Server:  Result of `boot2docker ip` (ie. 192.168.59.103)
+Server:  127.0.0.1
 Port:  30000
 Username:  hiveuser
 Password:  <empty>
@@ -43,17 +43,25 @@ Table:  <Your Spark SQL Table>
 ```
 Notes:
 * Tableau creates a single SQLContext within Spark
+* All data passes through this single SQLContext
+* This is a well-known bottleneck and encourages you to do your heavy transformations and aggregations behind Spark - and not within your visualization client (Tableau, MicroStrategy, etc).
+* The less data that is sent across the network, the better.
 * This SQLContext gives you full access to permanent tables that are created (ie. DataFrame.saveAsTable("ratings_perm")
 * Temp tables are not accessible since they are only specific to the SQLContext that they are created in
 
 ## Using Notebooks for Ad Hoc Data Analysis
 ### Apache Zeppelin
 ```
-macosx-laptop$ open http://<docker-hostname-or-ip>:38080
+macosx-laptop$ open http://127.0.0.1:38080
 ```
 ### Spark-Notebook
 ```
-macosx-laptop$ open http://<docker-hostname-or-ip>:39000
+macosx-laptop$ open http://127.0.0.1:39000
 ```
+### iPython/Jupyter Notebook
+```
+macosx-laptop$ open http://127.0.0.1:39000
+```
+
 Notes:
 * All notebooks are in `~/pipeline/notebooks/...` and are mounted from Docker through to the Host OS at `~/pipeline/notebooks/... using the `docker run -v` volume mapping command.
