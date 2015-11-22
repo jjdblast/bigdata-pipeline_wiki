@@ -22,7 +22,7 @@
 
 ***
 
-[10. Your Apps](https://github.com/fluxcapacitor/pipeline/wiki/Your-Apps)
+[10. Your Apps](https://github.com/fluxcapacitor/pipeline/wiki/Your-Custom-Apps-And-Notebooks)
 
 ***
 
