@@ -32,10 +32,16 @@ Examples
 [10. Examples](https://github.com/fluxcapacitor/pipeline/wiki/Examples)
 
 ***
-Misc
+Troubleshooting
 
 [11. Troubleshoot Environment](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshoot-Environment)
 
+***
+Cleanup
+
 [12. Stop Services](https://github.com/fluxcapacitor/pipeline/wiki/Stop-Services)
+
+***
+Misc
 
 [13. Miscellaneous Useful Links](https://github.com/fluxcapacitor/pipeline/wiki/Miscellaneous-Useful-Links)
