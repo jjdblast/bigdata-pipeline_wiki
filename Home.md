@@ -26,9 +26,9 @@
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-1.png)
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-2.png)
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-3.png)
+![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-6.png)
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-4.png)
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-5.png)
-![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-6.png)
 
 **Ganglia System and JVM Metrics Monitoring UIs**
 
