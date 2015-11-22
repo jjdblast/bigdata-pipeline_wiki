@@ -126,24 +126,21 @@ root@docker:~/pipeline# jps -l
 2556 io.confluent.kafkarest.Main
 ```
 
-Run the following to query with the Beeline Hive client 
+Login and Run the Following to Query with the Beeline Hive Client 
+
+* Note:  If you are outside of Docker, you need to use port `30000` instead of `10000` given the way we've mapped the Docker external-internal ports 
 ```
-root@docker$ beeline -u jdbc:hive2://127.0.0.1:10000 -n hiveuser -p ''
-0: jdbc:hive2://127.0.0.1:10000> SELECT id, gender FROM genders LIMIT 10;
-+-----+---------+
-| id  | gender  |
-+-----+---------+
-| 1   | F       |
-| 2   | F       |
-| 3   | U       |
-| 4   | F       |
-| 5   | F       |
-| 6   | F       |
-| 7   | F       |
-| 8   | M       |
-| 9   | M       |
-| 10  | M       |
-+-----+---------+
+root@docker:~/pipeline# beeline -u jdbc:hive2://127.0.0.1:10000 -n hiveuser -p ''
+Connecting to jdbc:hive2://127.0.0.1:10000
+jdbc:hive2://127.0.0.1:10000> SELECT gender, count(gender) as number_of_records FROM genders GROUP BY gender;
++---------+--------------------+--+
+| gender  | number_of_records  |
++---------+--------------------+--+
+| F       | 61365              |
+| M       | 76441              |
+| U       | 83164              |
++---------+--------------------+--+
+3 rows selected (0.881 seconds)
 ```
 
 * **Make sure that you STOP the Hive Thrift Server before continuing as this process occupies Spark CPU cores which may cause CPU starvation later in your exploration**:
