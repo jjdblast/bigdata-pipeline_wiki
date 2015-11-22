@@ -24,7 +24,8 @@ root@docker$ flux-rest-submit-sparkpi-job.sh
   "serverSparkVersion" : "1.5.1",
   "submissionId" : "driver-20151122184642-0000",
   "success" : true
-}```
+}
+```
 
 ### Spark Shell
 We've created a separate `flux-spark-shell.sh` script for the sole purpose of pre-configuring `--jars` and `--packages`.
