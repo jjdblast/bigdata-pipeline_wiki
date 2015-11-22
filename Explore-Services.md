@@ -28,8 +28,11 @@ root@docker$ flux-rest-submit-sparkpi-job.sh
 ```
 
 ### Spark Shell
-We've created a separate `flux-spark-shell.sh` script for the sole purpose of pre-configuring `--jars` and `--packages`.
-You can certainly use the regular `spark-shell.sh` that comes with Spark.  The $PATH env variable includes the Spark scripts.
+We've created a separate `flux-spark-shell.sh` script for the sole purpose of pre-configuring `--jars` and `--packages` - specifically for the MySQL JDBC Connector jar used to access the MySQL Hive Metastore.
+
+You can certainly use the regular `spark-shell.sh` that comes with Spark.  
+
+The $PATH env variable includes the regular Spark scripts.
 ```
 root@docker$ flux-spark-shell.sh
 ...
