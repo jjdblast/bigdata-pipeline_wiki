@@ -1,5 +1,7 @@
 [0. Architecture Overview](https://github.com/fluxcapacitor/pipeline/wiki/Architecture-Overview)
 
+***
+
 [1. Setup Docker](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Docker)
 
 [2. Start Docker](https://github.com/fluxcapacitor/pipeline/wiki/Start-Docker)
@@ -18,8 +20,12 @@
 
 [9. Monitor Metrics](https://github.com/fluxcapacitor/pipeline/wiki/Monitor-Metrics)
 
-[10. Troubleshoot Environment](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshoot-Environment)
+[10. Your Apps](https://github.com/fluxcapacitor/pipeline/wiki/Monitor-Metrics)
 
-[11. Stop Services](https://github.com/fluxcapacitor/pipeline/wiki/Stop-Services)
+***
 
-[12. Miscellaneous Useful Links](https://github.com/fluxcapacitor/pipeline/wiki/Miscellaneous-Useful-Links)
+[11. Troubleshoot Environment](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshoot-Environment)
+
+[12. Stop Services](https://github.com/fluxcapacitor/pipeline/wiki/Stop-Services)
+
+[13. Miscellaneous Useful Links](https://github.com/fluxcapacitor/pipeline/wiki/Miscellaneous-Useful-Links)
