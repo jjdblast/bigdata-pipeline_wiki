@@ -21,15 +21,16 @@
 
 ![Log Visualization with Kibana & Logstash](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-kibana.png)
 
-**Spark Admin UI**
+**Spark, Spark Streaming, and Spark SQL Admin UIs**
 
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-1.png)
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-2.png)
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-3.png)
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-4.png)
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-5.png)
+![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-6.png)
 
-**Ganglia System and JVM Metrics Monitoring UI**
+**Ganglia System and JVM Metrics Monitoring UIs**
 
 ![Ganglia Metrics UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-ganglia-1.png)
 ![Ganglia Metrics UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-ganglia-2.png)
