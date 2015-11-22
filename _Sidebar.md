@@ -3,7 +3,7 @@ Architecture Overiew
 [0. Architecture Overview](https://github.com/fluxcapacitor/pipeline/wiki/Architecture-Overview)
 
 ***
-Setup
+Environment Setup
 
 [1. Setup Docker](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Docker)
 
