@@ -1,5 +1,5 @@
 * [Custom Distributions](https://github.com/fluxcapacitor/pipeline/wiki/Custom-Distributions)
-* [Updating the Docker Image](https://github.com/fluxcapacitor/pipeline/wiki/Managing-the-Docker-Image)
+* [Updating the Docker Image](https://github.com/fluxcapacitor/pipeline/wiki/Updating-the-Docker-Image)
 * [Github Integration](https://github.com/fluxcapacitor/pipeline/wiki/Github-Integration)
 * [Ports and Networking](https://github.com/fluxcapacitor/pipeline/wiki/Ports-and-Networking)
 * [Setup from USB - Docker 1.7](https://github.com/fluxcapacitor/pipeline/wiki/Setup-from-USB-Docker-1.7)
