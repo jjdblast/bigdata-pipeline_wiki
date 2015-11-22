@@ -1,5 +1,5 @@
 ## End-to-End, Real-time, Advanced Analytics, Big Data Pipeline in a Box!
-### Follow Sidebar Steps to Setup Flux Capacitor --->
+### Follow Sidebar to Setup Flux Capacitor --->
 
 ### Architecture Overview
 ![Big Data Pipeline Overview](https://s3.amazonaws.com/fluxcapacitor.com/img/FluxCapacitorBigDataPipelineArchitectureOverview.png)
