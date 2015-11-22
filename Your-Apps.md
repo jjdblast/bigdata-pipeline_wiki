@@ -1,4 +1,4 @@
-## Sample Apps and Libarries
+## Sample Apps and Libraries
 
 * Flux Capacitor comes with many sample applications to help you get started.
 * The root of these samples is `$MYAPPS_HOME`.
@@ -15,6 +15,7 @@ nlp/        <-- Sample Spark and Stanford CoreNLP Text Analytics
 project/    <-- SBT-specific foldder (ignore for now)
 streaming/  <-- Sample Spark Streaming Apps using Kafka, Cassandra, ElasticSearch, Redis, Twitter Algebird
 tungsten/   <-- Sample Tungsten Scala Code to Demo Project Tungsten and Mechanical Sympathy 
+```
 
 ## Sample Notebooks
 * Flux Capacitor comes with many sample notebooks to help you get started.
