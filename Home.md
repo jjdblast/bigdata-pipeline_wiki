@@ -1,4 +1,5 @@
 # End-to-End, Real-time, Advanced Analytics, Big Data Pipeline in a Box!
+## Follow the Steps in the Sidebar to Setup Flux Capacitor in your Environment  --->
 ![Big Data Pipeline Overview](https://s3.amazonaws.com/fluxcapacitor.com/img/FluxCapacitorBigDataPipelineArchitectureOverview.png)
 ![Apache Spark](http://spark.apache.org/images/spark-logo.png) ![Redis](https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Redis_Logo.svg/200px-Redis_Logo.svg.png)
 ![Apache Cassandra](https://upload.wikimedia.org/wikipedia/commons/a/a0/Cassandra_logo.png)
