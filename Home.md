@@ -1,9 +1,6 @@
 ## End-to-End, Real-time, Advanced Analytics, Big Data Pipeline in a Box!
 ### Follow Sidebar to Setup Flux Capacitor --->
 
-### Architecture Overview
-![Big Data Pipeline Overview](https://s3.amazonaws.com/fluxcapacitor.com/img/FluxCapacitorBigDataPipelineArchitectureOverview.png)
-
 ### Screen Shots
 
 **Apache Zeppelin Notebooks**
@@ -26,9 +23,9 @@
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-1.png)
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-2.png)
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-3.png)
-![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-6.png)
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-4.png)
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-5.png)
+![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-6.png)
 
 **Ganglia System and JVM Metrics Monitoring UIs**
 
@@ -37,6 +34,9 @@
 ![Ganglia Metrics UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-ganglia-3.png)
 ![Ganglia Metrics UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-ganglia-4.png)
 ![Ganglia Metrics UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-ganglia-5.png)
+
+### Architecture Overview
+![Big Data Pipeline Overview](https://s3.amazonaws.com/fluxcapacitor.com/img/FluxCapacitorBigDataPipelineArchitectureOverview.png)
 
 ### Tools Overview
 ![Apache Spark](http://spark.apache.org/images/spark-logo.png) ![Redis](https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Redis_Logo.svg/200px-Redis_Logo.svg.png)
