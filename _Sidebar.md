@@ -22,7 +22,7 @@
 
 ***
 
-[10. App and Notebook Examples](https://github.com/fluxcapacitor/pipeline/wiki/App-and-Notebook-Examples)
+[10. App and Notebook Examples](https://github.com/fluxcapacitor/pipeline/wiki/Examples)
 
 ***
 
