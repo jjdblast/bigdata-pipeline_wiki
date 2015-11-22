@@ -20,6 +20,8 @@ tungsten/   <-- Sample Tungsten Scala Code to Demo Project Tungsten and Mechanic
 ## Sample Notebooks
 * Flux Capacitor comes with many sample notebooks to help you get started.
 * The root of these samples is `$NOTEBOOKS_HOME`.
+* This root folder has been mapped from the Docker Container (Guest) through to the Host filesystem using the `-v` VOLUME parameter on the `docker run` command.  
+This prevents data loss if the Docker Container crashes or exited without saving the files.
 * You can view these notebooks through Apache Zeppelin by navigating your browser to `http://127.0.0.1:38080`.
 ```
 root@docker:~# cd $NOTEBOOKS_HOME
