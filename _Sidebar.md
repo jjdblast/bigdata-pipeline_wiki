@@ -14,7 +14,7 @@
 
 [6. View Spark UI](https://github.com/fluxcapacitor/pipeline/wiki/View-Spark-UI)
 
-[7. Feed Data](https://github.com/fluxcapacitor/pipeline/wiki/Feed-Data)
+[7. Feed Demo Data](https://github.com/fluxcapacitor/pipeline/wiki/Feed-Demo-Data)
 
 [8. Analyze Data](https://github.com/fluxcapacitor/pipeline/wiki/Analyze-Data)
 
