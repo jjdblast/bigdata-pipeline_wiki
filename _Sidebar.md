@@ -1,4 +1,4 @@
-Architecture Overiew
+Architecture Overview
 
 [0. Architecture Overview](https://github.com/fluxcapacitor/pipeline/wiki/Architecture-Overview)
 
@@ -7,7 +7,7 @@ Environment Setup
 
 [1. Setup Docker Image](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Docker)
 
-[2. Start Docker Container](https://github.com/fluxcapacitor/pipeline/wiki/Start-Docker)
+[2. Start Docker Container](https://github.com/fluxcapacitor/pipeline/wiki/Start-Docker-Container)
 
 [3. Start Services](https://github.com/fluxcapacitor/pipeline/wiki/Start-Services)
 
