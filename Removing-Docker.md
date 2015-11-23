@@ -1,5 +1,3 @@
-## Removing Docker
-
 ### Stop Docker
 ```
 macosx-laptop$ docker stop
