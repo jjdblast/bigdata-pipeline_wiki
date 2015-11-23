@@ -1,4 +1,5 @@
 ### Apache Spark Master Admin Web UI (36060)
+* Admin UI of the single Master node in the Spark Cluster
 ```
 macosx-laptop$ open http://127.0.0.1:36060
 ```
