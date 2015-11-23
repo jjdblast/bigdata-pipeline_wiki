@@ -1,7 +1,7 @@
 # USB-based Installation
 **THIS ONLY APPLIES DURING A TRAINING CLASS WHERE YOU'VE BEEN GIVEN A USB!!**
 
-**OTHERWISE, FOLLOW [THESE](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Docker) INSTRUCTIONS.**
+**OTHERWISE, FOLLOW [THESE](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Docker-Image) INSTRUCTIONS.**
 
 # Installing Docker
 ## MacOS X or Windows 
