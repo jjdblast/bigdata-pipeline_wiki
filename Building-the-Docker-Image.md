@@ -1,4 +1,3 @@
-## Building the Docker Image
 * This will take about 15 mins to build - and lots of internet traffic - as dependent binaries and libraries are retrieved from the internet.
 * Run the `docker build` command from the directory where the `Dockerfile` lives (ie. ~/pipeline)
 
