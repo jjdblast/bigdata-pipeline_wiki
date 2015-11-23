@@ -120,5 +120,3 @@ local-macosx-or-linux$ docker load < ~/fluxcapacitor/pipeline/fluxcapacitor-pipe
 ```
 local-windows> docker load < %USERPROFILE%\fluxcapacitor\pipeline\fluxcapacitor-pipeline.tar
 ``` 
-
-### Start Docker [Here](https://github.com/fluxcapacitor/pipeline/wiki/Start-Docker)
