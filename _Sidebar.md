@@ -5,9 +5,9 @@ Architecture Overiew
 ***
 Environment Setup
 
-[1. Setup Docker](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Docker)
+[1. Setup Docker Image](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Docker)
 
-[2. Start Docker](https://github.com/fluxcapacitor/pipeline/wiki/Start-Docker)
+[2. Start Docker Container](https://github.com/fluxcapacitor/pipeline/wiki/Start-Docker)
 
 [3. Start Services](https://github.com/fluxcapacitor/pipeline/wiki/Start-Services)
 
@@ -41,7 +41,8 @@ Cleanup
 
 [12. Stop Services](https://github.com/fluxcapacitor/pipeline/wiki/Stop-Services)
 
+[13. Removing Docker](https://github.com/fluxcapacitor/pipeline/wiki/Removing-Docker)
 ***
 Misc
 
-[13. Miscellaneous Useful Links](https://github.com/fluxcapacitor/pipeline/wiki/Miscellaneous-Useful-Links)
+[14. Miscellaneous Links](https://github.com/fluxcapacitor/pipeline/wiki/Miscellaneous-Links)
