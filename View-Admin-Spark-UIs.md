@@ -6,7 +6,8 @@ macosx-laptop$ open http://127.0.0.1:36060
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-2.png)
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-9.png)
 
-### Apache Spark Worker Admin Web UI (36061)
+### Apache Spark Worker Admin Web UI (36061+)
+* If multiple Workers are actively running, the port will start at `36060` and +1 per active Worker
 ```
 macosx-laptop$ open http://127.0.0.1:36061
 ```
