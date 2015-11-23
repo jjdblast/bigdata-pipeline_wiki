@@ -1,3 +1,5 @@
+Follow the Steps Below to Setup Github Integration for your Customizations:
+
 ## Configure Git with your Email and Name
 ```
 git config --global user.email "chris@fregly.com"
