@@ -1,11 +1,24 @@
-## Removing boot2docker
+## Removing Docker
+
+### Stop Docker
+```
+macosx-laptop$ docker stop
+```
+
+### Stop boot2docker 
+* The following will stop the boot2docker VirtualBox VM docker daemon.
+```
+macosx-laptop$ boot2docker stop
+```
+
+### [Optional] Remove boot2docker 
+* You can also tear down boot2docker completely
+* This is very destructive and not recommended if you continue to explore this project 
+```
+maxosx-laptop$ boot2docker delete
+```
 ```
 #!/bin/bash
-
-# Stop boot2docker processes
-boot2docker stop
-boot2docker delete
-
 # Remove boot2docker executable
 sudo rm /usr/local/bin/boot2docker
 
