@@ -42,7 +42,11 @@ Cleanup
 [12. Stop Services](https://github.com/fluxcapacitor/pipeline/wiki/Stop-Services)
 
 [13. Removing Docker](https://github.com/fluxcapacitor/pipeline/wiki/Removing-Docker)
+
 ***
 Misc
 
-[14. Miscellaneous Links](https://github.com/fluxcapacitor/pipeline/wiki/Miscellaneous-Links)
+[14. Github Integration](https://github.com/fluxcapacitor/pipeline/wiki/Github-Integration)
+
+[15. Custom Distributions](https://github.com/fluxcapacitor/pipeline/wiki/Custom-Distributions)
+
