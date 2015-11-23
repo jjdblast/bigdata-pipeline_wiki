@@ -13,8 +13,7 @@ macosx-laptop$ open http://127.0.0.1:36061
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-7.png)
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-8.png)
 
-### Apache Spark Application (Driver) Admin Web UI (34040-3404n; where n=num active jobs)
-* Jobs, Stages, Tasks
+### Apache Spark Application (Driver) Admin Web UI (34040+)
 * Environment Variables
 * Event Timeline
 * Streaming Tab
