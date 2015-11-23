@@ -16,7 +16,9 @@ macosx-laptop$ open http://127.0.0.1:36061
 ### Apache Spark Application (Driver) Admin Web UI (34040+)
 * Environment Variables
 * Event Timeline
-* Streaming Tab
+* DAG Visualizations
+* System, JVM, and Spark Metrics
+* SQL & Streaming Tab
 * If multiple jobs are actively running, the port will start at `34040` and +1 per active job
 * The links from the Spark Master and Worker Admin UIs are broken, so you may need to manually navigate your browser to the following URL:
 ```
