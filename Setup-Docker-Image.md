@@ -15,8 +15,13 @@
 
 ```
 local-macosx-or-windows$ boot2docker --memory=8192 --disksize=20000 --lowerip=127.0.0.1 --upperip=127.0.0.1 init
+```
 
-local-macosx-or-windows$ vboxmanage modifyvm "boot2docker-vm" --natpf1 "docker,tcp,127.0.0.1,2376,,2376"
+* Setup the NAT routes
+```
+local-macosx-or-windows$ 
+#!/bin/bash
+vboxmanage modifyvm "boot2docker-vm" --natpf1 "docker,tcp,127.0.0.1,2376,,2376"
 vboxmanage modifyvm "boot2docker-vm" --natpf1 "apache,tcp,127.0.0.1,30080,,30080"
 vboxmanage modifyvm "boot2docker-vm" --natpf1 "34042,tcp,127.0.0.1,34042,,34042"
 vboxmanage modifyvm "boot2docker-vm" --natpf1 "39160,tcp,127.0.0.1,39160,,39160"
@@ -45,7 +50,10 @@ vboxmanage modifyvm "boot2docker-vm" --natpf1 "38888,tcp,127.0.0.1,38888,,38888"
 vboxmanage modifyvm "boot2docker-vm" --natpf1 "34321,tcp,127.0.0.1,34321,,34321"
 vboxmanage modifyvm "boot2docker-vm" --natpf1 "38099,tcp,127.0.0.1,38099,,38099"
 vboxmanage modifyvm "boot2docker-vm" --natpf1 "37777,tcp,127.0.0.1,37777,,37777"
+```
 
+* Bring boot2docker back up
+```
 local-macosx-or-windows$ boot2docker up
 local-macosx-or-windows$ docker version
 ```
