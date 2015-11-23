@@ -1,7 +1,0 @@
-* [Custom Distributions](https://github.com/fluxcapacitor/pipeline/wiki/Custom-Distributions)
-* [Updating the Docker Image](https://github.com/fluxcapacitor/pipeline/wiki/Updating-the-Docker-Image)
-* [Github Integration](https://github.com/fluxcapacitor/pipeline/wiki/Github-Integration)
-* [Ports and Networking](https://github.com/fluxcapacitor/pipeline/wiki/Ports-and-Networking)
-* [Setup from USB - Docker 1.7](https://github.com/fluxcapacitor/pipeline/wiki/Setup-from-USB-Docker-1.7)
-* [Docker Volumes and Persistent Paths](https://github.com/fluxcapacitor/pipeline/wiki/Docker-Volumes)
-* [Removing boot2docker and VirtualBox](https://github.com/fluxcapacitor/pipeline/wiki/Removing-boot2docker-and-VirtualBox)
