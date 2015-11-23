@@ -31,22 +31,21 @@ Examples
 
 [10. Examples](https://github.com/fluxcapacitor/pipeline/wiki/Examples)
 
+[11. Github Integration](https://github.com/fluxcapacitor/pipeline/wiki/Github-Integration)
+
 ***
 Troubleshooting
 
-[11. Troubleshoot Environment](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshoot-Environment)
+[12. Troubleshoot Environment](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshoot-Environment)
 
 ***
 Cleanup
 
-[12. Stop Services](https://github.com/fluxcapacitor/pipeline/wiki/Stop-Services)
+[13. Stop Services](https://github.com/fluxcapacitor/pipeline/wiki/Stop-Services)
 
-[13. Removing Docker](https://github.com/fluxcapacitor/pipeline/wiki/Removing-Docker)
+[14. Removing Docker](https://github.com/fluxcapacitor/pipeline/wiki/Removing-Docker)
 
 ***
 Misc
 
-[14. Github Integration](https://github.com/fluxcapacitor/pipeline/wiki/Github-Integration)
-
 [15. Custom Distributions](https://github.com/fluxcapacitor/pipeline/wiki/Custom-Distributions)
-
