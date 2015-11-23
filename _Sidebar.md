@@ -49,3 +49,5 @@ Cleanup
 Misc
 
 [15. Custom Distributions](https://github.com/fluxcapacitor/pipeline/wiki/Custom-Distributions)
+
+[16. Build Docker Image](https://github.com/fluxcapacitor/pipeline/wiki/Building-Docker-Image)
