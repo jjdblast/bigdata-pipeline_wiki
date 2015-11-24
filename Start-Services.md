@@ -7,7 +7,7 @@
 **--> Don't forget the `source` below! <--**
 
 ```
-root@docker$ cd ~/pipeline/bin && source flux-one-time-setup.sh
+root@docker$ cd ~/pipeline/bin && source one-time-setup.sh
 ```
 
 **--> ^^ Don't forget the `source` above! ^^ <--**
