@@ -12,10 +12,6 @@ docker rm `docker ps -aq`
 docker rmi `docker images -q`
 ```
 
-This solution has be proposed by GitHub user @crosbymichael in this issue
-
-
-
 ### Your kernel does not support swap limit capabilities, memory limited without swap
 * Just ignore this error
 
@@ -56,6 +52,14 @@ java.nio.channels.ClosedChannelException
 ```
 * You likely have not started your services using `start-all-services.sh`.
 * Or there was an issue starting your Spark Master and Worker services. 
+
+### Caused by: org.datanucleus.exceptions.NucleusException: Attempt to invoke the "DBCP" plugin 
+
+```
+Caused by: org.datanucleus.exceptions.NucleusException: Attempt to invoke the "DBCP" plugin to create a ConnectionPool gave an error : The specified datastore driver ("com.mysql.jdbc.Driver") was not found in the CLASSPATH. Please check your CLASSPATH specification, and the name of the driver.
+	...
+Caused by: org.datanucleus.store.rdbms.connectionpool.DatastoreDriverNotFoundException: The specified datastore driver ("com.mysql.jdbc.Driver") was not found in the CLASSPATH. Please check your CLASSPATH specification, and the name of the driver.
+```
 
 ### Caused by: java.io.FileNotFoundException: datasets/dating/ratings.csv (No such file or directory)
 ```
