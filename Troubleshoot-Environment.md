@@ -1,12 +1,20 @@
 ## Common Errors
 
 ### Running out of disk space
-* It's likely that you have old, unused containers from each `docker run` command
+* It's likely that you have old, unused containers or images lying around
 * These don't get garbage collected automatically as Docker assumes you may want to start them again
-* Use the following command to clean them out
+* Use the following command to clean out the Docker containers
 ```
 docker rm `docker ps -aq`
 ```
+* Use the following command to clean out the Docker images
+```
+docker rmi `docker images -q`
+```
+
+This solution has be proposed by GitHub user @crosbymichael in this issue
+
+
 
 ### Your kernel does not support swap limit capabilities, memory limited without swap
 * Just ignore this error
