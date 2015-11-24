@@ -16,7 +16,7 @@ Pi is roughly 3.14134  <-------   The value of Pi based on Monte Carlo Simulatio
 
 ### Spark Job Submit REST API
 ```
-root@docker$ flux-rest-submit-sparkpi-job.sh
+root@docker$ rest-submit-sparkpi-job.sh
 ...
 {
   "action" : "CreateSubmissionResponse",
@@ -28,13 +28,13 @@ root@docker$ flux-rest-submit-sparkpi-job.sh
 ```
 
 ### Spark Shell
-We've created a separate `flux-spark-shell.sh` script for the sole purpose of pre-configuring `--jars` and `--packages` - specifically for the MySQL JDBC Connector jar used to access the MySQL Hive Metastore.
+We've created a separate `spark-shell.sh` script for the sole purpose of pre-configuring `--jars` and `--packages` - specifically for the MySQL JDBC Connector jar used to access the MySQL Hive Metastore.
 
 You can certainly use the regular `spark-shell.sh` that comes with Spark.  
 
 The $PATH env variable includes the regular Spark scripts.
 ```
-root@docker$ flux-spark-shell.sh
+root@docker$ spark-shell.sh
 ...
 spark-sql> show tables;
 ...
@@ -46,10 +46,10 @@ Time taken: 2.179 seconds, Fetched 2 row(s)
 ```
 
 ### Spark SQL Shell
-We've created a separate `flux-spark-sql.sh` script for the sole purpose of pre-configuring `--jars` and `--packages`.
+We've created a separate `spark-sql.sh` script for the sole purpose of pre-configuring `--jars` and `--packages`.
 You can certainly use the regular `spark-sql.sh` that comes with Spark.  The $PATH env variable includes the Spark scripts.
 ```
-root@docker$ flux-spark-sql.sh
+root@docker$ spark-sql.sh
 ...
 spark-sql> show tables;
 15/11/19 13:22:44 INFO DAGScheduler: Job 0 finished: processCmd at CliDriver.java:376, took 1.626844 s
@@ -120,7 +120,7 @@ PONG
 ### JDBC ODBC Hive ThriftServer
 Start the [Hive ThriftServer](https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients) Service
 ```
-root@docker$ cd ~/pipeline && ./flux-start-hive-thriftserver.sh
+root@docker$ start-hive-thriftserver.sh
 ```
 Verify that the following 2 new processes have been added:
 
@@ -170,7 +170,7 @@ Beeline version 1.5.1 by Apache Hive
 
 * **Make sure that you STOP the Hive Thrift Server before continuing as this process occupies Spark CPU cores which may cause CPU starvation later in your exploration**:
 ```
-root@docker$ cd ~/pipeline && ./flux-stop-sparksubmitted-job.sh
+root@docker$ stop-sparksubmitted-job.sh
 ```
 * Verify that the 2 processes identified above for the Hive ThriftServer have been removed with `jps -l`.
 ```
