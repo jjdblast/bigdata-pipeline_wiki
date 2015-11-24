@@ -10,7 +10,9 @@ ratings
 ```
 root@docker$ spark-submit --class org.apache.spark.examples.SparkPi --master spark://127.0.0.1:7077 $SPARK_EXAMPLES_JAR 10 
 15/11/19 13:21:34 INFO DAGScheduler: Job 0 finished: reduce at SparkPi.scala:36, took 3.483164 s
-Pi is roughly 3.14134  <-------   The value of Pi based on Monte Carlo Simulation of 10 iterations
+...
+Pi is roughly 3.14134   <-------   The value of Pi based on Monte Carlo Simulation of 10 iterations
+...
 15/11/19 13:21:34 INFO SparkUI: Stopped Spark web UI at http://172.17.0.2:4040
 ```
 
