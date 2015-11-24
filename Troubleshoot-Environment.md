@@ -54,13 +54,18 @@ java.nio.channels.ClosedChannelException
 * Or there was an issue starting your Spark Master and Worker services. 
 
 ### Caused by: org.datanucleus.exceptions.NucleusException: Attempt to invoke the "DBCP" plugin 
-
 ```
 Caused by: org.datanucleus.exceptions.NucleusException: Attempt to invoke the "DBCP" plugin to create a ConnectionPool gave an error : The specified datastore driver ("com.mysql.jdbc.Driver") was not found in the CLASSPATH. Please check your CLASSPATH specification, and the name of the driver.
 	...
 Caused by: org.datanucleus.store.rdbms.connectionpool.DatastoreDriverNotFoundException: The specified datastore driver ("com.mysql.jdbc.Driver") was not found in the CLASSPATH. Please check your CLASSPATH specification, and the name of the driver.
 ```
-
+* You are likely not specifying the JDBC connector on the System Classpath
+* There should be a `$MYSQL_CONNECTOR` ENV variable set.  
+* This ENV variable lets you easily specify the JDBC connector with your `spark-submit`, `spark-sql`, or `spark-shell` commands as follows:
+```
+spark-sql --jars $MYSQL_CONNECTOR_JAR
+```
+ 
 ### Caused by: java.io.FileNotFoundException: datasets/dating/ratings.csv (No such file or directory)
 ```
 Caused by: java.io.FileNotFoundException: datasets/dating/ratings.csv (No such file or directory)
