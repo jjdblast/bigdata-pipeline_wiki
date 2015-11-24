@@ -76,7 +76,7 @@ Caused by: java.io.FileNotFoundException: datasets/dating/ratings.csv (No such f
 	at scala.io.Source$.fromFile(Source.scala:53)
         ...
 ```
-* You likely have not run `config-before-starting.sh` as the required datasets have not been uncompressed.
+* You likely have not run `config-services-before-starting.sh` as the required datasets have not been uncompressed.
 
 ### Failed to initialize machine "boot2docker-vm": exit status 1
 * Run the following to repair your busted boot2docker:
