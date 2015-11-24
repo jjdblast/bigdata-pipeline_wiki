@@ -4,7 +4,7 @@
 ### Screen Shots
 
 **Apache Zeppelin Notebooks**
-![Apache Zeppelin Notebooks](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-zeppelin.png)
+![Apache Zeppelin Notebooks](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-zeppelin-1.png)
 
 **Tableau Integration**
 
