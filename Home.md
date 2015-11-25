@@ -1,4 +1,5 @@
-# Docker-based, End-to-End, Real-time, Advanced Analytics, Big Data Pipeline in a Box!
+# Docker-based, End-to-End, Big Data Reference Pipeline!
+## Real-time, Advanced Analytics, Machine Learning, Graph Processing, Text/NLP Analytics
 ## Follow Sidebar to Setup Flux Capacitor --->
 
 ## Screen Shots
