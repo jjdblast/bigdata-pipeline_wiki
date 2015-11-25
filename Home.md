@@ -1,6 +1,6 @@
 # Docker-based, End-to-End, Big Data Reference Pipeline!
 ## Real-time, Advanced Analytics, Machine Learning, Graph Processing, Text/NLP Analytics
-## Follow Sidebar to Setup Whole Environment   --->
+## Follow Sidebar to Setup The Environment   --->
 
 ## Screen Shots
 
