@@ -46,10 +46,13 @@ Setup the NAT routes
 local-macosx$ docker-setup-nat-rules.sh
 ```
 
+Start boot2docker
+```
 local-macosx$ boot2docker up
 local-macosx$ eval "$(boot2docker shellinit)"
 local-macosx$ docker version
 ```
+
 **Troubleshooting**
 
 If you see an error similar to one of the following:
