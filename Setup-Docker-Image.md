@@ -19,7 +19,7 @@ local-macosx-or-windows$ boot2docker --memory=8192 --disksize=20000 --lowerip=12
 
 * Setup the NAT routes
 ```
-TODO:  flux-docker-setup-nat-rules.sh
+local-macosx$ docker-setup-nat-rules.sh
 ```
 * Bring boot2docker back up
 ```
