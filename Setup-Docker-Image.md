@@ -1,5 +1,7 @@
 # Installing Docker
-* We have not yet upgraded to Docker 1.8.  
+**YOU MUST BE USING DOCKER 1.7.1 OR THIS WILL NOT WORK.**
+**ALSO, PLEASE KILL ANY VPN DAEMON PROCESSES OR THIS WILL LIKELY NOT WORK.**
+* We have not yet upgraded to Docker 1.8.
 * boot2docker + Docker 1.7 works for now, so we're sticking with it in the short-term.
 
 **If you have been provided a USB with Docker and the Docker image, please follow [these](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Docker-Image-from-USB) instructions.**
