@@ -4,6 +4,10 @@
 **OTHERWISE, FOLLOW [THESE](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Docker-Image) INSTRUCTIONS.**
 
 # Installing Docker
+**YOU MUST BE USING DOCKER 1.7.1 OR THIS WILL NOT WORK.**
+
+**ALSO, PLEASE KILL ANY VPN DAEMON PROCESSES OR THIS WILL LIKELY NOT WORK.**
+
 ## MacOS X or Windows 
 ### Copy USB `fluxcapacitor` folder to Laptop Home Directory 
 * MacOS X, Linux:  `~`
