@@ -1,7 +1,4 @@
-[Home](https://github.com/fluxcapacitor/pipeline/wiki/)
-
-***
-Architecture Overview
+[Wiki Home](https://github.com/fluxcapacitor/pipeline/wiki/)
 
 [Architecture Overview](https://github.com/fluxcapacitor/pipeline/wiki/Architecture-Overview)
 
