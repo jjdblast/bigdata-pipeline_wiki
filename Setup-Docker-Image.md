@@ -60,7 +60,7 @@ local-linux$ sudo usermod -aG docker ubuntu
 
 **At this point, you should have installed everything needed to run Docker**
 
-* Next, we'll load and run the Pipeline Docker Image
+* Next, we'll load and run the Pipeline Docker Image from the DockerHub Registry
 
 ### MacOS X or Windows or Linux
 ```
