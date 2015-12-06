@@ -41,3 +41,8 @@ $ docker save --output="fluxcapacitor-pipeline.tar" fluxcapacitor/pipeline
 ```
 $ docker export --output="fluxcapacitor-pipeline.tar" fluxcapacitor/pipeline
 ```
+
+## Import a Docker Image or Container from a .tar
+```
+$ docker load < fluxcapacitor-pipeline.tar
+``` 
