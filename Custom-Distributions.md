@@ -2,9 +2,9 @@
 * Not really *custom*, just with many options turned on
 * This section helps remind us how we built specific versions of our tools (Spark, Zeppelin, Spark Notebook, etc)
 
-## Spark 1.5.1
-* Tachyon 7.1
-* Hadoop 2.6
+## Spark 1.6.x
+* Tachyon 8.1
+* Hadoop 2.6.0
 * Hive
 * Hive ThriftServer
 * Ganglia
