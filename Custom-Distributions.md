@@ -12,6 +12,9 @@
 
 ### Build Command (Very Long...)
 ```
+git clone -b branch-1.6 --single-branch git@github.com:apache/spark.git branch-1.6
+```
+```
 export MAVEN_OPTS="-Xmx16g -XX:MaxPermSize=512M -XX:ReservedCodeCacheSize=512m" && ./make-distribution.sh --name fluxcapacitor --tgz --with-tachyon --skip-java-test -Phadoop-2.6 -Dhadoop.version=2.6.0 -Phive -Phive-thriftserver -Pspark-ganglia-lgpl -Pkinesis-asl -DskipTests
 ```
 
