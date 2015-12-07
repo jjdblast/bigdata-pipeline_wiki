@@ -3,7 +3,7 @@
 * This section helps remind us how we built specific versions of our tools (Spark, Zeppelin, Spark Notebook, etc)
 
 ## Spark 1.6.x
-* Tachyon 8.1
+* Tachyon 8.2
 * Hadoop 2.6.0
 * Hive
 * Hive ThriftServer
@@ -17,16 +17,16 @@ export MAVEN_OPTS="-Xmx16g -XX:MaxPermSize=512M -XX:ReservedCodeCacheSize=512m" 
 
 ## Zeppelin 0.6.0
 * Hadoop 2.6.0
-* Spark 1.5.1
+* Spark 1.6.x
 
 ### Build Command
 ```
-mvn clean package install -Pspark-1.5.1 -Dhadoop.version=2.6.0 -Phadoop-2.6 -DskipTests
+mvn clean package install -Pspark-1.6.0 -Dhadoop.version=2.6.0 -Phadoop-2.6 -DskipTests
 ```
 
 ## Spark-Notebook 0.6.0
 * Tachyon ?
-* Hadoop 2.6
+* Hadoop 2.6.0
 * Hive
 * Parquet
 * (Whatever else Andy did)
