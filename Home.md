@@ -1,5 +1,5 @@
 # Docker-based, End-to-End, Big Data Reference Pipeline!
-## Real-time, Advanced Analytics, Machine Learning, Graph Processing, Text/NLP Analytics
+## Real-time, Advanced Analytics, Machine Learning, Streaming, Graph Processing, Text/NLP Analytics
 ## Follow [Wiki](https://github.com/fluxcapacitor/pipeline/wiki) Sidebar to Setup Environment -->
 
 ## Screen Shots
