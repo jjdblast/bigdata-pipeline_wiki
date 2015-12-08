@@ -38,6 +38,6 @@ It is required that your private key files are NOT accessible by others.
 This private key will be ignored.
 ```
 ```
-local-laptop$ ssh-add ~/.ssh/github_rsa
+ssh-add ~/.ssh/github_rsa
 Enter passphrase for /root/.ssh/github_rsa: <your-passphrase>
 ```
