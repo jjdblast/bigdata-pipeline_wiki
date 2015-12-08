@@ -53,12 +53,12 @@ root@docker$ cd $MYAPPS_HOME/streaming && ./start-streaming-ratings-topk-items-b
 ### Spark Streaming 1.6 TTL Sessionization Feature (TODO)
  
 ## ML Model Training (Large Batch Interval)
-### Incremental Model Training on New Data
+### Incremental ALS Model Training on New Data
 ```
 root@docker$ cd $MYAPPS_HOME/streaming && ./start-streaming-ratings-train-als-incremental.sh
 ...Starting Spark Streaming App...
 ```
-### Batch Training on All Data
+### Batch ALS Model Training on All Data
 ```
 root@docker$ cd $MYAPPS_HOME/streaming && ./start-streaming-ratings-train-als-batch.sh
 ...Starting Spark Streaming App...
