@@ -1,44 +1,56 @@
 # Spark Streaming Sample Apps
 Start various Spark Streaming Apps that each receive data from the same `ratings` Kafka topic, process and enrich the raw data, and write the data to the respective data store.
 
-## Store the Raw Data (Small Batch Interval)
+## Store Raw Data (Small Batch Interval)
 ### Cassandra
 ```
-root@docker$ cd $MYAPPS_HOME/streaming && ./flux-start-streaming-ratings-cassandra.sh
+root@docker$ cd $MYAPPS_HOME/streaming && ./start-streaming-ratings-cassandra.sh
 ...Starting Spark Streaming App...
 ```
-
+### ElasticSearch  
+```
+root@docker$ cd $MYAPPS_HOME/streaming && ./start-streaming-ratings-elasticsearch.sh
+...Starting Spark Streaming App...
+```
 ### Parquet (File-based, Parquet Columnar File Format)
 ```
-root@docker$ cd $MYAPPS_HOME/streaming && ./flux-start-streaming-ratings-parquet.sh
+root@docker$ cd $MYAPPS_HOME/streaming && ./start-streaming-ratings-parquet.sh
+...Starting Spark Streaming App...
+```
+### Redis (Exact and Approximate HyperLogLog) 
+```
+root@docker$ cd $MYAPPS_HOME/streaming && ./start-streaming-ratings-redis.sh
+...Starting Spark Streaming App...
+```
+```
+root@docker$ cd $MYAPPS_HOME/streaming && ./start-streaming-ratings-redis-hll.sh
+...Starting Spark Streaming App...
+```
+### In-Memory Twitter Algebird (Approximate HyperLogLog and CountMin Sketch) 
+```
+root@docker$ cd $MYAPPS_HOME/streaming && ./start-streaming-ratings-algebird-hll.sh
+...Starting Spark Streaming App...
+```
+```
+root@docker$ cd $MYAPPS_HOME/streaming && ./start-streaming-ratings-algebird-cms.sh
 ...Starting Spark Streaming App...
 ```
 
-## Redis (Exact and Approximate HyperLogLog Distinct Counts) 
+## Aggregate and Store Data (Medium Batch Interval)
+### Top K Items by Rating Count
 ```
-root@docker$ cd $MYAPPS_HOME/streaming && ./flux-start-streaming-ratings-redis.sh
+root@docker$ cd $MYAPPS_HOME/streaming && ./start-streaming-ratings-topk-items-by-rating-count.sh
 ...Starting Spark Streaming App...
 ```
 
-### Twitter Algebird (Approximate HyperLogLog Distinct Counts and CountMin Sketch Counts) 
+## Machine Learning Model Training (Large Batch Interval)
+### Incremental Model Training on New Data
 ```
-root@docker$ cd $MYAPPS_HOME/streaming && ./flux-start-streaming-ratings-algebird.sh
+root@docker$ cd $MYAPPS_HOME/streaming && ./start-streaming-ratings-train-als-incremental.sh
 ...Starting Spark Streaming App...
 ```
-
-## Some ETL and Enrichment, then Store the Data (Medium Batch Interval)
-### Join Ratings with Genders
+### Batch Training on All Data
 ```
-TODO
-```
-
-## Train Collaborative Filtering Recommendations Machine Learning Model (Large Batch Interval)
-### Batch Train on All Data including All Previous Data
-```
-TODO
-```
-
-### Incrementally Train and Combine New Data into Existing Model
-```
-TODO
+root@docker$ cd $MYAPPS_HOME/streaming && ./start-streaming-ratings-train-als-batch.sh
+...Starting Spark Streaming App...
 ```
