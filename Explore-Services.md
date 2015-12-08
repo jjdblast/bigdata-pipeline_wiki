@@ -193,52 +193,60 @@ root@docker:~/pipeline# jps -l
 
 ## Test Services Outside Docker Container
 **DO NOT TYPE `exit` AS THIS WILL STOP YOUR CONTAINER**
-
-* Launch a new `macosx-laptop$` terminal
-* Run the commands below to verify your setup 
-
-Make sure the boot2docker IP (and therefore your Docker Container) is `127.0.0.1`.  Otherwise, use the ip returned here. 
+* Instead, use the combo of `CTRL-P CTRL-Q` to exit the Docker Container
+* Launch a new terminal
+* If using MacOSX or Windows, make sure the boot2docker IP is `127.0.0.1`  
 ```
-macosx-laptop$ boot2docker ip
+macosx-or-windows-laptop$ boot2docker ip
 127.0.0.1
 ```
+* Use `curl`, `wget`, or your browser to verify the following URLs
 
 ### Apache2 HTTP Server
 ```
-macosx-laptop$ open http://127.0.0.1:30080
+http://127.0.0.1:30080
 ```
 
 ### Kafka REST API Proxy
 ```
-macosx-laptop$ open http://127.0.0.1:34042/topics
+http://127.0.0.1:34042/topics
+```
+
+### Redis REST API Proxy (Webdis)
+```
+http://127.0.0.1/redis/PING
+{"PING":[true,"PONG"]}
 ```
 
 ### Apache Zeppelin Web UI
 ```
-macosx-laptop$ open http://127.0.0.1:38080
+http://127.0.0.1:38080
 ```
 
 ### Apache Spark Master Admin Web UI
+* Note that the links *within* this page may be wonky due to absolute paths and incorrectly-assumed IP addresses within the UI itself.
+* You'll need to replace the broken links with `127.0.0.1` and make sure all ports have `3` prepended 
+(ie. `127.0.0.1:34040`, etc) 
 ```
-macosx-laptop$ open http://127.0.0.1:36060
+http://127.0.0.1:36060
 ```
 
 ### Apache Spark Worker Admin Web UI
 ```
-macosx-laptop$ open http://127.0.0.1:36061
+http://127.0.0.1:36061
 ```
 
 ### ElasticSearch REST API
 ```
-macosx-laptop$ open http://127.0.0.1:39200/_cat/indices?v
+http://127.0.0.1:39200/_cat/indices?v
 ```
 
 ### Kibana and Logstash
 ```
-macosx-laptop$ open http://127.0.0.1:35601
+http://127.0.0.1:35601
 ```
 
 ### Ganglia
 ```
-macosx-laptop$ open http://127.0.0.1:30080/ganglia
+http://127.0.0.1:30080/ganglia
 ```
