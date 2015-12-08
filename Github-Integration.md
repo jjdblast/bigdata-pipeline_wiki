@@ -39,5 +39,5 @@ This private key will be ignored.
 ```
 ```
 ssh-add ~/.ssh/github_rsa
-Enter passphrase for /root/.ssh/github_rsa: <your-passphrase>
+Enter passphrase for ~/.ssh/github_rsa: <your-passphrase>
 ```
