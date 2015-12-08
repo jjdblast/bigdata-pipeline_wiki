@@ -1,5 +1,4 @@
-# Spark Streaming Sample Apps
-Start various Spark Streaming Apps that each receive data from the same `ratings` Kafka topic, process and enrich the raw data, and write the data to the respective data store.
+Start various Spark Streaming Apps that each receive data from the same `ratings` Kafka topic, process and enrich the raw data, and write the data to various data stores.
 
 ## Store Raw Data (Small Batch Interval)
 ### Cassandra
@@ -42,7 +41,9 @@ root@docker$ cd $MYAPPS_HOME/streaming && ./start-streaming-ratings-algebird-cms
 root@docker$ cd $MYAPPS_HOME/streaming && ./start-streaming-ratings-topk-items-by-rating-count.sh
 ...Starting Spark Streaming App...
 ```
-
+### Hourly Rollups (TODO)
+### Spark Streaming 1.6 TTL Sessionization Feature (TODO)
+ 
 ## Machine Learning Model Training (Large Batch Interval)
 ### Incremental Model Training on New Data
 ```
