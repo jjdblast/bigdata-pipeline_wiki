@@ -1,4 +1,9 @@
-Start various Spark Streaming Apps that each receive data from the same `ratings` Kafka topic, process and enrich the raw data, and write the data to various data stores.
+Start various Spark Streaming Apps
+* Receive data from the `item_ratings` Kafka topic
+* Process, aggregate, transform, and enrich the raw data
+* Write the output to various data stores
+
+Note:  The examples below are are broken down by Small, Medium, and Large Batch Intervals
 
 ## Store Raw Data (Small Batch Interval)
 ### Cassandra
@@ -44,7 +49,7 @@ root@docker$ cd $MYAPPS_HOME/streaming && ./start-streaming-ratings-topk-items-b
 ### Hourly Rollups (TODO)
 ### Spark Streaming 1.6 TTL Sessionization Feature (TODO)
  
-## Machine Learning Model Training (Large Batch Interval)
+## ML Model Training (Large Batch Interval)
 ### Incremental Model Training on New Data
 ```
 root@docker$ cd $MYAPPS_HOME/streaming && ./start-streaming-ratings-train-als-incremental.sh
