@@ -2,10 +2,11 @@ Start various Spark Streaming Apps
 * Receive data from the `item_ratings` Kafka topic
 * Process, aggregate, transform, and enrich the raw data
 * Write the output to various data stores
+
 Broken down into the following Spark Streaming Batch Intervals:
 * Small (<1s)
 * Medium (1-30s)
-* Large (>30s
+* Large (>30s)
 
 ## Store Raw Data (Small Batch Interval)
 ### Cassandra
