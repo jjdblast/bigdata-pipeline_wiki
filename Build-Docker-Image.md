@@ -10,7 +10,7 @@ $ cd ~/pipeline
 $ docker build -t fluxcapacitor/pipeline .
 ```
 Notes
-* If you run out of memory or disk space while building or running the image, you need to re-initialize boot2docker with larger `--memory` and `--disksize` per [Setup Docker Image](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Docker-Image).
+* If you run out of memory or disk space while building or running the image, you need to re-initialize boot2docker with larger `--memory` and `--disksize` per the [Setup Docker Image](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Docker-Image#macos-x-and-windows) instructions.
 
 ## Tag and Push the Docker Image to the DockerHub Registry
 [TODO] Tagging
