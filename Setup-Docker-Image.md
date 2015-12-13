@@ -15,14 +15,12 @@
 * Initialize and start the boot2docker VM that contains the Docker daemon as follows:
 
 **If you are planning to run a large-memory or large-disk Docker Container, you may want to bump up `--memory` and `--disksize`**
-
 ```
-local-macosx-or-windows$ boot2docker --memory=8192 --disksize=20000 --lowerip=127.0.0.1 --upperip=127.0.0.1 init
+local-macosx-or-windows$ boot2docker --memory=8192 --disksize=50000 --lowerip=127.0.0.1 --upperip=127.0.0.1 init
 ```
-
 * Setup the NAT routes
 ```
-local-macosx$ docker-setup-nat-rules.sh
+local-macosx$ <fluxcapacitor-install-dir>/bin/docker-setup-nat-rules.sh
 ```
 * Bring boot2docker back up
 ```
