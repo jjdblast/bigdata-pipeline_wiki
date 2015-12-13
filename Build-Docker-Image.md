@@ -21,7 +21,7 @@ An error occurred trying to connect: Post https://192.168.59.103:2376/v1.19/buil
 ```
 local-macosx-or-windows$ boot2docker stop
 local-macosx-or-windows$ boot2docker destroy
-local-macosx-or-windows$ boot2docker --memory=16384 --disksize=30000 init
+local-macosx-or-windows$ boot2docker --memory=16384 --disksize=100000 init
 local-macosx-or-windows$ boot2docker up
 ```
 
