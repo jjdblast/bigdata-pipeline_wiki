@@ -10,8 +10,7 @@ $ cd ~/pipeline
 $ docker build -t fluxcapacitor/pipeline .
 ```
 Notes
-* If you run out of memory or disk space while building or running the image, you need to re-initialize boot2docker with larger `--memory` and `--disksize` per [Setup Docker Image](Setup Docker Image).
-```
+* If you run out of memory or disk space while building or running the image, you need to re-initialize boot2docker with larger `--memory` and `--disksize` per [Setup Docker Image](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Docker-Image).
 
 ## Tag and Push the Docker Image to the DockerHub Registry
 [TODO] Tagging
@@ -20,17 +19,16 @@ For now, just overwrite the `latest` tag with the following
 $ docker push fluxcapacitor/pipeline
 ```
 
-## Export the Docker Image as a .tar
+## Miscellaneous Docker Image and Container Stuff
+### Export the Docker Image as a .tar
 ```
 $ docker save --output="fluxcapacitor-pipeline.tar" fluxcapacitor/pipeline
 ```
-
-## Export a Docker Container as a .tar
+### Export a Docker Container as a .tar
 ```
 $ docker export --output="fluxcapacitor-pipeline.tar" fluxcapacitor/pipeline
 ```
-
-## Import a Docker Image or Container from a .tar
+### Import a Docker Image or Container from a .tar
 ```
 $ docker load < fluxcapacitor-pipeline.tar
-``` 
+```
