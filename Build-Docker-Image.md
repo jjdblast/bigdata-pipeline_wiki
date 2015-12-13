@@ -19,16 +19,16 @@ For now, just overwrite the `latest` tag with the following
 $ docker push fluxcapacitor/pipeline
 ```
 
-## Miscellaneous Docker Image and Container Stuff
-### Export the Docker Image as a .tar
+## Exporting and Importing Docker Images and Containers
+### Export Docker Image as .tar
 ```
 $ docker save --output="fluxcapacitor-pipeline.tar" fluxcapacitor/pipeline
 ```
-### Export a Docker Container as a .tar
+### Export Docker Container as .tar
 ```
 $ docker export --output="fluxcapacitor-pipeline.tar" fluxcapacitor/pipeline
 ```
-### Import a Docker Image or Container from a .tar
+### Import Docker Image or Container from a .tar
 ```
 $ docker load < fluxcapacitor-pipeline.tar
 ```
