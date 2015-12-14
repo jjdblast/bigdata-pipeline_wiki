@@ -19,12 +19,15 @@ WARNING: Your kernel does not support swap limit capabilities, memory limited wi
 ```
 
 ### MacOS X or Linux
+Make sure to replace `<pipeline-home>` with the correct directory where your pipeline code lives
 ```
-local-macosx-or-linux$ docker run -it --privileged --name pipeline -h docker -m 8g -v ~/pipeline/notebooks:/root/pipeline/notebooks -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:38080 -p 38081:38081 -p 36060:6060 -p 36061:6061 -p 36062:6062 -p 36063:6063 -p 36064:6064 -p 36065:6065 -p 32181:2181 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -p 36066:6066 -p 39000:9000 -p 39999:19999 -p 36081:6081 -p 35601:5601 -p 37979:7979 -p 38989:8989 -p 34040:4040 -p 36379:6379 -p 38888:8888 -p 34321:54321 -p 38099:8099 -p 37777:7777 -p 37379:7379 fluxcapacitor/pipeline bash
+local-macosx-or-linux$ <pipeline-home>/bin/run-docker-container.sh
 ```
 
 ### Windows
-* Make sure to replace `###pipelinedirectory###` with the correct directory
+Make sure to replace `###pipelinedirectory###` with the correct directory where your pipeline code lives **in 2 places**:
+* Inside the run-docker-container.bat script
+* In the command below:
 ```
-local-windows$ docker run -it --privileged --name pipeline -h docker -m 8g -v //c/###pipelinedirectory###/notebooks:/root/pipeline/notebooks -p 30080:80 -p 34042:4042 -p 39160:9160 -p 39042:9042 -p 39200:9200 -p 37077:7077 -p 38080:38080 -p 38081:38081 -p 36060:6060  -p 36061:6061 -p 36062:6062 -p 36063:6063 -p 36064:6064 -p 36065:6065 -p 32181:2181 -p 38090:8090 -p 30000:10000 -p 30070:50070 -p 30090:50090 -p 39092:9092 -p 36066:6066 -p 39000:9000 -p 39999:19999 -p 36081:6081 -p 35601:5601 -p 37979:7979 -p 38989:8989 -p 34040:4040 -p 36379:6379 -p 38888:8888 -p 34321:54321 -p 38099:8099 -p 37777:7777 -p 37379:7379 fluxcapacitor/pipeline bash
+local-windows$ ###pipelinedirectory###/bin/run-docker-container.bat
 ```
