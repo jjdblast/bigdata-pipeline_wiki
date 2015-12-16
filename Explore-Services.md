@@ -31,10 +31,12 @@ root@docker$ rest-submit-sparkpi-job.sh
 
 ### Spark Shell
 We've created a separate `pipeline-spark-shell.sh` script for the sole purpose of pre-configuring `--jars` and `--packages` to include things like the following:
+
 * MySQL JDBC Connector jar used to access the MySQL Hive Metastore 
 * Any custom file readers like [spark-csv](https://github.com/databricks/spark-csv)
 
 Notes:  
+
 * You can certainly use the regular `spark-shell.sh` that comes with Spark.  
 * The $PATH env variable includes the regular Spark scripts.
 ```
@@ -51,10 +53,12 @@ Time taken: 2.179 seconds, Fetched 2 row(s)
 
 ### Spark SQL Shell
 We've created a separate `pipeline-spark-sql.sh` script for the sole purpose of pre-configuring `--jars` and `--packages` to include things like the following:
+
 * MySQL JDBC Connector jar used to access the MySQL Hive Metastore 
 * Any custom file readers like [spark-csv](https://github.com/databricks/spark-csv)
 
 Notes: 
+
 * You can certainly use the regular `spark-sql.sh` that comes with Spark.  
 * The $PATH env variable includes the regular Spark scripts.
 ```
