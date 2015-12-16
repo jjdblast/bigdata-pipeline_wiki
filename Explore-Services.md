@@ -159,7 +159,7 @@ Connected to: Spark SQL (version 1.5.1)
 Driver: Spark Project Core (version 1.5.1)
 Transaction isolation: TRANSACTION_REPEATABLE_READ
 Beeline version 1.5.1 by Apache Hive
-0: jdbc:hive2://127.0.0.1:10000> SELECT gender, count(gender) as number_of_records FROM genders GROUP BY gender;
+0: jdbc:hive2://127.0.0.1:10000> SELECT gender, count(gender) as number_of_records FROM dating_genders GROUP BY gender;
 +---------+--------------------+--+
 | gender  | number_of_records  |
 +---------+--------------------+--+
