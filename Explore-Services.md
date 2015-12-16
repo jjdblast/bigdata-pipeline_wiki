@@ -62,14 +62,10 @@ Notes:
 * You can certainly use the regular `spark-sql.sh` that comes with Spark.  
 * The $PATH env variable includes the regular Spark scripts.
 ```
-root@docker$ pipeline-spark-sql.sh
+root@docker$ pipeline-spark-shell.sh
 ...
-spark-sql> show tables;
-15/11/19 13:22:44 INFO DAGScheduler: Job 0 finished: processCmd at CliDriver.java:376, took 1.626844 s
-datings_genders	false   <------   datings_genders table registered with Hive (isTemporary == false)
-datings_ratings	false   <------   datings_ratings table registered with Hive (isTemporary == false)
-Time taken: 2.179 seconds, Fetched 2 row(s)
-15/11/19 13:22:44 INFO CliDriver: Time taken: 2.179 seconds, Fetched 2 row(s)
+scala> 1 + 1
+res0: Int = 2
 ```
 
 ### Cassandra
