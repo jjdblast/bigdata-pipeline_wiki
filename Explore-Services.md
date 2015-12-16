@@ -45,8 +45,8 @@ root@docker$ pipeline-spark-shell.sh
 spark-sql> show tables;
 ...
 15/11/19 13:22:44 INFO DAGScheduler: Job 0 finished: processCmd at CliDriver.java:376, took 1.626844 s
-genders	false   <------   genders table registered with Hive (isTemporary == false)
-ratings	false   <------   ratings table registered with Hive (isTemporary == false)
+datings_genders	false   <------   datings_genders table registered with Hive (isTemporary == false)
+datings_ratings	false   <------   datings_ratings table registered with Hive (isTemporary == false)
 Time taken: 2.179 seconds, Fetched 2 row(s)
 15/11/19 13:22:44 INFO CliDriver: Time taken: 2.179 seconds, Fetched 2 row(s)
 ```
@@ -66,8 +66,8 @@ root@docker$ pipeline-spark-sql.sh
 ...
 spark-sql> show tables;
 15/11/19 13:22:44 INFO DAGScheduler: Job 0 finished: processCmd at CliDriver.java:376, took 1.626844 s
-genders	false   <------   genders table registered with Hive (isTemporary == false)
-ratings	false   <------   ratings table registered with Hive (isTemporary == false)
+datings_genders	false   <------   datings_genders table registered with Hive (isTemporary == false)
+datings_ratings	false   <------   datings_ratings table registered with Hive (isTemporary == false)
 Time taken: 2.179 seconds, Fetched 2 row(s)
 15/11/19 13:22:44 INFO CliDriver: Time taken: 2.179 seconds, Fetched 2 row(s)
 ```
@@ -85,7 +85,7 @@ cqlsh:fluxcapacitor> select fromuserid, touserid, rating, batchtime from ratings
 (0 rows)
 
 cqlsh> describe fluxcapacitor;
-CREATE KEYSPACE fluxcapacitor WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}  AND durable_writes = true;
+CREATE KEYSPACE fluxcapacitor WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'} AND durable_writes = true;
 ...
 
 cqlsh:fluxcapacitor> exit;
@@ -170,7 +170,7 @@ Connected to: Spark SQL (version 1.5.1)
 Driver: Spark Project Core (version 1.5.1)
 Transaction isolation: TRANSACTION_REPEATABLE_READ
 Beeline version 1.5.1 by Apache Hive
-0: jdbc:hive2://127.0.0.1:10000> SELECT gender, count(gender) as number_of_records FROM dating_genders GROUP BY gender;
+0: jdbc:hive2://127.0.0.1:10000> SELECT gender, count(gender) as num_records_per_gender FROM dating_genders GROUP BY gender;
 +---------+--------------------+--+
 | gender  | number_of_records  |
 +---------+--------------------+--+
