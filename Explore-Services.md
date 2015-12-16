@@ -30,13 +30,15 @@ root@docker$ rest-submit-sparkpi-job.sh
 ```
 
 ### Spark Shell
-We've created a separate `spark-shell.sh` script for the sole purpose of pre-configuring `--jars` and `--packages` - specifically for the MySQL JDBC Connector jar used to access the MySQL Hive Metastore.
+We've created a separate `pipeline-spark-shell.sh` script for the sole purpose of pre-configuring `--jars` and `--packages` to include things like the following:
+* MySQL JDBC Connector jar used to access the MySQL Hive Metastore 
+* Any custom file readers like [spark-csv](https://github.com/databricks/spark-csv)
 
-You can certainly use the regular `spark-shell.sh` that comes with Spark.  
-
-The $PATH env variable includes the regular Spark scripts.
+Notes:  
+* You can certainly use the regular `spark-shell.sh` that comes with Spark.  
+* The $PATH env variable includes the regular Spark scripts.
 ```
-root@docker$ spark-shell.sh
+root@docker$ pipeline-spark-shell.sh
 ...
 spark-sql> show tables;
 ...
@@ -48,10 +50,15 @@ Time taken: 2.179 seconds, Fetched 2 row(s)
 ```
 
 ### Spark SQL Shell
-We've created a separate `spark-sql.sh` script for the sole purpose of pre-configuring `--jars` and `--packages`.
-You can certainly use the regular `spark-sql.sh` that comes with Spark.  The $PATH env variable includes the Spark scripts.
+We've created a separate `pipeline-spark-sql.sh` script for the sole purpose of pre-configuring `--jars` and `--packages` to include things like the following:
+* MySQL JDBC Connector jar used to access the MySQL Hive Metastore 
+* Any custom file readers like [spark-csv](https://github.com/databricks/spark-csv)
+
+Notes: 
+* You can certainly use the regular `spark-sql.sh` that comes with Spark.  
+* The $PATH env variable includes the regular Spark scripts.
 ```
-root@docker$ spark-sql.sh
+root@docker$ pipeline-spark-sql.sh
 ...
 spark-sql> show tables;
 15/11/19 13:22:44 INFO DAGScheduler: Job 0 finished: processCmd at CliDriver.java:376, took 1.626844 s
