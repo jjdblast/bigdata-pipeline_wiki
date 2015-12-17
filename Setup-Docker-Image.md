@@ -20,16 +20,18 @@ local-macosx-or-windows$ boot2docker --memory=8192 --disksize=50000 --lowerip=12
 ```
 * Setup the NAT routes between boot2docker (VirtualBox VM) and local host per [this](https://github.com/docker/docker/issues/4007#issuecomment-34573044) link.
 ```
-local-macosx$ <pipeline-directory>/bin/docker-setup-nat-rules.sh
-...Removing existing NAT configuration for boot2docker...
-...Please ignore any errors that you see here...
-VBoxManage: error: Code NS_ERROR_INVALID_ARG (0x80070057) - Invalid argument value (extended info not available)
-...
-...Updating NAT configuration for boot2docker...
+local-macosx$ ~/pipeline/bin/docker-setup-nat-rules.sh
+...Updating NAT routes between boot2docker (VirtualBox VM) and localhost...
 ```
-* Bring boot2docker back up
+TODO:  @Windows Users - please document what works for you in this case.  Thanks!
 ```
-local-macosx-or-windows$ boot2docker up
+local-windows$ //c/###pipelinedirectory###/bin/docker-setup-nat-rules.sh
+...Updating NAT routes between boot2docker (VirtualBox VM) and localhost...
+```
+
+* Start boot2docker and test if Docker is working properly
+```
+local-macosx-or-windows$ boot2docker start
 local-macosx-or-windows$ docker version
 ```
 
