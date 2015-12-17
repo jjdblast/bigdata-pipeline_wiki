@@ -14,7 +14,7 @@ Details are [here](http://spark.apache.org/docs/latest/building-spark.html).
 
 ### Build Command (Very Long...)
 ```
-git clone -b branch-1.5.2 --single-branch git@github.com:apache/spark.git branch-1.5.2
+git clone -b branch-1.5 --single-branch git@github.com:apache/spark.git branch-1.5
 ```
 ```
 export MAVEN_OPTS="-Xmx16g -XX:MaxPermSize=512M -XX:ReservedCodeCacheSize=512m" && ./make-distribution.sh --name fluxcapacitor --tgz --with-tachyon --skip-java-test -Phadoop-2.6 -Dhadoop.version=2.6.0 -Phive -Phive-thriftserver -Pspark-ganglia-lgpl -Pkinesis-asl -DskipTests
@@ -27,6 +27,9 @@ export MAVEN_OPTS="-Xmx16g -XX:MaxPermSize=512M -XX:ReservedCodeCacheSize=512m" 
 Details are [here](https://github.com/apache/incubator-zeppelin).
 
 ### Build Command
+```
+git clone -b master --single-branch git@github.com:apache/incubator-zeppelin.git master
+```
 ```
 mvn clean package install -Pspark-1.5 -Pspark.version=1.5.2 -Phadoop-2.6 -Phadooop.version=2.6.0 -Pcassandra-spark-1.5 -DskipTests
 ```
