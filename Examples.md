@@ -9,12 +9,12 @@
 ```
 root@docker$ cd $MYAPPS_HOME
 root@docker$ ll
-datasource/ <-- Example DataSource like spark-csv, spark-avro, etc
+core/ <-- Example DataSource like spark-csv, spark-avro, etc
 feeder/     <-- Demo Feeder App feeds Ratings from CSV to Kafka
-nlp/        <-- Example Spark and Stanford CoreNLP Text Analytics
-project/    <-- SBT-specific foldder (ignore for now)
+ml/        <-- Example Spark and Stanford CoreNLP Text Analytics
+sql/    <-- SBT-specific foldder (ignore for now)
 streaming/  <-- Example Spark Streaming Apps using Kafka, Cassandra, ElasticSearch, Redis, Twitter Algebird
-tungsten/   <-- Example Tungsten Scala Code to Demo Project Tungsten and Mechanical Sympathy 
+<-- Example Tungsten Scala Code to Demo Project Tungsten and Mechanical Sympathy 
 ```
 
 ## Example Notebooks
