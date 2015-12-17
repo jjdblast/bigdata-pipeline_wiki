@@ -37,18 +37,12 @@ We've created a separate `pipeline-spark-shell.sh` script for the sole purpose o
 
 Notes:  
 
-* You can certainly use the regular `spark-shell.sh` that comes with Spark.  
-* The $PATH env variable includes the regular Spark scripts.
+* You can certainly use the regular `spark-sql.sh` that comes with Spark, but this will not have the `--jars` and `--packages` configured as described above.
 ```
 root@docker$ pipeline-spark-shell.sh
 ...
-spark-sql> show tables;
-...
-15/11/19 13:22:44 INFO DAGScheduler: Job 0 finished: processCmd at CliDriver.java:376, took 1.626844 s
-datings_genders	false   <------   datings_genders table registered with Hive (isTemporary == false)
-datings_ratings	false   <------   datings_ratings table registered with Hive (isTemporary == false)
-Time taken: 2.179 seconds, Fetched 2 row(s)
-15/11/19 13:22:44 INFO CliDriver: Time taken: 2.179 seconds, Fetched 2 row(s)
+scala> 1 + 1
+res0: Int = 2
 ```
 
 ### Spark SQL Shell
@@ -59,13 +53,14 @@ We've created a separate `pipeline-spark-sql.sh` script for the sole purpose of 
 
 Notes: 
 
-* You can certainly use the regular `spark-sql.sh` that comes with Spark.  
-* The $PATH env variable includes the regular Spark scripts.
+* You can certainly use the regular `spark-sql.sh` that comes with Spark, but this will not have the `--jars` and `--packages` configured as described above.
 ```
-root@docker$ pipeline-spark-shell.sh
-...
-scala> 1 + 1
-res0: Int = 2
+spark-sql> show tables;
+15/11/19 13:22:44 INFO DAGScheduler: Job 0 finished: processCmd at CliDriver.java:376, took 1.626844 s
+datings_genders	false   <------   datings_genders table registered with Hive (isTemporary == false)
+datings_ratings	false   <------   datings_ratings table registered with Hive (isTemporary == false)
+Time taken: 2.179 seconds, Fetched 2 row(s)
+15/11/19 13:22:44 INFO CliDriver: Time taken: 2.179 seconds, Fetched 2 row(s)
 ```
 
 ### Cassandra
@@ -225,9 +220,14 @@ http://127.0.0.1/redis/PING
 {"PING":[true,"PONG"]}
 ```
 
-### Apache Zeppelin Web UI
+### Apache Zeppelin Notebook Web UI
 ```
 http://127.0.0.1:38080
+```
+
+### Jupyter Notebook Web UI
+```
+http://127.0.0.1:38754
 ```
 
 ### Apache Spark Master Admin Web UI
