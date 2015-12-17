@@ -23,7 +23,6 @@ streaming/  <-- Example Spark Streaming Apps using Kafka, Cassandra, ElasticSear
 ```
 root@docker:~# cd $NOTEBOOKS_HOME
 root@docker:~/pipeline/notebooks# ll
-spark-notebook/ <-- Example Spark-Notebook Notebooks
 zeppelin/       <-- Example Apache Zeppelin Notebooks
 jupyter/        <-- Example iPython/Jupyter Notebooks
 ```
