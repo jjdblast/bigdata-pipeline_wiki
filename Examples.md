@@ -9,22 +9,17 @@
 ```
 root@docker$ cd $MYAPPS_HOME
 root@docker$ ll
-core/ <-- Example DataSource like spark-csv, spark-avro, etc
+core/       <-- Example Project Tungsten/Mechanical Sympathy Low-Level CPU Cache, Thread, Sort, and Linux Perf Examples
 feeder/     <-- Demo Feeder App feeds Ratings from CSV to Kafka
-ml/        <-- Example Spark and Stanford CoreNLP Text Analytics
-sql/    <-- SBT-specific foldder (ignore for now)
+ml/         <-- Example Spark ML Machine Learning, GraphX Graph Processing, and Stanford CoreNLP Text Analytics
+sql/        <-- Example DataSource like spark-csv, spark-avro, etc
 streaming/  <-- Example Spark Streaming Apps using Kafka, Cassandra, ElasticSearch, Redis, Twitter Algebird
-<-- Example Tungsten Scala Code to Demo Project Tungsten and Mechanical Sympathy 
 ```
 
 ## Example Notebooks
 * Flux Capacitor comes with many example notebooks to help you get started.
 * You are encouraged to start with one of these examples when building your own notebooks
 * The root of these examples is `$NOTEBOOKS_HOME`.
-* This root folder has been mapped from the Docker Container (Guest) through to the Host filesystem using the `-v` VOLUME parameter on the `docker run` command.  
-This prevents data loss if the Docker Container crashes or exited without saving the files.
-* You can view these notebooks through Apache Zeppelin by navigating your browser to `http://127.0.0.1:38080`.
-* Below is a description of each of the paths within `$NOTEBOOKS_HOME`
 ```
 root@docker:~# cd $NOTEBOOKS_HOME
 root@docker:~/pipeline/notebooks# ll
@@ -32,3 +27,8 @@ spark-notebook/ <-- Example Spark-Notebook Notebooks
 zeppelin/       <-- Example Apache Zeppelin Notebooks
 jupyter/        <-- Example iPython/Jupyter Notebooks
 ```
+* This root folder has been mapped from the Docker Container (Guest) through to the Host filesystem using the `-v` VOLUME parameter on the `docker run` command.  
+* This prevents data loss if the Docker Container crashes or exited without saving the files.
+* You can view these notebooks through Apache Zeppelin by navigating your browser to `http://127.0.0.1:38080`.
+* You can view these notebooks through Apache Jupyter by navigating your browser to `http://127.0.0.1:37777`.
+* Below is a description of each of the paths within `$NOTEBOOKS_HOME`
