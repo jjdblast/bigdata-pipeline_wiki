@@ -18,9 +18,9 @@
 ```
 local-macosx-or-windows$ boot2docker --memory=8192 --disksize=50000 --lowerip=127.0.0.1 --upperip=127.0.0.1 init
 ```
-* Setup the NAT routes
+* Setup the NAT routes between boot2docker (VirtualBox VM) and local host per [this](https://github.com/docker/docker/issues/4007#issuecomment-34573044) link.
 ```
-local-macosx$ <fluxcapacitor-install-dir>/bin/docker-setup-nat-rules.sh
+local-macosx$ <pipeline-directory>/bin/docker-setup-nat-rules.sh
 ...Removing existing NAT configuration for boot2docker...
 ...Please ignore any errors that you see here...
 VBoxManage: error: Code NS_ERROR_INVALID_ARG (0x80070057) - Invalid argument value (extended info not available)
@@ -38,13 +38,12 @@ local-macosx-or-windows$ docker version
 If you see an error similar to one of the following:
 ```
 Cannot connect to the Docker daemon. Is 'docker -d' running on this host?
-```
-```
+...
 An error occurred trying to connect: Post https://127.0.0.1:2376/v1.19/images/load: dial tcp 127.0.0.1:2376: i/o timeout
 ```
-There is likely a firewall (VPN) preventing the connection to Docker.
-
-Try shutting down the VPN and restarting your system with a clean start (and no VPN).
+* There is likely a firewall (VPN) preventing the connection to Docker.
+* Try shutting down the VPN and restarting your system with a clean start (and no VPN).
+* Make sure you've restarted boot2docker (`stop` and `up`) after setting up the NAT routes above. 
 
 ### Linux
 * Run the Docker installation script downloaded from `get.docker.com`
