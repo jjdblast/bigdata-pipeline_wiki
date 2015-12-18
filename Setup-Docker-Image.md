@@ -18,8 +18,13 @@
 ```
 local-macosx-or-windows$ boot2docker --memory=8192 --disksize=50000 --lowerip=127.0.0.1 --upperip=127.0.0.1 init
 ```
-* Setup the NAT routes between boot2docker (VirtualBox VM) and local host per [this](https://github.com/docker/docker/issues/4007#issuecomment-34573044) link.
+* Setup the NAT routes between boot2docker (VirtualBox VM) and local host per [this]
+(https://github.com/docker/docker/issues/4007#issuecomment-34573044) link.
 ```
+add one more 
+VBoxManage modifyvm "boot2docker-vm" --natpf1 "tcp-port2376,tcp,,2376,,2376";
+VBoxManage modifyvm "boot2docker-vm" --natpf1 "udp-port2376,udp,,2376,,2376";
+
 local-macosx$ ~/pipeline/bin/docker-setup-nat-rules.sh
 ...Updating NAT routes between boot2docker (VirtualBox VM) and localhost...
 ```
@@ -31,6 +36,7 @@ local-windows$ //c/###pipelinedirectory###/bin/docker-setup-nat-rules.sh
 
 * Start boot2docker and test if Docker is working properly
 ```
+
 local-macosx-or-windows$ boot2docker start
 local-macosx-or-windows$ docker version
 ```
