@@ -60,6 +60,7 @@ root@docker$ pipeline-pyspark.sh
 >>> 1 + 1
 2
 ```
+* Hit `Ctrl-D` to exit
 
 ### Spark SQL Shell
 We've created a separate `pipeline-spark-sql.sh` script for the sole purpose of pre-configuring `--jars` and `--packages` to include things like the following:
