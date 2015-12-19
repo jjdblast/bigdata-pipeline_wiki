@@ -138,6 +138,7 @@ root@docker$ redis-cli
 127.0.0.1:6379> ping
 PONG
 ```
+
 ### JDBC ODBC Hive ThriftServer
 Start the [Hive ThriftServer](https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients) Service
 ```
