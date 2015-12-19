@@ -234,7 +234,7 @@ http://127.0.0.1:34042/topics
 
 ### Redis REST API Proxy (Webdis)
 ```
-http://127.0.0.1/redis/PING
+http://127.0.0.1:30080/redis/PING
 {"PING":[true,"PONG"]}
 ```
 
