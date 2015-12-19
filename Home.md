@@ -5,23 +5,22 @@
 ### Apache Zeppelin Notebooks
 ![Apache Zeppelin Notebooks](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-zeppelin-1.png)
 
+### Jupyter/iPython Notebooks
+![Jupyter/iPython Notebooks](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-jupyter.png)
+
 ### Apache NiFi Flows
 ![Apache NiFi Flows](https://s3.amazonaws.com/fluxcapacitor.com/img/nifi-flow.png)
 
 ### Tableau Integration
-
 ![Tableau Integration](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-tableau.png)
 
 ### Beeline Command-line Hive Client
-
 ![Beeline Command-line Hive Client](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-beeline.png)
 
 ### Log Visualization with Kibana & Logstash
-
 ![Log Visualization with Kibana & Logstash](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-kibana.png)
 
 ### Spark, Spark Streaming, and Spark SQL Admin UIs
-
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-1.png)
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-2.png)
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-3.png)
@@ -30,7 +29,6 @@
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-6.png)
 
 ### Ganglia System and JVM Metrics Monitoring UIs
-
 ![Ganglia Metrics UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-ganglia-1.png)
 ![Ganglia Metrics UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-ganglia-2.png)
 ![Ganglia Metrics UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-ganglia-3.png)
