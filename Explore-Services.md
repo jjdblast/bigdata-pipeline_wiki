@@ -45,6 +45,22 @@ scala> 1 + 1
 res0: Int = 2
 ```
 
+### PySpark Shell
+We've created a separate `pipeline-pyspark.sh` script for the sole purpose of pre-configuring `--jars` and `--packages` to include things like the following:
+
+* MySQL JDBC Connector jar used to access the MySQL Hive Metastore 
+* Any custom file readers like [spark-csv](https://github.com/databricks/spark-csv)
+
+Notes:  
+
+* You can certainly use the regular `pyspark.sh` that comes with Spark, but this will not have the `--jars` and `--packages` configured as described above.
+```
+root@docker$ pipeline-pyspark.sh
+...
+>>> 1 + 1
+2
+```
+
 ### Spark SQL Shell
 We've created a separate `pipeline-spark-sql.sh` script for the sole purpose of pre-configuring `--jars` and `--packages` to include things like the following:
 
