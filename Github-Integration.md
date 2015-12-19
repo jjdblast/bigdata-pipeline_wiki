@@ -8,6 +8,7 @@ git config --global user.name "<your-name-in-quotes>"
 
 ## Update the Remote Origin URL
 ```
+cd $PIPELINE_HOME
 git remote set-url origin git@github.com:fluxcapacitor/pipeline.git
 ```
 
