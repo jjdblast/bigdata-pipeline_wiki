@@ -6,7 +6,7 @@
 ![Apache Zeppelin Notebooks](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-zeppelin-1.png)
 
 ### Apache NiFi Flows
-![Apache NiFi Flows](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-nifi-flow.png)
+![Apache NiFi Flows](https://s3.amazonaws.com/fluxcapacitor.com/img/nifi-flow.png)
 
 ### Tableau Integration
 
