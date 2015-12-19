@@ -7,7 +7,7 @@
 **--> Don't forget the `source` below! <--**
 
 ```
-root@docker$ cd ~/pipeline/bin && source one-time-setup.sh
+root@docker$ cd ~/pipeline/bin && source SOURCEME_FIRST.sh
 ```
 
 **--> ^^ Don't forget the `source` above! ^^ <--**
