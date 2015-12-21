@@ -2,14 +2,14 @@
 * Not really *custom*, just with many options turned on
 * This section helps remind us how we built specific versions of our tools (Spark, Zeppelin, etc)
 
-## Spark 1.5.x
-* Tachyon 0.7.1
-* Hadoop 2.6.0
+## Spark
+* Tachyon
+* Hadoop 
 * Hive
 * Hive ThriftServer
 * Ganglia
 * Kinesis
-* netlib-java
+* netlib-java (Java Wrapper around optimized Fortran BLAS Linear Algebra libs)
 
 Details are [here](http://spark.apache.org/docs/latest/building-spark.html).
 
