@@ -9,7 +9,7 @@
 ```
 root@docker$ cd $MYAPPS_HOME
 root@docker$ ll
-core/       <-- Example Project Tungsten/Mechanical Sympathy Low-Level CPU Cache, Thread, Sort, and Linux Perf Examples
+[core](http://advancedspark.com)/       <-- Example Project Tungsten/Mechanical Sympathy Low-Level CPU Cache, Thread, Sort, and Linux Perf Examples
 feeder/     <-- Demo Feeder App feeds Ratings from CSV to Kafka
 ml/         <-- Example Spark ML Machine Learning, GraphX Graph Processing, and Stanford CoreNLP Text Analytics
 sql/        <-- Example DataSource like spark-csv, spark-avro, etc
