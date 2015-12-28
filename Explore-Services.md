@@ -203,6 +203,8 @@ Beeline version 1.5.1 by Apache Hive
 3 rows selected (0.881 seconds)
 ```
 
+![Apache Zeppelin Notebooks](https://s3.amazonaws.com/fluxcapacitor.com/img/zeppelin-hive-thriftserver.png)
+
 * **Make sure that you STOP the Hive Thrift Server before continuing as this process occupies Spark CPU cores which may cause CPU starvation later in your exploration**:
 ```
 root@docker$ stop-sparksubmitted-job.sh
