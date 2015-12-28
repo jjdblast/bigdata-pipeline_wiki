@@ -238,7 +238,7 @@ http://127.0.0.1:30080/redis/PING
 {"PING":[true,"PONG"]}
 ```
 
-### Apache Zeppelin Notebook Web UI
+### Zeppelin Notebook Web UI
 ```
 http://127.0.0.1:38080
 ```
@@ -248,7 +248,7 @@ http://127.0.0.1:38080
 http://127.0.0.1:38754
 ```
 
-### Apache Spark Master Admin Web UI
+### Spark Master Admin Web UI
 * Note that the links *within* this page may be wonky due to absolute paths and incorrectly-assumed IP addresses within the UI itself.
 * You'll need to replace the broken links with `127.0.0.1` and make sure all ports have `3` prepended 
 (ie. `127.0.0.1:34040`, etc) 
@@ -256,7 +256,12 @@ http://127.0.0.1:38754
 http://127.0.0.1:36060
 ```
 
-### Apache Spark Worker Admin Web UI
+### Spark History Server UI
+```
+http://127.0.0.1:35050
+```
+
+### Spark Worker Admin Web UI
 ```
 http://127.0.0.1:36061
 ```
