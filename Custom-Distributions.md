@@ -17,6 +17,7 @@ Details are [here](http://spark.apache.org/docs/latest/building-spark.html).
 ```
 git clone -b branch-1.6 --single-branch git@github.com:apache/spark.git branch-1.6
 ```
+* Make sure you have [install R](https://www.digitalocean.com/community/tutorials/how-to-set-up-r-on-ubuntu-14-04) before running the following command
 ```
 export MAVEN_OPTS="-Xmx16g -XX:MaxPermSize=512M -XX:ReservedCodeCacheSize=512m" && ./make-distribution.sh --name fluxcapacitor --tgz --with-tachyon --skip-java-test -Phadoop-2.6 -Dhadoop.version=2.6.0 -Psparkr -Phive -Phive-thriftserver -Pspark-ganglia-lgpl -Pkinesis-asl -Pnetlib-lgpl -DskipTests
 ```
