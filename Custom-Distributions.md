@@ -33,6 +33,8 @@ Details are [here](https://github.com/apache/incubator-zeppelin).
 ```
 git clone -b master --single-branch git@github.com:apache/incubator-zeppelin.git master
 ```
+
 ```
-mvn clean package install -Pspark-1.5 -Phadoop-2.6 -Pcassandra-spark-1.5 -Dhadoop.version=2.6.0 -Dspark.version=1.5.2 -DskipTests -Drat.skip=true
+#-Pspark-1.6 -Phadoop-2.6 -Pcassandra-spark-1.5 -Dhadoop.version=2.6.0 -Dspark.version=1.5.2 
+mvn clean package -Pbuild-distr -Ppyspark -DskipTests -Drat.skip=true
 ```
