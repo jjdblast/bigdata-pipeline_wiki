@@ -19,7 +19,7 @@ git clone --branch 'v1.6.0' --single-branch git@github.com:apache/spark.git v1.6
 ```
 Make sure you have [install R](https://www.digitalocean.com/community/tutorials/how-to-set-up-r-on-ubuntu-14-04) before running the following command:
 ```
-export MAVEN_OPTS="-Xmx8g -XX:ReservedCodeCacheSize=512m" && ./make-distribution.sh --name fluxcapacitor --tgz --with-tachyon --skip-java-test -Phadoop-2.6 -Dhadoop.version=2.6.0 -Psparkr -Phive -Phive-thriftserver -Pspark-ganglia-lgpl -Pnetlib-lgpl -DskipTests
+export MAVEN_OPTS="-Xmx8g -XX:ReservedCodeCacheSize=512m" && ./make-distribution.sh --name fluxcapacitor --tgz --with-tachyon --skip-java-test -Phadoop-2.6 -Dhadoop.version=2.6.0 -Psparkr -Phive -Phive-thriftserver -Pspark-ganglia-lgpl -Pnetlib-lgpl -DskipTests -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true
 ```
 
 ## Zeppelin Master
@@ -27,12 +27,13 @@ export MAVEN_OPTS="-Xmx8g -XX:ReservedCodeCacheSize=512m" && ./make-distribution
 Details are [here](https://github.com/apache/incubator-zeppelin).
 
 ### Build Command
+Clone the repo as follows:
+
 ```
 git clone -b master --single-branch git@github.com:apache/incubator-zeppelin.git master
 ```
-```
-# We are not passing these params at build time because we're configuring them through conf/zeppelin-env.sh
-#   -Pspark-1.6 -Phadoop-2.6 -Dspark.version=1.6.0 -Dhadoop.version=2.6.0
 
-mvn clean package -Pbuild-distr -Ppyspark -DskipTests -Drat.skip=true
+Build the distribution
+```
+mvn clean package -Pbuild-distr -Ppyspark -DskipTests -Drat.skip=true -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true
 ```
