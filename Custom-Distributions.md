@@ -8,8 +8,7 @@
 * Hive
 * Hive ThriftServer
 * Ganglia
-* Kinesis
-* netlib-java (Java Wrapper around optimized Fortran BLAS Linear Algebra libs)
+* netlib-java (Java wrapper around Fortran BLAS libs)
 
 Details are [here](http://spark.apache.org/docs/latest/building-spark.html).
 
