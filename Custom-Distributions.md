@@ -23,8 +23,6 @@ export MAVEN_OPTS="-Xmx8g -XX:ReservedCodeCacheSize=512m" && ./make-distribution
 ```
 
 ## Zeppelin Master
-* Hadoop 2.6.0 (Set this insize zeppelin-env.sh)
-* Spark 1.6.. (Set this version inside zeppelin-env.sh)
 
 Details are [here](https://github.com/apache/incubator-zeppelin).
 
@@ -33,8 +31,8 @@ Details are [here](https://github.com/apache/incubator-zeppelin).
 git clone -b master --single-branch git@github.com:apache/incubator-zeppelin.git master
 ```
 ```
-# We're not passing these at build time because we're configuring them within conf/zeppelin-env.sh
-#   -Pspark-1.6 -Phadoop-2.6 -Pcassandra-spark-1.5 -Dhadoop.version=2.6.0 -Dspark.version=1.5.2 
+# We are not passing these params at build time because we're configuring them through conf/zeppelin-env.sh
+#   -Pspark-1.6 -Phadoop-2.6 -Dspark.version=1.6.0 -Dhadoop.version=2.6.0
 
 mvn clean package -Pbuild-distr -Ppyspark -DskipTests -Drat.skip=true
 ```
