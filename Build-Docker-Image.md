@@ -13,8 +13,7 @@ Notes
 * If you run out of memory or disk space while building or running the image, you need to re-initialize boot2docker with larger `--memory` and `--disksize` per the [Setup Docker Image](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Docker-Image#macos-x-and-windows) instructions.
 
 ## Tag and Push the Docker Image to the DockerHub Registry
-[TODO] Tagging
-For now, just overwrite the `latest` tag with the following
+For now, just overwrite the `latest` tag as follows:
 ```
 $ docker push fluxcapacitor/pipeline
 ```
