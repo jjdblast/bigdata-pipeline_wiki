@@ -53,10 +53,12 @@ An error occurred trying to connect: Post https://127.0.0.1:2376/v1.19/images/lo
 
 **This will install everything needed to run Docker on Linux**
 ```
-local-linux$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9
-local-linux$ sudo sh -c "echo deb https://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
 local-linux$ sudo apt-get update
-local-linux$ sudo apt-get install lxc-docker-1.7.1
+local-linux$ sudo apt-get -y install linux-image-extra-$(uname -r)
+local-linux$ sudo sh -c "wget -qO- https://get.docker.io/gpg | apt-key add -"
+local-linux$ sudo sh -c "echo deb http://get.docker.io/ubuntu docker main\ > /etc/apt/sources.list.d/docker.list"
+local-linux$ sudo apt-get update
+local-linux$ sudo apt-get -y install lxc-docker
 local-linux$ sudo usermod -a -G docker $USER
 local-linux$ exit
 ```
