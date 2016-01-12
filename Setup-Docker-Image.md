@@ -53,13 +53,14 @@ An error occurred trying to connect: Post https://127.0.0.1:2376/v1.19/images/lo
 
 **This will install everything needed to run Docker on Linux**
 ```
-local-linux$ wget -qO- https://get.docker.com/ | sed 's/lxc-docker/lxc-docker-1.7.1/' | sh
+local-linux$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9
+local-linux$ sudo sh -c "echo deb https://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
+local-linux$ sudo apt-get update
+local-linux$ sudo apt-get install lxc-docker-1.7.1
+local-linux$ sudo usermod -a -G docker $USER
+local-linux$ exit
 ```
-* Add your user to the `docker` group to avoid having to 
-```
-local-linux$ sudo usermod -aG docker ubuntu
-```
-* **Log out and log back in or the changes will not take effect**
+* **Log out and log back in or Docker will not work properly**
 
 # Load the Pipeline Docker Image 
 
