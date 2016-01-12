@@ -53,7 +53,7 @@ An error occurred trying to connect: Post https://127.0.0.1:2376/v1.19/images/lo
 
 **This will install everything needed to run Docker on Linux**
 ```
-local-linux$ wget -qO- https://get.docker.com/ | sh
+local-linux$ wget -qO- https://get.docker.com/ | sed 's/lxc-docker/lxc-docker-1.7.1/' | sh
 ```
 * Add your user to the `docker` group to avoid having to 
 ```
