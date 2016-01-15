@@ -29,12 +29,12 @@ boot2docker delete boot2docker-vm
 * Setup the NAT routes between boot2docker (VirtualBox VM) and local host per [this]
 (https://github.com/docker/docker/issues/4007#issuecomment-34573044) link.
 ```
-local-macosx$ ~/pipeline/bin/docker-setup-nat-rules.sh
+local-macosx$ <pipeline-directory>/bin/docker-setup-nat-rules.sh
 ...Updating NAT routes between boot2docker (VirtualBox VM) and localhost...
 ```
 TODO:  @Windows Users - please document what works for you in this case.  Thanks!
 ```
-local-windows$ //c/###pipelinedirectory###/bin/docker-setup-nat-rules.sh
+local-windows$ //c/<pipeline-directory>/bin/docker-setup-nat-rules.sh
 ...Updating NAT routes between boot2docker (VirtualBox VM) and localhost...
 ```
 
