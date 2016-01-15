@@ -41,7 +41,31 @@ local-windows$ //c/<pipeline-directory>/bin/docker-setup-nat-rules.sh
 * Start boot2docker and test if Docker is working properly
 ```
 local-macosx-or-windows$ boot2docker start
+Waiting for VM and Docker daemon to start...
+........................ooooooooooo
+Started.
+Writing /Users/cfregly/.boot2docker/certs/boot2docker-vm/ca.pem
+Writing /Users/cfregly/.boot2docker/certs/boot2docker-vm/cert.pem
+Writing /Users/cfregly/.boot2docker/certs/boot2docker-vm/key.pem
+
+To connect the Docker client to the Docker daemon, please set:
+    export DOCKER_HOST=tcp://127.0.0.1:2376
+    export DOCKER_CERT_PATH=/Users/cfregly/.boot2docker/certs/boot2docker-vm
+    export DOCKER_TLS_VERIFY=1
+
+Or run: `eval "$(boot2docker shellinit)"`
+```
+* Run the following:
+```
+eval "$(boot2docker shellinit)"
+Writing /Users/cfregly/.boot2docker/certs/boot2docker-vm/ca.pem
+Writing /Users/cfregly/.boot2docker/certs/boot2docker-vm/cert.pem
+Writing /Users/cfregly/.boot2docker/certs/boot2docker-vm/key.pem
+```
+* Check the version
+```
 local-macosx-or-windows$ docker version
+Client version: 1.7.1
 ```
 
 **Troubleshooting**
