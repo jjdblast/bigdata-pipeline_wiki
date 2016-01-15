@@ -18,6 +18,14 @@
 ```
 local-macosx-or-windows$ boot2docker --memory=8192 --disksize=50000 --lowerip=127.0.0.1 --upperip=127.0.0.1 init
 ```
+* If you see the following error:
+```
+Virtual machine boot2docker-vm already exists
+```
+* You can delete the existing `boot2docker-vm` as follows (if you're comfortable deleting it):
+```
+boot2docker delete boot2docker-vm
+``` 
 * Setup the NAT routes between boot2docker (VirtualBox VM) and local host per [this]
 (https://github.com/docker/docker/issues/4007#issuecomment-34573044) link.
 ```
