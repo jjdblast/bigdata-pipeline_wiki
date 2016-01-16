@@ -258,7 +258,7 @@ http://127.0.0.1:30080/redis/PING
 http://127.0.0.1:38080
 ```
 
-### iPython/Jupyter Notebook Web UI
+### iPython/Jupyter/Tensorflow Notebook Web UI
 ```
 http://127.0.0.1:38754
 ```
