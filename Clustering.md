@@ -25,14 +25,15 @@ docker-machine create -d virtualbox --swarm --swarm-discovery token://<cluster-i
 eval "$(docker-machine env --swarm swarm-master)"
 ```
 
-### List the Swarm Nodes through Docker
-```
-docker run swarm list token://<cluster-id>
-```
-
-### List the Swarm Nodes through `docker-machine`
+### List the Swarm Nodes
+* Verify `swarm-master` is ACTIVE for your shell
 ```
 docker-machine ls
+NAME            ACTIVE      DRIVER       STATE     URL                         SWARM                   DOCKER    ERRORS
+default         -           virtualbox   Running   tcp://192.168.99.100:2376                           v1.10.1
+swarm-master    * (swarm)   virtualbox   Running   tcp://192.168.99.101:2376   swarm-master (master)   v1.10.1
+swarm-node-01   -           virtualbox   Running   tcp://192.168.99.102:2376   swarm-master            v1.10.1
+swarm-node-02   -           virtualbox   Running   tcp://192.168.99.103:2376   swarm-master            v1.10.1
 ```
 
 ### Run an Image in a Container (not named `frontend`)
