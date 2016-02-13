@@ -94,6 +94,8 @@ local-linux$ sudo apt-get -y install lxc-docker
 local-linux$ sudo usermod -a -G docker $USER
 local-linux$ exit
 ```
+(TODO:  Update to these: https://docs.docker.com/engine/installation/linux/ubuntulinux/)
+
 * **Log out and log back in or Docker will not work properly**
 
 # Load the Pipeline Docker Image 
