@@ -34,6 +34,7 @@ default         -           virtualbox   Running   tcp://192.168.99.100:2376    
 swarm-master    * (swarm)   virtualbox   Running   tcp://192.168.99.101:2376   swarm-master (master)   v1.10.1
 swarm-node-01   -           virtualbox   Running   tcp://192.168.99.102:2376   swarm-master            v1.10.1
 swarm-node-02   -           virtualbox   Running   tcp://192.168.99.103:2376   swarm-master            v1.10.1
+swarm-node-03   -           virtualbox   Running   tcp://192.168.99.104:2376   swarm-master            v1.10.1
 ```
 
 ### Run an Image in a Container (not named `frontend`)
