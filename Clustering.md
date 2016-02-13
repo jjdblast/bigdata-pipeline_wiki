@@ -20,7 +20,7 @@ docker-machine create -d virtualbox --swarm --swarm-discovery token://<cluster-i
 docker-machine create -d virtualbox --swarm --swarm-discovery token://<cluster-id> swarm-node-03
 ```
 
-### Make swarm-master the true master
+### Configure Shell to Communicate with Swarm Master
 ```
 eval "$(docker-machine env --swarm swarm-master)"
 ```
