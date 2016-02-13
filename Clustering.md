@@ -1,6 +1,6 @@
 ### Create Swarm Cluster
 ```
-docker run swarm create
+docker run --rm swarm create
 <cluster-id> <-- cluster id used for swarm discovery
 ```
 
