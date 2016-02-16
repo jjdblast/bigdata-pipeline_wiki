@@ -83,20 +83,20 @@ Time taken: 2.179 seconds, Fetched 2 row(s)
 ### Cassandra
 ```
 root@docker$ cqlsh
-cqlsh> use fluxcapacitor;
+cqlsh> use advancedspark;
 
-cqlsh:fluxcapacitor> select fromuserid, touserid, rating, batchtime from ratings;
+cqlsh:advancedspark> select fromuserid, touserid, rating, batchtime from ratings;
 
  fromuserid | touserid | rating | batchtime
 ------------+----------+--------+-----------
 
 (0 rows)
 
-cqlsh> describe fluxcapacitor;
-CREATE KEYSPACE fluxcapacitor WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'} AND durable_writes = true;
+cqlsh> describe advancedspark;
+CREATE KEYSPACE advancedspark WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'} AND durable_writes = true;
 ...
 
-cqlsh:fluxcapacitor> exit;
+cqlsh:advancedspark> exit;
 ```
 
 ### ZooKeeper
