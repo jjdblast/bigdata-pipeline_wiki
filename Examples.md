@@ -65,8 +65,8 @@ jupyter/
 ```
 
 ### Apache Zeppelin 
-* [zeppelin](https://github.com/fluxcapacitor/pipeline/tree/master/notebooks/zeppelin)
+* [zeppelin](https://github.com/fluxcapacitor/pipeline/tree/master/data_persist/zeppelin)
 
 ### Jupyter/iPython
-* [jupyter](https://github.com/fluxcapacitor/pipeline/tree/master/notebooks/jupyter)
+* [jupyter](https://github.com/fluxcapacitor/pipeline/tree/master/data_persist/jupyter)
  
