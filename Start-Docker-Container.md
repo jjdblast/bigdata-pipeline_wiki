@@ -4,7 +4,7 @@
 local-laptop$ $ docker load < <usb-drive>/<path-to-tar-file>/fluxcapacitor-pipeline.tar
 ```
 
-* Otherwise, Use 
+* Otherwise, pull from remote DockerHub
 ```
 local-laptop$ docker pull fluxcapacitor/pipeline
 ```
