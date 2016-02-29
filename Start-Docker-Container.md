@@ -1,7 +1,7 @@
 # Pull Latest fluxcapacitor/pipeline Docker Image
-* If using a USB, please use the following command
+* If using a USB, please use the following command as this will greatly speed things up
 ```
-local-laptop$ docker pull fluxcapacitor/pipeline
+local-laptop$ $ docker load < <usb-drive>/<path-to-tar-file>/fluxcapacitor-pipeline.tar
 ```
 
 * Otherwise, Use 
