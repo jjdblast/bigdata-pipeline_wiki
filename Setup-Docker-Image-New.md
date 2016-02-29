@@ -16,7 +16,7 @@ local-laptop$ docker-machine create --driver virtualbox --virtualbox-hostonly-ci
 ```
 
 ### Setup Local Environment
-* To connect the Docker client to the Docker daemon, please export the `DOCKER_` vars below.
+* Export all of the `DOCKER_` vars below
 * You may want to include these in your `.profile', `.bashrc', or `.bash_profile` file as appropriate for your environment.
 ```
 local-laptop$ export DOCKER_TLS_VERIFY=1
@@ -28,6 +28,7 @@ local-laptop$ export DOCKER_MACHINE_NAME="pipeline-vm"
 ```
 local-laptop$ sudo usermod -a -G docker $USER
 local-laptop$ exit
+(log back in)
 ```
 * Check that the version is Docker 1.10+
 ```
