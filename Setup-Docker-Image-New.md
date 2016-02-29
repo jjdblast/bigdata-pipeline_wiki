@@ -12,7 +12,8 @@
 * Feel free to adjust the cpu, disk, and memory settings as appropriate.
 * Also, if you have been provided a USB, please modify the `--virtualbox-boot2docker-url` param value to include to point to the `file://<usb-drive>/<path-to-boot2docker.iso>` on the USB.
 ```
-local-laptop$ docker-machine create --driver virtualbox --virtualbox-hostonly-cidr "192.69.69.1/24" --virtualbox-cpu-count "8" --virtualbox-disk-size "100000" --virtualbox-memory "8096" --virtualbox-boot2docker-url "file:///Users/cfregly/.docker/machine/cache/boot2docker.iso" pipeline-vm```
+local-laptop$ docker-machine create --driver virtualbox --virtualbox-hostonly-cidr "192.69.69.1/24" --virtualbox-cpu-count "8" --virtualbox-disk-size "100000" --virtualbox-memory "8096" --virtualbox-boot2docker-url "file:///Users/cfregly/.docker/machine/cache/boot2docker.iso" pipeline-vm
+```
 
 ### Setup Local Environment
 * To connect the Docker client to the Docker daemon, please export the `DOCKER_` vars below.
