@@ -1,4 +1,4 @@
-* The following Akka-based App puts data from `$DATASETS_HOME/dating/ratings.csv` onto the `ratings` Kafka topic to simulate real-time streaming ratings from users.  
+* The following Akka-based App puts data from `$DATASETS_HOME/dating/ratings.csv` onto the `item_ratings` Kafka topic to simulate real-time streaming ratings from users.  
 * Note:  Akka is not required, but it's cool, so we used it.
 ```
 root@docker$ cd $MYAPPS_HOME/feeder && ./start-feeder-ratings.sh
