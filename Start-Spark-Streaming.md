@@ -49,8 +49,6 @@ root@docker$ cd $MYAPPS_HOME/streaming && ./start-streaming-ratings-algebird-cms
 root@docker$ cd $MYAPPS_HOME/streaming && ./start-streaming-ratings-topk-items-by-rating-count.sh
 ...Starting Spark Streaming App...
 ```
-### Hourly Rollups (TODO)
-### Spark Streaming 1.6 TTL Sessionization Feature (TODO)
  
 ## ML Model Training (Large Batch Interval)
 ### Incremental ALS Model Training on New Data
