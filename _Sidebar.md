@@ -5,7 +5,7 @@
 ***
 Environment Setup
 
-[1. Setup Docker Image](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Docker)
+[1. Setup Docker](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Docker)
 
 [2. Start Docker Container](https://github.com/fluxcapacitor/pipeline/wiki/Start-Docker-Container)
 
