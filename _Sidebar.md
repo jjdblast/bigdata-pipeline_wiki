@@ -26,14 +26,12 @@ Examples
 
 [9. Examples](https://github.com/fluxcapacitor/pipeline/wiki/Examples)
 
-***
-Cleanup
-
-[10. Stop Services](https://github.com/fluxcapacitor/pipeline/wiki/Stop-Services)
+[10. Monitor Metrics](https://github.com/fluxcapacitor/pipeline/wiki/Monitor-Metrics)
 
 ***
 Misc
-[11. Monitor Metrics](https://github.com/fluxcapacitor/pipeline/wiki/Monitor-Metrics)
+
+[11. Stop Services](https://github.com/fluxcapacitor/pipeline/wiki/Stop-Services)
 
 [12. Github Integration](https://github.com/fluxcapacitor/pipeline/wiki/Github-Integration)
 
