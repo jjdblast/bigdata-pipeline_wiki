@@ -230,37 +230,39 @@ root@docker:~/pipeline# jps -l
 **DO NOT TYPE `exit` AS THIS WILL STOP YOUR CONTAINER**
 * Instead, use the combo of `CTRL-P CTRL-Q` to exit the Docker Container
 * Launch a new terminal
-* If using MacOSX or Windows, make sure the boot2docker IP is `127.0.0.1`  
 ```
-macosx-or-windows-laptop$ boot2docker ip
-127.0.0.1
+local-laptop$ docker-machine env pipeline-vm
+export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://192.69.69.100:2376"
+export DOCKER_CERT_PATH="/Users/<username>/.docker/machine/machines/pipeline-vm"
+export DOCKER_MACHINE_NAME="pipeline-vm"
 ```
 * Use `curl`, `wget`, or your browser to verify the following URLs
 
 ### Apache2 HTTP Server
 ```
-http://127.0.0.1:30080
+http://192.69.69.100:80
 ```
 
 ### Kafka REST API Proxy
 ```
-http://127.0.0.1:34042/topics
+http://192.69.69.100:34042/topics
 ```
 
 ### Redis REST API Proxy (Webdis)
 ```
-http://127.0.0.1:30080/redis/PING
+http://192.69.69.100:30080/redis/PING
 {"PING":[true,"PONG"]}
 ```
 
 ### Zeppelin Notebook Web UI
 ```
-http://127.0.0.1:38080
+http://192.69.69.100:38080
 ```
 
 ### iPython/Jupyter/Tensorflow Notebook Web UI
 ```
-http://127.0.0.1:38754
+http://192.69.69.100:38754
 ```
 
 ### Spark Master Admin Web UI
@@ -268,35 +270,45 @@ http://127.0.0.1:38754
 * You'll need to replace the broken links with `127.0.0.1` and make sure all ports have `3` prepended 
 (ie. `127.0.0.1:34040`, etc) 
 ```
-http://127.0.0.1:36060
+http://192.69.69.100:36060
 ```
 
 ### Spark History Server UI
 ```
-http://127.0.0.1:35050
+http://192.69.69.100:35050
 ```
 
 ### Spark Worker Admin Web UI
 ```
-http://127.0.0.1:36061
+http://192.69.69.100:36061
 ```
 
 ### ElasticSearch REST API
 ```
-http://127.0.0.1:39200/_cat/indices?v
+http://192.69.69.100:39200/_cat/indices?v
 ```
 
 ### Kibana and Logstash
 ```
-http://127.0.0.1:35601
+http://192.69.69.100:35601
 ```
 
 ### Ganglia
 ```
-http://127.0.0.1:30080/ganglia
+http://192.69.69.100/ganglia
 ```
 
 ### NiFi
 ```
-http://127.0.0.1:36969/nifi/
+http://192.69.69.100:36969/nifi/
+```
+
+### Airflow
+```
+http://192.69.69.100:35060/
+```
+
+### Presto
+```
+http://192.69.69.100:37060
 ```
