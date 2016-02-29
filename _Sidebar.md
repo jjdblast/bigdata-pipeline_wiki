@@ -18,7 +18,7 @@ Demo
 
 [5. Start Spark Streaming](https://github.com/fluxcapacitor/pipeline/wiki/Start-Spark-Streaming)
 
-[6. View Spark UI](https://github.com/fluxcapacitor/pipeline/wiki/View-Spark-UI)
+[6. View Admin Spark UIs](https://github.com/fluxcapacitor/pipeline/wiki/View-Admin-Spark-UIs)
 
 [7. Feed Data](https://github.com/fluxcapacitor/pipeline/wiki/Feed-Data)
 
