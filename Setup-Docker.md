@@ -46,8 +46,3 @@ Cannot connect to the Docker daemon. Is the docker daemon running on this host?
 * Make sure that you have run all of the EXPORTs listed above and try again
 * Otherwise, there may be a firewall (VPN) preventing the connection to Docker.
 * Try shutting down the VPN and restarting your system with a clean start (and no VPN).
-
-### Pull Latest fluxcapacitor/pipeline Docker Image
-```
-local-laptop$ docker pull fluxcapacitor/pipeline
-```
