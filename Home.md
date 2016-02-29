@@ -1,6 +1,7 @@
-# Docker-based, End-to-End, Big Data Reference Pipeline!
+## Docker-based, End-to-End, Big Data Reference Pipeline
 ## Real-time, Advanced Analytics, Machine Learning, Streaming, Graph Processing, Text/NLP Analytics
-## Follow [Wiki](https://github.com/fluxcapacitor/pipeline/wiki) Sidebar to Setup Environment -->
+
+### Follow [Wiki](https://github.com/fluxcapacitor/pipeline/wiki) Sidebar to Setup Environment -->
 
 ### Apache Zeppelin Notebooks
 ![Apache Zeppelin Notebooks](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-zeppelin-1.png)
