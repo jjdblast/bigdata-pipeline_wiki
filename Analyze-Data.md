@@ -29,6 +29,14 @@ root@[docker]$ beeline -u jdbc:hive2://127.0.0.1:10000 -n hiveuser -p ''
 0: jdbc:hive2://127.0.0.1:10000> SELECT id, gender FROM genders LIMIT 100;
 ```
 
+### Presto CLI
+* TODO
+
+
+## Visualization Tools
+### Presto UI
+* TODO
+
 ### Tableau Integration
 * Query the Hive ThriftServer from *outside* of Docker on port `30000`
 * Connect Tableau to Spark SQL using the following
@@ -49,7 +57,7 @@ Notes:
 * This SQLContext gives you full access to permanent tables that are created (ie. DataFrame.saveAsTable("ratings_perm")
 * Temp tables are not accessible since they are only specific to the SQLContext that they are created in
 
-## Using Notebooks for Ad Hoc Data Analysis
+## Notebooks
 ### Apache Zeppelin
 ```
 http://127.0.0.1:38080
@@ -62,3 +70,7 @@ http://127.0.0.1:39000
 
 Notes:
 * All notebooks are in `~/pipeline/notebooks/...` and are mounted from Docker through to the Host OS at `~/pipeline/notebooks/... using the `docker run -v` volume mapping command.
+
+## Workflows
+### Airflow
+* TODO
