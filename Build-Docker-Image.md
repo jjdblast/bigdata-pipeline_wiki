@@ -10,7 +10,7 @@ local-laptop$ cd ~/pipeline
 local-laptop$ docker build -t fluxcapacitor/pipeline .
 ```
 Notes
-* If you run out of memory or disk space while building or running the image, you need to re-initialize boot2docker with larger `--memory` and `--disksize` per the [Setup Docker Image](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Docker-Image#macos-x-and-windows) instructions.
+* If you run out of memory or disk space while building or running the image, you need to re-initialize docker-machine with larger memory and disk size.
 
 ## Tag and Push the Docker Image to the DockerHub Registry
 For now, just overwrite the `latest` tag as follows:
