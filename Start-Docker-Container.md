@@ -1,8 +1,14 @@
 # Pull Latest fluxcapacitor/pipeline Docker Image
+* If using a USB, please use the following command
 ```
 local-laptop$ docker pull fluxcapacitor/pipeline
-
 ```
+
+* Otherwise, Use 
+```
+local-laptop$ docker pull fluxcapacitor/pipeline
+```
+
 # Verify the Docker Image was Loaded Successfully
 ```
 local-laptop$ docker images
