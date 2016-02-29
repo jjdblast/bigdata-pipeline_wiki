@@ -10,10 +10,12 @@
 root@docker$ cd $MYAPPS_HOME
 root@docker$ ll
 core/        
-feeder/      
+feeder/ 
+jupyter/     
 ml/         
 sql/        
 streaming/
+zeppelin/
 ```
 
 ### Spark Core
@@ -29,6 +31,10 @@ streaming/
 * [feeder](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/feeder)
 * Akka-based App that Feeds Ratings from CSV into a Kafka Topic
 * Simulates Users Posting Ratings to a Kafka Topic
+
+### Jupyter
+* [juptyer](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/jupyter)
+* Jupyter/iPython notebooks including PySpark, TensorFlow, SciKit-Learn, matplotlib and various other examples from around the web
 
 ### Spark ML/MLlib, GraphX, and CoreNLP
 * [ml](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/ml) 
@@ -48,25 +54,8 @@ streaming/
 * Calculate distinct count using Redis HyperLogLog and Twitter Algebird HyperLogLog
 * Calculate count and heavy hitters using Twitter Algebird CountMin Sketch
 
-## Example Notebooks
-* Flux Capacitor comes with many example notebooks to help you get started.
-* You are encouraged to start with one of these examples when building your own notebooks
-* The root of these examples is `$NOTEBOOKS_HOME`.
-* This root folder has been mapped from the Docker Container (Guest) through to the Host filesystem using the `-v` VOLUME parameter on the `docker run` command.  
-* This prevents data loss if the Docker Container crashes or exited without saving the files.
-* You can view these notebooks through Apache Zeppelin by navigating your browser to `http://127.0.0.1:38080`.
-* You can view these notebooks through Apache Jupyter by navigating your browser to `http://127.0.0.1:38754`.
-* Below is a description of each of the paths within `$NOTEBOOKS_HOME`
-```
-root@docker:~# cd $NOTEBOOKS_HOME
-root@docker:~/pipeline/notebooks# ll
-zeppelin/       
-jupyter/        
-```
-
 ### Apache Zeppelin 
-* [zeppelin](https://github.com/fluxcapacitor/pipeline/tree/master/data_persist/zeppelin)
+* [zeppelin](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/zeppelin)
+* Python and Scala-based notebooks including many new and existing examples from around the web
 
-### Jupyter/iPython
-* [jupyter](https://github.com/fluxcapacitor/pipeline/tree/master/data_persist/jupyter)
  
