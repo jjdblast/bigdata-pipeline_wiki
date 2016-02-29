@@ -25,7 +25,7 @@ cqlsh> USE fluxcapacitor; SELECT fromuserid, touserid, rating, batchtime FROM ra
 ### Beeline's HiveQL CLI
 * Query the Hive ThriftServer directly inside of Docker
 ```
-root@[docker]$ beeline -u jdbc:hive2://127.0.0.1:10000 -n hiveuser -p ''
+root@docker$ beeline -u jdbc:hive2://127.0.0.1:10000 -n hiveuser -p ''
 0: jdbc:hive2://127.0.0.1:10000> SELECT id, gender FROM genders LIMIT 100;
 ```
 
@@ -42,7 +42,7 @@ root@[docker]$ beeline -u jdbc:hive2://127.0.0.1:10000 -n hiveuser -p ''
 * Connect Tableau to Spark SQL using the following
 ```
 Select Spark SQL Integration 
-Server:  127.0.0.1
+Server:  192.69.69.1
 Port:  30000
 Username:  hiveuser
 Password:  <empty>
@@ -60,17 +60,16 @@ Notes:
 ## Notebooks
 ### Apache Zeppelin
 ```
-http://127.0.0.1:38080
+http://192.69.69.1:38080
 ```
-### Spark-Notebook
-```
-http://127.0.0.1:39000
-```
-### iPython/Jupyter Notebook (TODO)
 
-Notes:
-* All notebooks are in `~/pipeline/notebooks/...` and are mounted from Docker through to the Host OS at `~/pipeline/notebooks/... using the `docker run -v` volume mapping command.
+### iPython/Jupyter & TensorFlow Notebook
+```
+http://192.69.69.1:38754
+```
 
 ## Workflows
 ### Airflow
-* TODO
+```
+http://192.69.69.1:35060
+```
