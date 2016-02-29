@@ -3,8 +3,6 @@
 
 **ALSO, PLEASE KILL ANY VPN DAEMON PROCESSES OR THESE STEPS MAY NOT WORK.**
 
-**If you have been provided a USB with Docker and the Docker image, please follow [these](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Docker-Image-from-USB) instructions.**
-
 ### Download and Install Docker Toolbox
 * [Mac OS X](https://docs.docker.com/mac/)
 * [Windows](https://docs.docker.com/windows/)
