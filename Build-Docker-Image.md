@@ -2,12 +2,12 @@
 * Run the `docker build` command from the directory where the `Dockerfile` lives (ie. ~/pipeline)
 
 ```
-$ git clone https://github.com/fluxcapacitor/pipeline.git
-$ cd ~/pipeline
+local-laptop$ git clone https://github.com/fluxcapacitor/pipeline.git
+local-laptop$ cd ~/pipeline
 
 [... Make Changes ...]
 
-$ docker build -t fluxcapacitor/pipeline .
+local-laptop$ docker build -t fluxcapacitor/pipeline .
 ```
 Notes
 * If you run out of memory or disk space while building or running the image, you need to re-initialize boot2docker with larger `--memory` and `--disksize` per the [Setup Docker Image](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Docker-Image#macos-x-and-windows) instructions.
@@ -15,19 +15,19 @@ Notes
 ## Tag and Push the Docker Image to the DockerHub Registry
 For now, just overwrite the `latest` tag as follows:
 ```
-$ docker push fluxcapacitor/pipeline
+local-laptop$ docker push fluxcapacitor/pipeline
 ```
 
 ## Exporting and Importing Docker Images and Containers
 ### Export Docker Image as .tar
 ```
-$ docker save --output="fluxcapacitor-pipeline.tar" fluxcapacitor/pipeline
+local-laptop$ docker save --output="fluxcapacitor-pipeline.tar" fluxcapacitor/pipeline
 ```
 ### Export Docker Container as .tar
 ```
-$ docker export --output="fluxcapacitor-pipeline.tar" fluxcapacitor/pipeline
+local-laptop$ docker export --output="fluxcapacitor-pipeline.tar" fluxcapacitor/pipeline
 ```
 ### Import Docker Image or Container from a .tar
 ```
-$ docker load < fluxcapacitor-pipeline.tar
+local-laptop$ docker load < fluxcapacitor-pipeline.tar
 ```
