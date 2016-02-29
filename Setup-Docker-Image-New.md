@@ -8,13 +8,16 @@
 * [Windows](https://docs.docker.com/windows/)
 * [Linux](https://docs.docker.com/linux/)
 
-### Create a Default `docker-machine` Environment
+### Create VM Environment (VirtualBox) 
+* Feel free to adjust the cpu, disk, and memory settings as appropriate.
+* Also, if you have been provided a USB, please modify the `--virtualbox-boot2docker-url` param value to include to point to the `file://<usb-drive>/<path-to-boot2docker.iso>` on the USB.
 ```
-docker-machine create --driver virtualbox default
+create --driver virtualbox --virtualbox-hostonly-cidr "127.0.0.1/24" --virtualbox-cpu-count "8" --virtualbox-disk-size "100000" --virtualbox-memory "8096" --virtualbox-boot2docker-url "" pipeline-vm
 ```
 
 ### Setup Local Environment
-* To connect the Docker client to the Docker daemon, please set:
+* To connect the Docker client to the Docker daemon, please export the `DOCKER_` vars below.
+* You may want to include these in your `.profile', `.bashrc', or `.bash_profile` file as appropriate for your environment.
 ```
 export DOCKER_HOST=tcp://127.0.0.1:2376
 export DOCKER_CERT_PATH=/Users/<username>/.boot2docker/certs/boot2docker-vm
