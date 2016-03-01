@@ -26,8 +26,12 @@ local-laptop$ docker-machine create --driver virtualbox --virtualbox-hostonly-ci
 ```
 
 ### Setup Local Environment
-* Export all of the `DOCKER_` vars below
-* You may want to include these in your `.profile', `.bashrc', or `.bash_profile` file as appropriate for your environment.
+* Run the following"
+```
+local-laptop$ docker-machine env pipeline-vm
+local-laptop$ eval $(docker-machine env pipeline-vm)
+```
+* To setup your environment longer-term, include the output EXPORTs (from the commands above) in your `.profile', `.bashrc', or `.bash_profile` file as appropriate for your environment.
 ```
 local-laptop$ export DOCKER_TLS_VERIFY=1
 local-laptop$ export DOCKER_HOST=tcp://192.69.69.100:2376
