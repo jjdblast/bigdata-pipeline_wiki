@@ -3,14 +3,12 @@
 
 **ALSO, PLEASE KILL ANY VPN DAEMON PROCESSES OR THESE STEPS MAY NOT WORK.**
 
-### Download and Install Docker Toolbox either from the following links:
-* **If you have been provided a USB**, use the appropriate file for your system provided on the USB
-* Otherwise, you will incur a huge download for the following:
+### Install Docker Toolbox from USB (preferred) or the Internet (large download):
 * [Mac OS X](https://docs.docker.com/mac/)
 * [Windows](https://docs.docker.com/windows/)
 * [Linux](https://docs.docker.com/linux/)
 
-### Create VM Environment (VirtualBox-based) 
+### Create VM Environment from USB (preferred) or the Internet (huge download)
 * **If you have been provided a USB**, please add `--virtualbox-boot2docker-url "file:///<usb-drive>/<path-to-boot2docker.iso>"` to use the file on the USB.  Otherwise, you will incur a huge download for boot2docker.iso
 * Feel free to adjust the cpu, disk, and memory settings as appropriate.
 ```
