@@ -3,14 +3,24 @@
 
 **ALSO, PLEASE KILL ANY VPN DAEMON PROCESSES OR THESE STEPS MAY NOT WORK.**
 
-### Install Docker Toolbox from USB (preferred) or the Internet (large download):
-* [Mac OS X](https://docs.docker.com/mac/)
-* [Windows](https://docs.docker.com/windows/)
-* [Linux](https://docs.docker.com/linux/)
+### Install Docker Toolbox from USB (preferred) or Internet (large download):
+* USB
+Install `.exe` (Windows) or `.pkg` (Mac) as appropriate
 
-### Create VM Environment from USB (preferred) or the Internet (huge download)
-* **If you have been provided a USB**, please add `--virtualbox-boot2docker-url "file:///<usb-drive>/<path-to-boot2docker.iso>"` to use the file on the USB.  Otherwise, you will incur a huge download for boot2docker.iso
+* Internet
+[Mac OS X](https://docs.docker.com/mac/)
+[Windows](https://docs.docker.com/windows/)
+[Linux](https://docs.docker.com/linux/)
+
+
+
+### Create VM Environment from USB (preferred) or Internet (huge download)
 * Feel free to adjust the cpu, disk, and memory settings as appropriate.
+* USB
+```
+local-laptop$ docker-machine create --driver virtualbox --virtualbox-hostonly-cidr "192.69.69.1/24" --virtualbox-cpu-count "8" --virtualbox-disk-size "100000" --virtualbox-memory "8096" --virtualbox-boot2docker-url "file:///<usb-drive>/<path-to-boot2docker.iso>" pipeline-vm
+```
+* Internet
 ```
 local-laptop$ docker-machine create --driver virtualbox --virtualbox-hostonly-cidr "192.69.69.1/24" --virtualbox-cpu-count "8" --virtualbox-disk-size "100000" --virtualbox-memory "8096" pipeline-vm
 ```
