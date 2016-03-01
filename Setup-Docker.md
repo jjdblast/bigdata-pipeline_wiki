@@ -3,16 +3,18 @@
 
 **ALSO, PLEASE KILL ANY VPN DAEMON PROCESSES OR THESE STEPS MAY NOT WORK.**
 
-### Download and Install Docker Toolbox
+### Download and Install Docker Toolbox either from the following links:
+* **If you have been provided a USB**, use the appropriate file for your system provided on the USB
+* Otherwise, you will incur a huge download for the following:
 * [Mac OS X](https://docs.docker.com/mac/)
 * [Windows](https://docs.docker.com/windows/)
 * [Linux](https://docs.docker.com/linux/)
 
 ### Create VM Environment (VirtualBox-based) 
+* **If you have been provided a USB**, please add `--virtualbox-boot2docker-url "file:///<usb-drive>/<path-to-boot2docker.iso>"` to use the file on the USB.  Otherwise, you will incur a huge download for boot2docker.iso
 * Feel free to adjust the cpu, disk, and memory settings as appropriate.
-* **If you have been provided a USB**, please add `--virtualbox-boot2docker-url "file:///<usb-drive>/<path-to-boot2docker.iso>"` or else you will incur a huge download for the `boot2docker.iso`
 ```
-local-laptop$ docker-machine create --driver virtualbox --virtualbox-hostonly-cidr "192.69.69.1/24" --virtualbox-cpu-count "8" --virtualbox-disk-size "100000" --virtualbox-memory "8096"  pipeline-vm
+local-laptop$ docker-machine create --driver virtualbox --virtualbox-hostonly-cidr "192.69.69.1/24" --virtualbox-cpu-count "8" --virtualbox-disk-size "100000" --virtualbox-memory "8096" pipeline-vm
 ```
 
 ### Setup Local Environment
