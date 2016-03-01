@@ -15,7 +15,6 @@ Install `.exe` (Windows) or `.pkg` (Mac) as appropriate
 
 
 ### Create VM Environment from USB (preferred) or Internet (huge download)
-* Feel free to adjust the cpu, disk, and memory settings as appropriate.
 * USB
 ```
 local-laptop$ docker-machine create --driver virtualbox --virtualbox-hostonly-cidr "192.69.69.1/24" --virtualbox-cpu-count "8" --virtualbox-disk-size "100000" --virtualbox-memory "8096" --virtualbox-boot2docker-url "file:///<usb-drive>/<path-to-boot2docker.iso>" pipeline-vm
