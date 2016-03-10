@@ -1,12 +1,11 @@
-# Pull Latest Docker Image from USB (preferred) or Internet (huge download)
-* USB
-```
-local-laptop$ $ docker load < /Volumes/TRAINING/fluxcapacitor-pipeline.tar
-```
-
+# Pull Latest Docker Image from Internet or USB
 * Internet
 ```
 local-laptop$ docker pull fluxcapacitor/pipeline
+```
+* USB
+```
+local-laptop$ $ docker load < /Volumes/TRAINING/fluxcapacitor-pipeline.tar
 ```
 
 # Verify Docker Image
