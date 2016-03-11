@@ -37,6 +37,12 @@ local-laptop$ export DOCKER_HOST=tcp://192.69.69.100:2376
 local-laptop$ export DOCKER_CERT_PATH=/Users/<username>/.docker/machine/machines/pipeline-vm
 local-laptop$ export DOCKER_MACHINE_NAME="pipeline-vm"
 ```
+
+* Setup NAT Rules 
+```
+local-laptop$ cd $PIPELINE_HOME/bin && ./docker-setup-nat-rules.sh
+```
+
 * [Linux-Only] Run the following:
 ```
 local-laptop$ sudo usermod -a -G docker $USER
