@@ -8,7 +8,7 @@ macosx-laptop$ http://127.0.0.1:35601
 ### Ganglia System and JVM Metrics Monitoring UIs**
 Note:  This may have been configured to listen on port `80` depending on the `docker run` command port mappings.
 ```
-macosx-laptop$ http://192.69.69.1/ganglia
+macosx-laptop$ http://127.0.0.1/ganglia
 ```
 ![Ganglia Metrics UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-ganglia-1.png)
 ![Ganglia Metrics UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-ganglia-2.png)
