@@ -37,6 +37,7 @@ local-laptop$ export DOCKER_MACHINE_NAME="pipeline-vm"
 ```
 
 * Setup NAT Rules 
+
 This step bridges `127.0.0.1` to the VirtualBox VM created by `docker-machine` called pipeline-vm.
 ```
 local-laptop$ cd $PIPELINE_HOME/bin && ./docker-setup-nat-rules.sh
