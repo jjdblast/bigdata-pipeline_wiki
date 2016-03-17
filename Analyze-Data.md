@@ -42,7 +42,7 @@ root@docker$ beeline -u jdbc:hive2://127.0.0.1:10000 -n hiveuser -p ''
 * Connect Tableau to Spark SQL using the following
 ```
 Select Spark SQL Integration 
-Server:  192.69.69.1
+Server:  127.0.0.1
 Port:  30000
 Username:  hiveuser
 Password:  <empty>
@@ -60,16 +60,16 @@ Notes:
 ## Notebooks
 ### Apache Zeppelin
 ```
-http://192.69.69.1:38080
+http://127.0.0.1:38080
 ```
 
 ### iPython/Jupyter & TensorFlow Notebook
 ```
-http://192.69.69.1:38754
+http://127.0.0.1:38754
 ```
 
 ## Workflows
 ### Airflow
 ```
-http://192.69.69.1:35060
+http://127.0.0.1:35060
 ```
