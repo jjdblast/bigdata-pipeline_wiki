@@ -1,7 +1,7 @@
 ### Apache Spark Master Admin Web UI (36060)
 * Admin UI of the single Master node in the Spark Cluster
 ```
-macosx-laptop$ open http://127.0.0.1:36060
+http://127.0.0.1:36060
 ```
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-1.png)
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-2.png)
@@ -10,7 +10,7 @@ macosx-laptop$ open http://127.0.0.1:36060
 ### Apache Spark Worker Admin Web UI (36061+)
 * If multiple Workers are actively running, the port will start at `36060` and +1 per active Worker
 ```
-macosx-laptop$ open http://127.0.0.1:36061
+http://127.0.0.1:36061
 ```
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-7.png)
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-8.png)
@@ -24,7 +24,7 @@ macosx-laptop$ open http://127.0.0.1:36061
 * If multiple jobs are actively running, the port will start at `34040` and +1 per active job
 * The links from the Spark Master and Worker Admin UIs are broken, so you may need to manually navigate your browser to the following URL:
 ```
-macosx-laptop$ open http://127.0.0.1:34040
+http://127.0.0.1:34040
 ```
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-3.png)
 ![Spark Admin UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-spark-4.png)
