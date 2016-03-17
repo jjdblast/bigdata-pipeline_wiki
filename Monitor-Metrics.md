@@ -1,7 +1,7 @@
 ## Metrics and Monitoring
 ### Log Visualization with Kibana & Logstash
 ```
-macosx-laptop$ http://192.69.69.1:35601
+macosx-laptop$ http://127.0.0.1:35601
 ```
 ![Log Visualization with Kibana & Logstash](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-kibana.png)
 
