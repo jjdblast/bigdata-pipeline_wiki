@@ -241,28 +241,28 @@ export DOCKER_MACHINE_NAME="pipeline-vm"
 
 ### Apache2 HTTP Server
 ```
-http://192.69.69.1:80
+http://127.0.0.1
 ```
 
 ### Kafka REST API Proxy
 ```
-http://192.69.69.1:34042/topics
+http://127.0.0.1:34042/topics
 ```
 
 ### Redis REST API Proxy (Webdis)
 ```
-http://192.69.69.1/redis/PING
+http://127.0.0.1/redis/PING
 {"PING":[true,"PONG"]}
 ```
 
 ### Zeppelin Notebook Web UI
 ```
-http://192.69.69.1:38080
+http://127.0.0.1:38080
 ```
 
 ### iPython/Jupyter/Tensorflow Notebook Web UI
 ```
-http://192.69.69.1:38754
+http://127.0.0.1:38754
 ```
 
 ### Spark Master Admin Web UI
@@ -270,45 +270,45 @@ http://192.69.69.1:38754
 * You'll need to replace the broken links with `127.0.0.1` and make sure all ports have `3` prepended 
 (ie. `127.0.0.1:34040`, etc) 
 ```
-http://192.69.69.1:36060
+http://127.0.0.1:36060
 ```
 
 ### Spark History Server UI
 ```
-http://192.69.69.1:35050
+http://127.0.0.1:35050
 ```
 
 ### Spark Worker Admin Web UI
 ```
-http://192.69.69.1:36061
+http://127.0.0.1:36061
 ```
 
 ### ElasticSearch REST API
 ```
-http://192.69.69.1:39200/_cat/indices?v
+http://127.0.0.1:39200/_cat/indices?v
 ```
 
 ### Kibana and Logstash
 ```
-http://192.69.69.1:35601
+http://127.0.0.1:35601
 ```
 
 ### Ganglia
 ```
-http://192.69.69.1/ganglia
+http://127.0.0.1/ganglia
 ```
 
 ### NiFi
 ```
-http://192.69.69.1:36969/nifi/
+http://127.0.0.1:36969/nifi/
 ```
 
 ### Airflow
 ```
-http://192.69.69.1:35060/
+http://127.0.0.1:35060/
 ```
 
 ### Presto
 ```
-http://192.69.69.1:37060
+http://127.0.0.1:37060
 ```
