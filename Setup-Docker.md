@@ -12,8 +12,6 @@ Install `.exe` (Windows) or `.pkg` (Mac) as appropriate
 [Windows](https://docs.docker.com/windows/)
 [Linux](https://docs.docker.com/linux/)
 
-
-
 ### Create VM Environment from USB (preferred) or Internet (huge download)
 * USB
 ```
@@ -39,6 +37,7 @@ local-laptop$ export DOCKER_MACHINE_NAME="pipeline-vm"
 ```
 
 * Setup NAT Rules 
+This step bridges `127.0.0.1` to the VirtualBox VM created by `docker-machine` called pipeline-vm.
 ```
 local-laptop$ cd $PIPELINE_HOME/bin && ./docker-setup-nat-rules.sh
 ```
