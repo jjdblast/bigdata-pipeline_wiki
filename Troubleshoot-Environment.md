@@ -1,5 +1,11 @@
 ## Common Errors
 
+### The name "/pipeline" is already in use by container
+* You have likely exited out of the running Docker Container that you initially created and trying to re-run the `docker run ...` command
+* Instead, you should use `docker attach pipeline` to attach to the existing Docker Container
+* You may need to start the container using `docker start pipeline` and then run `docker attach pipeline` and click `<enter>` a few times.
+* If you have to start the container, you will likely need to run the following when you re-attach:  `source /root/pipeline/config/bash/.profile` (We will make this less annoying in the future.)
+
 ### Running out of disk space
 * It's likely that you have old, unused containers or images lying around
 * These don't get garbage collected automatically as Docker assumes you may want to start them again
