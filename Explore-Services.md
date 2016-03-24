@@ -246,7 +246,7 @@ http://127.0.0.1
 
 ### Kafka REST API Proxy
 ```
-http://127.0.0.1:34042/topics
+http://127.0.0.1:36042/topics
 ```
 
 ### Redis REST API Proxy (Webdis)
