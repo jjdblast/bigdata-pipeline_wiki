@@ -3,7 +3,7 @@
 ```
 root@docker$ kafka-topics --zookeeper 127.0.0.1:2181 --list
 _schemas
-ratings
+item_ratings
 ```
 
 ### Spark Job Submit Script
