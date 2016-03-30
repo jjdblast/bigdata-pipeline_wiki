@@ -21,6 +21,20 @@ local-laptop$ docker-machine create --driver virtualbox --virtualbox-hostonly-ci
 ```
 local-laptop$ docker-machine create --driver virtualbox --virtualbox-hostonly-cidr "192.69.69.1/24" --virtualbox-cpu-count "8" --virtualbox-disk-size "100000" --virtualbox-memory "8096" pipeline-vm
 ```
+** If you see the following:
+```
+Error with pre-create check: "VirtualBox is configured with multiple host-only adapters with the same IP
+```
+You need to run the following commands until you remove the conflicting virtualbox network adapters:
+```
+VBoxManage hostonlyif remove vboxnet0
+VBoxManage hostonlyif remove vboxnet1
+VBoxManage hostonlyif remove vboxnet2
+VBoxManage hostonlyif remove vboxnet3
+...
+<until you have removed all existing vboxnet's>
+```
+Then re-run the appropriate `docker-machine create` command above.
 
 ### Setup Local Environment
 * Run the following"
@@ -38,9 +52,9 @@ local-laptop$ export DOCKER_MACHINE_NAME="pipeline-vm"
 
 * Setup NAT Rules 
 
-This step bridges `127.0.0.1` to the VirtualBox VM created by `docker-machine` called pipeline-vm.
+This step bridges your local laptop at `127.0.0.1` to the VirtualBox VM created by `docker-machine` called `pipeline-vm`.
 ```
-local-laptop$ cd $PIPELINE_HOME/bin && ./docker-setup-nat-rules.sh
+local-laptop$ <pipeline-install-dir>/bin/docker-setup-nat-rules.sh
 ```
 
 * [Linux-Only] Run the following:
