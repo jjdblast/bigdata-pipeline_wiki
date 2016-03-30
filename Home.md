@@ -1,5 +1,5 @@
 ## End-to-End Streaming Advanced Analytics and Machine Learning Recommendation Pipeline
-### Follow Wiki [Sidebar](https://github.com/fluxcapacitor/pipeline/wiki) to Setup Environment >>>
+### Follow Wiki [Sidebar](https://github.com/fluxcapacitor/pipeline/wiki) to Setup Docker-based Environment >>>
 
 ## PANCAKE STACK
 ![PANCAKE STACK](http://advancedspark.com/img/pancake-stack-sign-sm.png)
