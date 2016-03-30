@@ -303,7 +303,7 @@ http://127.0.0.1/ganglia
 http://127.0.0.1:36969/nifi/
 ```
 
-### Airflow
+### AirFlow
 ```
 http://127.0.0.1:35060/
 ```
