@@ -20,7 +20,10 @@
 ### TensorFlow Notebooks
 ![TensorFlow Notebooks](http://advancedspark.com/img/tensorflow.png)
 
-### Apache NiFi Flows
+### Apache NiFi Data Flows
+![Apache NiFi Flows](https://s3.amazonaws.com/fluxcapacitor.com/img/nifi-flow.png)
+
+### AirFlow Workflows
 ![Apache NiFi Flows](https://s3.amazonaws.com/fluxcapacitor.com/img/nifi-flow.png)
 
 ### Tableau Integration
