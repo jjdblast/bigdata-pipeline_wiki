@@ -21,7 +21,7 @@ local-laptop$ docker-machine create --driver virtualbox --virtualbox-hostonly-ci
 ```
 local-laptop$ docker-machine create --driver virtualbox --virtualbox-hostonly-cidr "192.69.69.1/24" --virtualbox-cpu-count "8" --virtualbox-disk-size "100000" --virtualbox-memory "8096" pipeline-vm
 ```
-**Troubleshooting:  If you see the following**
+**Troubleshooting:  If you see the following error:**
 ```
 Error with pre-create check: "VirtualBox is configured with multiple host-only adapters with the same IP
 ```
@@ -35,7 +35,19 @@ VBoxManage hostonlyif remove vboxnet3
 ...
 <until you have removed all existing vboxnet's>
 ```
-Then re-run the appropriate `docker-machine create` command above.
+**Then re-run the appropriate `docker-machine create` command above.**
+
+**Troubleshooting:  If you see the following error:**
+```
+Host already exists: "pipeline-vm"
+```
+**Then run the following**
+```
+local-laptop$ docker-machine kill pipeline-vm
+local-laptop$ docker-machine rm pipeline-vm
+Are you sure? (y/n): y
+Successfully removed pipeline-vm
+```
 
 ### Setup Local Environment
 * Run the following"
@@ -43,27 +55,28 @@ Then re-run the appropriate `docker-machine create` command above.
 local-laptop$ docker-machine env pipeline-vm
 local-laptop$ eval $(docker-machine env pipeline-vm)
 ```
-* To setup your environment longer-term, include the output EXPORTs (from the commands above) in your `.profile', `.bashrc', or `.bash_profile` file as appropriate for your environment.
+* Add the EXPORTs (from the commands above) to your `.profile', `.bashrc`, or `.bash_profile` file as appropriate for your environment.
 ```
 local-laptop$ export DOCKER_TLS_VERIFY=1
 local-laptop$ export DOCKER_HOST=tcp://192.69.69.100:2376
-local-laptop$ export DOCKER_CERT_PATH=/Users/<username>/.docker/machine/machines/pipeline-vm
+local-laptop$ export DOCKER_CERT_PATH=<home-directory>/.docker/machine/machines/pipeline-vm
 local-laptop$ export DOCKER_MACHINE_NAME="pipeline-vm"
 ```
 
-* Setup NAT Rules 
+* [**Mac and Windows Only**] Setup NAT Rules 
 
 This step bridges your local laptop at `127.0.0.1` to the VirtualBox VM created by `docker-machine` called `pipeline-vm`.
 ```
 local-laptop$ <pipeline-install-dir>/bin/docker-setup-nat-rules.sh
 ```
 
-* [Linux-Only] Run the following:
+* [**Linux-Only**] Run the following:
 ```
 local-laptop$ sudo usermod -a -G docker $USER
 local-laptop$ exit
 (log back in)
 ```
+
 * Check that the version is Docker 1.10+
 ```
 local-laptop$ docker version
