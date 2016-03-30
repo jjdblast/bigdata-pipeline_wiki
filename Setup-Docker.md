@@ -21,12 +21,13 @@ local-laptop$ docker-machine create --driver virtualbox --virtualbox-hostonly-ci
 ```
 local-laptop$ docker-machine create --driver virtualbox --virtualbox-hostonly-cidr "192.69.69.1/24" --virtualbox-cpu-count "8" --virtualbox-disk-size "100000" --virtualbox-memory "8096" pipeline-vm
 ```
-** If you see the following:
+**Troubleshooting:  If you see the following**
 ```
 Error with pre-create check: "VirtualBox is configured with multiple host-only adapters with the same IP
 ```
-You need to run the following commands until you remove the conflicting virtualbox network adapters:
+**You may need to run the following commands until you remove the conflicting virtualbox network adapters**
 ```
+# ONLY RUN THIS IF YOU SEE THE ERROR ABOVE
 VBoxManage hostonlyif remove vboxnet0
 VBoxManage hostonlyif remove vboxnet1
 VBoxManage hostonlyif remove vboxnet2
