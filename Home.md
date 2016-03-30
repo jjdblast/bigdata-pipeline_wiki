@@ -1,5 +1,8 @@
-## Real-time, End-to-End Advanced Analytics and Machine Learning Data and Recommendation Pipeline
-### Follow [Wiki](https://github.com/fluxcapacitor/pipeline/wiki) Sidebar to Setup Environment -->
+## End-to-End Streaming Advanced Analytics and Machine Learning Recommendation Pipeline
+### Follow Wiki [Sidebar](https://github.com/fluxcapacitor/pipeline/wiki) to Setup Environment >>>
+
+## PANCAKE STACK
+![PANCAKE STACK](http://advancedspark.com/img/pancake-stack-sm.png)
 
 ## Screenshots
 ### Apache Zeppelin Notebooks
