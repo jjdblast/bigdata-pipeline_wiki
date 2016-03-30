@@ -1,12 +1,15 @@
 ## PANCAKE STACK
 ### End-to-End Streaming Advanced Analytics and Machine Learning Recommendation Pipeline
-Follow Wiki [Sidebar](https://github.com/fluxcapacitor/pipeline/wiki) to Setup Docker-based Environment >>>
+**Follow Wiki [Sidebar](https://github.com/fluxcapacitor/pipeline/wiki) to Setup Docker-based Environment >>>**
 
 ![PANCAKE STACK](http://advancedspark.com/img/pancake-stack-sign-sm.png)
 
 ## Screenshots
 ### Apache Zeppelin Notebooks
 ![Apache Zeppelin Notebooks](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-zeppelin-1.png)
+
+### Stanford CoreNLP Sentiment Analysis
+![Stanford CoreNLP Sentiment](http://advancedspark.com/img/corenlp-sentiment.png)
 
 ### Jupyter/iPython Notebooks
 ![Jupyter/iPython Notebooks](http://advancedspark.com/img/jupyter.png)
