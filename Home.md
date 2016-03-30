@@ -6,13 +6,13 @@
 ![Apache Zeppelin Notebooks](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-zeppelin-1.png)
 
 ### Jupyter/iPython Notebooks
-![Jupyter/iPython Notebooks](https://s3.amazonaws.com/advancedspark.com/img/jupyter.png)
+![Jupyter/iPython Notebooks](http://advancedspark.com/img/jupyter.png)
 
 ### SparkR Notebooks
-![SparkR Notebooks](https://s3.amazonaws.com/advancedspark.com/img/sparkr.png)
+![SparkR Notebooks](http://advancedspark.com/img/sparkr.png)
 
 ### TensorFlow Notebooks
-![TensorFlow Notebooks](https://s3.amazonaws.com/advancedspark.com/img/tensorflow.png)
+![TensorFlow Notebooks](http://advancedspark.com/img/tensorflow.png)
 
 ### Apache NiFi Flows
 ![Apache NiFi Flows](https://s3.amazonaws.com/fluxcapacitor.com/img/nifi-flow.png)
