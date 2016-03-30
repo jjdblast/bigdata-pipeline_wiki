@@ -50,7 +50,7 @@ Successfully removed pipeline-vm
 ```
 
 ### Setup Local Environment
-* Run the following"
+* Run the following
 ```
 local-laptop$ docker-machine env pipeline-vm
 local-laptop$ eval $(docker-machine env pipeline-vm)
