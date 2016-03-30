@@ -1,14 +1,18 @@
-## Docker-based, End-to-End, Big Data Reference Pipeline
-## Real-time, Advanced Analytics, Machine Learning, Streaming, Graph Processing, Text/NLP Analytics
-
-## Follow [Wiki](https://github.com/fluxcapacitor/pipeline/wiki) Sidebar to Setup Environment -->
+## Real-time, End-to-End Advanced Analytics and Machine Learning Data and Recommendation Pipeline
+### Follow [Wiki](https://github.com/fluxcapacitor/pipeline/wiki) Sidebar to Setup Environment -->
 
 ## Screenshots
 ### Apache Zeppelin Notebooks
 ![Apache Zeppelin Notebooks](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-zeppelin-1.png)
 
 ### Jupyter/iPython Notebooks
-![Jupyter/iPython Notebooks](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-jupyter.png)
+![Jupyter/iPython Notebooks](https://s3.amazonaws.com/advancedspark.com/img/jupyter.png)
+
+### SparkR Notebooks
+![SparkR Notebooks](https://s3.amazonaws.com/advancedspark.com/img/sparkr.png)
+
+### TensorFlow Notebooks
+![TensorFlow Notebooks](https://s3.amazonaws.com/advancedspark.com/img/tensorflow.png)
 
 ### Apache NiFi Flows
 ![Apache NiFi Flows](https://s3.amazonaws.com/fluxcapacitor.com/img/nifi-flow.png)
