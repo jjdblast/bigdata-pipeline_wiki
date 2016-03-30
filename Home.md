@@ -37,9 +37,6 @@
 ### Ganglia System and JVM Metrics Monitoring UIs
 ![Ganglia Metrics UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-ganglia-1.png)
 ![Ganglia Metrics UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-ganglia-2.png)
-![Ganglia Metrics UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-ganglia-3.png)
-![Ganglia Metrics UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-ganglia-4.png)
-![Ganglia Metrics UI](https://s3.amazonaws.com/fluxcapacitor.com/img/flux-ganglia-5.png)
 
 ## Architecture Overview
 ![Big Data Pipeline Overview](https://s3.amazonaws.com/fluxcapacitor.com/img/FluxCapacitorBigDataPipelineArchitectureOverview.png)
