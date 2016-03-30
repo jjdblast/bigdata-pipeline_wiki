@@ -59,7 +59,7 @@ local-laptop$ eval $(docker-machine env pipeline-vm)
 ```
 local-laptop$ export DOCKER_TLS_VERIFY=1
 local-laptop$ export DOCKER_HOST=tcp://192.69.69.100:2376
-local-laptop$ export DOCKER_CERT_PATH=<home-directory>/.docker/machine/machines/pipeline-vm
+local-laptop$ export DOCKER_CERT_PATH=<user-home-dir>/.docker/machine/machines/pipeline-vm
 local-laptop$ export DOCKER_MACHINE_NAME="pipeline-vm"
 ```
 
@@ -67,7 +67,7 @@ local-laptop$ export DOCKER_MACHINE_NAME="pipeline-vm"
 
 This step bridges your local laptop at `127.0.0.1` to the VirtualBox VM created by `docker-machine` called `pipeline-vm`.
 ```
-local-laptop$ <pipeline-install-dir>/bin/docker-setup-nat-rules.sh
+local-laptop$ <pipeline-home-dir>/bin/docker-setup-nat-rules.sh
 ```
 
 * [**Linux-Only**] Run the following:
