@@ -1,4 +1,4 @@
-##PANCAKE STACK
+## PANCAKE STACK
 ### End-to-End Streaming Advanced Analytics and Machine Learning Recommendation Pipeline
 Follow Wiki [Sidebar](https://github.com/fluxcapacitor/pipeline/wiki) to Setup Docker-based Environment >>>
 
