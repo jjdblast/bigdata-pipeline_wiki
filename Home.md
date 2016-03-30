@@ -2,7 +2,7 @@
 ### Follow Wiki [Sidebar](https://github.com/fluxcapacitor/pipeline/wiki) to Setup Environment >>>
 
 ## PANCAKE STACK
-![PANCAKE STACK](http://advancedspark.com/img/pancake-stack-sm.png)
+![PANCAKE STACK](http://advancedspark.com/img/pancake-stack-sign-sm.png)
 
 ## Screenshots
 ### Apache Zeppelin Notebooks
