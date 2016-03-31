@@ -29,13 +29,6 @@ root@docker$ ~/pipeline/bin/RUNME_ONCE.sh
 ```
 root@docker$ export
 ```
-
-* TROUBLESHOOTING ONLY:  If you don't see PIPELINE_HOME defined above, you'll need to do the following:
-```
-root@docker source ~/.profile
-```
-**Note:  This is likely an issue from an earlier step, so proceed at your own risk.**
-
 * Verify the number of CPU cores matches what you expect (at least 4 CPU cores or things won't work right)
 
 Note:  Knowing this number will help you troubleshoot Spark problems later as you may hit Spark Job resource starvation issues if you run too many long-running jobs at the same time (ie. Hive ThriftServer, Spark Streaming, Spark Job Server).
