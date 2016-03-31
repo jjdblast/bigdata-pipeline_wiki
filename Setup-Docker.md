@@ -35,12 +35,13 @@ local-laptop$ <pipeline-home-dir>/bin/docker-setup-nat-rules.sh
 local-laptop$ docker-machine env pipeline-vm
 local-laptop$ eval $(docker-machine env pipeline-vm)
 ```
-* Add the EXPORTs (from the commands above) to your `.profile', `.bashrc`, or `.bash_profile` file as appropriate for your environment.
+* Add the following EXPORTs (from the commands above) as environment variables
 ```
-local-laptop$ export DOCKER_TLS_VERIFY=1
-local-laptop$ export DOCKER_HOST=tcp://192.69.69.100:2376
-local-laptop$ export DOCKER_CERT_PATH=<user-home-dir>/.docker/machine/machines/pipeline-vm
-local-laptop$ export DOCKER_MACHINE_NAME="pipeline-vm"
+# Add these to .profile, .bashrc, or .bash_profile as appropriate for your environment
+export DOCKER_TLS_VERIFY=1
+export DOCKER_HOST=tcp://192.69.69.100:2376
+export DOCKER_CERT_PATH=<user-home-dir>/.docker/machine/machines/pipeline-vm
+export DOCKER_MACHINE_NAME="pipeline-vm"
 ```
 
 * [**Linux-Only**] Run the following:
@@ -60,7 +61,7 @@ If you see the following error:
 ```
 Error with pre-create check: "VirtualBox is configured with multiple host-only adapters with the same IP
 ```
-**You may need to run the following commands until you remove the conflicting virtualbox network adapters**
+**You may need to run the following commands until you remove the conflicting VirtualBox network adapters**
 ```
 # ONLY RUN THIS IF YOU SEE THE ERROR ABOVE
 VBoxManage hostonlyif remove vboxnet0
