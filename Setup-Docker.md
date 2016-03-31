@@ -29,34 +29,6 @@ This step bridges your local laptop at `127.0.0.1` to the VirtualBox VM created 
 local-laptop$ <pipeline-home-dir>/bin/docker-setup-nat-rules.sh
 ```
 
-**Troubleshooting:  If you see the following error:**
-```
-Error with pre-create check: "VirtualBox is configured with multiple host-only adapters with the same IP
-```
-**You may need to run the following commands until you remove the conflicting virtualbox network adapters**
-```
-# ONLY RUN THIS IF YOU SEE THE ERROR ABOVE
-VBoxManage hostonlyif remove vboxnet0
-VBoxManage hostonlyif remove vboxnet1
-VBoxManage hostonlyif remove vboxnet2
-VBoxManage hostonlyif remove vboxnet3
-...
-<until you have removed all existing vboxnet's>
-```
-**Then re-run the appropriate `docker-machine create` command above.**
-
-**Troubleshooting:  If you see the following error:**
-```
-Host already exists: "pipeline-vm"
-```
-**Then run the following**
-```
-local-laptop$ docker-machine kill pipeline-vm
-local-laptop$ docker-machine rm pipeline-vm
-Are you sure? (y/n): y
-Successfully removed pipeline-vm
-```
-
 ### Setup Local Environment
 * Run the following
 ```
@@ -84,6 +56,34 @@ local-laptop$ docker version
 ```
 
 **Troubleshooting**
+If you see the following error:
+```
+Error with pre-create check: "VirtualBox is configured with multiple host-only adapters with the same IP
+```
+**You may need to run the following commands until you remove the conflicting virtualbox network adapters**
+```
+# ONLY RUN THIS IF YOU SEE THE ERROR ABOVE
+VBoxManage hostonlyif remove vboxnet0
+VBoxManage hostonlyif remove vboxnet1
+VBoxManage hostonlyif remove vboxnet2
+VBoxManage hostonlyif remove vboxnet3
+...
+<until you have removed all existing vboxnet's>
+```
+**Then re-run the appropriate `docker-machine create` command above.**
+
+If you see the following error:
+```
+Host already exists: "pipeline-vm"
+```
+**Then run the following**
+```
+local-laptop$ docker-machine kill pipeline-vm
+local-laptop$ docker-machine rm pipeline-vm
+Are you sure? (y/n): y
+Successfully removed pipeline-vm
+```
+
 * If you see an error similar to one of the following:
 ```
 Cannot connect to the Docker daemon. Is 'docker -d' running on this host?
