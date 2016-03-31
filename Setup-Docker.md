@@ -25,6 +25,7 @@ local-laptop$ docker-machine create --driver virtualbox --virtualbox-hostonly-ci
 ### Setup NAT Rules [**Mac and Windows Only**]
 This step bridges your local laptop at `127.0.0.1` to the VirtualBox VM created by `docker-machine` called `pipeline-vm`.
 ```
+# Only run this for Mac and Windows environments
 local-mac-or-windows-only$ <pipeline-home-dir>/bin/docker-setup-nat-rules.sh
 ```
 
@@ -45,6 +46,7 @@ export DOCKER_MACHINE_NAME="pipeline-vm"
 
 * [**Linux-Only**] Run the following:
 ```
+# Only run this for Linux environments
 local-linux-only$ sudo usermod -a -G docker $USER
 local-linux-only$ exit
 (log back in)
