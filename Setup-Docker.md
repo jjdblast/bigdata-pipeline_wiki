@@ -103,7 +103,8 @@ VBoxManage: error: Details: code VBOX_E_INVALID_OBJECT_STATE (0x80bb0007), compo
 ```
 local-laptop$ docker-machine stop pipeline-vm
 ```
-* Re-run the `docker-setup-nat-rules.sh` script and restart as follows:
+* Re-run the `docker-setup-nat-rules.sh` script 
+* Restart the `pipeline-vm`
 ```
 local-laptop$ docker-machine start pipeline-vm
 ```
