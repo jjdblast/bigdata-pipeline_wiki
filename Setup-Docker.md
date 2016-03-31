@@ -22,11 +22,10 @@ local-laptop$ docker-machine create --driver virtualbox --virtualbox-hostonly-ci
 local-laptop$ docker-machine create --driver virtualbox --virtualbox-hostonly-cidr "192.69.69.1/24" --virtualbox-cpu-count "8" --virtualbox-disk-size "100000" --virtualbox-memory "8096" pipeline-vm
 ```
 
-* [**Mac and Windows Only**] Setup NAT Rules 
-
+### Setup NAT Rules [**Mac and Windows Only**]
 This step bridges your local laptop at `127.0.0.1` to the VirtualBox VM created by `docker-machine` called `pipeline-vm`.
 ```
-local-laptop$ <pipeline-home-dir>/bin/docker-setup-nat-rules.sh
+local-mac-or-windows-only$ <pipeline-home-dir>/bin/docker-setup-nat-rules.sh
 ```
 
 ### Setup Local Environment
@@ -46,8 +45,8 @@ export DOCKER_MACHINE_NAME="pipeline-vm"
 
 * [**Linux-Only**] Run the following:
 ```
-local-laptop$ sudo usermod -a -G docker $USER
-local-laptop$ exit
+local-linux-only$ sudo usermod -a -G docker $USER
+local-linux-only$ exit
 (log back in)
 ```
 
@@ -56,12 +55,11 @@ local-laptop$ exit
 local-laptop$ docker version
 ```
 
-**Troubleshooting**
-If you see the following error:
+## Troubleshooting
 ```
 Error with pre-create check: "VirtualBox is configured with multiple host-only adapters with the same IP
 ```
-**You may need to run the following commands until you remove the conflicting VirtualBox network adapters**
+* Run the following commands (vboxnet0..n) until you remove the conflicting VirtualBox network adapters
 ```
 # ONLY RUN THIS IF YOU SEE THE ERROR ABOVE
 VBoxManage hostonlyif remove vboxnet0
@@ -71,13 +69,12 @@ VBoxManage hostonlyif remove vboxnet3
 ...
 <until you have removed all existing vboxnet's>
 ```
-**Then re-run the appropriate `docker-machine create` command above.**
+* Then re-run the appropriate `docker-machine create` command above.
 
-If you see the following error:
 ```
 Host already exists: "pipeline-vm"
 ```
-**Then run the following**
+* Run the following and re-run the `docker-machine create` command above
 ```
 local-laptop$ docker-machine kill pipeline-vm
 local-laptop$ docker-machine rm pipeline-vm
@@ -85,7 +82,6 @@ Are you sure? (y/n): y
 Successfully removed pipeline-vm
 ```
 
-* If you see an error similar to one of the following:
 ```
 Cannot connect to the Docker daemon. Is 'docker -d' running on this host?
 ...
