@@ -8,15 +8,19 @@
 ```
 root@docker$ cd $MYAPPS_HOME
 root@docker$ ll
-core/        
-feeder/ 
-jupyter/     
-ml/         
-sql/        
-streaming/
+airflow/        
+akka/
+elasticsearch/
+flink/  
+jupyter/
+kibana/
+nifi/        
+spark/
+titandb/
 zeppelin/
 ```
 
+## TODO:  Fix these!
 ### Spark Core
 * [core](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/core)
 * Project Tungsten
