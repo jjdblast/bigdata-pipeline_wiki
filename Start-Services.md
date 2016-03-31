@@ -2,18 +2,13 @@
 * Keep an eye on the prompt:  `root@docker$` means that you're inside docker, otherwise, you're on your local laptop.
 
 ### Setup the Environment
-* You must `source` the following script to setup and start the pipeline services.
-
-**--> Don't forget the `source` below! <--**
-
+* The following command configures all of the services and datasets 
 ```
-root@docker$ cd ~/pipeline/bin && source SOURCEME_FIRST.sh
+root@docker$ ~/pipeline/bin/RUNME_ONCE.sh
 ```
-
-**--> ^^ Don't forget the `source` above! ^^ <--**
 
 ### Verify that Setup Worked Correctly
-* Verify the output of the script above looks something like this:
+* Verify the output of the script above looks something like this
 ```
 ...Show Running Java Processes...
 737 org.elasticsearch.bootstrap.Elasticsearch           <-- ElasticSearch
@@ -24,10 +19,11 @@ root@docker$ cd ~/pipeline/bin && source SOURCEME_FIRST.sh
 3479 sun.tools.jps.Jps                                  <-- this (jps)
 2391 org.apache.spark.deploy.history.HistoryServer      <-- Spark History Server
 2408 play.core.server.NettyServer                       <-- Spark Notebook
-1529 org.apache.zookeeper.server.quorum.QuorumPeerMain  <-- ZooKeeper
-2555 io.confluent.kafka.schemaregistry.rest.Main        <-- Kafka SchemaRegistry (Avro)
+1529 org.apache.zookeeper.server.quorum.QuorumPeerMain  <-- ZooKeeper (for Kafka 0.8 - will upgrade to 0.10 soon)
+2555 io.confluent.kafka.schemaregistry.rest.Main        <-- Kafka SchemaRegistry
 2123 org.apache.spark.deploy.master.Master              <-- Spark Master
 2556 io.confluent.kafkarest.Main                        <-- Kafka REST API
+...
 ```
 * Verify that the output of `export` contains `$PIPELINE_HOME` among many other new exports
 ```
