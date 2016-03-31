@@ -30,5 +30,5 @@ local-laptop$ docker run -it --privileged --name pipeline -h docker -m 8g -p 80:
 WARNING: Your kernel does not support swap limit capabilities, memory limited without swap.
 ```
 
-## Contact us at `help@fluxcapacitor.com` if you have problems getting this setup.  
-### We will answer your questions quickly!!
+## Email `help@fluxcapacitor.com` with Questions!
+### We will respond quickly!!
