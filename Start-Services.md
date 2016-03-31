@@ -2,7 +2,7 @@
 * Keep an eye on the prompt:  `root@docker$` means that you're inside docker, otherwise, you're on your local laptop.
 
 ### Setup the Environment
-* The following command configures all of the services and datasets 
+* The following command configures and starts all of the services
 ```
 root@docker$ ~/pipeline/bin/RUNME_ONCE.sh
 ```
