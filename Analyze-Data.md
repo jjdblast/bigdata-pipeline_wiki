@@ -32,6 +32,16 @@ root@docker$ beeline -u jdbc:hive2://127.0.0.1:10000 -n hiveuser -p ''
 ### Presto CLI
 * TODO
 
+## Notebooks
+### Apache Zeppelin
+```
+http://127.0.0.1:38080
+```
+
+### iPython/Jupyter & TensorFlow Notebook
+```
+http://127.0.0.1:38754
+```
 
 ## Visualization Tools
 ### Presto UI
@@ -57,19 +67,8 @@ Notes:
 * This SQLContext gives you full access to permanent tables that are created (ie. DataFrame.saveAsTable("ratings_perm")
 * Temp tables are not accessible since they are only specific to the SQLContext that they are created in
 
-## Notebooks
-### Apache Zeppelin
-```
-http://127.0.0.1:38080
-```
-
-### iPython/Jupyter & TensorFlow Notebook
-```
-http://127.0.0.1:38754
-```
-
 ## Workflows
-### Airflow
+### AirFlow
 ```
 http://127.0.0.1:35060
 ```
