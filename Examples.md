@@ -1,4 +1,3 @@
-## Examples
 * This repo comes with many example applications to help you get started.
 * You are encouraged to start with one of these examples when building your own custom apps or libraries
 * The root of these examples is `$MYAPPS_HOME`.
