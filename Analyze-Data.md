@@ -1,3 +1,14 @@
+## Notebooks
+### Apache Zeppelin
+```
+http://127.0.0.1:38080
+```
+
+### iPython/Jupyter & TensorFlow Notebook
+```
+http://127.0.0.1:38754
+```
+
 ## Command Line
 ### Cassandra's cqlsh CLI
 * Query Cassandra directly inside of Docker
@@ -31,17 +42,6 @@ root@docker$ beeline -u jdbc:hive2://127.0.0.1:10000 -n hiveuser -p ''
 
 ### Presto CLI
 * TODO
-
-## Notebooks
-### Apache Zeppelin
-```
-http://127.0.0.1:38080
-```
-
-### iPython/Jupyter & TensorFlow Notebook
-```
-http://127.0.0.1:38754
-```
 
 ## Visualization Tools
 ### Presto UI
