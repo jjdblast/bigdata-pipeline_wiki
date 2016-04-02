@@ -66,10 +66,35 @@ Caused by: java.io.FileNotFoundException: datasets/dating/ratings.csv (No such f
 spark.executor.cores=2
 spark.cores.max=2
 ```
-* Check Number of CPU Cores for your Docker Container
+
+* Verify the number of CPU cores matches what you expect (at least 4 CPU cores or things won't work right)
+Note:  Knowing this number will help you troubleshoot Spark problems later as you may hit Spark Job resource starvation issues if you run too many long-running jobs at the same time (ie. Hive ThriftServer, Spark Streaming, Spark Job Server).
 ```
-lscpus
+root@docker$ lscpu
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                8   <----------- Number of CPU Cores
+On-line CPU(s) list:   0-7
+Thread(s) per core:    2
+Core(s) per socket:    4
+Socket(s):             1
+NUMA node(s):          1
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 62
+Stepping:              4
+CPU MHz:               2500.094
+BogoMIPS:              5000.18
+Hypervisor vendor:     Xen
+Virtualization type:   full
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              256K
+L3 cache:              25600K
+NUMA node0 CPU(s):     0-7
 ```
+
 * Check the Spark Admin UI to see if a Job is pending/waiting for resources
 ```
 macosx-linux-windows-laptop$ open http://192.69.69.1:36060
