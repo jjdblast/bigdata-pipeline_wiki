@@ -17,8 +17,6 @@ root@docker$ ~/pipeline/bin/RUNME_ONCE.sh
 2243 org.apache.spark.deploy.worker.Worker              <-- Spark Worker
 1973 kafka.Kafka                                        <-- Kafka
 3479 sun.tools.jps.Jps                                  <-- this (jps)
-2391 org.apache.spark.deploy.history.HistoryServer      <-- Spark History Server
-2408 play.core.server.NettyServer                       <-- Spark Notebook
 1529 org.apache.zookeeper.server.quorum.QuorumPeerMain  <-- ZooKeeper (for Kafka 0.8 - will upgrade to 0.10 soon)
 2555 io.confluent.kafka.schemaregistry.rest.Main        <-- Kafka SchemaRegistry
 2123 org.apache.spark.deploy.master.Master              <-- Spark Master
