@@ -217,7 +217,6 @@ root@docker:~/pipeline# jps -l
 2243 org.apache.spark.deploy.worker.Worker
 1973 kafka.Kafka
 2391 org.apache.spark.deploy.history.HistoryServer
-2408 play.core.server.NettyServer
 1529 org.apache.zookeeper.server.quorum.QuorumPeerMain
 2555 io.confluent.kafka.schemaregistry.rest.Main
 2123 org.apache.spark.deploy.master.Master
