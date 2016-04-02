@@ -1,1 +1,1 @@
-![Big Data Pipeline Overview](https://s3.amazonaws.com/fluxcapacitor.com/img/FluxCapacitorBigDataPipelineArchitectureOverview.png)
+![Pipeline Architecture Overview](https://advancedspark.com/img/architecture-overview.png)
