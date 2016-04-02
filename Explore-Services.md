@@ -85,10 +85,10 @@ Time taken: 2.179 seconds, Fetched 2 row(s)
 root@docker$ cqlsh
 cqlsh> use advancedspark;
 
-cqlsh:advancedspark> select fromuserid, touserid, rating, batchtime from ratings;
+cqlsh:advancedspark> select fromuserid, touserid, rating, geo_city, batchtime from ratings;
 
- fromuserid | touserid | rating | batchtime
-------------+----------+--------+-----------
+ fromuserid | touserid | rating | geo_city | batchtime
+------------+----------+--------+----------+-----------
 
 (0 rows)
 
@@ -156,12 +156,10 @@ root@docker:~/pipeline# jps -l
 738 org.jruby.Main
 1987 org.apache.zeppelin.server.ZeppelinServer
 2243 org.apache.spark.deploy.worker.Worker
-2408 play.core.server.NettyServer
 2123 org.apache.spark.deploy.master.Master
 4177 org.apache.spark.deploy.SparkSubmit                     <-- Long-running Spark Submit Process for ThriftServer
 4370 sun.tools.jps.Jps
 1973 kafka.Kafka
-2391 org.apache.spark.deploy.history.HistoryServer
 1529 org.apache.zookeeper.server.quorum.QuorumPeerMain
 2555 io.confluent.kafka.schemaregistry.rest.Main
 4284 org.apache.spark.executor.CoarseGrainedExecutorBackend  <-- Long-running Executor for ThriftServer
