@@ -1,6 +1,5 @@
 # Custom Distributions
-* Not really *custom*, just with many options turned on
-* This section helps remind us how we built specific versions of our tools (Spark, Zeppelin, etc)
+* Not really *custom* - more about enabling various options at build-time
 
 ## Spark
 * Tachyon
@@ -15,7 +14,7 @@ Details are [here](http://spark.apache.org/docs/latest/building-spark.html).
 ### Build Commands (Very Long...)
 Clone the branch/tag as follows:
 ```
-git clone --branch 'v1.6.0' --single-branch git@github.com:apache/spark.git v1.6.0
+git clone --branch 'v1.6.1' --single-branch git@github.com:apache/spark.git v1.6.1
 ```
 Make sure you have [install R](https://www.digitalocean.com/community/tutorials/how-to-set-up-r-on-ubuntu-14-04) before running the following command:
 ```
