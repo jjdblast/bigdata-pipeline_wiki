@@ -223,9 +223,49 @@ root@docker:~/pipeline# jps -l
 2556 io.confluent.kafkarest.Main
 ```
 
-root@docker$ gremlin.sh
-Apr 03, 2016 12:55:43 AM java.util.prefs.FileSystemPreferences$1 run
-INFO: Created user preferences directory.
+
+### Presto
+* Requires `start-presto-service.sh`
+* Run `pipeline-presto-kafka.sh` and query a live Kafka Topic
+```
+presto:default> select _key, _message from item_ratings;
+ _key  |  _message  
+-------+------------
+ 33057 | 33057,3,1  
+ 33057 | 33057,9,1  
+ 33057 | 33057,8,1  
+ 33057 | 33057,14,1 
+ 33057 | 33057,16,1 
+(5 rows)
+
+Query 20160403_043056_00020_jtkti, FINISHED, 1 node
+Splits: 2 total, 2 done (100.00%)
+0:00 [5 rows, 47B] [147 rows/s, 1.35KB/s]
+```
+
+* Requires `start-presto-service.sh`
+* Run `pipeline-presto-hive.sh` and query a Hive-friendly Table 
+_(ie. no non-Hive-friendly SerDe's like com.databricks.spark.csv were used to create the table)_
+```
+presto:default> select * from movies_hive_friendly limit 10;
+  id  |               title                |                    tags                     
+------+------------------------------------+---------------------------------------------
+ NULL | title                              | genres                                      
+    1 | Toy Story (1995)                   | Adventure|Animation|Children|Comedy|Fantasy 
+    2 | Jumanji (1995)                     | Adventure|Children|Fantasy                  
+    3 | Grumpier Old Men (1995)            | Comedy|Romance                              
+    4 | Waiting to Exhale (1995)           | Comedy|Drama|Romance                        
+    5 | Father of the Bride Part II (1995) | Comedy                                      
+    6 | Heat (1995)                        | Action|Crime|Thriller                       
+    7 | Sabrina (1995)                     | Comedy|Romance                              
+    8 | Tom and Huck (1995)                | Adventure|Children                          
+    9 | Sudden Death (1995)                | Action                                      
+(10 rows)
+
+Query 20160403_160506_00010_wq24r, FINISHED, 1 node
+Splits: 2 total, 2 done (100.00%)
+0:01 [2.46K rows, 114KB] [4.51K rows/s, 209KB/s]
+```
 
 ### Titan
 * Requires `start-titan-service.sh`
