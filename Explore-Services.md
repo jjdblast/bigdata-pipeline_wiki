@@ -85,7 +85,7 @@ Time taken: 2.179 seconds, Fetched 2 row(s)
 root@docker$ cqlsh
 cqlsh> use advancedspark;
 
-cqlsh:advancedspark> select fromuserid, touserid, rating, batchtime from ratings;
+cqlsh:advancedspark> select fromuserid, touserid, rating, batchtime from item_ratings;
 
  fromuserid | touserid | rating | batchtime
 ------------+----------+--------+-----------
@@ -163,15 +163,16 @@ root@docker:~/pipeline# jps -l
 737 org.elasticsearch.bootstrap.Elasticsearch
 738 org.jruby.Main
 1987 org.apache.zeppelin.server.ZeppelinServer
-2243 org.apache.spark.deploy.worker.Worker
-2123 org.apache.spark.deploy.master.Master
-4177 org.apache.spark.deploy.SparkSubmit                     <-- Long-running Spark Submit Process for ThriftServer
 4370 sun.tools.jps.Jps
-1973 kafka.Kafka
 1529 org.apache.zookeeper.server.quorum.QuorumPeerMain
+2123 org.apache.spark.deploy.master.Master
+2243 org.apache.spark.deploy.worker.Worker
+4177 org.apache.spark.deploy.SparkSubmit                     <-- Long-running Spark Submit Process for Hive ThriftServer
+4284 org.apache.spark.executor.CoarseGrainedExecutorBackend  <-- Long-running Executor for Hive ThriftServer
+1973 kafka.Kafka
 2555 io.confluent.kafka.schemaregistry.rest.Main
-4284 org.apache.spark.executor.CoarseGrainedExecutorBackend  <-- Long-running Executor for ThriftServer
 2556 io.confluent.kafkarest.Main
+2547 org.apache.hadoop.util.RunJar                    
 ```
 
 Login and Run the Following to Query with the Beeline Hive Client 
@@ -209,7 +210,7 @@ Beeline version 1.5.1 by Apache Hive
 3 rows selected (0.881 seconds)
 ```
 
-![Apache Zeppelin Notebooks](https://s3.amazonaws.com/fluxcapacitor.com/img/zeppelin-hive-thriftserver.png)
+![Apache Zeppelin Notebooks](http://advancedspark.com/img/zeppelin-hive-thriftserver.png)
 
 * Stopping the long-running Hive Thrift Server frees up CPU cores for more Spark exploration
 ```
@@ -219,16 +220,17 @@ root@docker$ stop-sparksubmitted-job.sh
 ```
 root@docker:~/pipeline# jps -l
 737 org.elasticsearch.bootstrap.Elasticsearch
-4545 sun.tools.jps.Jps
 738 org.jruby.Main
 1987 org.apache.zeppelin.server.ZeppelinServer
-2243 org.apache.spark.deploy.worker.Worker
-1973 kafka.Kafka
 2391 org.apache.spark.deploy.history.HistoryServer
 1529 org.apache.zookeeper.server.quorum.QuorumPeerMain
-2555 io.confluent.kafka.schemaregistry.rest.Main
+4545 sun.tools.jps.Jps
 2123 org.apache.spark.deploy.master.Master
+2243 org.apache.spark.deploy.worker.Worker
+1973 kafka.Kafka
 2556 io.confluent.kafkarest.Main
+2555 io.confluent.kafka.schemaregistry.rest.Main
+2547 org.apache.hadoop.util.RunJar                    
 ```
 
 ### Presto
@@ -251,8 +253,8 @@ Splits: 2 total, 2 done (100.00%)
 ```
 
 * Requires `start-presto-service.sh`
-* Run `pipeline-presto-hive.sh` and query a Hive-friendly Table 
-_(ie. no non-Hive-friendly SerDe's like com.databricks.spark.csv were used to create the table)_
+* Run `pipeline-presto-hive.sh` and query a Hive-friendly table 
+_(ie. non-Hive-friendly tables use SerDe's like `com.databricks.spark.csv`)_
 ```
 presto:default> select * from movies_hive_friendly limit 10;
   id  |               title                |                    tags                     
