@@ -309,6 +309,9 @@ http://127.0.0.1:36061
 ```
 http://127.0.0.1:39200/_cat/indices?v
 ```
+```
+http://demo.advancedspark.com:39200/advancedspark/item_ratings/_search?q=*&pretty
+```
 
 ### Kibana and Logstash
 ```
