@@ -203,7 +203,7 @@ Beeline version 1.5.1 by Apache Hive
 
 ![Apache Zeppelin Notebooks](https://s3.amazonaws.com/fluxcapacitor.com/img/zeppelin-hive-thriftserver.png)
 
-* **Make sure that you STOP the Hive Thrift Server before continuing as this process occupies Spark CPU cores which may cause CPU starvation later in your exploration**:
+* Stopping the long-running Hive Thrift Server frees up CPU cores for more Spark exploration
 ```
 root@docker$ stop-sparksubmitted-job.sh
 ```
@@ -222,7 +222,6 @@ root@docker:~/pipeline# jps -l
 2123 org.apache.spark.deploy.master.Master
 2556 io.confluent.kafkarest.Main
 ```
-
 
 ### Presto
 * Requires `start-presto-service.sh`
