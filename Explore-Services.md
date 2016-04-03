@@ -113,9 +113,9 @@ quit  <-- Type quit to Exit
 ```
 
 ### MySQL
-We use MySQL for the Hive Metastore instead of the default, file-based Derby because we were noticing concurrency/locking issues when running both queries through the Hive ThriftServer as well as regular Spark jobs.
-
-Any serious production use case should use MySQL for the Hive Metastore and not rely on the default, file-based Derby implementation.
+* We use MySQL to back the Hive Metastore Service
+* Serious production deployments should use MySQL (or Postgres) behind the Hive Metastore Service
+* The default, file-based Derby implementation causes many concurrency/locking issues beyond a single connection.
 ```
 root@docker$ mysql -u root -p 
 Enter password:  password
@@ -125,11 +125,19 @@ mysql> show databases;
 | Database           |
 +--------------------+
 | information_schema |
-| hive_metastore     |  <---  Hive Metastore
+| hive_metastore     |  <---  Hive Metastore Database
 | mysql              |
 | performance_schema |
 +--------------------+
 4 rows in set (0.01 sec)
+```
+
+### Hive Metastore Service
+* Make sure the Hive Metastore Service is running.
+* This services uses the Hive Metastore Database shown above.
+```
+root@docker$ netstat -an | grep 9083
+tcp        0      0 0.0.0.0:9083            0.0.0.0:*               LISTEN 
 ```
 
 ### Redis
@@ -345,16 +353,27 @@ http://127.0.0.1:36061
 ```
 
 ### ElasticSearch REST API
+* Show the current ElasticSearch indexes
 ```
 http://127.0.0.1:39200/_cat/indices?v
 ```
+* Query the `advancedspark` index and `item_ratings` document type
 ```
 http://127.0.0.1:39200/advancedspark/item_ratings/_search?q=*&pretty
 ```
 
 ### Kibana and Logstash
+* Main Kibana landing page
 ```
 http://127.0.0.1:35601
+```
+* ElasticSearch Graph Plugin (graph data through Kibana)
+```
+http://127.0.0.1:35601/app/graph
+```
+* ElasticSearch Sense Plugin (run queries through Kibana)
+```
+http://demo.advancedspark.com:35601/app/sense
 ```
 
 ### Ganglia
