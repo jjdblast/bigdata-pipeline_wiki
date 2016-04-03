@@ -170,7 +170,7 @@ Login and Run the Following to Query with the Beeline Hive Client
 
 * Note:  If you are outside of Docker, you need to use port `30000` instead of `10000` given the way we've mapped the Docker external-internal ports 
 ```
-root@docker:~/pipeline# beeline -u jdbc:hive2://127.0.0.1:10000 -n hiveuser -p ''
+root@docker$ beeline -u jdbc:hive2://127.0.0.1:10000 -n hiveuser -p ''
 Connecting to jdbc:hive2://127.0.0.1:10000
 ...
 Connected to: Spark SQL (version 1.5.1)
@@ -221,6 +221,31 @@ root@docker:~/pipeline# jps -l
 2555 io.confluent.kafka.schemaregistry.rest.Main
 2123 org.apache.spark.deploy.master.Master
 2556 io.confluent.kafkarest.Main
+```
+
+root@docker$ gremlin.sh
+Apr 03, 2016 12:55:43 AM java.util.prefs.FileSystemPreferences$1 run
+INFO: Created user preferences directory.
+
+### Titan
+* Requires `start-titan-service.sh`
+```
+root@docker$ gremlin.sh
+         \,,,/
+         (o o)
+-----oOOo-(3)-oOOo-----
+plugin activated: aurelius.titan
+plugin activated: tinkerpop.server
+plugin activated: tinkerpop.utilities
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/root/titan-1.0.0-hadoop1/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/root/titan-1.0.0-hadoop1/lib/logback-classic-1.1.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+00:55:52 INFO  org.apache.tinkerpop.gremlin.hadoop.structure.HadoopGraph  - HADOOP_GREMLIN_LIBS is set to: /root/titan-1.0.0-hadoop1/lib
+plugin activated: tinkerpop.hadoop
+plugin activated: tinkerpop.tinkergraph
+gremlin>
 ```
 
 ## Test Services Outside Docker Container
@@ -296,16 +321,25 @@ http://127.0.0.1/ganglia
 ```
 
 ### NiFi
+* Requires `start-nifi-service.sh`
 ```
 http://127.0.0.1:36969/nifi/
 ```
 
 ### AirFlow
+* Requires `start-airflow-service.sh`
 ```
 http://127.0.0.1:35060/
 ```
 
 ### Presto
+* Requires `start-presto-service.sh`
 ```
 http://127.0.0.1:37060
+```
+
+### Titan
+* Requires `start-titan-service.sh`
+```
+http://127.0.0.1:38182/
 ```
