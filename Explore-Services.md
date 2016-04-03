@@ -23,7 +23,7 @@ root@docker$ rest-submit-sparkpi-job.sh
 {
   "action" : "CreateSubmissionResponse",
   "message" : "Driver successfully submitted as driver-20151122184642-0000",
-  "serverSparkVersion" : "1.5.1",
+  "serverSparkVersion" : "1.6.1",
   "submissionId" : "driver-20151122184642-0000",
   "success" : true
 }
