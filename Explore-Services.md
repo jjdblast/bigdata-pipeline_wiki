@@ -85,10 +85,10 @@ Time taken: 2.179 seconds, Fetched 2 row(s)
 root@docker$ cqlsh
 cqlsh> use advancedspark;
 
-cqlsh:advancedspark> select fromuserid, touserid, rating, geo_city, batchtime from ratings;
+cqlsh:advancedspark> select fromuserid, touserid, rating, batchtime from ratings;
 
- fromuserid | touserid | rating | geo_city | batchtime
-------------+----------+--------+----------+-----------
+ fromuserid | touserid | rating | batchtime
+------------+----------+--------+-----------
 
 (0 rows)
 
