@@ -4,16 +4,9 @@
 **ALSO, PLEASE KILL ANY VPN DAEMON PROCESSES OR THESE STEPS MAY NOT WORK.**
 
 ### Install Docker Toolbox from USB (if available) or Internet:
-* USB
-Install `.exe` (Windows) or `.pkg` (Mac) as appropriate
+* USB: Install `.exe` (Windows) or `.pkg` (Mac) as appropriate
 
-* Internet
-
-[Mac OS X](https://docs.docker.com/mac/)
-
-[Windows](https://docs.docker.com/windows/)
-
-[Linux](https://docs.docker.com/linux/)
+* Internet: [Mac OS X](https://docs.docker.com/mac/) or [Windows](https://docs.docker.com/windows/) or [Linux](https://docs.docker.com/linux/)
 
 ### Create VM Environment from USB (preferred) or Internet (huge download)
 * USB
