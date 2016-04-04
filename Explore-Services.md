@@ -111,12 +111,14 @@ root@docker$ zookeeper-shell 127.0.0.1:2181
 WATCHER::
 
 WatchedEvent state:SyncConnected type:None path:null
-
-  <-- Hit Enter a Few Times
+<enter>  <-- Hit Enter a Few Times
+<enter>
+...
+  
 ```
 * Type `quit` to quit
 ```
-quit  <-- Type quit to Exit
+quit
 ```
 
 ### MySQL
@@ -155,12 +157,12 @@ PONG
 ```
 
 ### JDBC ODBC Hive ThriftServer
-Start the [Hive ThriftServer](https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients) Service
+* Start the [Hive ThriftServer](https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients) Service
 ```
 root@docker$ start-hive-thriftserver.sh
 ```
-Verify that the following 2 new processes have been added:
 
+* Verify that the following 2 new processes have been added:
 ```
 root@docker$ jps -l
 3641 org.apache.spark.executor.CoarseGrainedExecutorBackend 
@@ -182,9 +184,7 @@ root@docker:~/pipeline# jps -l
 2547 org.apache.hadoop.util.RunJar                    
 ```
 
-Login and Run the Following to Query with the Beeline Hive Client 
-
-* Note:  If you are outside of Docker, you need to use port `30000` instead of `10000` given the way we've mapped the Docker external-internal ports 
+* Login and Run the Following to Query with the Beeline Hive Client 
 ```
 root@docker$ beeline -u jdbc:hive2://127.0.0.1:10000 -n hiveuser -p ''
 Connecting to jdbc:hive2://127.0.0.1:10000
@@ -223,6 +223,7 @@ Beeline version 1.5.1 by Apache Hive
 ```
 root@docker$ stop-sparksubmitted-job.sh
 ```
+
 * Verify that the 2 processes identified above for the Hive ThriftServer have been removed with `jps -l`.
 ```
 root@docker:~/pipeline# jps -l
@@ -240,7 +241,7 @@ root@docker:~/pipeline# jps -l
 2547 org.apache.hadoop.util.RunJar                    
 ```
 
-### Presto
+### Presto + Kafka
 * Requires `start-presto-service.sh`
 * Run `pipeline-presto-kafka.sh` and query a live Kafka Topic
 ```
@@ -259,6 +260,7 @@ Splits: 2 total, 2 done (100.00%)
 0:00 [5 rows, 47B] [147 rows/s, 1.35KB/s]
 ```
 
+### Presto + Hive/SparkSQL
 * Requires `start-presto-service.sh`
 * Run `pipeline-presto-hive.sh` and query a Hive-friendly table 
 _(ie. non-Hive-friendly tables use SerDe's like `com.databricks.spark.csv`)_
@@ -305,9 +307,16 @@ gremlin>
 ```
 
 ## Test Services Outside Docker Container
-**DO NOT TYPE `exit` AS THIS WILL STOP YOUR CONTAINER**
+**DO NOT TYPE `exit` from DOCKER AS THIS WILL STOP YOUR CONTAINER**
+
 * Instead, use the combo of `CTRL-P CTRL-Q` to exit the Docker Container
-* Launch a new terminal
+```
+ctrl-p ctrl-q
+```
+
+* Launch a new command-line terminal
+
+* Run the following to verify that everything is OK before continuining
 ```
 local-laptop$ docker-machine env pipeline-vm
 export DOCKER_TLS_VERIFY="1"
@@ -315,6 +324,7 @@ export DOCKER_HOST="tcp://192.69.69.100:2376"
 export DOCKER_CERT_PATH="/Users/<username>/.docker/machine/machines/pipeline-vm"
 export DOCKER_MACHINE_NAME="pipeline-vm"
 ```
+
 * Use `curl`, `wget`, or your browser to verify the following URLs
 
 ### Apache2 HTTP Server
@@ -366,6 +376,7 @@ http://127.0.0.1:36061
 ```
 http://127.0.0.1:39200/_cat/indices?v
 ```
+
 * Query the `advancedspark` index and `item_ratings` document type
 ```
 http://127.0.0.1:39200/advancedspark/item_ratings/_search?q=*&pretty
@@ -376,10 +387,12 @@ http://127.0.0.1:39200/advancedspark/item_ratings/_search?q=*&pretty
 ```
 http://127.0.0.1:35601
 ```
+
 * ElasticSearch Graph Plugin (graph data through Kibana)
 ```
 http://127.0.0.1:35601/app/graph
 ```
+
 * ElasticSearch Sense Plugin (run queries through Kibana)
 ```
 http://127.0.0.1:35601/app/sense
