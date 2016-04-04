@@ -44,7 +44,7 @@ root@docker$ pipeline-spark-shell.sh
 scala> 1 + 1
 res0: Int = 2
 ```
-* Hit Ctrl-C to exit
+* Hit `Ctrl-C` to exit
 
 
 ### PySpark Shell
@@ -81,7 +81,7 @@ datings_ratings	false   <------   datings_ratings table registered with Hive (is
 Time taken: 2.179 seconds, Fetched 2 row(s)
 15/11/19 13:22:44 INFO CliDriver: Time taken: 2.179 seconds, Fetched 2 row(s)
 ```
-* Hit Ctrl-C to exit
+* Hit `Ctrl-C` to exit
 
 ### Cassandra
 ```
