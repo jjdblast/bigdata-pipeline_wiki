@@ -4,7 +4,7 @@
 ### Setup the Environment
 * The following command configures and starts all of the services
 ```
-root@docker$ ~/pipeline/bin/RUNME_ONCE.sh
+root@docker$ ~/pipeline/bin/initial/RUNME_ONCE.sh
 ```
 
 ### Verify that Setup Worked Correctly
@@ -28,7 +28,7 @@ root@docker$ ~/pipeline/bin/RUNME_ONCE.sh
 ```
 root@docker$ export
 ...
-declare -x PATH=/root/titan-1.0.0-hadoop1/bin:/root/presto-server-0.137/bin:/root/airflow/bin:/root/flink-1.0.0/bin:/root/zeppelin-0.6.0/bin:/root/sbt/bin:/root/nifi-0.4.1/bin:/root/webdis:/root/redis-3.0.5/bin:/root/apache-hive-1.2.1-bin/bin:/root/hadoop-2.6.0/bin:/root/kibana-4.5.0-linux-x64/bin:/root/logstash-2.3.0/bin:/root/elasticsearch-2.3.0/bin:/root/confluent-1.0.1/bin:/root/confluent-1.0.1/bin:/root/spark-1.6.1-bin-fluxcapacitor/tachyon/bin:/root/spark-1.6.1-bin-fluxcapacitor/bin:/root/spark-1.6.1-bin-fluxcapacitor/sbin:/root/apache-cassandra-2.2.5/bin:/root/pipeline/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+declare -x PATH=/root/titan-1.0.0-hadoop1/bin:/root/presto-server-0.137/bin:/root/airflow/bin:/root/flink-1.0.0/bin:/root/zeppelin-0.6.0/bin:/root/sbt/bin:/root/nifi-0.4.1/bin:/root/webdis:/root/redis-3.0.5/bin:/root/apache-hive-1.2.1-bin/bin:/root/hadoop-2.6.0/bin:/root/kibana-4.5.0-linux-x64/bin:/root/logstash-2.3.0/bin:/root/elasticsearch-2.3.0/bin:/root/confluent-1.0.1/bin:/root/confluent-1.0.1/bin:/root/spark-1.6.1-bin-fluxcapacitor/tachyon/bin:/root/spark-1.6.1-bin-fluxcapacitor/bin:/root/spark-1.6.1-bin-fluxcapacitor/sbin:/root/apache-cassandra-2.2.5/bin:/root/pipeline/bin/cli:/root/pipeline/bin/cluster:/root/pipeline/bin/docker:/root/pipeline/bin/initial:/root/pipeline/bin/kafka:/root/pipeline/bin/rest:/root/pipeline/bin/service:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 ...
 declare -x PIPELINE_HOME="/root/pipeline"
 ...
