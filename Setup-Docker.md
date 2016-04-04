@@ -8,6 +8,7 @@
 Install `.exe` (Windows) or `.pkg` (Mac) as appropriate
 
 * Internet
+
 [Mac OS X](https://docs.docker.com/mac/)
 
 [Windows](https://docs.docker.com/windows/)
