@@ -44,6 +44,8 @@ root@docker$ pipeline-spark-shell.sh
 scala> 1 + 1
 res0: Int = 2
 ```
+* Hit Ctrl-C to exit
+
 
 ### PySpark Shell
 We've created a separate `pipeline-pyspark.sh` script for the sole purpose of pre-configuring `--jars` and `--packages` to include things like the following:
@@ -79,6 +81,7 @@ datings_ratings	false   <------   datings_ratings table registered with Hive (is
 Time taken: 2.179 seconds, Fetched 2 row(s)
 15/11/19 13:22:44 INFO CliDriver: Time taken: 2.179 seconds, Fetched 2 row(s)
 ```
+* Hit Ctrl-C to exit
 
 ### Cassandra
 ```
@@ -95,7 +98,9 @@ cqlsh:advancedspark> select fromuserid, touserid, rating, batchtime from item_ra
 cqlsh> describe advancedspark;
 CREATE KEYSPACE advancedspark WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'} AND durable_writes = true;
 ...
-
+```
+* Type `exit` to exit
+```
 cqlsh:advancedspark> exit;
 ```
 
@@ -108,7 +113,9 @@ WATCHER::
 WatchedEvent state:SyncConnected type:None path:null
 
   <-- Hit Enter a Few Times
-
+```
+* Type `quit` to quit
+```
 quit  <-- Type quit to Exit
 ```
 
@@ -212,7 +219,7 @@ Beeline version 1.5.1 by Apache Hive
 
 ![Apache Zeppelin Notebooks](http://advancedspark.com/img/zeppelin-hive-thriftserver.png)
 
-* Stopping the long-running Hive Thrift Server frees up CPU cores for more Spark exploration
+* Stop the long-running Hive Thrift Server frees up CPU cores for more Spark exploration
 ```
 root@docker$ stop-sparksubmitted-job.sh
 ```
@@ -375,7 +382,7 @@ http://127.0.0.1:35601/app/graph
 ```
 * ElasticSearch Sense Plugin (run queries through Kibana)
 ```
-http://demo.advancedspark.com:35601/app/sense
+http://127.0.0.1:35601/app/sense
 ```
 
 ### Ganglia
