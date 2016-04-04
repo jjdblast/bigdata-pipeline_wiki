@@ -3,7 +3,7 @@
 
 **ALSO, PLEASE KILL ANY VPN DAEMON PROCESSES OR THESE STEPS MAY NOT WORK.**
 
-### Install Docker Toolbox from USB (preferred) or Internet (large download):
+### Install Docker Toolbox from USB (if available) or Internet:
 * USB
 Install `.exe` (Windows) or `.pkg` (Mac) as appropriate
 
@@ -22,11 +22,12 @@ local-laptop$ docker-machine create --driver virtualbox --virtualbox-hostonly-ci
 local-laptop$ docker-machine create --driver virtualbox --virtualbox-hostonly-cidr "192.69.69.1/24" --virtualbox-cpu-count "8" --virtualbox-disk-size "100000" --virtualbox-memory "8096" pipeline-vm
 ```
 
-### Setup NAT Rules [**Mac and Windows Only**]
-This step bridges your local laptop at `127.0.0.1` to the VirtualBox VM created by `docker-machine` called `pipeline-vm`.
+### Setup NAT Rules [**Mac OSX and Windows Only**]
+* This step bridges your local laptop at `127.0.0.1` to the VirtualBox VM created by `docker-machine` called `pipeline-vm`.
+* ONLY RUN THIS ON MAC OSX OR WINDOWS
+* Run the following script available in this same github repo
 ```
-# Only run this for Mac and Windows environments
-local-mac-or-windows-only$ <pipeline-home-dir>/bin/docker-setup-nat-rules.sh
+local-mac-or-windows$ <pipeline-home-in-github>/bin/docker/docker-setup-nat-rules.[sh|bat]
 ```
 
 ### Setup Local Environment
