@@ -24,7 +24,7 @@ root@docker$ ~/pipeline/bin/initial/RUNME_ONCE.sh
 2547 org.apache.hadoop.util.RunJar                      <-- Hive Metastore Service (Uses MySQL as backing store)
 ...
 ```
-* Verify that the output of `export` contains the proper `$PATH`, `$PIPELINE_HOME`, `$MYSQL_CONNECTOR_JAR` among many other new exports
+* Verify that the output of `export` contains the proper `$PATH`, `$PIPELINE_HOME`, `$MYSQL_CONNECTOR_JAR` among many other environment variables
 ```
 root@docker$ export
 ...
