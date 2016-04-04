@@ -9,7 +9,9 @@ Install `.exe` (Windows) or `.pkg` (Mac) as appropriate
 
 * Internet
 [Mac OS X](https://docs.docker.com/mac/)
+
 [Windows](https://docs.docker.com/windows/)
+
 [Linux](https://docs.docker.com/linux/)
 
 ### Create VM Environment from USB (preferred) or Internet (huge download)
