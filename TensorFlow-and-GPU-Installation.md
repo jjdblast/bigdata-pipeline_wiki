@@ -9,7 +9,7 @@ export TENSORFLOW_VERSION=0.7.1
 
 ## Install Bazel
 ```
-export BAZEL_HOME=/root/bazel
+export BAZEL_HOME=/root/bazel-$BAZEL_VERSION
 
 cd ~
 wget https://github.com/bazelbuild/bazel/releases/download/$BAZEL_VERSION/bazel-$BAZEL_VERSION-installer-linux-x86_64.sh
