@@ -9,21 +9,25 @@ export TENSORFLOW_VERSION=0.7.1
 
 ## Install Bazel
 ```
+export BAZEL_HOME=/root/bazel
+
 cd ~
 wget https://github.com/bazelbuild/bazel/releases/download/$BAZEL_VERSION/bazel-$BAZEL_VERSION-installer-linux-x86_64.sh
 chmod +x bazel-$BAZEL_VERSION-installer-linux-x86_64.sh
 
-./bazel-$BAZEL_VERSION-installer-linux-x86_64.sh --bin=/root/bazel/bin
+./bazel-$BAZEL_VERSION-installer-linux-x86_64.sh --bin=$BAZEL_HOME/bin
 rm bazel-$BAZEL_VERSION-installer-linux-x86_64.sh
 
-export PATH=$PATH:/root/bazel/bin
+...
+
+export PATH=$PATH:$BAZEL_HOME/bin
 ```
 
 ## Install TensorFlow Serving
 ```
 pip install grpcio
 
-apt-get update && sudo apt-get install -y \
+apt-get update && apt-get install -y \
         build-essential \
         curl \
         git \
@@ -41,11 +45,13 @@ apt-get update && sudo apt-get install -y \
 
 cd ~
 git clone -b $TENSORFLOW_SERVING_VERSION --recurse-submodules https://github.com/tensorflow/serving
-
 ```
 
 ## Train and Deploy Example Model to TensorFlow Serving
 ```
+cd ~/serving/tensorflow
+./configure   <-- Answer defaults (python location and gpu support)
+
 cd ~/serving
 bazel build //tensorflow_serving/example:mnist_export
 bazel-bin/tensorflow_serving/example/mnist_export /tmp/mnist_model
