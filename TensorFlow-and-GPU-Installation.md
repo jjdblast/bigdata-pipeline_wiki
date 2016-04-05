@@ -44,7 +44,10 @@ apt-get update && apt-get install -y \
         zlib1g-dev
 
 cd ~
-git clone -b $TENSORFLOW_SERVING_VERSION --recurse-submodules https://github.com/tensorflow/serving
+git clone -b $TENSORFLOW_SERVING_VERSION --recurse-submodules https://github.com/tensorflow/serving tensorflow-serving-$TENSORFLOW_SERVING_VERSION
+
+cd ~
+git clone -b v$TENSORFLOW_VERSION --recurse-submodules https://github.com/tensorflow/tensorflow tensorflow-$TENSORFLOW_VERSION
 ```
 
 ## Train and Deploy Example Model to TensorFlow Serving
