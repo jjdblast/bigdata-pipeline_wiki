@@ -49,10 +49,10 @@ git clone -b $TENSORFLOW_SERVING_VERSION --recurse-submodules https://github.com
 
 ## Train and Deploy Example Model to TensorFlow Serving
 ```
-cd ~/serving/tensorflow
+cd $TENSORFLOW_SERVING_HOME/tensorflow
 ./configure   <-- Answer defaults (python location and gpu support)
 
-cd ~/serving
+cd $TENSORFLOW_SERVING_HOME
 bazel build //tensorflow_serving/example:mnist_export
 
 rm -rf $WORK_HOME/tensorflow/serving/mnist_model/
@@ -69,7 +69,7 @@ nohup $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_infere
 $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_client --num_tests=1000 --server=localhost:9000 &
 ```
 
-# Host Machine
+# Setup GPU Host Machine
 ## Installing CUDA Toolkit
 
 ```
@@ -101,7 +101,7 @@ $ cd ~/NVIDIA_CUDA-Samples_7.5/1_Utilities/deviceQuery
 $ make
 $ ./deviceQuery
 
-Installing cuDNN
+## Installing cuDNN
 
 (Download from nvidia directly - requires registration and approval) area 
 
@@ -109,3 +109,8 @@ tar xvzf cudnn-6.5-linux-x64-v2.tgz
 sudo cp cudnn-6.5-linux-x64-v2/cudnn.h /usr/local/cuda/include
 sudo cp cudnn-6.5-linux-x64-v2/libcudnn* /usr/local/cuda/lib64
 sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
+
+## Start GPU-enabled Docker
+```
+local-laptop$ <pipeline-install-dir>/bin/docker/docker-start-container-gpu.sh
+```
