@@ -54,17 +54,19 @@ cd ~/serving/tensorflow
 
 cd ~/serving
 bazel build //tensorflow_serving/example:mnist_export
-bazel-bin/tensorflow_serving/example/mnist_export /tmp/mnist_model
+
+rm -rf $WORK_HOME/tensorflow/serving/mnist_model/
+$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export $WORK_HOME/tensorflow/serving/mnist_model
 ```
 
 ## Start TensorFlow Serving Service
 ```
-nohup bazel-bin/tensorflow_serving/example/mnist_inference --port=9000 /tmp/mnist_model/00000001 &
+nohup $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_inference --port=9000 $WORK_HOME/tensorflow/serving/mnist_model/00000001 &
 ```
 
 ## Test TensorFlow Serving Service
 ```
-bazel-bin/tensorflow_serving/example/mnist_client --num_tests=1000 --server=localhost:9000
+$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_client --num_tests=1000 --server=localhost:9000 &
 ```
 
 # Host Machine
