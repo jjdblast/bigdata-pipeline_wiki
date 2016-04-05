@@ -1,7 +1,7 @@
 # Docker Image
 ## Environment Variables
 ```
-export JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 export BAZEL_VERSION=0.2.1
 export TENSORFLOW_SERVING_VERSION=0.4.1
 export TENSORFLOW_VERSION=0.7.1
