@@ -51,6 +51,7 @@ git clone -b v$TENSORFLOW_VERSION --recurse-submodules https://github.com/tensor
 ```
 
 ## Train and Deploy Example Model to TensorFlow Serving
+* ERRORs during these steps likely requires a larger Docker container (16 GB+)
 ```
 cd $TENSORFLOW_SERVING_HOME/tensorflow
 ./configure   <-- Answer defaults (python location and gpu support)
