@@ -25,7 +25,7 @@ export PATH=$PATH:$BAZEL_HOME/bin
 
 ## Install TensorFlow Serving
 ```
-pip install grpcio
+pip install --upgrade grpcio
 
 apt-get update && apt-get install -y \
         build-essential \
