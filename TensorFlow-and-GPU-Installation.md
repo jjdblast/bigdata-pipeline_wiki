@@ -68,24 +68,23 @@ cd $TENSORFLOW_SERVING_HOME/tensorflow
 # [TODO:  Only if deploying new model] Remove any existing model
 # rm -rf $WORK_HOME/tensorflow/serving/mnist_model/
 
-# Train the model
+# Train and Export Mnist Model to Path Monitored by TensorFlow Serving
 # cd $TENSORFLOW_SERVING_HOME
-# bazel-bin/tensorflow_serving/example/mnist_export $WORK_HOME/tensorflow/serving/mnist_model
-
-# Export the model to a location monitored by TensorFlow Serving
-# $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export $WORK_HOME/tensorflow/serving/mnist_model
+# $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export $DATASETS_HOME/tensorflow/serving/mnist_model
 ```
 
-## Start TensorFlow Serving Service
+## Start TensorFlow Serving Service (9090)
+$MYAPPS_HOME/tensorflow/serving
 ```
 cd $TENSORFLOW_SERVING_HOME
+
 nohup $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_inference --port=9090 $DATASETS_HOME/tensorflow/serving/mnist_model/00000001 &
 ```
 
-## Test TensorFlow Serving Service
+## Run Classifier Client (9090)
 ```
 cd $TENSORFLOW_SERVING_HOME
-./bazel-bin/tensorflow_serving/example/mnist_client --num_tests=1000 --server=localhost:9090 &
+$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_client --num_tests=1000 --server=localhost:9090 &
 ```
 
 # Setup GPU Host Machine
@@ -108,9 +107,6 @@ sudo update-initramfs -u
 ```
 wget http://developer.download.nvidia.com/compute/cuda/7.5/Prod/local_installers/cuda_7.5.18_linux.run
 ```
-
-
-
 
 ## Perform the following steps to install CUDA and verify the installation.
 
