@@ -73,10 +73,28 @@ $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_client --num
 ```
 
 # Setup GPU Host Machine
+
+http://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#ubuntu-installation
+
+## Remove Existing Nouveau Video Driver
+* Create a file at /etc/modprobe.d/blacklist-nouveau.conf with the following contents:
+```
+blacklist nouveau
+options nouveau modeset=0
+```
+
+* Regenerate the kernel initramfs:
+```
+sudo update-initramfs -u
+```
+
 ## Installing CUDA Toolkit
 ```
 wget http://developer.download.nvidia.com/compute/cuda/7.5/Prod/local_installers/cuda_7.5.18_linux.run
 ```
+
+
+
 
 ## Perform the following steps to install CUDA and verify the installation.
 
