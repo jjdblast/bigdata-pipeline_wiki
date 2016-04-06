@@ -137,3 +137,15 @@ sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
 ```
 local-gpu$ <pipeline-install-dir>/bin/docker/docker-start-container-gpu.sh
 ```
+* Uninstall Default CPU TensorFlow and Install GPU TensorFlow
+
+https://www.tensorflow.org/versions/r0.7/get_started/os_setup.html#pip-installation
+
+* TODO:  `pip uninstall` the CPU version of TensorFlow
+```
+pip uninstall ...
+``` 
+* TODO:  `pip install` the GPU version of TensorFlow
+```
+pip install ...
+```
