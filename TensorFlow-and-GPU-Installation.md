@@ -50,27 +50,42 @@ cd ~
 git clone -b v$TENSORFLOW_VERSION --recurse-submodules https://github.com/tensorflow/tensorflow tensorflow-$TENSORFLOW_VERSION
 ```
 
+## Build Components of TensorFlow Serving (24GB Minimum Docker Container)
+* Errors during these build steps are likely due to not enough memory.  24GB+ is required.
+```
+cd $TENSORFLOW_SERVING_HOME
+
+bazel build //tensorflow_serving/example:mnist_export
+bazel build //tensorflow_serving/example:mnist_inference
+bazel build //tensorflow_serving/example:mnist_client
+```
+
 ## Train and Deploy Example Model to TensorFlow Serving
-* ERRORs during these steps likely requires a larger Docker container (16 GB+)
 ```
 cd $TENSORFLOW_SERVING_HOME/tensorflow
 ./configure   <-- Answer defaults (python location and gpu support)
 
-cd $TENSORFLOW_SERVING_HOME
-bazel build //tensorflow_serving/example:mnist_export
+# [TODO:  Only if deploying new model] Remove any existing model
+# rm -rf $WORK_HOME/tensorflow/serving/mnist_model/
 
-rm -rf $WORK_HOME/tensorflow/serving/mnist_model/
-$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export $WORK_HOME/tensorflow/serving/mnist_model
+# Train the model
+# cd $TENSORFLOW_SERVING_HOME
+# bazel-bin/tensorflow_serving/example/mnist_export $WORK_HOME/tensorflow/serving/mnist_model
+
+# Export the model to a location monitored by TensorFlow Serving
+# $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export $WORK_HOME/tensorflow/serving/mnist_model
 ```
 
 ## Start TensorFlow Serving Service
 ```
-nohup $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_inference --port=9090 $WORK_HOME/tensorflow/serving/mnist_model/00000001 &
+cd $TENSORFLOW_SERVING_HOME
+nohup $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_inference --port=9090 $DATASETS_HOME/tensorflow/serving/mnist_model/00000001 &
 ```
 
 ## Test TensorFlow Serving Service
 ```
-$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_client --num_tests=1000 --server=localhost:9090 &
+cd $TENSORFLOW_SERVING_HOME
+./bazel-bin/tensorflow_serving/example/mnist_client --num_tests=1000 --server=localhost:9090 &
 ```
 
 # Setup GPU Host Machine
