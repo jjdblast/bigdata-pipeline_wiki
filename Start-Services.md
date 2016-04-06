@@ -4,7 +4,7 @@
 ### Setup the Environment
 * The following command configures and starts all of the services
 ```
-root@docker$ ~/pipeline/bin/initial/RUNME_ONCE.sh
+root@docker$ $PIPELINE_HOME/bin/initial/RUNME_ONCE.sh
 ```
 
 ### Verify that Setup Worked Correctly
