@@ -58,7 +58,7 @@ cd $TENSORFLOW_SERVING_HOME
 
 # MNIST
 bazel build //tensorflow_serving/example:mnist_export
-bazel build //tensorflow_serving/example:mnist_inference
+bazel build //tensorflow_serving/example:mnist_inference_2
 bazel build //tensorflow_serving/example:mnist_client
 ```
 
@@ -70,7 +70,9 @@ cd $TENSORFLOW_SERVING_HOME/tensorflow
 # Train and Export Mnist Model to Path Monitored by TensorFlow Serving
 # TODO:  JUST DO THIS ONCE
 # cd $TENSORFLOW_SERVING_HOME
-# $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export $DATASETS_HOME/tensorflow/serving/mnist_model
+# $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --training_iteration=100 --export_version=1 $DATASETS_HOME/tensorflow/serving/mnist_model
+
+# $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --training_iteration=2000 --export_version=2 $DATASETS_HOME/tensorflow/serving/mnist_model
 ```
 
 ## Start TensorFlow MNIST Serving Service (9090)
