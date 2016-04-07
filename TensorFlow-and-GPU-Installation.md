@@ -50,41 +50,83 @@ cd ~
 git clone -b v$TENSORFLOW_VERSION --recurse-submodules https://github.com/tensorflow/tensorflow tensorflow-$TENSORFLOW_VERSION
 ```
 
-## Build Components of TensorFlow Serving (24GB Minimum Docker Container)
+## Build TensorFlow Serving MNIST Example (24GB Minimum Docker Container)
 * Errors during these build steps are likely due to not enough memory.  24GB+ is required.
 ```
 cd $TENSORFLOW_SERVING_HOME
 
+# MNIST
+bazel build //tensorflow_serving/example:mnist_export
+bazel build //tensorflow_serving/example:mnist_inference
+bazel build //tensorflow_serving/example:mnist_client
+
+# Inception
+bazel build //tensorflow_serving/example:inception_export
+bazel build //tensorflow_serving/example:inception_inference
+bazel build //tensorflow_serving/example:inception_client
+```
+
+## Train and Deploy Example MNIST Model to TensorFlow Serving
+```
+cd $TENSORFLOW_SERVING_HOME/tensorflow
+./configure   <-- Answer defaults (python location and gpu support)
+
+# Train and Export Mnist Model to Path Monitored by TensorFlow Serving
+# TODO:  JUST DO THIS ONCE
+# cd $TENSORFLOW_SERVING_HOME
+# $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export $DATASETS_HOME/tensorflow/serving/mnist_model
+```
+
+## Start TensorFlow MNIST Serving Service (9090)
+```
+cd $TENSORFLOW_SERVING_HOME
+
+# MNIST Inference
+nohup $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_inference --port=9090 $DATASETS_HOME/tensorflow/serving/mnist_model/00000001 &
+```
+
+## Run MNIST Classifier Client (9090)
+```
+cd $TENSORFLOW_SERVING_HOME
+$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_client --num_tests=1000 --server=localhost:9090 &
+```
+
+## Build TensorFlow Serving MNIST Example (24GB Minimum Docker Container)
+* Errors during these build steps are likely due to not enough memory.  24GB+ is required.
+```
+cd $TENSORFLOW_SERVING_HOME
+
+# MNIST
 bazel build //tensorflow_serving/example:mnist_export
 bazel build //tensorflow_serving/example:mnist_inference
 bazel build //tensorflow_serving/example:mnist_client
 ```
 
-## Train and Deploy Example Model to TensorFlow Serving
+## Train and Deploy Example Inception Model to TensorFlow Serving
 ```
 cd $TENSORFLOW_SERVING_HOME/tensorflow
 ./configure   <-- Answer defaults (python location and gpu support)
 
-# [TODO:  Only if deploying new model] Remove any existing model
-# rm -rf $WORK_HOME/tensorflow/serving/mnist_model/
-
-# Train and Export Mnist Model to Path Monitored by TensorFlow Serving
+# Train and Export Inception Model to Path Monitored by TensorFlow Serving
+# TODO:  JUST DO THIS ONCE
+# PUT THIS INTO $DATASETS_HOME/inception
+# wget http://download.tensorflow.org/models/image/imagenet/inception-v3-2016-03-01.tar.gz
 # cd $TENSORFLOW_SERVING_HOME
-# $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export $DATASETS_HOME/tensorflow/serving/mnist_model
+# $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_export --checkpoint_dir=$DATASETS_HOME/inception --export_dir=$DATASETS_HOME/tensorflow/serving/inception_model
 ```
 
-## Start TensorFlow Serving Service (9090)
-$MYAPPS_HOME/tensorflow/serving
+## Start TensorFlow Inception Serving Service (9090)
 ```
 cd $TENSORFLOW_SERVING_HOME
 
+# Inception Inference
 nohup $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_inference --port=9090 $DATASETS_HOME/tensorflow/serving/mnist_model/00000001 &
 ```
 
-## Run Classifier Client (9090)
+## Run Inception Classifier Client (9090)
 ```
 cd $TENSORFLOW_SERVING_HOME
-$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_client --num_tests=1000 --server=localhost:9090 &
+$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_client --num_tests=1000 --server=localhost:9090 &
 ```
 
 # Setup GPU Host Machine
