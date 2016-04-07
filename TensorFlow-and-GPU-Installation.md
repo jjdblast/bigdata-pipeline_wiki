@@ -59,11 +59,6 @@ cd $TENSORFLOW_SERVING_HOME
 bazel build //tensorflow_serving/example:mnist_export
 bazel build //tensorflow_serving/example:mnist_inference
 bazel build //tensorflow_serving/example:mnist_client
-
-# Inception
-bazel build //tensorflow_serving/example:inception_export
-bazel build //tensorflow_serving/example:inception_inference
-bazel build //tensorflow_serving/example:inception_client
 ```
 
 ## Train and Deploy Example MNIST Model to TensorFlow Serving
@@ -120,13 +115,13 @@ cd $TENSORFLOW_SERVING_HOME/tensorflow
 cd $TENSORFLOW_SERVING_HOME
 
 # Inception Inference
-nohup $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_inference --port=9090 $DATASETS_HOME/tensorflow/serving/mnist_model/00000001 &
+nohup $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_inference --port=9090 $DATASETS_HOME/tensorflow/serving/inception_model/00000001 &
 ```
 
 ## Run Inception Classifier Client (9090)
 ```
 cd $TENSORFLOW_SERVING_HOME
-$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_client --num_tests=1000 --server=localhost:9090 &
+$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_client --num_tests=1000 --server=localhost:9090 --image=$DATASETS/inception/cropped_panda.jpg
 ```
 
 # Setup GPU Host Machine
