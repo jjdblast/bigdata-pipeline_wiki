@@ -141,6 +141,7 @@ $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_client -
 ```
 cd $TENSORFLOW_HOME
 bazel build //tensorflow/models/rnn/ptb:ptb_word_lm
+```
 
 ## Train Model
 ```
