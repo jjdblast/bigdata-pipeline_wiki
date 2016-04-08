@@ -68,7 +68,7 @@ cd $TENSORFLOW_SERVING_HOME/tensorflow
 ./configure   <-- Answer defaults (python location and gpu support)
 
 # Train and Export Mnist Model to Path Monitored by TensorFlow Serving
-# TODO:  JUST DO THIS ONCE
+# rm -rf $DATASETS_HOME/tensorflow/serving/mnist_model
 # cd $TENSORFLOW_SERVING_HOME
 # $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --training_iteration=100 --export_version=1 $DATASETS_HOME/tensorflow/serving/mnist_model
 
@@ -110,9 +110,13 @@ bazel build //tensorflow_serving/example:inception_client
 cd $TENSORFLOW_SERVING_HOME/tensorflow
 ./configure   <-- Answer defaults (python location and gpu support)
 
-# Train and Export Inception Model to Path Monitored by TensorFlow Serving
-cd $TENSORFLOW_SERVING_HOME
+# Download checkpointed inception model to speed up training
 wget http://download.tensorflow.org/models/image/imagenet/inception-v3-2016-03-01.tar.gz
+
+# Train and Export Inception Model to Path Monitored by TensorFlow Serving
+rm -rf $DATASETS_HOME/tensorflow/serving/inception_model
+cd $TENSORFLOW_SERVING_HOME
+
 # Note:  the --checkpoint_dir must be local or you will get an error like the following:
 #   "ValueError: Restore called with invalid save path model.ckpt-157585"
 $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_export --checkpoint_dir=inception-v3 --export_dir=$DATASETS_HOME/tensorflow/serving/inception_model
@@ -129,7 +133,7 @@ nohup $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_in
 ## Run Inception Classifier Client (9090)
 ```
 cd $TENSORFLOW_SERVING_HOME
-$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_client --num_tests=1000 --server=localhost:9090 --image=$DATASES_HOME/inception/cropped_panda.jpg
+$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_client --num_tests=1000 --server=localhost:9090 --image=$DATASETS_HOME/inception/cropped_panda.jpg
 ```
 
 # Setup GPU Host Machine
