@@ -70,13 +70,13 @@ cd $TENSORFLOW_SERVING_HOME/tensorflow
 # Train and Export Mnist Model to Path Monitored by TensorFlow Serving
 # rm -rf $DATASETS_HOME/tensorflow/serving/mnist_model
 # cd $TENSORFLOW_SERVING_HOME
-# $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --training_iteration=100 --export_version=1 $DATASETS_HOME/tensorflow/serving/mnist_model
+$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --training_iteration=100 --export_version=1 $DATASETS_HOME/tensorflow/serving/mnist_model
 
-# $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --training_iteration=1000 --export_version=2 $DATASETS_HOME/tensorflow/serving/mnist_model
+$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --training_iteration=1000 --export_version=2 $DATASETS_HOME/tensorflow/serving/mnist_model
 
-# $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --training_iteration=10000 --export_version=3 $DATASETS_HOME/tensorflow/serving/mnist_model
+$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --training_iteration=10000 --export_version=3 $DATASETS_HOME/tensorflow/serving/mnist_model
 
-# $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --training_iteration=100000 --export_version=4 $DATASETS_HOME/tensorflow/serving/mnist_model
+$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --training_iteration=100000 --export_version=4 $DATASETS_HOME/tensorflow/serving/mnist_model
 ```
 
 ## Start TensorFlow MNIST Serving Service (9090)
@@ -115,10 +115,11 @@ wget http://download.tensorflow.org/models/image/imagenet/inception-v3-2016-03-0
 
 # Train and Export Inception Model to Path Monitored by TensorFlow Serving
 rm -rf $DATASETS_HOME/tensorflow/serving/inception_model
-cd $TENSORFLOW_SERVING_HOME
+
 
 # Note:  the --checkpoint_dir must be local or you will get an error like the following:
 #   "ValueError: Restore called with invalid save path model.ckpt-157585"
+cd $TENSORFLOW_SERVING_HOME
 $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_export --checkpoint_dir=inception-v3 --export_dir=$DATASETS_HOME/tensorflow/serving/inception_model
 ```
 
@@ -127,13 +128,13 @@ $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_export -
 cd $TENSORFLOW_SERVING_HOME
 
 # Inception Inference
-nohup $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_inference --port=9090 $DATASETS_HOME/tensorflow/serving/inception_model &
+nohup $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_inference --port=9091 $DATASETS_HOME/tensorflow/serving/inception_model &
 ```
 
 ## Run Inception Classifier Client (9090)
 ```
 cd $TENSORFLOW_SERVING_HOME
-$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_client --num_tests=1000 --server=localhost:9090 --image=$DATASETS_HOME/inception/cropped_panda.jpg
+$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_client --num_tests=1000 --server=localhost:9091 --image=$DATASETS_HOME/inception/cropped_panda.jpg
 ```
 
 # PTB Sentence Prediction
