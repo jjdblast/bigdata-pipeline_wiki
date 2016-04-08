@@ -115,7 +115,7 @@ cd $TENSORFLOW_SERVING_HOME/tensorflow
 # PUT THIS INTO $DATASETS_HOME/inception
 # wget http://download.tensorflow.org/models/image/imagenet/inception-v3-2016-03-01.tar.gz
 # cd $TENSORFLOW_SERVING_HOME
-# $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_export --checkpoint_dir=$DATASETS_HOME/inception --export_dir=$DATASETS_HOME/tensorflow/serving/inception_model
+# $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_export --checkpoint_dir=$DATASETS_HOME/inception/inception-v3 --export_dir=$DATASETS_HOME/tensorflow/serving/inception_model
 ```
 
 ## Start TensorFlow Inception Serving Service (9090)
