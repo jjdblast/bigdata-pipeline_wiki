@@ -72,9 +72,9 @@ cd $TENSORFLOW_SERVING_HOME/tensorflow
 # cd $TENSORFLOW_SERVING_HOME
 # $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --training_iteration=100 --export_version=1 $DATASETS_HOME/tensorflow/serving/mnist_model
 
-# $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --training_iteration=2000 --export_version=2 $DATASETS_HOME/tensorflow/serving/mnist_model
+# $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --training_iteration=1000 --export_version=2 $DATASETS_HOME/tensorflow/serving/mnist_model
 
-# $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --training_iteration=3000 --export_version=3 $DATASETS_HOME/tensorflow/serving/mnist_model
+# $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --training_iteration=10000 --export_version=3 $DATASETS_HOME/tensorflow/serving/mnist_model
 
 # $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --training_iteration=100000 --export_version=4 $DATASETS_HOME/tensorflow/serving/mnist_model
 ```
