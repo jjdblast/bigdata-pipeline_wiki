@@ -40,3 +40,8 @@ Misc
 [15. Custom Distributions](https://github.com/fluxcapacitor/pipeline/wiki/Custom-Distributions)
 
 [16. Remove Docker](https://github.com/fluxcapacitor/pipeline/wiki/Remove-Docker)
+
+***
+TensorFlow (beta)
+
+[17. TensorFlow Examples](https://github.com/fluxcapacitor/pipeline/wiki/TensorFlow)
