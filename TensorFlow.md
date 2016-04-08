@@ -129,7 +129,7 @@ nohup $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_in
 ## Run Inception Classifier Client (9090)
 ```
 cd $TENSORFLOW_SERVING_HOME
-$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_client --num_tests=1000 --server=localhost:9090 --image=$DATASETS/inception/cropped_panda.jpg
+$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_client --num_tests=1000 --server=localhost:9090 --image=$DATASES_HOME/inception/cropped_panda.jpg
 ```
 
 # Setup GPU Host Machine
