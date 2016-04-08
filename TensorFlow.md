@@ -136,6 +136,22 @@ cd $TENSORFLOW_SERVING_HOME
 $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_client --num_tests=1000 --server=localhost:9090 --image=$DATASETS_HOME/inception/cropped_panda.jpg
 ```
 
+# PTB Sentence Prediction
+## Build Code
+```
+cd $TENSORFLOW_HOME
+bazel build //tensorflow/models/rnn/ptb:ptb_word_lm
+
+## Train Model
+```
+python ptb_word_lm.py --data_path=$DATASETS_HOME/ptb/simple-examples/data --model small
+```
+
+## Predict
+```
+TODO
+```
+
 # Setup GPU Host Machine
 
 http://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#ubuntu-installation
