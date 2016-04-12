@@ -45,3 +45,5 @@ Misc
 TensorFlow (beta)
 
 [17. TensorFlow Examples](https://github.com/fluxcapacitor/pipeline/wiki/TensorFlow)
+
+[18. Cloud Provisioning]()
