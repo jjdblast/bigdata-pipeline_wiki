@@ -1,5 +1,5 @@
-## EC2 Provisioning
-
+## EC2
+* Minimum Instance Type:  `m4.xlarge` with 4 CPUs and 16 GB RAM
 * User Data (per instance)
 ```
 #!/bin/bash
