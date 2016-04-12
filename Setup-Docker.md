@@ -1,24 +1,23 @@
-# Installing Docker
 **YOU MUST BE USING DOCKER 1.10+ OR THESE STEPS MAY NOT WORK.**
 
 **ALSO, PLEASE KILL ANY VPN DAEMON PROCESSES OR THESE STEPS MAY NOT WORK.**
 
-### Install Docker Toolbox from USB (if provided) or Internet (huge download!!):
-* USB: Install `.exe` (Windows) or `.pkg` (Mac) as appropriate
+## Install Docker Toolbox from USB (if provided) or Internet (huge download!!):
+### USB: Install `.exe` (Windows) or `.pkg` (Mac) as appropriate
 
-* Internet: [Mac OS X](https://docs.docker.com/mac/) or [Windows](https://docs.docker.com/windows/) or [Linux](https://docs.docker.com/linux/)
+### Internet: [Mac OS X](https://docs.docker.com/mac/) or [Windows](https://docs.docker.com/windows/) or [Linux](https://docs.docker.com/linux/)
 
-### Create VM Environment from USB (if provided) or Internet (huge download!!)
-* USB
+## Create VM Environment from USB (if provided) or Internet (huge download!!)
+### USB
 ```
 local-laptop$ docker-machine create --driver virtualbox --virtualbox-hostonly-cidr "192.69.69.1/24" --virtualbox-cpu-count "8" --virtualbox-disk-size "100000" --virtualbox-memory "8096" --virtualbox-boot2docker-url "file:///<usb-drive>/<path-to-boot2docker.iso>" pipeline-vm
 ```
-* Internet
+### Internet
 ```
 local-laptop$ docker-machine create --driver virtualbox --virtualbox-hostonly-cidr "192.69.69.1/24" --virtualbox-cpu-count "8" --virtualbox-disk-size "100000" --virtualbox-memory "8096" pipeline-vm
 ```
 
-### Setup NAT Rules [**Mac OS X and Windows Only**]
+## Setup NAT Rules [**Mac OS X and Windows Only**]
 * This step bridges your local laptop at `127.0.0.1` to the VirtualBox VM created by `docker-machine` called `pipeline-vm`.
 * ONLY RUN THIS ON MAC OS X OR WINDOWS
 * Run the following script available in this same github repo
@@ -26,13 +25,13 @@ local-laptop$ docker-machine create --driver virtualbox --virtualbox-hostonly-ci
 local-mac-or-windows$ <pipeline-home-in-github>/bin/docker/docker-setup-nat-rules.[sh|bat]
 ```
 
-### Setup Local Environment
-* Run the following
+## Setup Local Environment
+### Run the following
 ```
 local-laptop$ docker-machine env pipeline-vm
 local-laptop$ eval $(docker-machine env pipeline-vm)
 ```
-* Add the following EXPORTs (from the commands above) as environment variables
+### Add the following EXPORTs (from the commands above) as environment variables
 ```
 # Add these to .profile, .bashrc, or .bash_profile as appropriate for your environment
 export DOCKER_TLS_VERIFY=1
@@ -41,7 +40,7 @@ export DOCKER_CERT_PATH=<user-home-dir>/.docker/machine/machines/pipeline-vm
 export DOCKER_MACHINE_NAME="pipeline-vm"
 ```
 
-* [**Linux-Only**] Run the following:
+### [**Linux-Only**] Run the following:
 ```
 # Only run this for Linux environments
 local-linux-only$ sudo usermod -a -G docker $USER
@@ -49,12 +48,12 @@ local-linux-only$ exit
 (log back in)
 ```
 
-* Check that the version is Docker 1.10+
+### Check that the version is Docker 1.10+
 ```
 local-laptop$ docker version
 ```
 
-## Troubleshooting
+### Troubleshooting
 ```
 Error with pre-create check: "VirtualBox is configured with multiple host-only adapters with the same IP
 ```
@@ -70,7 +69,8 @@ VBoxManage hostonlyif remove vboxnet3
 ```
 * Then re-run the appropriate `docker-machine create` command above.
 
-```
+``` 
+
 Host already exists: "pipeline-vm"
 ```
 * Run the following and re-run the `docker-machine create` command above
