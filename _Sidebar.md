@@ -42,8 +42,8 @@ Misc
 [16. Remove Docker](https://github.com/fluxcapacitor/pipeline/wiki/Remove-Docker)
 
 ***
-TensorFlow (beta)
+Beta Apps
 
 [17. TensorFlow Examples](https://github.com/fluxcapacitor/pipeline/wiki/TensorFlow)
 
-[18. Cloud Provisioning]()
+[18. Cloud Provisioning](https://github.com/fluxcapacitor/pipeline/wiki/Cloud-Provisioning)
