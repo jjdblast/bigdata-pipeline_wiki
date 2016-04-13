@@ -1,4 +1,4 @@
-## Test Services Inside Docker Container
+## Explore Service Inside Docker Container
 ### Kafka Native
 ```
 root@docker$ kafka-topics --zookeeper 127.0.0.1:2181 --list
