@@ -1,7 +1,7 @@
-## EC2
-* Minimum Instance Type:  `m4.xlarge` with 4 CPUs and 16 GB RAM
+## Cloud Instance
+* Minimum Instance Type:  4 CPUs and 16 GB RAM (ie. AWS EC2 `m4.xlarge`)
 
-* Create an EC2 instance using the `user data` below
+* Run the following scripts after the instance starts (ie. EC2 `user data`):
 ```
 #!/bin/bash
 sudo apt-get update
@@ -24,7 +24,7 @@ cp ~/Downloads/pipeline-training.pem ~/
 
 * Log in to your instance as follows
 ```
-ssh -i "~/pipeline-training.pem" ubuntu@<public-ip-address-of-ec2-instance>
+ssh -i "~/pipeline-training.pem" ubuntu@<your-cloud-instance-public-ip>
 ```
 
 * Run the following command to start up the Docker container
@@ -38,3 +38,14 @@ root@docker$ cd $SCRIPTS_HOME/initial && ./RUNME_ONCE.sh
 ```
 
 * Wait a few mins for initialization to complete!
+
+* When done with all the labs, you can save your work as follows:
+```
+root@docker$ cd ~ && docker export --output="pipeline.tar" pipeline
+```
+* This creates a 10 GB Docker image from your running container
+
+* You can download this Docker image as follows:
+```
+local-laptop$ scp -i ~/pipeline-training.pem ubuntu@<your-cloud-instance-public-ip>:pipeline.tar ~/pipeline.tar
+```
