@@ -22,4 +22,4 @@ tail -f /root/pipeline/logs/spark/spark--org.apache.spark.deploy.worker.Worker-1
 http://<spark-master-ip>:36060
 ```
 
-## Let's Have Fun With All These Workers!
+## Let's Have Fun With All These New Workers!
