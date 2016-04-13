@@ -21,13 +21,13 @@ local-laptop$ docker push fluxcapacitor/pipeline
 ## Exporting and Importing Docker Images and Containers
 ### Export Docker Image as .tar
 ```
-local-laptop$ docker save --output="fluxcapacitor-pipeline.tar" fluxcapacitor/pipeline
+local-laptop$ docker save --output="pipeline.tar" fluxcapacitor/pipeline
 ```
 ### Export Docker Container as .tar
 ```
-local-laptop$ docker export --output="fluxcapacitor-pipeline.tar" fluxcapacitor/pipeline
+local-laptop$ docker export --output="pipeline.tar" pipeline
 ```
 ### Import Docker Image or Container from a .tar
 ```
-local-laptop$ docker load < fluxcapacitor-pipeline.tar
+local-laptop$ docker load < pipeline.tar
 ```
