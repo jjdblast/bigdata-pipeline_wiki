@@ -15,7 +15,7 @@ echo 'DOCKER_OPTS="--ip=127.0.0.1"' | sudo tee -a /etc/default/docker
 sudo service docker restart
 ```
 
-* Download the `pipeline-training.pem` file from [here](http://advancedspark.com/keys/pipeline-training.pem).
+* Download the `pipeline-training.pem` file (location of .pem provided later)
 
 * Copy the `pipeline-training.pem` file into your root directory:
 ```
