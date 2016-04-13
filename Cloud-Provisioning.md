@@ -39,9 +39,9 @@ root@docker$ cd $PIPELINE_HOME && git pull && source $CONFIG_HOME/bash/pipeline.
 
 * Wait a few mins for initialization to complete!
 
-* Do the labs
+* [Explore](https://github.com/fluxcapacitor/pipeline/wiki/Explore-Services) the Environment
 
-* When done with all the labs, you can save your work as follows:
+* At the end of the workshop, save your work as follows:
 ```
 root@docker$ cd ~ && docker export --output="pipeline.tar" pipeline
 ```
