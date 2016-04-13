@@ -14,7 +14,7 @@ local-laptop$ docker-machine create --driver virtualbox --virtualbox-hostonly-ci
 ```
 ### Internet
 ```
-local-laptop$ docker-machine create --driver virtualbox --virtualbox-hostonly-cidr "192.69.69.1/24" --virtualbox-cpu-count "8" --virtualbox-disk-size "100000" --virtualbox-memory "8096" pipeline-vm
+local-laptop$ docker-machine create --driver virtualbox --virtualbox-hostonly-cidr "192.69.69.1/24" --virtualbox-cpu-count "4" --virtualbox-disk-size "100000" --virtualbox-memory "8096" pipeline-vm
 ```
 
 ## Setup NAT Rules [**Mac OS X and Windows Only**]
