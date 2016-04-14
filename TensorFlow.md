@@ -50,7 +50,7 @@ cd ~
 git clone -b v$TENSORFLOW_VERSION --recurse-submodules https://github.com/tensorflow/tensorflow tensorflow-$TENSORFLOW_VERSION
 ```
 
-# MNIST
+# MNIST (Images of Numbers) Classifier
 ## Build TensorFlow Serving MNIST Example (24GB Minimum Docker Container)
 * Errors during these build steps are likely due to not enough memory.  24GB+ is required.
 ```
@@ -93,7 +93,7 @@ cd $TENSORFLOW_SERVING_HOME
 $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_client --num_tests=1000 --server=localhost:9090 &
 ```
 
-# Inception
+# Inception (Images from ImageNet) Classifier
 ## Build TensorFlow Serving Inception Example (24GB Minimum Docker Container)
 * Errors during these build steps are likely due to not enough memory.  24GB+ is required.
 ```
