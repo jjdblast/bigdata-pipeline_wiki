@@ -56,7 +56,7 @@ git clone -b v$TENSORFLOW_VERSION --recurse-submodules https://github.com/tensor
 ```
 cd $TENSORFLOW_SERVING_HOME
 
-# MNIST
+# Build the model, serving, and client components
 bazel build //tensorflow_serving/example:mnist_export
 bazel build //tensorflow_serving/example:mnist_inference_2
 bazel build //tensorflow_serving/example:mnist_client
@@ -93,18 +93,18 @@ cd $TENSORFLOW_SERVING_HOME
 $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_client --num_tests=1000 --server=localhost:9090 &
 ```
 
-## Build TensorFlow Serving MNIST Example (24GB Minimum Docker Container)
+# Inception
+## Build TensorFlow Serving Inception Example (24GB Minimum Docker Container)
 * Errors during these build steps are likely due to not enough memory.  24GB+ is required.
 ```
 cd $TENSORFLOW_SERVING_HOME
 
-# MNIST
+# Build inception model, inference serving, and client 
 bazel build //tensorflow_serving/example:inception_export
 bazel build //tensorflow_serving/example:inception_inference
 bazel build //tensorflow_serving/example:inception_client
 ```
 
-# MNIST
 ## Train and Deploy Example Inception Model to TensorFlow Serving
 ```
 cd $TENSORFLOW_SERVING_HOME/tensorflow
@@ -123,7 +123,7 @@ cd $TENSORFLOW_SERVING_HOME
 $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_export --checkpoint_dir=inception-v3 --export_dir=$DATASETS_HOME/tensorflow/serving/inception_model
 ```
 
-## Start TensorFlow Inception Serving Service (9090)
+## Start TensorFlow Inception Serving Service (9091)
 ```
 cd $TENSORFLOW_SERVING_HOME
 
@@ -131,13 +131,13 @@ cd $TENSORFLOW_SERVING_HOME
 nohup $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_inference --port=9091 $DATASETS_HOME/tensorflow/serving/inception_model &
 ```
 
-## Run Inception Classifier Client (9090)
+## Run Inception Classifier Client (9091)
 ```
 cd $TENSORFLOW_SERVING_HOME
 $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_client --num_tests=1000 --server=localhost:9091 --image=$DATASETS_HOME/inception/cropped_panda.jpg
 ```
 
-# PTB Sentence Prediction
+# NLP Sentence Prediction (PTB)
 ## Build Code
 ```
 cd $TENSORFLOW_HOME
