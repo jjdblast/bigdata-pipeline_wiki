@@ -288,7 +288,7 @@ Splits: 2 total, 2 done (100.00%)
 ### Titan
 * Requires `start-titan-service.sh`
 ```
-root@docker$ gremlin.sh
+root@docker$ gremlin.sh $MYAPPS_HOME/titan/item-ratings.gremlin
          \,,,/
          (o o)
 -----oOOo-(3)-oOOo-----
@@ -303,9 +303,11 @@ SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
 00:55:52 INFO  org.apache.tinkerpop.gremlin.hadoop.structure.HadoopGraph  - HADOOP_GREMLIN_LIBS is set to: /root/titan-1.0.0-hadoop1/lib
 plugin activated: tinkerpop.hadoop
 plugin activated: tinkerpop.tinkergraph
-gremlin> graph = TitanFactory.open('/root/pipeline/config/titan/titan-cassandra-es.properties')
 ==>standardtitangraph[cassandrathrift:[127.0.0.1]]
+==>/root/pipeline/datasets/graph/item_ratings.csv
+gremlin> 
 ```
+* `ctrl-c` to exit
 
 ## Test Services Outside Docker Container
 **DO NOT TYPE `exit` from DOCKER AS THIS WILL STOP YOUR CONTAINER**
