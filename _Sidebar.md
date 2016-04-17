@@ -42,7 +42,7 @@ Misc
 [16. Remove Docker](https://github.com/fluxcapacitor/pipeline/wiki/Remove-Docker)
 
 ***
-Beta Apps
+Beta Features (Not Stable)
 
 [17. TensorFlow Examples](https://github.com/fluxcapacitor/pipeline/wiki/TensorFlow)
 
