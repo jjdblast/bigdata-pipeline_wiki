@@ -303,7 +303,8 @@ SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
 00:55:52 INFO  org.apache.tinkerpop.gremlin.hadoop.structure.HadoopGraph  - HADOOP_GREMLIN_LIBS is set to: /root/titan-1.0.0-hadoop1/lib
 plugin activated: tinkerpop.hadoop
 plugin activated: tinkerpop.tinkergraph
-gremlin>
+gremlin> graph = TitanFactory.open('/root/pipeline/config/titan/titan-cassandra-es.properties')
+==>standardtitangraph[cassandrathrift:[127.0.0.1]]
 ```
 
 ## Test Services Outside Docker Container
