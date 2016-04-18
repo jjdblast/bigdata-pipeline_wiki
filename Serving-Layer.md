@@ -11,7 +11,7 @@
 root@docker$ $MYAPPS_HOME/serving/flask/start-recommendation-service.sh
 ```
 
-* Verify predictions `predict/<user>/<item>`
+* Verify predictions at the following `predict/<user>/<item>` endpoint
 ```
 http://127.0.0.1:35090/predict/12663/7
 ```
