@@ -47,3 +47,5 @@ Beta Features (Not Stable)
 [17. TensorFlow Examples](https://github.com/fluxcapacitor/pipeline/wiki/TensorFlow)
 
 [18. Cloud Provisioning](https://github.com/fluxcapacitor/pipeline/wiki/Cloud-Provisioning)
+
+[19. Serving Layer](https://github.com/fluxcapacitor/pipeline/wiki/Serving-Layer)
