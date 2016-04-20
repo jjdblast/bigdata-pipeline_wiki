@@ -2,8 +2,8 @@ Follow the Steps Below to Setup Github Integration for your Customizations:
 
 ## Configure Git with your Email and Name
 ```
-git config --global user.email "chris@fregly.com"
-git config --global user.name "cfregly"
+git config --global user.email "<your email address>"
+git config --global user.name "<your username>"
 ```
 
 ## Update the Remote Origin URL
