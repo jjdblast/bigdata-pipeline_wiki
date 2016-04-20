@@ -1,30 +1,16 @@
 ## Cloud Instance
-* Minimum Instance Type:  4 CPUs and 16 GB RAM (ie. AWS EC2 `m4.xlarge`)
+* Instance Type:  8 CPUs and 50GB RAM, 50GB SSD (GCE n1-highmem-8 instance)
 
-* Run the following scripts after the instance starts (ie. EC2 `user data`):
+## Logging Into Your Instance 
+* Download the `pipeline-training-gce.pem` file (location of .pem provided later)
+* Copy the `pipeline-training-gce.pem` file into your root directory:
 ```
-#!/bin/bash
-sudo apt-get update
-sudo apt-get install curl
-curl -fsSL https://get.docker.com/ | sh
-curl -fsSL https://get.docker.com/gpg | sudo apt-key add -
-sudo usermod -a -G docker $USER
-docker run hello-world
-docker pull fluxcapacitor/pipeline
-echo 'DOCKER_OPTS="--ip=127.0.0.1"' | sudo tee -a /etc/default/docker
-sudo service docker restart
-```
-
-* Download the `pipeline-training.pem` file (location of .pem provided later)
-
-* Copy the `pipeline-training.pem` file into your root directory:
-```
-cp ~/Downloads/<your-ssh-key>.pem ~/
+cp ~/Downloads/pipeline-training-gce.pem ~/
 ```
 
 * Log in to your instance as follows
 ```
-ssh -i "~/<your-ssh-key>.pem" <your-username>@<your-cloud-instance-public-ip>
+ssh -i "~/pipeline-training-gce.pem" pipeline-training@<your-cloud-instance-public-ip>
 ```
 
 * Run the following command to start up the Docker container
@@ -39,15 +25,33 @@ root@docker$ cd $PIPELINE_HOME && git pull && source $CONFIG_HOME/bash/pipeline.
 
 * Wait a few mins for initialization to complete!
 
+## Do Workshop!
 * [Explore](https://github.com/fluxcapacitor/pipeline/wiki/Explore-Services) the Environment
+* ...many other things...
 
+## Saving Your Work
 * At the end of the workshop, save your Docker container as follows:
 ```
 root@docker$ cd ~ && docker export --output="pipeline.tar" pipeline
 ```
-* This creates a 10 GB Docker image from your running container
+* This creates a 10 GB Docker image based on your live, running container
 
-* You can download this Docker image as follows:
+* Download the newly-created Docker image as follows:
 ```
-local-laptop$ scp -i ~/<your-ssh-key>.pem <your-username>@<your-cloud-instance-public-ip>:pipeline.tar ~/pipeline.tar
+local-laptop$ scp -i ~/pipeline-training-gce.pem pipeline-training@<your-cloud-instance-public-ip>:pipeline.tar ~/pipeline.tar
+```
+
+## Instance Launch Scripts 
+* Ignore this as we're doing this for you automatically
+```
+#!/bin/bash
+sudo apt-get update
+sudo apt-get install curl
+curl -fsSL https://get.docker.com/ | sh
+curl -fsSL https://get.docker.com/gpg | sudo apt-key add -
+sudo usermod -a -G docker $USER
+docker run hello-world
+docker pull fluxcapacitor/pipeline
+echo 'DOCKER_OPTS="--ip=127.0.0.1"' | sudo tee -a /etc/default/docker
+sudo service docker restart
 ```
