@@ -19,12 +19,12 @@ sudo service docker restart
 
 * Copy the `pipeline-training.pem` file into your root directory:
 ```
-cp ~/Downloads/pipeline-training.pem ~/
+cp ~/Downloads/<your-ssh-key>.pem ~/
 ```
 
 * Log in to your instance as follows
 ```
-ssh -i "~/pipeline-training.pem" ubuntu@<your-cloud-instance-public-ip>
+ssh -i "~/<your-ssh-key>.pem" <your-username>@<your-cloud-instance-public-ip>
 ```
 
 * Run the following command to start up the Docker container
@@ -49,5 +49,5 @@ root@docker$ cd ~ && docker export --output="pipeline.tar" pipeline
 
 * You can download this Docker image as follows:
 ```
-local-laptop$ scp -i ~/pipeline-training.pem ubuntu@<your-cloud-instance-public-ip>:pipeline.tar ~/pipeline.tar
+local-laptop$ scp -i ~/<your-ssh-key>.pem <your-username>@<your-cloud-instance-public-ip>:pipeline.tar ~/pipeline.tar
 ```
