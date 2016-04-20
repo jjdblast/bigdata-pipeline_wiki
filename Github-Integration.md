@@ -28,6 +28,10 @@ chmod 600 ~/.ssh/github_rsa
 
 ## Register SSH Keys Locally
 * Run `ssh-add` and enter the passphrase used when creating the key pair
+```
+ssh-add ~/.ssh/github_rsa
+Enter passphrase for ~/.ssh/github_rsa: <your-passphrase>
+```
 
 **If you see the following error, make sure you ran the `chmod 600` command above.**
 ```
@@ -37,8 +41,4 @@ chmod 600 ~/.ssh/github_rsa
 Permissions 0644 for '/root/.ssh/github_rsa' are too open.
 It is required that your private key files are NOT accessible by others.
 This private key will be ignored.
-```
-```
-ssh-add ~/.ssh/github_rsa
-Enter passphrase for ~/.ssh/github_rsa: <your-passphrase>
 ```
