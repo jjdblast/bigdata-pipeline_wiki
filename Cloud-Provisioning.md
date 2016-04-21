@@ -46,6 +46,10 @@ root@docker$ cd $PIPELINE_HOME && git pull && source $CONFIG_HOME/bash/pipeline.
 ```
 root@docker$ start-core-services-only-worker.sh demo.advancedspark.com
 ```
+* Check out all of the Spark Workers registerd with the common Spark Master!
+```
+http://demo.advancedspark.com:36060/
+```
 
 ## Saving Your Work
 * At the end of the workshop, save your Docker container as follows:
