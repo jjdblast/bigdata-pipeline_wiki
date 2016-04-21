@@ -3,12 +3,19 @@
 **ALSO, PLEASE KILL ANY VPN DAEMON PROCESSES OR THESE STEPS MAY NOT WORK.**
 
 ## Install Docker Toolbox from USB (if provided) or Internet (huge download!!):
-### USB: Install `.exe` (Windows) or `.pkg` (Mac) as appropriate
+### USB
+* Install `.exe` (Windows) or `.pkg` (Mac) as appropriate
 
-### Internet: [Mac OS X](https://docs.docker.com/mac/) or [Windows](https://docs.docker.com/windows/) or [Linux](https://docs.docker.com/linux/)
+### Internet
+* [Mac OS X](https://docs.docker.com/mac/)
+* [Windows](https://docs.docker.com/windows/) 
+* [Linux](https://docs.docker.com/linux/)
 
 ## Create VM Environment from USB (if provided) or Internet (huge download!!)
 ### USB
+* Adjust the `virtualbox-memory` and `virtualbox-disk-size` accordingly.
+* These are the recommended minimums as the Docker Container is very large and has a large memory footprint when running the full examples.
+* You may want to spin up an AWS or GCE instance with 4 cores and 8GB minimum RAM.
 ```
 local-laptop$ docker-machine create --driver virtualbox --virtualbox-hostonly-cidr "192.69.69.1/24" --virtualbox-cpu-count "4" --virtualbox-disk-size "100000" --virtualbox-memory "8096" --virtualbox-boot2docker-url "file:///<usb-drive>/<path-to-boot2docker.iso>" pipeline-vm
 ```
