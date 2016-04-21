@@ -40,6 +40,13 @@ root@docker$ cd $PIPELINE_HOME && git pull && source $CONFIG_HOME/bash/pipeline.
 * [Explore](https://github.com/fluxcapacitor/pipeline/wiki/Explore-Services) the Environment
 * ...many other things...
 
+# End of Workshop Fun
+## Building a Gigantic Spark Cluster (5TB RAM, 800 Cores)
+* The following command restarts the local Spark Worker and points to a common Spark Master
+```
+root@docker$ start-core-services-only-worker.sh demo.advancedspark.com
+```
+
 ## Saving Your Work
 * At the end of the workshop, save your Docker container as follows:
 ```
@@ -52,8 +59,8 @@ root@docker$ cd ~ && docker export --output="pipeline.tar" pipeline
 local-laptop$ scp -i ~/pipeline-training-gce.pem pipeline-training@<your-cloud-instance-public-ip>:pipeline.tar ~/pipeline.tar
 ```
 
-## Instance Launch Scripts 
-* Ignore this as we're doing this for you automatically
+# Ignore This -- Internal Notes for Cloud Instance Provisioning
+## AWS User Data (or GCE Launch Scripts)
 ```
 #!/bin/bash
 sudo apt-get update
