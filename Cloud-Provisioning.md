@@ -2,7 +2,11 @@
 * Instance Type:  8 CPUs and 50GB RAM, 50GB SSD (GCE n1-highmem-8 instance)
 
 ## Logging Into Your Instance 
-* Download the `pipeline-training-gce.pem` file (location of .pem provided later)
+* Download `pipeline-training-gce.pem` as follows:
+```
+wget http://advancedspark.com/keys/pipeline-training-gce.pem
+```
+
 * Copy the `pipeline-training-gce.pem` file into your root directory:
 ```
 cp ~/Downloads/pipeline-training-gce.pem ~/
@@ -10,7 +14,7 @@ cp ~/Downloads/pipeline-training-gce.pem ~/
 
 * Log in to your instance as follows
 ```
-ssh -i "~/pipeline-training-gce.pem" pipeline-training@<your-cloud-instance-public-ip>
+ssh -i ~/pipeline-training-gce.pem pipeline-training@<your-cloud-instance-public-ip>
 ```
 
 * Run the following command to start up the Docker container
@@ -26,6 +30,8 @@ root@docker$ cd $PIPELINE_HOME && git pull && source $CONFIG_HOME/bash/pipeline.
 * Wait a few mins for initialization to complete!
 
 ## Do Workshop!
+* NOTE:  THERE IS A BLOCKER THAT WILL PREVENT THIS NEXT STEP FROM WORKING.
+* I'M WORKING ON IT!!  :)
 * [Explore](https://github.com/fluxcapacitor/pipeline/wiki/Explore-Services) the Environment
 * ...many other things...
 
