@@ -76,4 +76,6 @@ docker run hello-world
 docker pull fluxcapacitor/pipeline
 echo 'DOCKER_OPTS="--ip=127.0.0.1"' | sudo tee -a /etc/default/docker
 sudo service docker restart
+echo "alias docker='sudo docker'" > ~/.bash_aliases
+source ~/.bash_aliases
 ```
