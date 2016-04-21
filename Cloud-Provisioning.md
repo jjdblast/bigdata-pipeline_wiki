@@ -7,9 +7,14 @@
 wget http://advancedspark.com/keys/pipeline-training-gce.pem
 ```
 
-* Copy the `pipeline-training-gce.pem` file into your root directory:
+* Move the `pipeline-training-gce.pem` file into your root directory:
 ```
-cp ~/Downloads/pipeline-training-gce.pem ~/
+mv ~/Downloads/pipeline-training-gce.pem ~/
+```
+
+* Update the permission on the `pipeline-training-gce.pem` 
+```
+chmod 600 ~/pipeline-training-gce.pem
 ```
 
 * Log in to your instance as follows
