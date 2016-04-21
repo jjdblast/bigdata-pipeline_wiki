@@ -40,7 +40,8 @@ root@docker$ cd $PIPELINE_HOME && git pull && source $CONFIG_HOME/bash/pipeline.
 * [Explore](https://github.com/fluxcapacitor/pipeline/wiki/Explore-Services) the Environment
 * ...many other things...
 
-# End of Workshop Fun
+# End of Workshop Fun - DO NOT DO THIS RIGHT NOW - EVEN THE TA'S!!!!!
+
 ## Building a Gigantic Spark Cluster (5TB RAM, 800 Cores)
 * The following command restarts the local Spark Worker and points to a common Spark Master
 ```
