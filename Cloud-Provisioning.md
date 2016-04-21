@@ -40,9 +40,10 @@ root@docker$ cd $PIPELINE_HOME && git pull && source $CONFIG_HOME/bash/pipeline.
 * [Explore](https://github.com/fluxcapacitor/pipeline/wiki/Explore-Services) the Environment
 * ...many other things...
 
-# End of Workshop Fun - DO NOT DO THIS RIGHT NOW - EVEN THE TA'S!!!!!
+# End of Workshop Fun
 
 ## Building a Gigantic Spark Cluster (5TB RAM, 800 Cores)
+***** DO NOT DO THIS RIGHT NOW - EVEN THE TA'S!!!!! *****
 * The following command restarts the local Spark Worker and points to a common Spark Master
 ```
 root@docker$ start-core-services-only-worker.sh demo.advancedspark.com
@@ -53,6 +54,7 @@ http://demo.advancedspark.com:36060/
 ```
 
 ## Saving Your Work
+***** IT IS OK TO DO THIS, YES *****
 * At the end of the workshop, save your Docker container as follows:
 ```
 root@docker$ cd ~ && docker export --output="pipeline.tar" pipeline
