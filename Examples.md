@@ -8,21 +8,19 @@
 ```
 root@docker$ cd $MYAPPS_HOME
 root@docker$ ll
-airflow/        
+airflow/
 akka/
-elasticsearch/
 flink/  
 jupyter/
 kibana/
 nifi/        
 spark/
-titandb/
+titan/
 zeppelin/
 ```
 
-## TODO:  Fix these!
-### Spark Core
-* [core](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/core)
+### Airflow
+* [core](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/spark/core)
 * Project Tungsten
 * Mechanical Sympathy 
 * CPU Cache Aware Algorithms
@@ -30,28 +28,41 @@ zeppelin/
 * Efficient Sorting with Sequential and Off-Heap Data
 * Using Linux Perf to Analyze and Compare Algorithms
 
-### Feeder
-* [feeder](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/feeder)
+### Akka/Feeder
+* [akka/feeder](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/akka/feeder)
 * Akka-based App that Feeds Ratings from CSV into a Kafka Topic
 * Simulates Users Posting Ratings to a Kafka Topic
+ 
+### Flink Streaming
+* [flink/streaming](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/flink/streaming) 
+* Flink Streaming 
+
+### Spark Core
+* [core](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/spark/core)
+* Project Tungsten
+* Mechanical Sympathy 
+* CPU Cache Aware Algorithms
+* Thread Context Switch Aware Algorithms
+* Efficient Sorting with Sequential and Off-Heap Data
+* Using Linux Perf to Analyze and Compare Algorithms
 
 ### Jupyter
 * [juptyer](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/jupyter)
-* Jupyter/iPython notebooks including PySpark, TensorFlow, SciKit-Learn, matplotlib and various other examples from around the web
+* Jupyter/iPython notebooks including PySpark, TensorFlow, SciKit-Learn, NetworkX, Matplotlib and various other examples from around the world wide web (aka www)
 
 ### Spark ML/MLlib, GraphX, and CoreNLP
-* [ml](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/ml) 
+* [ml](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/spark/ml) 
 * Machine Learning
 * Graph Processing
 * Text Analytics and NLP
 
 ### Spark SQL
-* [sql](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/sql)
+* [sql](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/spark/sql)
 * Custom In-memory DataSource API Implementation 
 * Custom Tungsten-Friendly UDF Participating in Catalyst Optimizations
 
 ### Spark Streaming
-* [streaming](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/streaming)
+* [streaming](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/spark/streaming)
 * Read data from Kafka
 * Store data in Cassandra, ElasticSearch, Redis
 * Calculate distinct count using Redis HyperLogLog and Twitter Algebird HyperLogLog
@@ -61,4 +72,10 @@ zeppelin/
 * [zeppelin](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/zeppelin)
 * Python and Scala-based notebooks including many new and existing examples from around the web
 
- 
+### ML Serving/Prediction Layer
+* [serving](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/serving) 
+* ML Serving Layer
+
+### NiFi
+* [nifi](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/nifi) 
+* NiFi Data Flows
