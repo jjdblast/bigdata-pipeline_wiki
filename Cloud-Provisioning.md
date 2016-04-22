@@ -17,7 +17,18 @@ mv ~/Downloads/pipeline-training-gce.pem ~/
 chmod 600 ~/pipeline-training-gce.pem
 ```
 
-* Log in to your instance as follows
+* Update the permission on the `pipeline-training-gce.pem` 
+```
+chmod 600 ~/pipeline-training-gce.pem
+```
+
+* Add the `.pem` file to your keychain
+```
+ssh-add ~/pipeline-training-gce.pem
+Enter passphrase for /Users/<username>/pipeline-training-gce.pem: password9
+```
+
+* SSH into the instance 
 ```
 ssh -i ~/pipeline-training-gce.pem pipeline-training@<your-cloud-instance-public-ip>
 ```
