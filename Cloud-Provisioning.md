@@ -2,35 +2,36 @@
 * Instance Type:  8 CPUs and 50GB RAM, 50GB SSD (GCE n1-highmem-8 instance)
 
 ## Logging Into Your Instance 
-* Download `pipeline-training-gce.pem` as follows:
+* Download the .pem as follows:
 ```
 wget http://advancedspark.com/keys/pipeline-training-gce.pem
+wget http://advancedspark.com/keys/pipeline-training-aws.pem
 ```
 
-* Move the `pipeline-training-gce.pem` file into your root directory:
+* Move the .pem into your root directory:
 ```
 mv ~/Downloads/pipeline-training-gce.pem ~/
+mv ~/Downloads/pipeline-training-aws.pem ~/
 ```
 
-* Update the permission on the `pipeline-training-gce.pem` 
+* Update the .pem permissions:
 ```
 chmod 600 ~/pipeline-training-gce.pem
+chmod 600 ~/pipeline-training-aws.pem
 ```
 
-* Update the permission on the `pipeline-training-gce.pem` 
-```
-chmod 600 ~/pipeline-training-gce.pem
-```
-
-* Add the `.pem` file to your keychain
+* Add the .pem to your keychain
 ```
 ssh-add ~/pipeline-training-gce.pem
 Enter passphrase for /Users/<username>/pipeline-training-gce.pem: password9
+
+ssh-add ~/pipeline-training-aws.pem
 ```
 
 * SSH into the instance 
 ```
 ssh -i ~/pipeline-training-gce.pem pipeline-training@<your-cloud-instance-public-ip>
+ssh -i ~/pipeline-training-aws.pem ubuntu@<your-cloud-instance-public-ip>
 ```
 
 * Run the following command to start up the Docker container
@@ -59,7 +60,7 @@ root@docker$ cd $PIPELINE_HOME && git pull && source $CONFIG_HOME/bash/pipeline.
 ```
 root@docker$ start-core-services-only-worker.sh demo.advancedspark.com
 ```
-* Check out all of the Spark Workers registerd with the common Spark Master!
+* Check out all of the Spark Workers registered with the common Spark Master!
 ```
 http://demo.advancedspark.com:36060/
 ```
@@ -75,10 +76,12 @@ root@docker$ cd ~ && docker export --output="pipeline.tar" pipeline
 * Download the newly-created Docker image as follows:
 ```
 local-laptop$ scp -i ~/pipeline-training-gce.pem pipeline-training@<your-cloud-instance-public-ip>:pipeline.tar ~/pipeline.tar
+
+local-laptop$ scp -i ~/pipeline-training-aws.pem ubuntu@<your-cloud-instance-public-ip>:pipeline.tar ~/pipeline.tar
 ```
 
 # Ignore This -- Internal Notes for Cloud Instance Provisioning
-## AWS User Data (or GCE Launch Scripts)
+## AWS User Data (or GCE Launch Script)
 ```
 #!/bin/bash
 sudo apt-get update
