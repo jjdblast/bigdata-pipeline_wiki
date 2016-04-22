@@ -26,6 +26,7 @@ ssh-add ~/pipeline-training-gce.pem
 Enter passphrase for /Users/<username>/pipeline-training-gce.pem: password9
 
 ssh-add ~/pipeline-training-aws.pem
+(NO PASSPHRASE NEEDED)
 ```
 
 * SSH into the instance 
