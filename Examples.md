@@ -12,9 +12,10 @@ airflow/
 akka/
 flink/  
 jupyter/
-kibana/
-nifi/        
+nifi/
+serving/    
 spark/
+tensorflow/
 titan/
 zeppelin/
 ```
@@ -37,6 +38,10 @@ zeppelin/
 * [flink/streaming](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/flink/streaming) 
 * Flink Streaming 
 
+### Jupyter
+* [juptyer](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/jupyter)
+* Jupyter/iPython notebooks including PySpark, TensorFlow, SciKit-Learn, NetworkX, Matplotlib and various other examples from around the world wide web (aka www)
+
 ### Spark Core
 * [core](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/spark/core)
 * Project Tungsten
@@ -45,10 +50,6 @@ zeppelin/
 * Thread Context Switch Aware Algorithms
 * Efficient Sorting with Sequential and Off-Heap Data
 * Using Linux Perf to Analyze and Compare Algorithms
-
-### Jupyter
-* [juptyer](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/jupyter)
-* Jupyter/iPython notebooks including PySpark, TensorFlow, SciKit-Learn, NetworkX, Matplotlib and various other examples from around the world wide web (aka www)
 
 ### Spark ML/MLlib, GraphX, and CoreNLP
 * [ml](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/spark/ml) 
@@ -68,14 +69,15 @@ zeppelin/
 * Calculate distinct count using Redis HyperLogLog and Twitter Algebird HyperLogLog
 * Calculate count and heavy hitters using Twitter Algebird CountMin Sketch
 
+### NiFi
+* [nifi](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/nifi) 
+* NiFi Data Flows
+
+### Serving/Prediction ML Layer 
+* [serving](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/serving) 
+* ML Serving Layer
+
 ### Apache Zeppelin 
 * [zeppelin](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/zeppelin)
 * Python and Scala-based notebooks including many new and existing examples from around the web
 
-### ML Serving/Prediction Layer
-* [serving](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/serving) 
-* ML Serving Layer
-
-### NiFi
-* [nifi](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/nifi) 
-* NiFi Data Flows
