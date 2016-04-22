@@ -86,10 +86,10 @@ sudo apt-get install curl
 curl -fsSL https://get.docker.com/ | sh
 curl -fsSL https://get.docker.com/gpg | sudo apt-key add -
 sudo usermod -a -G docker $USER
-docker run hello-world
-docker pull fluxcapacitor/pipeline
 echo 'DOCKER_OPTS="--ip=127.0.0.1"' | sudo tee -a /etc/default/docker
-sudo service docker restart
 echo "alias docker='sudo docker'" > ~/.bash_aliases
 source ~/.bash_aliases
+sudo service docker restart
+docker run hello-world
+docker pull fluxcapacitor/pipeline
 ```
