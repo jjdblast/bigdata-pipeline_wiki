@@ -1,5 +1,6 @@
 ## Cloud Instance
-* Instance Type:  8 CPUs and 50GB RAM, 50GB SSD (GCE n1-highmem-8 instance)
+* Instance Type
+8 CPUs and 50GB RAM, 50GB SSD (GCE n1-highmem-8 instance)
 
 ## Logging Into Your Instance 
 * Download the .pem as follows:
