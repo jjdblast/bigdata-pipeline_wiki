@@ -407,19 +407,16 @@ http://127.0.0.1/ganglia
 ```
 
 ### NiFi
-* Requires `start-nifi-service.sh`
 ```
 http://127.0.0.1:36969/nifi/
 ```
 
 ### AirFlow
-* Requires `start-airflow-service.sh`
 ```
 http://127.0.0.1:35060/
 ```
 
 ### Presto
-* Requires `start-presto-service.sh`
 ```
 http://127.0.0.1:37060
 ```
@@ -428,4 +425,9 @@ http://127.0.0.1:37060
 * Requires `start-titan-service.sh`
 ```
 http://127.0.0.1:38182/
+```
+
+### Flask-based Recommendation/Prediction Service
+```
+http://127.0.0.1:35090/predict/12663/7
 ```
