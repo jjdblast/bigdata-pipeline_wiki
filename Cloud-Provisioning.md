@@ -42,7 +42,7 @@ sudo docker run -it --name pipeline -h docker -m 48g -p 80:80 -p 36042:6042 -p 3
 
 * Run the following commands inside of the Docker container
 ```
-root@docker$ cd $PIPELINE_HOME && git pull && source $CONFIG_HOME/bash/pipeline.bashrc && $SCRIPTS_HOME/setup/RUNME_ONCE.sh
+root@docker$ cd $PIPELINE_HOME && git pull && source $CONFIG_HOME/bash/pipeline.bashrc && $SCRIPTS_HOME/setup/RUNME_ONCE_LARGE.sh
 ```
 
 * Wait a few mins for initialization to complete!
