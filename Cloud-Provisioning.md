@@ -68,16 +68,14 @@ root@docker$ cd ~ && docker export --output="pipeline.tar" pipeline
 ```
 * This creates a 10 GB Docker image based on your live, running container
 
-***** DO NOT DO THIS UNTIL LATER THIS EVENING ON YOUR HOME WIFI *****
 * Download the newly-created Docker image as follows:
+***** DO NOT DO THIS UNTIL LATER THIS EVENING ON YOUR HOME WIFI *****
 ```
 local-laptop$ scp -i ~/pipeline-training-gce.pem pipeline-training@<your-cloud-instance-public-ip>:pipeline.tar ~/pipeline.tar
-
-local-laptop$ scp -i ~/pipeline-training-aws.pem ubuntu@<your-cloud-instance-public-ip>:pipeline.tar ~/pipeline.tar
 ```
 
-# Ignore This -- Internal Notes for Cloud Instance Provisioning
-## AWS User Data (or GCE Launch Script)
+# Internal Notes for Cloud Instance Provisioning
+## GCE Launch Script/User Data
 ```
 #!/bin/bash
 sudo apt-get update
