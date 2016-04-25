@@ -4,9 +4,9 @@
 **8 Cores**, **50GB RAM**, **50GB SSD**
 
 ## Logging Into Your Instance 
-* Download the .pem as follows:
+* Download the .pem as follows (TODO:  provide in-person):
 ```
-wget http://advancedspark.com/keys/pipeline-training-gce.pem
+wget <insert-server-name-here>
 ```
 
 * Move the .pem into your root directory:
@@ -19,10 +19,10 @@ mv ~/Downloads/pipeline-training-gce.pem ~/
 chmod 600 ~/pipeline-training-gce.pem
 ```
 
-* Add the .pem to your keychain
+* Add the .pem to your keychain (TODO:  password provided later)
 ```
 ssh-add ~/pipeline-training-gce.pem
-Enter passphrase for /Users/<username>/pipeline-training-gce.pem: password9
+Enter passphrase for /Users/<username>/pipeline-training-gce.pem
 ```
 
 * SSH into the instance 
@@ -62,14 +62,13 @@ http://<your-cloud-instance-public-ip>
 
 # End of Workshop Fun
 ## Build a Gigantic Spark Cluster (5TB RAM, 800 Cores)
-***** DO NOT DO THIS RIGHT NOW - EVEN THE TA'S!!!!! *****
-* The following command restarts the local Spark Worker and points to a common Spark Master
+* The following command restarts the local Spark Worker and points to a remote Spark Master
 ```
-root@docker$ start-core-services-only-worker.sh demo.advancedspark.com
+root@docker$ start-core-services-only-worker.sh <insert-common-master-ip-here>
 ```
 * Check out all of the Spark Workers registered with the common Spark Master!
 ```
-http://<your-cloud-instance-public-ip>:36060/
+http://<common-master-ip>:36060/
 ```
 
 ## Saving Your Work
