@@ -13,3 +13,14 @@ source ~/.bash_aliases
 sudo service docker restart
 docker pull fluxcapacitor/pipeline
 ```
+
+# End of Workshop Fun
+## Build a Gigantic Spark Cluster (5TB RAM, 800 Cores)
+* The following command restarts the local Spark Worker and points to a remote Spark Master
+```
+root@docker$ start-core-services-only-worker.sh <insert-common-master-ip-here>
+```
+* Check out all of the Spark Workers registered with the common Spark Master!
+```
+http://<common-master-ip>:6060/
+```
