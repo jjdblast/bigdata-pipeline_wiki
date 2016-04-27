@@ -1,7 +1,7 @@
 ## Cloud Instance
 * Instance Type:  GCE n1-highmem-8 instance
 * 8 Cores, 50GB RAM, 100GB SSD
-* **MAKE SURE ALL PORTS ARE OPEN ON THE CLOUD INSTANCE!!**
+* **MAKE SURE ALL PORTS ARE OPEN ON THE FIREWALL OF THE CLOUD INSTANCE!!**
 
 ## Logging Into Your Instance 
 * Download the .pem as follows (TODO:  provide in-person):
