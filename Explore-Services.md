@@ -156,6 +156,11 @@ root@docker$ redis-cli
 PONG
 ```
 
+* Type `exit` to exit
+```
+127.0.0.1:6379> exit
+```
+
 ### JDBC ODBC Hive ThriftServer
 * Start the [Hive ThriftServer](https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients) Service
 ```
