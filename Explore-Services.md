@@ -137,6 +137,10 @@ mysql> show databases;
 4 rows in set (0.01 sec)
 ```
 
+* Type `exit` to exit
+```
+mysql> exit
+```
 ### Hive Metastore Service
 * Make sure the Hive Metastore Service is running.
 * This services uses the Hive Metastore Database shown above.
