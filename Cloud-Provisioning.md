@@ -44,7 +44,7 @@ sudo docker pull fluxcapacitor/pipeline
 ```
 
 * Run the following command to start up the Docker container
-* Note:  Review the [Docker]() file to make sure your host does not already listen on the EXPOSEd ports
+* Note:  Review the [Docker](https://github.com/fluxcapacitor/pipeline/blob/master/Dockerfile) file to make sure your host does not already listen on the EXPOSEd ports
 ```
 sudo docker run -it --name pipeline --net=host -m 48g fluxcapacitor/pipeline bash
 ```
