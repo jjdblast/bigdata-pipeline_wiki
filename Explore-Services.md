@@ -269,6 +269,10 @@ Query 20160403_043056_00020_jtkti, FINISHED, 1 node
 Splits: 2 total, 2 done (100.00%)
 0:00 [5 rows, 47B] [147 rows/s, 1.35KB/s]
 ```
+* Type `quit` to exit
+```
+presto:default> quit
+```
 
 ### Presto + Hive/SparkSQL
 * Requires `start-presto-service.sh`
