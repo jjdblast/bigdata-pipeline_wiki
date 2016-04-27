@@ -1,5 +1,5 @@
 # Internal Notes for Cloud Instance Provisioning
-## GCE Launch Script/User Data
+## GCE "Launch Script" (aka. AWS "User Data")
 ```
 #!/bin/bash
 sudo apt-get update
