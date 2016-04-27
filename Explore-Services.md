@@ -88,12 +88,8 @@ Time taken: 2.179 seconds, Fetched 2 row(s)
 root@docker$ cqlsh
 cqlsh> use advancedspark;
 
-cqlsh:advancedspark> select userid, rating, batchtime from item_ratings;
-
- fromuserid | touserid | rating | batchtime
-------------+----------+--------+-----------
-
-(0 rows)
+cqlsh:advancedspark> select userid, rating, timestamp from item_ratings;
+...
 
 cqlsh> describe advancedspark;
 CREATE KEYSPACE advancedspark WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'} AND durable_writes = true;
