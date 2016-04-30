@@ -1,6 +1,8 @@
 ## Cloud Instance
 * The following are the minimum requirements for your Cloud Instance:
 **8 Cores, 50GB RAM, 100GB SSD**
+* Note:  We have deprecated the local laptop installation instructions given that most laptops are not equipped to handle the large memory and disk/dataset footprint of this environment.
+* A Cloud Instance with the given minimum requirements can be acquired for around $8-$10 per day - and getting cheaper by the day.
 
 ## Firewall and Cloud Instance Security Groups
 * Make sure all ports are open on your Cloud Instance
