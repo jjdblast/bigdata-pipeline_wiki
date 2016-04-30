@@ -1,5 +1,5 @@
 Start various Spark Streaming Apps
-* Receive data from the `item_ratings` Kafka topic
+* Receive data from the `item_ratings_geo` Kafka topic
 * Process, aggregate, transform, and enrich the raw data
 * Write the output to various data stores
 * Some of these may already be started, so please check the Spark Admin UI first before starting manually
@@ -15,21 +15,19 @@ Broken down into the following Spark Streaming Batch Intervals:
 root@docker$ cd $MYAPPS_HOME/spark/streaming && ./start-streaming-ratings-nifi-kafka-cassandra.sh
 ...Starting Spark Streaming App...
 ```
-### Cassandra
-```
-root@docker$ cd $MYAPPS_HOME/spark/streaming && ./start-streaming-ratings-cassandra.sh
-...Starting Spark Streaming App...
-```
+
 ### ElasticSearch  
 ```
 root@docker$ cd $MYAPPS_HOME/spark/streaming && ./start-streaming-ratings-elasticsearch.sh
 ...Starting Spark Streaming App...
 ```
+
 ### Parquet (File-based, Parquet Columnar File Format)
 ```
 root@docker$ cd $MYAPPS_HOME/spark/streaming && ./start-streaming-ratings-parquet.sh
 ...Starting Spark Streaming App...
 ```
+
 ### Redis (Exact and Approximate HyperLogLog) 
 ```
 root@docker$ cd $MYAPPS_HOME/spark/streaming && ./start-streaming-ratings-redis.sh
@@ -39,6 +37,7 @@ root@docker$ cd $MYAPPS_HOME/spark/streaming && ./start-streaming-ratings-redis.
 root@docker$ cd $MYAPPS_HOME/spark/streaming && ./start-streaming-ratings-redis-hll.sh
 ...Starting Spark Streaming App...
 ```
+
 ### In-Memory Twitter Algebird (Approximate HyperLogLog and CountMin Sketch) 
 ```
 root@docker$ cd $MYAPPS_HOME/spark/streaming && ./start-streaming-ratings-algebird-hll.sh
@@ -57,10 +56,11 @@ root@docker$ cd $MYAPPS_HOME/spark/streaming && ./start-streaming-ratings-topk-i
 ```
  
 ## ML Model Training (Large Batch Interval)
-### Incremental ALS Model Training on New Data
+### Incremental ALS Model Training on New Data (Beta)
 ```
 root@docker$ cd $MYAPPS_HOME/spark/streaming && ./start-streaming-ratings-train-als-incremental.sh
 ...Starting Spark Streaming App...
+
 ```
 ### Batch ALS Model Training on All Data
 ```
