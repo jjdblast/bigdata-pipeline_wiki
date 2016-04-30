@@ -3,49 +3,45 @@
 ***
 Environment Setup
 
-[1. Setup Docker](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Docker)
+[1. Setup Cloud Environment](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Environment)
 
-[2. Start Docker Container](https://github.com/fluxcapacitor/pipeline/wiki/Start-Docker-Container)
+[2. Start Services](https://github.com/fluxcapacitor/pipeline/wiki/Start-Services)
 
-[3. Start Services](https://github.com/fluxcapacitor/pipeline/wiki/Start-Services)
-
-[4. Explore Services](https://github.com/fluxcapacitor/pipeline/wiki/Explore-Services)
+[3. Explore Services](https://github.com/fluxcapacitor/pipeline/wiki/Explore-Services)
 
 ***
 Examples
 
-[5. Start Spark Streaming](https://github.com/fluxcapacitor/pipeline/wiki/Start-Spark-Streaming)
+[4. Start Spark Streaming](https://github.com/fluxcapacitor/pipeline/wiki/Start-Spark-Streaming)
 
-[6. View Admin Spark UIs](https://github.com/fluxcapacitor/pipeline/wiki/View-Admin-Spark-UIs)
+[5. View Admin Spark UIs](https://github.com/fluxcapacitor/pipeline/wiki/View-Admin-Spark-UIs)
 
-[7. Feed Data](https://github.com/fluxcapacitor/pipeline/wiki/Feed-Data)
+[6. Feed Data](https://github.com/fluxcapacitor/pipeline/wiki/Feed-Data)
 
-[8. Analyze Data](https://github.com/fluxcapacitor/pipeline/wiki/Analyze-Data)
+[7. Analyze Data](https://github.com/fluxcapacitor/pipeline/wiki/Analyze-Data)
 
-[9. Examples](https://github.com/fluxcapacitor/pipeline/wiki/Examples)
+[8. Examples](https://github.com/fluxcapacitor/pipeline/wiki/Examples)
 
-[10. Monitor Metrics](https://github.com/fluxcapacitor/pipeline/wiki/Monitor-Metrics)
+[9. Monitor Metrics](https://github.com/fluxcapacitor/pipeline/wiki/Monitor-Metrics)
 
 ***
 Misc
 
-[11. Stop Services](https://github.com/fluxcapacitor/pipeline/wiki/Stop-Services)
+[10. Stop Services](https://github.com/fluxcapacitor/pipeline/wiki/Stop-Services)
 
-[12. Github Integration](https://github.com/fluxcapacitor/pipeline/wiki/Github-Integration)
+[11. Github Integration](https://github.com/fluxcapacitor/pipeline/wiki/Github-Integration)
 
-[13. Troubleshoot Environment](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshoot-Environment)
+[12. Troubleshoot Environment](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshoot-Environment)
 
-[14. Build Docker Image](https://github.com/fluxcapacitor/pipeline/wiki/Build-Docker-Image)
+[13. Build Docker Image](https://github.com/fluxcapacitor/pipeline/wiki/Build-Docker-Image)
 
-[15. Custom Distributions](https://github.com/fluxcapacitor/pipeline/wiki/Custom-Distributions)
+[14. Custom Distributions](https://github.com/fluxcapacitor/pipeline/wiki/Custom-Distributions)
 
-[16. Remove Docker](https://github.com/fluxcapacitor/pipeline/wiki/Remove-Docker)
+[15. Remove Docker](https://github.com/fluxcapacitor/pipeline/wiki/Remove-Docker)
 
 ***
 Beta Features (Not Stable)
 
-[17. TensorFlow Examples](https://github.com/fluxcapacitor/pipeline/wiki/TensorFlow)
+[16. TensorFlow Examples](https://github.com/fluxcapacitor/pipeline/wiki/TensorFlow)
 
-[18. Cloud Provisioning](https://github.com/fluxcapacitor/pipeline/wiki/Cloud-Provisioning)
-
-[19. Serving Layer](https://github.com/fluxcapacitor/pipeline/wiki/Serving-Layer)
+[17. Serving Layer](https://github.com/fluxcapacitor/pipeline/wiki/Serving-Layer)
