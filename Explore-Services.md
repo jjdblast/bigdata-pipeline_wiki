@@ -333,7 +333,7 @@ http://<ip>
 
 ### Kafka REST API Proxy
 ```
-http://<ip>:36042/topics
+http://<ip>:6042/topics
 ```
 
 ### Redis REST API Proxy (Webdis)
