@@ -14,7 +14,15 @@
 ssh -i ~/.ssh/<your-pem-file> <your-username>@<your-cloud-instance-public-ip>
 ```
 
-* Setup some local env vars
+## Setup Docker
+```
+sudo apt-get update
+sudo apt-get install curl
+curl -fsSL https://get.docker.com/ | sh
+curl -fsSL https://get.docker.com/gpg | sudo apt-key add -
+```
+
+## Setup Environment
 ```
 echo "alias docker='sudo docker'" > ~/.bash_aliases
 source ~/.bash_aliases
@@ -35,7 +43,7 @@ sudo docker run -it --name pipeline --net=host -m 48g fluxcapacitor/pipeline bas
 
 * Run the following commands *inside of the Docker container*
 ```
-root@docker$ cd $PIPELINE_HOME && git pull && source $CONFIG_HOME/bash/pipeline.bashrc && $SCRIPTS_HOME/setup/RUNME_ONCE_LARGE.sh
+cd $PIPELINE_HOME && git pull && source $CONFIG_HOME/bash/pipeline.bashrc && $SCRIPTS_HOME/setup/RUNME_ONCE_LARGE.sh
 ```
 
 * Wait a few mins for initialization to complete!
@@ -46,15 +54,3 @@ root@docker$ cd $PIPELINE_HOME && git pull && source $CONFIG_HOME/bash/pipeline.
 http://<your-cloud-instance-public-ip>
 ```
 * Click around on the navigation links at the top and familiarize yourself with the environment
-
-## Saving Your Work
-* You can save your live Docker container as follows:
-```
-root@docker$ cd ~ && docker export --output="pipeline.tar" pipeline
-```
-* This creates an 11 GB Docker image based on a snapshot of your live, running container
-
-* Download the newly-created Docker image to your local home directory as follows:
-```
-local-laptop$ scp -i ~/<your-pem-file.pem> <your-username>@<your-cloud-instance-public-ip>:pipeline.tar ~/pipeline.tar
-```
