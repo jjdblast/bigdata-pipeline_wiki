@@ -24,3 +24,26 @@ root@docker$ start-core-services-only-worker.sh <insert-common-master-ip-here>
 ```
 http://<common-master-ip>:6060/
 ```
+
+# Misc Instructions (Ignore these please)
+* If you've been provided a `.pem` download link, download it now
+```
+wget <insert-url-to-pem-file-here>
+```
+
+* Move the .pem into the `~/.ssh` directory:
+```
+mkdir -p ~/.ssh
+mv ~/Downloads/pipeline-training-gce.pem ~/.ssh/
+```
+
+* Update the `.pem` file permissions:
+```
+chmod 600 ~/.ssh/pipeline-training-gce.pem
+```
+
+* Add the `.pem` file to your keychain (TODO:  password provided later)
+```
+ssh-add ~/.ssh/pipeline-training-gce.pem
+Enter passphrase for /Users/<username>/pipeline-training-gce.pem
+```
