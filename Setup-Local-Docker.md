@@ -60,6 +60,17 @@ local-linux-only$ exit
 local-laptop$ docker version
 ```
 
+### Launching a new command-line terminal
+
+* Run the following to verify that everything is OK before continuing
+```
+local-laptop$ docker-machine env pipeline-vm
+export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://192.69.69.100:2376"
+export DOCKER_CERT_PATH="/Users/<username>/.docker/machine/machines/pipeline-vm"
+export DOCKER_MACHINE_NAME="pipeline-vm"
+```
+
 ### Troubleshooting
 ```
 Error with pre-create check: "VirtualBox is configured with multiple host-only adapters with the same IP
