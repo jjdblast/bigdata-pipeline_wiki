@@ -3,7 +3,7 @@
 ***
 Environment Setup
 
-[1. Setup Cloud Environment](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Environment)
+[1. Setup Cloud Environment](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Cloud-Environment)
 
 [2. Start Services](https://github.com/fluxcapacitor/pipeline/wiki/Start-Services)
 
