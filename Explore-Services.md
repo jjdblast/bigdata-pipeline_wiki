@@ -1,14 +1,16 @@
 ## Explore Service Inside Docker Container
 ### Kafka Native
 ```
-root@docker$ kafka-topics --zookeeper 127.0.0.1:2181 --list
+kafka-topics --zookeeper 127.0.0.1:2181 --list
 _schemas
 item_ratings
+item_ratings_geo
+...
 ```
 
 ### Spark Job Submit Script
 ```
-root@docker$ spark-submit --class org.apache.spark.examples.SparkPi --master spark://127.0.0.1:7077 $SPARK_EXAMPLES_JAR 10 
+spark-submit --class org.apache.spark.examples.SparkPi --master spark://127.0.0.1:7077 $SPARK_EXAMPLES_JAR 10 
 15/11/19 13:21:34 INFO DAGScheduler: Job 0 finished: reduce at SparkPi.scala:36, took 3.483164 s
 ...
 Pi is roughly 3.14134   <--- Value of Pi using Monte Carlo Simulation with 10 iters
@@ -18,7 +20,7 @@ Pi is roughly 3.14134   <--- Value of Pi using Monte Carlo Simulation with 10 it
 
 ### Spark Job Submit REST API
 ```
-root@docker$ rest-submit-sparkpi-job.sh
+rest-submit-sparkpi-job.sh
 ...
 {
   "action" : "CreateSubmissionResponse",
@@ -39,25 +41,22 @@ Notes:
 
 * You can certainly use the regular `spark-sql.sh` that comes with Spark, but this will not have the `--jars` and `--packages` configured as described above.
 ```
-root@docker$ pipeline-spark-shell.sh
+pipeline-spark-shell.sh
 ...
 scala> 1 + 1
 res0: Int = 2
 ```
 * Hit `Ctrl-C` to exit
 
-
 ### PySpark Shell
 We've created a separate `pipeline-pyspark-shell.sh` script for the sole purpose of pre-configuring `--jars` and `--packages` to include things like the following:
-
 * MySQL JDBC Connector jar used to access the MySQL Hive Metastore 
 * Any custom file readers like [spark-csv](https://github.com/databricks/spark-csv)
 
 Notes:  
-
 * You can certainly use the regular `pyspark.sh` that comes with Spark, but this will not have the `--jars` and `--packages` configured as described above.
 ```
-root@docker$ pipeline-pyspark-shell.sh
+pipeline-pyspark-shell.sh
 ...
 >>> 1 + 1
 2
@@ -85,7 +84,7 @@ Time taken: 2.179 seconds, Fetched 2 row(s)
 
 ### Cassandra
 ```
-root@docker$ cqlsh
+cqlsh
 cqlsh> use advancedspark;
 
 cqlsh:advancedspark> select userid, rating, timestamp from item_ratings;
@@ -102,7 +101,7 @@ cqlsh:advancedspark> exit;
 
 ### ZooKeeper
 ```
-root@docker$ zookeeper-shell 127.0.0.1:2181
+zookeeper-shell 127.0.0.1:2181
 ...
 WATCHER::
 
@@ -122,7 +121,7 @@ quit
 * Serious production deployments should use MySQL (or Postgres) behind the Hive Metastore Service
 * The default, file-based Derby implementation causes many concurrency/locking issues beyond a single connection.
 ```
-root@docker$ mysql -u root -p 
+mysql -u root -p 
 Enter password:  password
 ...
 mysql> show databases;
@@ -145,13 +144,13 @@ mysql> exit
 * Make sure the Hive Metastore Service is running.
 * This services uses the Hive Metastore Database shown above.
 ```
-root@docker$ netstat -an | grep 9083
+netstat -an | grep 9083
 tcp        0      0 0.0.0.0:9083            0.0.0.0:*               LISTEN 
 ```
 
 ### Redis
 ```
-root@docker$ redis-cli
+redis-cli
 127.0.0.1:6379> ping
 PONG
 ```
@@ -164,34 +163,25 @@ PONG
 ### JDBC ODBC Hive ThriftServer
 * Start the [Hive ThriftServer](https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients) Service
 ```
-root@docker$ start-hive-thriftserver.sh
+start-hive-thriftserver.sh
 ```
 
 * Verify that the following 2 new processes have been added:
 ```
-root@docker$ jps -l
+jps -l
 3641 org.apache.spark.executor.CoarseGrainedExecutorBackend 
 3047 org.apache.spark.deploy.SparkSubmit  
 
 root@docker:~/pipeline# jps -l
-737 org.elasticsearch.bootstrap.Elasticsearch
-738 org.jruby.Main
-1987 org.apache.zeppelin.server.ZeppelinServer
-4370 sun.tools.jps.Jps
-1529 org.apache.zookeeper.server.quorum.QuorumPeerMain
-2123 org.apache.spark.deploy.master.Master
-2243 org.apache.spark.deploy.worker.Worker
+...
 4177 org.apache.spark.deploy.SparkSubmit                     <-- Long-running Spark Submit Process for Hive ThriftServer
 4284 org.apache.spark.executor.CoarseGrainedExecutorBackend  <-- Long-running Executor for Hive ThriftServer
-1973 kafka.Kafka
-2555 io.confluent.kafka.schemaregistry.rest.Main
-2556 io.confluent.kafkarest.Main
-2547 org.apache.hadoop.util.RunJar                    
+...
 ```
 
 * Login and Run the Following to Query with the Beeline Hive Client 
 ```
-root@docker$ beeline -u jdbc:hive2://127.0.0.1:10000 -n hiveuser -p ''
+beeline -u jdbc:hive2://127.0.0.1:10000 -n hiveuser -p ''
 Connecting to jdbc:hive2://127.0.0.1:10000
 ...
 Connected to: Spark SQL (version 1.5.1)
@@ -231,12 +221,13 @@ Beeline version 1.5.1 by Apache Hive
 
 * Stop the long-running Hive Thrift Server frees up CPU cores for more Spark exploration
 ```
-root@docker$ stop-sparksubmitted-job.sh
+stop-sparksubmitted-job.sh
 ```
 
 * Verify that the 2 processes identified above for the Hive ThriftServer have been removed with `jps -l`.
 ```
-root@docker:~/pipeline# jps -l
+jps -l
+...
 737 org.elasticsearch.bootstrap.Elasticsearch
 738 org.jruby.Main
 1987 org.apache.zeppelin.server.ZeppelinServer
@@ -252,9 +243,11 @@ root@docker:~/pipeline# jps -l
 ```
 
 ### Presto + Kafka
-* Requires `start-presto-service.sh`
+* Requires `start-presto-service.sh` (which may already be running)
 * Run `pipeline-presto-kafka.sh` and query a live Kafka Topic
 ```
+pipeline-presto-kafka.sh
+...
 presto:default> select _key, _message from item_ratings;
  _key  |  _message  
 -------+------------
@@ -275,7 +268,7 @@ presto:default> quit
 ```
 
 ### Presto + Hive/SparkSQL
-* Requires `start-presto-service.sh`
+* Requires `start-presto-service.sh` (may already be running)
 * Run `pipeline-presto-hive.sh` and query a Hive-friendly table 
 _(ie. non-Hive-friendly tables use SerDe's like `com.databricks.spark.csv`)_
 ```
@@ -331,117 +324,106 @@ gremlin>
 ctrl-p ctrl-q
 ```
 
-* Launch a new command-line terminal
-
-* Run the following to verify that everything is OK before continuining
-```
-local-laptop$ docker-machine env pipeline-vm
-export DOCKER_TLS_VERIFY="1"
-export DOCKER_HOST="tcp://192.69.69.100:2376"
-export DOCKER_CERT_PATH="/Users/<username>/.docker/machine/machines/pipeline-vm"
-export DOCKER_MACHINE_NAME="pipeline-vm"
-```
-
 * Use `curl`, `wget`, or your browser to verify the following URLs
 
-### Apache2 HTTP Server
+### Apache2 HTTP Server - HOME PAGE - ALWAYS START HERE IF LOST
 ```
-http://127.0.0.1
+http://<ip>
 ```
 
 ### Kafka REST API Proxy
 ```
-http://127.0.0.1:36042/topics
+http://<ip>:36042/topics
 ```
 
 ### Redis REST API Proxy (Webdis)
 ```
-http://127.0.0.1/redis/PING
+http://<ip>/redis/PING
 {"PING":[true,"PONG"]}
 ```
 
 ### Zeppelin Notebook Web UI
 ```
-http://127.0.0.1:38080
+http://<ip>:8080
 ```
 
 ### iPython/Jupyter/Tensorflow Notebook Web UI
 ```
-http://127.0.0.1:38754
+http://<ip>:8754
 ```
 
 ### Spark Master Admin Web UI
 * Note that the links *within* this page may be wonky due to absolute paths and incorrectly-assumed IP addresses within the UI itself.
-* You'll need to replace the broken links with `127.0.0.1` and make sure all ports have `3` prepended 
-(ie. `127.0.0.1:34040`, etc) 
+(ie. `<ip>:4040`, <ip>:4041, etc) 
 ```
-http://127.0.0.1:36060
+http://127.0.0.1:6060
 ```
 
 ### Spark History Server UI
+* Requires `start-history-server.sh`
 ```
-http://127.0.0.1:35050
+http://<ip>:5050
 ```
 
 ### Spark Worker Admin Web UI
 ```
-http://127.0.0.1:36061
+http://<ip>:6061
 ```
 
 ### ElasticSearch REST API
 * Show the current ElasticSearch indexes
 ```
-http://127.0.0.1:39200/_cat/indices?v
+http://<ip>:9200/_cat/indices?v
 ```
 
 * Query the `advancedspark` index and `item_ratings` document type
 ```
-http://127.0.0.1:39200/advancedspark/item_ratings/_search?q=*&pretty
+http://<ip>:9200/advancedspark/item_ratings/_search?q=*&pretty
 ```
 
 ### Kibana and Logstash
 * Main Kibana landing page
 ```
-http://127.0.0.1:35601
+http://<ip>:5601
 ```
 
 * ElasticSearch Graph Plugin (graph data through Kibana)
 ```
-http://127.0.0.1:35601/app/graph
+http://<ip>:5601/app/graph
 ```
 
 * ElasticSearch Sense Plugin (run queries through Kibana)
 ```
-http://127.0.0.1:35601/app/sense
+http://<ip>:5601/app/sense
 ```
 
 ### Ganglia
 ```
-http://127.0.0.1/ganglia
+http://<ip>/ganglia
 ```
 
 ### NiFi
 ```
-http://127.0.0.1:36969/nifi/
+http://<ip>:6969/nifi/
 ```
 
 ### AirFlow
 ```
-http://127.0.0.1:35060/
+http://<ip>:5060/
 ```
 
 ### Presto
 ```
-http://127.0.0.1:37060
+http://<ip>:7060
 ```
 
 ### Titan
 * Requires `start-titan-service.sh`
 ```
-http://127.0.0.1:38182/
+http://<ip>:8182/
 ```
 
 ### Flask-based Recommendation/Prediction Service
 ```
-http://127.0.0.1:35090/predict/12663/7
+http://<ip>:5090/predict/12663/7
 ```
