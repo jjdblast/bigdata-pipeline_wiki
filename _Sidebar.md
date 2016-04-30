@@ -9,10 +9,10 @@ Environment Setup
 
 [3. Explore Services](https://github.com/fluxcapacitor/pipeline/wiki/Explore-Services)
 
+[4. Stop Services](https://github.com/fluxcapacitor/pipeline/wiki/Stop-Services)
+
 ***
 Examples
-
-[4. Start Spark Streaming](https://github.com/fluxcapacitor/pipeline/wiki/Start-Spark-Streaming)
 
 [5. View Admin Spark UIs](https://github.com/fluxcapacitor/pipeline/wiki/View-Admin-Spark-UIs)
 
@@ -27,21 +27,13 @@ Examples
 ***
 Misc
 
-[10. Stop Services](https://github.com/fluxcapacitor/pipeline/wiki/Stop-Services)
+[10. Contributing](https://github.com/fluxcapacitor/pipeline/wiki/Github-Integration)
 
-[11. Github Integration](https://github.com/fluxcapacitor/pipeline/wiki/Github-Integration)
-
-[12. Troubleshoot Environment](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshoot-Environment)
-
-[13. Build Docker Image](https://github.com/fluxcapacitor/pipeline/wiki/Build-Docker-Image)
-
-[14. Custom Distributions](https://github.com/fluxcapacitor/pipeline/wiki/Custom-Distributions)
-
-[15. Remove Docker](https://github.com/fluxcapacitor/pipeline/wiki/Remove-Docker)
+[11. Troubleshoot Environment](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshoot-Environment)
 
 ***
 Beta Features (Not Stable)
 
-[16. TensorFlow Examples](https://github.com/fluxcapacitor/pipeline/wiki/TensorFlow)
+[12. TensorFlow Examples](https://github.com/fluxcapacitor/pipeline/wiki/TensorFlow)
 
-[17. Serving Layer](https://github.com/fluxcapacitor/pipeline/wiki/Serving-Layer)
+[13. Serving Layer](https://github.com/fluxcapacitor/pipeline/wiki/Serving-Layer)
