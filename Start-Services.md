@@ -4,6 +4,7 @@
 * Verify the output of `jps -l` is similar to the following
 ```
 jps -l
+...
 737 org.elasticsearch.bootstrap.Elasticsearch           <-- ElasticSearch
 738 org.jruby.Main                                      <-- Logstash
 1987 org.apache.zeppelin.server.ZeppelinServer          <-- Zeppelin
