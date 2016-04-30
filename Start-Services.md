@@ -1,16 +1,9 @@
 * **At this point, you are inside of the Docker Container.**
-* Keep an eye on the prompt:  `root@docker$` means that you're inside docker, otherwise, you're on your local laptop.
-
-### Setup the Environment
-* The following command configures and starts all of the services
-```
-root@docker$ cd $PIPELINE_HOME && git pull && source $CONFIG_HOME/bash/pipeline.bashrc && $SCRIPTS_HOME/setup/RUNME_ONCE.sh
-```
 
 ### Verify that Setup Worked Correctly
-* Verify the output of the script above looks something like this
+* Verify the output of `jps -l` is similar to the following
 ```
-...Show Running Java Processes...
+jps -l
 737 org.elasticsearch.bootstrap.Elasticsearch           <-- ElasticSearch
 738 org.jruby.Main                                      <-- Logstash
 1987 org.apache.zeppelin.server.ZeppelinServer          <-- Zeppelin
@@ -27,7 +20,7 @@ root@docker$ cd $PIPELINE_HOME && git pull && source $CONFIG_HOME/bash/pipeline.
 ```
 * Verify that the output of `export` contains the proper `$PATH`, `$PIPELINE_HOME`, `$MYSQL_CONNECTOR_JAR` among many other environment variables
 ```
-root@docker$ export
+export
 ...
 declare -x PATH=/root/titan-1.0.0-hadoop1/bin:/root/presto-server-0.137/bin:/root/airflow/bin:/root/flink-1.0.0/bin:/root/zeppelin-0.6.0/bin:/root/sbt/bin:/root/nifi-0.6.1/bin:/root/webdis:/root/redis-3.0.5/bin:/root/apache-hive-1.2.1-bin/bin:/root/hadoop-2.6.0/bin:/root/kibana-4.5.0-linux-x64/bin:/root/logstash-2.3.0/bin:/root/elasticsearch-2.3.0/bin:/root/confluent-2.0.1/bin:/root/spark-1.6.1-bin-fluxcapacitor/tachyon/bin:/root/spark-1.6.1-bin-fluxcapacitor/bin:/root/spark-1.6.1-bin-fluxcapacitor/sbin:/root/apache-cassandra-2.2.5/bin:/root/pipeline/bin/cli:/root/pipeline/bin/cluster:/root/pipeline/bin/docker:/root/pipeline/bin/initial:/root/pipeline/bin/kafka:/root/pipeline/bin/rest:/root/pipeline/bin/service:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 ...
