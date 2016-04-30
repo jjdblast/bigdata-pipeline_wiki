@@ -2,6 +2,7 @@ Start various Spark Streaming Apps
 * Receive data from the `item_ratings` Kafka topic
 * Process, aggregate, transform, and enrich the raw data
 * Write the output to various data stores
+* Some of these may already be started, so please check the Spark Admin UI first before starting manually
 
 Broken down into the following Spark Streaming Batch Intervals:
 * Small (<1s)
@@ -9,6 +10,11 @@ Broken down into the following Spark Streaming Batch Intervals:
 * Large (>30s)
 
 ## Store Raw Data (Small Batch Interval)
+### Nifi + Kafka + Cassandra (Default Demo - Likely Already Started)
+```
+root@docker$ cd $MYAPPS_HOME/spark/streaming && ./start-streaming-ratings-nifi-kafka-cassandra.sh
+...Starting Spark Streaming App...
+```
 ### Cassandra
 ```
 root@docker$ cd $MYAPPS_HOME/spark/streaming && ./start-streaming-ratings-cassandra.sh
