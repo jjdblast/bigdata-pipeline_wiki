@@ -22,11 +22,6 @@ cd ~ && sudo docker export --output="pipeline.tar" pipeline
 cd ~ && sudo docker save --output="pipeline.tar" fluxcapacitor/pipeline
 ```
 
-## Load Docker Image/Container from .tar File
-```
-docker load < pipeline.tar
-```
-
 * Download the newly-created Docker image to your local home directory as follows:
 ```
 scp -i ~/<your-pem-file.pem> <your-username>@<your-cloud-instance-public-ip>:pipeline.tar ~/pipeline.tar
