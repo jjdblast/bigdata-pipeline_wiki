@@ -21,13 +21,8 @@ zeppelin/
 ```
 
 ### Airflow
-* [core](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/spark/core)
-* Project Tungsten
-* Mechanical Sympathy 
-* CPU Cache Aware Algorithms
-* Thread Context Switch Aware Algorithms
-* Efficient Sorting with Sequential and Off-Heap Data
-* Using Linux Perf to Analyze and Compare Algorithms
+* [airflow](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/airflow)
+* AirFlow Workflow DAGs
 
 ### Akka/Feeder
 * [akka/feeder](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/akka/feeder)
@@ -43,7 +38,7 @@ zeppelin/
 * Jupyter/iPython notebooks including PySpark, TensorFlow, SciKit-Learn, NetworkX, Matplotlib and various other examples from around the world wide web (aka www)
 
 ### Spark Core
-* [core](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/spark/core)
+* [spark/core](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/spark/core)
 * Project Tungsten
 * Mechanical Sympathy 
 * CPU Cache Aware Algorithms
@@ -52,18 +47,18 @@ zeppelin/
 * Using Linux Perf to Analyze and Compare Algorithms
 
 ### Spark ML/MLlib, GraphX, and CoreNLP
-* [ml](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/spark/ml) 
+* [spark/ml](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/spark/ml) 
 * Machine Learning
 * Graph Processing
 * Text Analytics and NLP
 
 ### Spark SQL
-* [sql](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/spark/sql)
+* [spark/sql](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/spark/sql)
 * Custom In-memory DataSource API Implementation 
 * Custom Tungsten-Friendly UDF Participating in Catalyst Optimizations
 
 ### Spark Streaming
-* [streaming](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/spark/streaming)
+* [spark/streaming](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/spark/streaming)
 * Read data from Kafka
 * Store data in Cassandra, ElasticSearch, Redis
 * Calculate distinct count using Redis HyperLogLog and Twitter Algebird HyperLogLog
@@ -80,4 +75,3 @@ zeppelin/
 ### Apache Zeppelin 
 * [zeppelin](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/zeppelin)
 * Python and Scala-based notebooks including many new and existing examples from around the web
-
