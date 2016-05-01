@@ -422,6 +422,11 @@ http://<ip>:7060
 http://<ip>:8182/
 ```
 
+### Finagle-based Recommendation/Prediction Service
+```
+http://<ip>:5080/predict/12663/7
+```
+
 ### Flask-based Recommendation/Prediction Service
 ```
 http://<ip>:5090/predict/12663/7
