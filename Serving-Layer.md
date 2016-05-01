@@ -6,7 +6,7 @@ http://<ip>:8080/#/notebook/2AUYFSKXN
 
 * Start the finagle-based recommendation service
 ```
-root@docker$ $MYAPPS_HOME/serving/finagle/start-finagle-recommendation-service.sh
+$MYAPPS_HOME/serving/finagle/start-finagle-recommendation-service.sh
 ```
 * Verify predictions at the following `/predict/<userId>/<itemId>` endpoint
 ```
@@ -16,7 +16,7 @@ http://<ip>:5080/predict/12663/7
 ## Flask (Python)
 * Start the flask-based recommendation service
 ```
-root@docker$ $MYAPPS_HOME/serving/flask/start-flask-recommendation-service.sh
+$MYAPPS_HOME/serving/flask/start-flask-recommendation-service.sh
 ```
 * Verify predictions at the following `/predict/<userId>/<itemId>` endpoint
 ```
