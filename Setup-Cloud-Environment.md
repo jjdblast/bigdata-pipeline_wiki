@@ -6,10 +6,10 @@
 
 ## Firewall and Cloud Instance Security Groups
 * Make sure all ports are open on your Cloud Instance
-* We will narrow this later, but for now it's easier to just open them all
+* We will tighten the security later, but for now it's easier to just open them all
 
 ## Logging Into Your Instance 
-* Use SSH or Putty (Windows) to log into the instance 
+* Use SSH or Putty (Windows) to log into the instance using the `.pem` file created upon Cloud Instance creation
 ```
 ssh -i ~/.ssh/<your-pem-file> <your-username>@<your-cloud-instance-public-ip>
 ```
@@ -24,7 +24,7 @@ curl -fsSL https://get.docker.com/gpg | sudo apt-key add -
 
 ## Setup Environment
 ```
-echo "alias docker='sudo docker'" > ~/.bash_aliases
+echo "alias docker='sudo docker'" >> ~/.bash_aliases
 source ~/.bash_aliases
 ```
 
@@ -41,16 +41,16 @@ sudo docker pull fluxcapacitor/pipeline
 sudo docker run -it --name pipeline --net=host -m 48g fluxcapacitor/pipeline bash
 ```
 
-* Run the following commands *inside of the Docker container*
+* Run the following commands **inside the Docker Container**
 ```
 cd $PIPELINE_HOME && git pull && source $CONFIG_HOME/bash/pipeline.bashrc && $SCRIPTS_HOME/setup/RUNME_ONCE_LARGE.sh
 ```
 
-* Wait a few mins for initialization to complete!
+* Wait a few mins for initialization to complete...  this may take some time.
 
 ## Explore Your Environment
 * Navigate to the main demo URL in your browser
 ```
 http://<your-cloud-instance-public-ip>
 ```
-* Click around on the navigation links at the top and familiarize yourself with the environment
+* Click on the navigation links at the top and familiarize yourself with the environment
