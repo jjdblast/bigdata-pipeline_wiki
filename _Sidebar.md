@@ -7,33 +7,26 @@ Environment Setup
 
 [2. Verify Environment Setup](https://github.com/fluxcapacitor/pipeline/wiki/Verify-Environment-Setup)
 
+*** 
+Exploring Environment
+
 [3. Explore Services](https://github.com/fluxcapacitor/pipeline/wiki/Explore-Services)
 
 [4. Stop Services](https://github.com/fluxcapacitor/pipeline/wiki/Stop-Services)
 
-***
-Examples
+[5. Examples](https://github.com/fluxcapacitor/pipeline/wiki/Examples)
 
-[5. View Admin Spark UIs](https://github.com/fluxcapacitor/pipeline/wiki/View-Admin-Spark-UIs)
+[6. Monitor Metrics](https://github.com/fluxcapacitor/pipeline/wiki/Monitor-Metrics)
 
-[6. Feed Data](https://github.com/fluxcapacitor/pipeline/wiki/Feed-Data)
-
-[7. Analyze Data](https://github.com/fluxcapacitor/pipeline/wiki/Analyze-Data)
-
-[8. Examples](https://github.com/fluxcapacitor/pipeline/wiki/Examples)
-
-[9. Monitor Metrics](https://github.com/fluxcapacitor/pipeline/wiki/Monitor-Metrics)
 
 ***
-Misc
+Contributing
 
-[10. Contributing](https://github.com/fluxcapacitor/pipeline/wiki/Github-Integration)
-
-[11. Troubleshoot Environment](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshoot-Environment)
+[7. Contributing](https://github.com/fluxcapacitor/pipeline/wiki/Github-Integration)
 
 ***
 Beta Features (Not Stable)
 
-[12. TensorFlow Examples](https://github.com/fluxcapacitor/pipeline/wiki/TensorFlow)
+[8. TensorFlow Examples](https://github.com/fluxcapacitor/pipeline/wiki/TensorFlow)
 
-[13. Serving Layer](https://github.com/fluxcapacitor/pipeline/wiki/Serving-Layer)
+[9. Serving Layer](https://github.com/fluxcapacitor/pipeline/wiki/Serving-Layer)
