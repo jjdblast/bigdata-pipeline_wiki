@@ -16,7 +16,7 @@ Exploring Environment
 
 [5. Monitor Metrics](https://github.com/fluxcapacitor/pipeline/wiki/Monitor-Metrics)
 
-[6. Stop and Save Environment](https://github.com/fluxcapacitor/pipeline/wiki/Stop-and-Save-Environment)
+[6. Stop and Save Environment](https://github.com/fluxcapacitor/pipeline/wiki/Save-Your-Environment)
 
 ***
 Contributing
