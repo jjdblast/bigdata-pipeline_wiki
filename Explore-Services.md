@@ -4,7 +4,6 @@
 kafka-topics --zookeeper 127.0.0.1:2181 --list
 _schemas
 item_ratings
-item_ratings_geo
 ...
 ```
 
