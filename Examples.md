@@ -6,8 +6,7 @@
 * Some are packages meant to be imported and used by Spark Apps, Standalone Apps, Notebooks, etc.
 * Below is a high-level description of each of these examples separated into different paths within `$MYAPPS_HOME`
 ```
-root@docker$ cd $MYAPPS_HOME
-root@docker$ ll
+ls -l $MYAPPS_HOME
 airflow/
 akka/
 flink/  
