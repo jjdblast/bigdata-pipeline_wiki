@@ -231,7 +231,6 @@ jps -l
 737 org.elasticsearch.bootstrap.Elasticsearch
 738 org.jruby.Main
 1987 org.apache.zeppelin.server.ZeppelinServer
-2391 org.apache.spark.deploy.history.HistoryServer
 1529 org.apache.zookeeper.server.quorum.QuorumPeerMain
 4545 sun.tools.jps.Jps
 2123 org.apache.spark.deploy.master.Master
