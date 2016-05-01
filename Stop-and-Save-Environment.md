@@ -1,13 +1,13 @@
-### Stop the Pipeline Services
+### Stop Services
 * The following must be done within the Docker Container.
 ```
 stop-all-services.sh
 ```
 
-### Saving Your Work
+### Save Your Work
 * You can save your live Docker container as follows:
 ```
-root@docker$ cd ~ && docker export --output="pipeline.tar" pipeline
+cd ~ && docker export --output="pipeline.tar" pipeline
 ```
 * This creates an 11 GB Docker image based on a snapshot of your live, running container
 
