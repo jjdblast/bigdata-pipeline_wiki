@@ -12,12 +12,11 @@ Exploring Environment
 
 [3. Explore Services](https://github.com/fluxcapacitor/pipeline/wiki/Explore-Services)
 
-[4. Stop Services](https://github.com/fluxcapacitor/pipeline/wiki/Stop-Services)
+[4. Examples](https://github.com/fluxcapacitor/pipeline/wiki/Examples)
 
-[5. Examples](https://github.com/fluxcapacitor/pipeline/wiki/Examples)
+[5. Monitor Metrics](https://github.com/fluxcapacitor/pipeline/wiki/Monitor-Metrics)
 
-[6. Monitor Metrics](https://github.com/fluxcapacitor/pipeline/wiki/Monitor-Metrics)
-
+[6. Stop and Save Environment](https://github.com/fluxcapacitor/pipeline/wiki/Stop-and-Save-Environment)
 
 ***
 Contributing
