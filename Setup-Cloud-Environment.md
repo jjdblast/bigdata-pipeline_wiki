@@ -47,24 +47,3 @@ source ~/.bash_aliases
 ```
 sudo docker pull fluxcapacitor/pipeline
 ```
-
-* Run the following command to start up the Docker container
-* The assumption is that this is a fresh Cloud Instance with nothing else running on it.
-* This Docker container will bind to many ports including port 80, so make sure even `apache2` is disabled before running this command
-```
-sudo docker run -it --name pipeline --net=host -m 48g fluxcapacitor/pipeline bash
-```
-
-* Run the following commands **inside the Docker Container**
-```
-cd $PIPELINE_HOME && git pull && source $CONFIG_HOME/bash/pipeline.bashrc && $SCRIPTS_HOME/setup/RUNME_ONCE_LARGE.sh
-```
-
-* Wait a few mins for initialization to complete...  this may take some time.
-
-## Explore Your Environment
-* Navigate to the main demo URL in your browser
-```
-http://<your-cloud-instance-public-ip>
-```
-* Click on the navigation links at the top and familiarize yourself with the environment
