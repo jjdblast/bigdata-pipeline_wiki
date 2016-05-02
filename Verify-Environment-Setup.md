@@ -1,6 +1,19 @@
 ## **At this point, you should be ssh'd into the Docker Container.**
 
-### Verify that Setup Worked Correctly
+* Run the following command to start up the Docker container
+* The assumption is that this is a fresh Cloud Instance with nothing else running on it.
+* This Docker container will bind to many ports including port 80, so make sure even `apache2` is disabled before running this command
+```
+sudo docker run -it --name pipeline --net=host -m 48g fluxcapacitor/pipeline bash
+```
+
+* Run the following commands **inside the Docker Container**
+```
+cd $PIPELINE_HOME && git pull && source $CONFIG_HOME/bash/pipeline.bashrc && $SCRIPTS_HOME/setup/RUNME_ONCE_LARGE.sh
+```
+
+* Wait a few mins for initialization to complete...  this may take some time.
+
 * Verify the output of `jps -l` is *similar to* the following (may differ slightly):
 ```
 jps -l
@@ -33,3 +46,12 @@ declare -x PIPELINE_HOME="/root/pipeline"
 ...
 declare -x MYSQL_CONNECTOR_JAR="/usr/share/java/mysql-connector-java.jar"
 ```
+
+## Explore Your Environment
+* Navigate to the main demo URL in your browser
+```
+http://<your-cloud-instance-public-ip>
+```
+* Click on the navigation links at the top and familiarize yourself with the environment
+
+Note:  IF YOU CANNOT CONNECT TO ANY OF THE LINKS AT THE TOP, YOU HAVE NOT PROPERLY OPENED THE FIREWALL RULES OR SECURITY GROUPS TO YOUR CLOUD INSTANCE.  Go back [here]() to setup the firewall rules or security groups appropriate for your cloud instance. 
