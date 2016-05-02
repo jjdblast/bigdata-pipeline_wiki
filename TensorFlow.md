@@ -13,51 +13,84 @@ Configuration finished
 * Requires **24 GB Minimum Docker Container**
 * Errors during these build steps are likely due to not enough memory.  
 * **24 GB+ is required.**  Please believe us!  :)
-* These commands take a while (10-15 mins), so please be patient.
+### Build the Inference and Client Components
 ```
 cd $TENSORFLOW_SERVING_HOME
-
-### Build the model, serving, and client components
-bazel build //tensorflow_serving/example:mnist_export
 
 bazel build //tensorflow_serving/example:mnist_inference_2
 
 bazel build //tensorflow_serving/example:mnist_client
 ```
 
+### Build the Export Component
+* This is just building the Export Component - not actually building and exporting the model
+* This command takes a while (10-15 mins), so please be patient.
+```
+cd $TENSORFLOW_SERVING_HOME
+
+bazel build //tensorflow_serving/example:mnist_export
+```
+
+### Train and Deploy v1 MNIST Model to TensorFlow Serving
+* This will train and deploy the v1 model with 1,000 training iterations
+* TensorFlow Serving will automatically pick up the v1 MNIST Model
+* This step will take a while (3-5 mins), so please be patient
+```
+cd $TENSORFLOW_SERVING_HOME
+
+$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --training_iteration=1000 --export_version=1 $DATASETS_HOME/tensorflow/serving/mnist_model
+```
+
 ### Start TensorFlow Serving with MNIST Model (Port 9090)
-* This will pick up the v1 MNIST Model that has already been training using 1000 training iterations  
+* This will pick up the v1 MNIST Model that has been training using 1,000 training iterations
 ```
 cd $TENSORFLOW_SERVING_HOME
 
 nohup $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_inference_2 --port=9090 $DATASETS_HOME/tensorflow/serving/mnist_model &
 ```
+* Verify that TensorFlow Serving has found the v1 MNIST Model `mnist_model/00000001`
+```
+tail -f nohup.out 
+I tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:85] Found a servable {name: default version: 1} at path /root/pipeline/datasets/tensorflow/serving/mnist_model/00000001
+I tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:149] Aspiring 1 versions for servable default
+```
+* `ctrl-c` to exit the `tail` log
 
 ### Perform MNIST Classification using v1 MNIST Model (Port 9090)
-* This will run 1000 tests against the v1 MNIST Model and output a metric that we're trying to minimize
+* This will run 1000 tests against the v1 MNIST Model and output an `Inference error rate` metric that we'll try to minimize in the next step
 * (This is kind of boring, but this will get more interesting down below... stick with us.)
 ```
 cd $TENSORFLOW_SERVING_HOME
 
-$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_client --num_tests=1000 --server=localhost:9090 &
+$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_client --num_tests=1000 --server=localhost:9090
 ```
 
 ### Train and Deploy v2 MNIST Model to TensorFlow Serving
 * This will train and deploy the v2 model with 10,000 training iterations - an order of magnitude more than v1
 * TensorFlow Serving will automatically pick up the new v2 MNIST Model
+* This step will take a while (3-5 mins), so please be patient
 ```
 cd $TENSORFLOW_SERVING_HOME
 
 $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --training_iteration=10000 --export_version=2 $DATASETS_HOME/tensorflow/serving/mnist_model
 ```
 
+* Verify that TensorFlow Serving has found the new v2 MNIST Model `mnist_model/00000002`
+```
+tail -f nohup.out 
+I tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:149] Aspiring 1 versions for servable default
+I tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:45] Polling the file system to look for a servable path under: /root/pipeline/datasets/tensorflow/serving/mnist_model
+I tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:85] Found a servable {name: default version: 2} at path /root/pipeline/datasets/tensorflow/serving/mnist_model/00000002
+```
+* `ctrl-c` to exit the `tail` log
+
 ### Perform MNIST Classification using v2 MNIST Model (Port 9090)
 * This will run the same number of tests (1000) as the prior run, but against the new v2 MNIST Model
-* We should see the output metric decrease from the earlier run
+* We should see the output metric `Inference error rate` decrease from the earlier run
 ```
 cd $TENSORFLOW_SERVING_HOME
 
-$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_client --num_tests=1000 --server=localhost:9090 &
+$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_client --num_tests=1000 --server=localhost:9090
 ```
 
 ## Setup Inception Model Classifier
