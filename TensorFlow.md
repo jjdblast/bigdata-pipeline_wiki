@@ -63,6 +63,8 @@ I tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:149
 cd $TENSORFLOW_SERVING_HOME
 
 $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_client --num_tests=1000 --server=localhost:9090
+...
+Inference error rate: 13.1%
 ```
 
 ### Train and Deploy v2 MNIST Model to TensorFlow Serving
@@ -86,11 +88,13 @@ I tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:85]
 
 ### Perform MNIST Classification using v2 MNIST Model (Port 9090)
 * This will run the same number of tests (1000) as the prior run, but against the new v2 MNIST Model
-* We should see the output metric `Inference error rate` decrease from the earlier run
+* `Inference error rate` should have **decreased** from the earlier run
 ```
 cd $TENSORFLOW_SERVING_HOME
 
 $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_client --num_tests=1000 --server=localhost:9090
+...
+Inference error rate: 9.5%
 ```
 
 ## Setup Inception Model Classifier
