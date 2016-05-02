@@ -21,8 +21,8 @@ jps -l
 2894 org.apache.nifi.bootstrap.RunNiFi                  <-- NiFi Flow
 2908 com.facebook.presto.server.PrestoServer            <-- Presto Server
 1712 target/scala-2.10/finagle-assembly-1.0.jar        <-- Finagle-based Recommendation Service
-
 ...
+(may be a few more or a few less...)
 ```
 * Verify that the output of `export` contains the follows exports (among many others)
 ```
