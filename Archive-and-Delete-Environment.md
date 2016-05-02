@@ -1,5 +1,5 @@
 * The following steps should almost NEVER be done.
-* If you simply want to pause your exploration and resume later, please follow [THESE](http://github.com/fluxcapacitor/pipeline/wiki/Pause-and-Stop-Environment).
+* If you simply want to pause your exploration and resume later, please follow [THESE](http://github.com/fluxcapacitor/pipeline/wiki/Pause-and-Stop-Environment) steps.
 * These steps are the LAST RESORT scenario when you are absolutely done with your exploration and wish to archive your environment for later.
 * This is a very length process, so please be sure this is worth the effort.
 * Unless you've made a lot of changes that you'd like to keep, it's almost always easier to follow [THESE](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Cloud-Environment) steps from scratch and start with a fresh Docker Image when you're ready to explore again
