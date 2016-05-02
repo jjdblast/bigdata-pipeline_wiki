@@ -1,4 +1,4 @@
-* **At this point, you are inside of the Docker Container.**
+## **At this point, you should be ssh'd into the Docker Container.**
 
 ### Verify that Setup Worked Correctly
 * Verify the output of `jps -l` is *similar to* the following (may differ slightly):
