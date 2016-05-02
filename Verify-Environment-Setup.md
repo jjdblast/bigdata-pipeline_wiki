@@ -62,4 +62,4 @@ http://<your-cloud-instance-public-ip>
 ```
 * Click on the navigation links at the top to familiarize yourself with the tools of the environment
 
-Note:  IF YOU CANNOT CONNECT TO ANY OF THE LINKS AT THE TOP, YOU HAVE NOT PROPERLY OPENED THE FIREWALL RULES OR SECURITY GROUPS TO YOUR CLOUD INSTANCE.  Go back [here](Setup-Cloud-Environment) to setup the firewall rules or security groups appropriate for your cloud instance.
+Note:  IF YOU CANNOT CONNECT TO ANY OF THE LINKS AT THE TOP, YOU HAVE NOT PROPERLY OPENED THE FIREWALL RULES OR SECURITY GROUPS TO YOUR CLOUD INSTANCE.  Go back [here](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Cloud-Environment#firewall-and-cloud-instance-security-groups) to setup the firewall rules or security groups appropriate for your cloud instance.
