@@ -13,6 +13,7 @@ Configuration finished
 * Requires **24 GB Minimum Docker Container**
 * Errors during these build steps are likely due to not enough memory.  
 * **24 GB+ is required.**  Please believe us!  :)
+* Each of these commands takes a while (10-15 mins), so please be patient.
 ```
 cd $TENSORFLOW_SERVING_HOME
 
@@ -65,6 +66,7 @@ $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_client --num
 * Errors during these build steps are likely due to not enough memory.  
 * 24GB+ is required.
 * Make sure you've run `./configure` on TensorFlow per an earlier step above 
+* Each of these commands takes a while (10-15 mins), so please be patient.
 ```
 cd $TENSORFLOW_SERVING_HOME
 
