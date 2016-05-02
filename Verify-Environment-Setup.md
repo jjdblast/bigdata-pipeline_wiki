@@ -65,7 +65,6 @@ http://<your-cloud-instance-public-ip>
 * Click on the navigation links at the top to familiarize yourself with the tools of the environment
 
 ## Troubleshooting
-### Cannot Connect to Cloud Instance or Navigation Links
-* You likely have not configured your cloud instance firewall rules (GCE) or security groups (AWS) properly
-* Go back [HERE](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Cloud-Environment#firewall-and-cloud-instance-security-groups) and open up the cloud instance firewall rules or security groups to all incoming traffic on all ports
-* Try again once you've properly configured the networking
+### Cannot Connect to Demo Home Page or Navigation Links?
+* Your services are either not started or you have not configured your cloud instance firewall rules (GCE) or security groups (AWS) properly
+* Check out the [Troubleshooting Guide](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshooting-Guide) and try again
