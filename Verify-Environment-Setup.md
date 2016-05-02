@@ -18,7 +18,9 @@ sudo docker run -it --name pipeline --net=host -m 48g fluxcapacitor/pipeline bas
 cd $PIPELINE_HOME && git pull && source $CONFIG_HOME/bash/pipeline.bashrc && $SCRIPTS_HOME/setup/RUNME_ONCE_LARGE.sh
 ```
 
+
 **Wait a few mins for initialization to complete...  this may take some time.**
+
 
 ### Verifying the Initialization
 * Verify the output of `jps -l` is *similar to* the following (may differ slightly):
