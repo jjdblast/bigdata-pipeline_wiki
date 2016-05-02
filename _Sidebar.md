@@ -16,16 +16,21 @@ Exploring Environment
 
 [5. Monitor Metrics](https://github.com/fluxcapacitor/pipeline/wiki/Monitor-Metrics)
 
-[6. Save Environment](https://github.com/fluxcapacitor/pipeline/wiki/Save-Your-Environment)
+***
+Taking a Break
+
+[6. Pause and Stop Environment](https://github.com/fluxcapacitor/pipeline/wiki/Pause-and-Stop-Environment)
+
+[7. Archive and Delete Environment](https://github.com/fluxcapacitor/pipeline/wiki/Archive-and-Delete-Environment)
 
 ***
 Contributing
 
-[7. Contributing](https://github.com/fluxcapacitor/pipeline/wiki/Contributing)
+[8. Contributing](https://github.com/fluxcapacitor/pipeline/wiki/Contributing)
 
 ***
 Beta Features (Not Stable)
 
-[8. TensorFlow Examples](https://github.com/fluxcapacitor/pipeline/wiki/TensorFlow)
+[9. TensorFlow Examples](https://github.com/fluxcapacitor/pipeline/wiki/TensorFlow)
 
-[9. Serving Layer](https://github.com/fluxcapacitor/pipeline/wiki/Serving-Layer)
+[10. Serving Layer](https://github.com/fluxcapacitor/pipeline/wiki/Serving-Layer)
