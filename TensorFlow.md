@@ -12,7 +12,7 @@ Configuration finished
 ## Setup MNIST Classifier (Images of Numbers)
 * Requires **24 GB Minimum Docker Container**
 * Errors during these build steps are likely due to not enough memory.  
-* 24 GB+ is required.  Please believe us!  :)
+* **24 GB+ is required.**  Please believe us!  :)
 ```
 cd $TENSORFLOW_SERVING_HOME
 
