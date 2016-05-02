@@ -10,21 +10,20 @@
 * This will stop your Docker Container as well as all services running within the Container
 
 ## Save Options
-* There are two options:  both create a 10 GB+ .tar file that you can download AS A LAST RESORT
-
-### Option 1:  Save Live Docker Container
-* Save your live Docker Container as a 10 GB+ .tar file as follows:
+* The following creates a 10 GB+ .tar file that you will need to download from your Cloud Instance to your local laptop
+* Export your Docker Container
 ```
-cd ~ && sudo docker export --output="pipeline.tar" pipeline
-```
-
-### Option 2:  Save Underlying Docker Image (without any of your changes)
-* Save your underlying Docker Image as 10 GB+ .tar file follows:
-```
-cd ~ && sudo docker save --output="pipeline.tar" fluxcapacitor/pipeline
+cd ~ && sudo docker export --output="pipeline.tar" fluxcapacitor/pipeline
 ```
 
 * Download the newly-created `pipeline.tar` file from your Cloud Instance to your local home directory using your `.pem` file from the SSH Keypair that you created during Cloud Instance setup:
 ```
 scp -i ~/<your-pem-file.pem> <your-username>@<your-cloud-instance-public-ip>:pipeline.tar ~/pipeline.tar
+```
+
+## Reload the Docker Container at a Later Date
+* When you are ready to reload the Docker Container, you can use the command below
+* Note:  It is almost always easier to start with a fresh install unless you've made a lot of changes that you chose to preserve
+```
+sudo docker load < ~/pipeline.tar
 ```
