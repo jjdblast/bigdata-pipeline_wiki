@@ -1,6 +1,8 @@
 # MNIST (Images of Numbers) Classifier
-## Build TensorFlow Serving MNIST Example (24GB Minimum Docker Container)
-* Errors during these build steps are likely due to not enough memory.  24GB+ is required.
+## Build TensorFlow Serving MNIST Example 
+* Requires **24 GB Minimum Docker Container**
+* Errors during these build steps are likely due to not enough memory.  
+* 24 GB+ is required!!
 ```
 cd $TENSORFLOW_SERVING_HOME
 
