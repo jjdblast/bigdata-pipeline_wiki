@@ -12,7 +12,7 @@ Exploring Environment
 
 [3. Explore Services](https://github.com/fluxcapacitor/pipeline/wiki/Explore-Services)
 
-[4. Code Examples](https://github.com/fluxcapacitor/pipeline/wiki/Code-Examples)
+[4. Code Sample](https://github.com/fluxcapacitor/pipeline/wiki/Code-Sample)
 
 [5. Monitor Metrics](https://github.com/fluxcapacitor/pipeline/wiki/Monitor-Metrics)
 
@@ -21,7 +21,7 @@ Exploring Environment
 ***
 Contributing
 
-[7. Contributing](https://github.com/fluxcapacitor/pipeline/wiki/Github-Integration)
+[7. Contributing](https://github.com/fluxcapacitor/pipeline/wiki/Contributing)
 
 ***
 Beta Features (Not Stable)
