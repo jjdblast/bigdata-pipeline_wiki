@@ -5,14 +5,9 @@
 * Unless you've made a lot of changes that you'd like to keep, it's almost always easier to follow [THESE](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Cloud-Environment) steps from scratch and start with a fresh Docker Image when you're ready to explore again
 * If you still wish to continue, here you go!
 
-## Stop Services
-* The following must be done within the Docker Container.
-```
-stop-all-services.sh
-```
-
 ## Exit Docker Container
-* `exit` out of your Docker Container (again, this is a last resort) to stop your Docker Container
+* `exit` out of your Docker Container (again, this is a last resort) 
+* This will stop your Docker Container as well as all services running within the Container
 
 ## Save Options
 * There are two options:  both create a 10 GB+ .tar file that you can download AS A LAST RESORT
