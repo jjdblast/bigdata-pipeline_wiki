@@ -1,9 +1,9 @@
-* This repo comes with many example applications to help you get started.
+* This repo comes with many example applications to help you get started
 * You are encouraged to start with one of these examples when building your own custom apps or libraries
-* The root of these examples is `$MYAPPS_HOME`.
-* Some are Spark Apps that need to be submitted to a Spark Cluster using `submit-spark`.
+* The root of these examples is `$MYAPPS_HOME`
+* Some are Spark Apps that need to be submitted to a Spark Cluster using `submit-spark`
 * Some are Standalone Apps with their own `main()` method
-* Some are packages meant to be imported and used by Spark Apps, Standalone Apps, Notebooks, etc.
+* Some are packages meant to be imported and used by Spark Apps, Standalone Apps, Notebooks, etc
 * Below is a high-level description of each of these examples separated into different paths within `$MYAPPS_HOME`
 ```
 ls -l $MYAPPS_HOME
