@@ -18,8 +18,7 @@ sudo docker run -it --name pipeline --net=host -m 48g fluxcapacitor/pipeline bas
 cd $PIPELINE_HOME && git pull && source $CONFIG_HOME/bash/pipeline.bashrc && $SCRIPTS_HOME/setup/RUNME_ONCE_LARGE.sh
 ```
 
-
-* **Wait a few mins for initialization to complete...  this may take some time.**
+**Wait a few mins for initialization to complete...  this may take some time.**
 
 ### Verifying the Initialization
 * Verify the output of `jps -l` is *similar to* the following (may differ slightly):
@@ -45,6 +44,7 @@ jps -l
 ...
 (may be a few more or a few less...)
 ```
+
 * Verify that the output of `export` contains the follows exports (among many others)
 ```
 export
@@ -62,4 +62,8 @@ http://<your-cloud-instance-public-ip>
 ```
 * Click on the navigation links at the top to familiarize yourself with the tools of the environment
 
-Note:  IF YOU CANNOT CONNECT TO ANY OF THE LINKS AT THE TOP, YOU HAVE NOT PROPERLY OPENED THE FIREWALL RULES OR SECURITY GROUPS TO YOUR CLOUD INSTANCE.  Go back [here](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Cloud-Environment#firewall-and-cloud-instance-security-groups) to setup the firewall rules or security groups appropriate for your cloud instance.
+## Troubleshooting
+### Cannot Connect to Cloud Instance or Navigation Links
+* You likely have not configured your cloud instance firewall rules (GCE) or security groups (AWS) properly
+* Go back [HERE](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Cloud-Environment#firewall-and-cloud-instance-security-groups) to set these up.
+* Try again once you've opened up the cloud instance firewall rules or security groups to all incoming traffic on all ports
