@@ -1,3 +1,9 @@
+Few Important Notes:
+* NEVER `exit` out of your Docker Container as this stops the Docker Container as well - as the services running within it!
+* Instead, use `ctrl-p ctrl-q` to do a "soft exit" to keep the Docker Container running - as well as the services running within it
+* You can later use `sudo docker attach pipeline` to re-enter a soft-exited container.
+* More environment troubleshooting tips are [HERE](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshooting-Environment)
+
 ## Explore Service Inside Docker Container
 ### Kafka Native
 ```
@@ -291,14 +297,8 @@ Splits: 2 total, 2 done (100.00%)
 ```
 
 ## Test Services Outside Docker Container
-**DO NOT TYPE `exit` from DOCKER AS THIS WILL STOP YOUR CONTAINER**
-
-* Instead, use the combo of `CTRL-P CTRL-Q` to exit the Docker Container
-```
-ctrl-p ctrl-q
-```
-
-* Use `curl`, `wget`, or your browser to verify the following URLs
+* Use your browser to verify the following services
+* If these links don't work, check out the [Troubleshooting Guide](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshooting-Guide)
 
 ### Apache2 HTTP Server - HOME PAGE - ALWAYS START HERE IF LOST
 ```
