@@ -13,7 +13,7 @@ jps -l
 3479 sun.tools.jps.Jps                                  <-- this (jps)
 1529 org.apache.zookeeper.server.quorum.QuorumPeerMain  <-- ZooKeeper
 1973 io.confluent.support.metrics.SupportedKafka        <-- Kafka
-2555 io.confluent.kafka.schemaregistry.rest.SchemaRegistryMain        <-- Kafka SchemaRegistry
+2555 io.confluent.kafka.schemaregistry.rest.SchemaRegistryMain <-- Kafka SchemaRegistry
 3408 io.confluent.kafkarest.Main                        <-- Kafka REST API
 6107 org.apache.flink.runtime.jobmanager.JobManager     <-- Flink Service
 2547 org.apache.hadoop.util.RunJar                      <-- Hive Metastore Service (Uses MySQL as backing store)
