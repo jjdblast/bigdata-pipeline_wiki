@@ -1,39 +1,38 @@
-Follow the Steps Below to Setup Github Integration for your Customizations:
+## Prepare Your Environment to Submit Pull Requests
 
-## Configure Git with your Email and Name
+### Configure Git with your Email and Name
 ```
 git config --global user.email "<your email address>"
 git config --global user.name "<your username>"
 ```
 
-## Update the Remote Origin URL
+### Update the Remote Origin URL
 ```
 cd $PIPELINE_HOME
 git remote set-url origin git@github.com:fluxcapacitor/pipeline.git
 ```
 
-## Start your SSH Authentication Agent
+### Start your SSH Authentication Agent
 ```
 eval $(ssh-agent -s)
 ```
 
-
-## Setup Private (github_rsa) and Public (github_rsa.pub) Keys
-* Put your private (github_rsa) and public (github_rsa.pub) keys in `~/.ssh/`.
-
-**You must modify the permissions.**
+### Setup Github Keys
+* Put your private `github_rsa` and public `github_rsa.pub` keys into `~/.ssh/`
+* Modify permissions on this `github_rsa` file
 ```
 chmod 600 ~/.ssh/github_rsa
 ```
 
-## Register SSH Keys Locally
+### Register SSH Keys Locally
 * Run `ssh-add` and enter the passphrase used when creating the key pair
 ```
 ssh-add ~/.ssh/github_rsa
 Enter passphrase for ~/.ssh/github_rsa: <your-passphrase>
 ```
 
-**If you see the following error, make sure you ran the `chmod 600` command above.**
+### Troubleshooting
+* If you see the following error, make sure you ran modified the permissions on your `github_rsa` file above
 ```
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
