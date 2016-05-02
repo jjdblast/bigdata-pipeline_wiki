@@ -1,7 +1,8 @@
 ## Cloud Instance
 * The following are the minimum requirements for your Cloud Instance:
 **8 Cores**, **50GB RAM**, **100GB SSD**
-* Typically, we use either the Amazon Web Services `r3.2xlarge` EC2 instance or the Google Cloud Platform `n1-highmem-8` GCE instance which run about $8-10 per day and getting cheaper every month
+* Typically, we use either the Amazon Web Services `r3.2xlarge` EC2  or Google Cloud Platform `n1-highmem-8` GCE Cloud Instance  types
+* These Cloud Instance types cost around $8-10 per day and get less expensive each month
 * Later, we will show you how to save money by pausing/stopping your instance - allowing you to resume your work at a later date.
 
 (Note:  We have deprecated the local laptop installation instructions given that most laptops are not equipped to handle the large memory and disk/dataset footprint of this environment.)
