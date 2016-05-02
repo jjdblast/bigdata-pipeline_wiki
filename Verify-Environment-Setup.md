@@ -1,4 +1,4 @@
-### Starting the Docker Container
+### Start the Docker Container
 
 **At this point, you should be ssh'd into your specific cloud instance**
 
@@ -9,7 +9,7 @@ Note:  This Docker Container will bind to many ports including port 80, so make 
 sudo docker run -it --name pipeline --net=host -m 48g fluxcapacitor/pipeline bash
 ```
 
-### Configuring the Environment and Starting All Services
+### Configure the Environment and Start All Services
 
 **At this point, you should be in your Docker Container**
 
@@ -22,7 +22,7 @@ cd $PIPELINE_HOME && git pull && source $CONFIG_HOME/bash/pipeline.bashrc && $SC
 **Wait a few mins for initialization to complete...  this may take some time.**
 
 
-### Verifying the Initialization
+### Verify the Initialization
 * Verify the output of `jps -l` is *similar to* the following (may differ slightly):
 ```
 jps -l
@@ -67,5 +67,5 @@ http://<your-cloud-instance-public-ip>
 ## Troubleshooting
 ### Cannot Connect to Cloud Instance or Navigation Links
 * You likely have not configured your cloud instance firewall rules (GCE) or security groups (AWS) properly
-* Go back [HERE](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Cloud-Environment#firewall-and-cloud-instance-security-groups) to set these up.
-* Try again once you've opened up the cloud instance firewall rules or security groups to all incoming traffic on all ports
+* Go back [HERE](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Cloud-Environment#firewall-and-cloud-instance-security-groups) and open up the cloud instance firewall rules or security groups to all incoming traffic on all ports
+* Try again once you've properly configured the networking
