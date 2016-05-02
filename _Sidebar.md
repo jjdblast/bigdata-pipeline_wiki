@@ -17,14 +17,14 @@ Exploring Environment
 [5. Monitor Metrics](https://github.com/fluxcapacitor/pipeline/wiki/Monitor-Metrics)
 
 ***
-Taking a Break
+Managing Environment
 
 [6. Pause and Stop Environment](https://github.com/fluxcapacitor/pipeline/wiki/Pause-and-Stop-Environment)
 
 [7. Archive and Delete Environment](https://github.com/fluxcapacitor/pipeline/wiki/Archive-and-Delete-Environment)
 
 ***
-Contributing
+Contributing to this Project
 
 [8. Contributing](https://github.com/fluxcapacitor/pipeline/wiki/Contributing)
 
