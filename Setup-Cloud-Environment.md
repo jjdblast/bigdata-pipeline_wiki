@@ -12,13 +12,15 @@
 * Below is a screen shot of the **FIREWALL RULES CHANGES** required to allow all traffic into your instance
 * In this example, my instances are using the "default" network which is the Google default
 * You **must modify these rules** or you will only be able to connect to your instance on port 80 (and 443 if selected)
-[Google Cloud Platform Firewall Rules](http://advancedspark.com/img/gce-firewall-rules.png)
+
+![Google Cloud Platform Firewall Rules](http://advancedspark.com/img/gce-firewall-rules.png)
 
 ### Amazon Web Services Security Group Modifications
 * Below is a screen shot of the **SECURITY GROUP CHANGES** required to allow all traffic into your instance
 * In this example, my instances are using the "fluxcapacitor" security group which I created myself
 * You **must modify the security group** or you will only be able to connect to your instance on port 80 (and 443 if selected)
-[AWS Security Groups](http://advancedspark.com/img/aws-security-groups.png)
+
+![AWS Security Groups](http://advancedspark.com/img/aws-security-groups.png)
 
 ## Logging Into Your Instance 
 * Use SSH or Putty (Windows) to log into the instance using the `.pem` file created upon Cloud Instance creation
