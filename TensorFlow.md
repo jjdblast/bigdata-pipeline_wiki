@@ -13,6 +13,7 @@ Configuration finished
 * Requires **24 GB Minimum Docker Container**
 * Errors during these build steps are likely due to not enough memory.  
 * **24 GB+ is required.**  Please believe us!  :)
+
 ### Build the Inference and Client Components
 ```
 cd $TENSORFLOW_SERVING_HOME
@@ -46,11 +47,11 @@ $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --tra
 ```
 cd $TENSORFLOW_SERVING_HOME
 
-nohup $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_inference_2 --port=9090 $DATASETS_HOME/tensorflow/serving/mnist_model &
+nohup $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_inference_2 --port=9090 $DATASETS_HOME/tensorflow/serving/mnist_model > nohup-mnist.out &
 ```
 * Verify that TensorFlow Serving has found the v1 MNIST Model `mnist_model/00000001`
 ```
-tail -f nohup.out 
+tail -f nohup-mnist.out 
 I tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:85] Found a servable {name: default version: 1} at path /root/pipeline/datasets/tensorflow/serving/mnist_model/00000001
 I tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:149] Aspiring 1 versions for servable default
 ```
@@ -79,7 +80,7 @@ $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --tra
 
 * Verify that TensorFlow Serving has found the new v2 MNIST Model `mnist_model/00000002`
 ```
-tail -f nohup.out 
+tail -f nohup-mnist.out 
 I tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:149] Aspiring 1 versions for servable default
 I tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:45] Polling the file system to look for a servable path under: /root/pipeline/datasets/tensorflow/serving/mnist_model
 I tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:85] Found a servable {name: default version: 2} at path /root/pipeline/datasets/tensorflow/serving/mnist_model/00000002
@@ -99,47 +100,62 @@ Inference error rate: 9.5%
 
 ## Setup Inception Model Classifier
 
-### Build TensorFlow Serving Inception Example (24GB Minimum Docker Container)
+### Build TensorFlow Serving Inception Example
+* Requires **24 GB Minimum Docker Container**
 * Errors during these build steps are likely due to not enough memory.  
-* 24GB+ is required.
-* Make sure you've run `./configure` on TensorFlow per an earlier step above 
-* These commands take a while (10-15 mins), so please be patient.
+* **24 GB+ is required.**  Please believe us!  :)
+
+### Build the Inference and Client Components
 ```
 cd $TENSORFLOW_SERVING_HOME
 
-# Build inception model, inference serving, and client 
-bazel build //tensorflow_serving/example:inception_export
-
+# Build Inference and Client Components
 bazel build //tensorflow_serving/example:inception_inference
 
 bazel build //tensorflow_serving/example:inception_client
 ```
 
+### Build the Export Component
+* This is just building the Export Component - not actually building and exporting the model
+```
+cd $TENSORFLOW_SERVING_HOME
+
+bazel build //tensorflow_serving/example:inception_export
+```
+
 ## Train and Deploy the Inception Model to TensorFlow Serving
 * Because of the size of the Inception Model, we need to download a checkpoint version to start with
-* The checkpoint dir must be local to where we build the model or else we see an error like the following:
+* The `--checkpoint_dir` must be local to where we build the model or else we see an error like the following:
 ```
-#   "ValueError: Restore called with invalid save path model.ckpt-157585"
+"ValueError: Restore called with invalid save path model.ckpt-157585"
 ```
 * Follow these instructions and you'll be fine
 ```
 cd $TENSORFLOW_SERVING_HOME
 
-wget http://download.tensorflow.org/models/image/imagenet/inception-v3-2016-03-01.tar.gz
+# IS THIS NEEDED
+#wget http://download.tensorflow.org/models/image/imagenet/inception-v3-2016-03-01.tar.gz
+#
+#cd $DATASETS_HOME/tensorflow/serving/inception_model
+#tar -xvzf inception-v3-2016-03-01.tar.gz
 
-tar -xvzf inception-v3-2016-03-01.tar.gz
-
-# TODO:  Do we need to do this?
-#rm -rf $DATASETS_HOME/tensorflow/serving/inception_model
-
-$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_export --checkpoint_dir=inception-v3 --export_dir=$DATASETS_HOME/tensorflow/serving/inception_model
+# IS THIS NEEDED?
+##?? $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_export --checkpoint_dir=inception-v3 --export_dir=$DATASETS_HOME/tensorflow/serving/inception_model
 ```
 
 ### Start TensorFlow Serving with Inception Model (Port 9091)
 ```
 cd $TENSORFLOW_SERVING_HOME
 
-nohup $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_inference --port=9091 $DATASETS_HOME/tensorflow/serving/inception_model &
+nohup $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_inference --port=9091 $DATASETS_HOME/tensorflow/serving/inception_model > nohup-inception.out &
+```
+
+* Verify that TensorFlow Serving found v00157585 Inception Model `inception_model/00157585`
+```
+tail -f nohup.out
+I tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:149] Aspiring 1 versions for servable default
+I tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:45] Polling the file system to look for a servable path under: /root/pipeline/datasets/tensorflow/serving/inception_model
+I tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:85] Found a servable {name: default version: 157585} at path /root/pipeline/datasets/tensorflow/serving/inception_model/00157585
 ```
 
 ### Perform Image Classification using Inception Model (Port 9091)
@@ -147,7 +163,16 @@ nohup $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_in
 cd $TENSORFLOW_SERVING_HOME
 
 # TODO:  is num_tests required?
-$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_client --num_tests=1000 --server=localhost:9091 --image=$DATASETS_HOME/inception/cropped_panda.jpg
+$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_client --server=localhost:9091 --image=$DATASETS_HOME/inception/cropped_panda.jpg
+```
+
+### Classify Your Own Image using Inception Model (Port 9091)
+```
+wget <my-remote-image-url>
+
+cd $TENSORFLOW_SERVING_HOME
+
+$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_client --server=localhost:9091 --image=<my-local-image-filename>
 ```
 
 ## TODO:  NLP Sentence Prediction with PTB
