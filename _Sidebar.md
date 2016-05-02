@@ -23,14 +23,16 @@ Managing Environment
 
 [7. Archive and Delete Environment](https://github.com/fluxcapacitor/pipeline/wiki/Archive-and-Delete-Environment)
 
+[8. Troubleshooting Environment](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshooting-Environment)
+
 ***
 Contributing
 
-[8. Contributing](https://github.com/fluxcapacitor/pipeline/wiki/Contributing)
+[9. Contributing](https://github.com/fluxcapacitor/pipeline/wiki/Contributing)
 
 ***
 Beta Features (Not Stable)
 
-[9. TensorFlow Examples](https://github.com/fluxcapacitor/pipeline/wiki/TensorFlow)
+[10. TensorFlow Examples](https://github.com/fluxcapacitor/pipeline/wiki/TensorFlow)
 
-[10. Serving Layer](https://github.com/fluxcapacitor/pipeline/wiki/Serving-Layer)
+[11. Serving Layer](https://github.com/fluxcapacitor/pipeline/wiki/Serving-Layer)
