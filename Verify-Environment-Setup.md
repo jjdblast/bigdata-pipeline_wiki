@@ -67,4 +67,4 @@ http://<your-cloud-instance-public-ip>
 ## Troubleshooting
 ### Cannot Connect to Demo Home Page or Navigation Links?
 * Your services are either not started or you have not configured your cloud instance firewall rules (GCE) or security groups (AWS) properly
-* Check out the [Troubleshooting Guide](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshooting-Guide) and try again
+* Check out [THIS](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshooting-Guide) for further environment troubleshooting
