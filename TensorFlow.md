@@ -1,7 +1,8 @@
-## Configure TensorFlow
+## Configure TensorFlow (Defaults are Fine)
 ```
 cd $TENSORFLOW_SERVING_HOME/tensorflow
-./configure              <-- Answer defaults (python location and gpu support)
+
+./configure              
 Please specify the location of python. [Default is /usr/bin/python]: 
 Do you wish to build TensorFlow with GPU support? [y/N] 
 No GPU support will be enabled for TensorFlow
