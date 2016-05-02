@@ -24,7 +24,7 @@ Managing Environment
 [7. Archive and Delete Environment](https://github.com/fluxcapacitor/pipeline/wiki/Archive-and-Delete-Environment)
 
 ***
-Contributing to this Project
+Contributing
 
 [8. Contributing](https://github.com/fluxcapacitor/pipeline/wiki/Contributing)
 
