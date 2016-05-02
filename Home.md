@@ -55,6 +55,7 @@
 
 ## Tools Overview
 ![Apache Spark](http://spark.apache.org/images/spark-logo.png) ![Redis](https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Redis_Logo.svg/200px-Redis_Logo.svg.png)
+![TensorFlow](http://advancedspark.com/img/tensorflow.png) 
 ![Apache Cassandra](https://upload.wikimedia.org/wikipedia/commons/a/a0/Cassandra_logo.png)
 ![Apache Kafka](http://www.bogotobogo.com/Hadoop/images/Ecosystem/Kafka.png)
 ![NiFi](http://advancedspark.com/img/nifi-logo.png)
