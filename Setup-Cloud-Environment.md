@@ -1,8 +1,12 @@
 ## Cloud Instance
 * The following are the minimum requirements for your Cloud Instance:
-**8 Cores, 50GB RAM, 100GB SSD**
+**8 Cores**
+**50GB RAM**
+**100GB SSD**
+
 * Note:  We have deprecated the local laptop installation instructions given that most laptops are not equipped to handle the large memory and disk/dataset footprint of this environment.
 * A Cloud Instance with the given minimum requirements can be acquired for around $8-$10 per day - and getting cheaper by the day.
+* Later, we will show you how to save money by pausing/stopping your instance - allowing you to resume your work at a later date.
 
 ## Firewall and Cloud Instance Security Groups
 * Make sure all ports are open on your Cloud Instance
@@ -22,8 +26,27 @@
 
 ![AWS Security Groups](http://advancedspark.com/img/aws-security-groups.png)
 
+## Setup SSH Key Pairs
+### Google Cloud Platform
+* https://cloud.google.com/compute/docs/instances/connecting-to-instance#generatesshkeypair
+
+### Amazon Web Services
+* Create SSH Keypair
+![Create Keypair](http://advancedspark.com/img/aws-create-keypair.png)
+
+* Result of Associating Keypair at Cloud Instance Creation Time
+![Cloud Instance Keypair Association](http://advancedspark.com/img/aws-keypair-instance.png) 
+
+## Download the SSH Keypairs and Prepare Them for Use
+* Download the SSH Keypair and place into '~/.ssh/<keypair-name>.pem`
+* Modify the permissions
+```
+chmod 600 ~/.ssh/<keypair-name>.pem
+```
+ 
 ## Logging Into Your Instance 
-* Use SSH or Putty (Windows) to log into the instance using the `.pem` file created upon Cloud Instance creation
+* Use SSH or Putty (Windows) to log in to your Cloud Instance using the `.pem` file created from the previous step
+* You may have to enter the password you used when you created the keypair in an earlier step 
 ```
 ssh -i ~/.ssh/<your-pem-file> <your-username>@<your-cloud-instance-public-ip>
 ```
