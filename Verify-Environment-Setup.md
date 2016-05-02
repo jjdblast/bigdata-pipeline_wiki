@@ -1,6 +1,6 @@
 ### Starting the Docker Container
 
-**At this point, you should be ssh'd into your <ip>**
+**At this point, you should be ssh'd into your specific cloud instance**
 
 * Run the following command to start up the Docker Container
 * The assumption is that this is a fresh Cloud Instance with nothing bound to popular ports like 80, 8080, 9090, etc
