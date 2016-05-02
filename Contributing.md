@@ -17,7 +17,8 @@ git remote set-url origin git@github.com:fluxcapacitor/pipeline.git
 eval $(ssh-agent -s)
 ```
 
-### Setup Github Keys
+### Setup Github SSH Keys 
+* SSH Keys are provided by Github through your Github account
 * Put your private `github_rsa` and public `github_rsa.pub` keys into `~/.ssh/`
 * Modify permissions on this `github_rsa` file
 ```
@@ -31,6 +32,12 @@ ssh-add ~/.ssh/github_rsa
 Enter passphrase for ~/.ssh/github_rsa: <your-passphrase>
 ```
 
+### Make Your Changes
+* Do what you gotta do!  :)
+
+### Submit a Pull Request
+* We will see the Pull Request and comment/merge as appropriate
+ 
 ### Troubleshooting
 * If you see the following error, make sure you ran modified the permissions on your `github_rsa` file above
 ```
