@@ -1,7 +1,9 @@
 ## Cloud Instance
 * The following are the minimum requirements for your Cloud Instance:
 **8 Cores**
+
 **50GB RAM**
+
 **100GB SSD**
 
 * Note:  We have deprecated the local laptop installation instructions given that most laptops are not equipped to handle the large memory and disk/dataset footprint of this environment.
