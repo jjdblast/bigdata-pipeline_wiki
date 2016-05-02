@@ -1,50 +1,61 @@
-# MNIST (Images of Numbers) Classifier
-## Build TensorFlow Serving MNIST Example 
+## Configure TensorFlow
+```
+cd $TENSORFLOW_SERVING_HOME/tensorflow
+./configure              <-- Answer defaults (python location and gpu support)
+Please specify the location of python. [Default is /usr/bin/python]: 
+Do you wish to build TensorFlow with GPU support? [y/N] 
+No GPU support will be enabled for TensorFlow
+Configuration finished
+```
+
+## Setup MNIST Classifier (Images of Numbers)
 * Requires **24 GB Minimum Docker Container**
 * Errors during these build steps are likely due to not enough memory.  
-* 24 GB+ is required!!
+* 24 GB+ is required.  Please believe us!  :)
 ```
 cd $TENSORFLOW_SERVING_HOME
 
-# Build the model, serving, and client components
+### Build the model, serving, and client components
 bazel build //tensorflow_serving/example:mnist_export
 bazel build //tensorflow_serving/example:mnist_inference_2
 bazel build //tensorflow_serving/example:mnist_client
 ```
 
-## Train and Deploy Example MNIST Model to TensorFlow Serving
-```
-cd $TENSORFLOW_SERVING_HOME/tensorflow
-./configure   <-- Answer defaults (python location and gpu support)
-
-# Train and Export Mnist Model to Path Monitored by TensorFlow Serving
-# rm -rf $DATASETS_HOME/tensorflow/serving/mnist_model
-# cd $TENSORFLOW_SERVING_HOME
-$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --training_iteration=100 --export_version=1 $DATASETS_HOME/tensorflow/serving/mnist_model
-
-$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --training_iteration=1000 --export_version=2 $DATASETS_HOME/tensorflow/serving/mnist_model
-
-$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --training_iteration=10000 --export_version=3 $DATASETS_HOME/tensorflow/serving/mnist_model
-
-$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --training_iteration=100000 --export_version=4 $DATASETS_HOME/tensorflow/serving/mnist_model
-```
-
-## Start TensorFlow MNIST Serving Service (9090)
+### Start TensorFlow Serving with MNIST Model
+* This will pick up the v1 MNIST Model that has already been training using 1000 training iterations  
 ```
 cd $TENSORFLOW_SERVING_HOME
 
-# MNIST Inference with Dynamic Model Monitoring
 nohup $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_inference_2 --port=9090 $DATASETS_HOME/tensorflow/serving/mnist_model &
 ```
 
-## Run MNIST Classifier Client (9090)
+### Perform MNIST Classification using v1 MNIST Model
+* This will run 1000 tests against the v1 MNIST Model and output a metric that we're trying to minimize
+* (This is kind of boring, but this will get more interesting down below... stick with us.)
 ```
 cd $TENSORFLOW_SERVING_HOME
 $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_client --num_tests=1000 --server=localhost:9090 &
 ```
 
-# Inception (Images from ImageNet) Classifier
-## Build TensorFlow Serving Inception Example (24GB Minimum Docker Container)
+### Train and Deploy v2 MNIST Model to TensorFlow Serving
+* This will train and deploy the v2 model with 10,000 training iterations - an order of magnitude more than v1
+* TensorFlow Serving will automatically pick up the new v2 MNIST Model
+```
+cd $TENSORFLOW_SERVING_HOME
+
+$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --training_iteration=10000 --export_version=2 $DATASETS_HOME/tensorflow/serving/mnist_model
+```
+
+### Perform MNIST Classification using v2 MNIST Model
+* This will run the same number of tests (1000) as the prior run, but against the new v2 MNIST Model
+* We should see the output metric decrease from the earlier run
+```
+cd $TENSORFLOW_SERVING_HOME
+$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_client --num_tests=1000 --server=localhost:9090 &
+```
+
+## Inception (Images from ImageNet) Classifier
+### Build TensorFlow Serving Inception Example (24GB Minimum Docker Container)
 * Errors during these build steps are likely due to not enough memory.  24GB+ is required.
 ```
 cd $TENSORFLOW_SERVING_HOME
