@@ -7,6 +7,7 @@
 * Below is a high-level description of each of these examples separated into different paths within `$MYAPPS_HOME`
 ```
 ls -l $MYAPPS_HOME
+...
 airflow/
 akka/
 flink/  
