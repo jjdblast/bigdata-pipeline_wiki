@@ -22,3 +22,9 @@
 * Notebooks need to be run from top to bottom.
 * If you run them out of order - or jump between notebooks - your variable assignments may clobber each other
 * Keep an eye on this
+
+### File name too long
+* Most Scala-based notebooks operate by generating inner classes for each cell executed within the notebook
+* The names of these inner classes, over many executions of the notebook/cell, get very long and exceed the OS filename length
+* When you see this, just restart the notebook kernel/interpreter
+* After restarting your notebook kernel/interpreter, you'll lose all notebook variable assignments
