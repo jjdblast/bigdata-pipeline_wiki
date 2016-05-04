@@ -12,7 +12,13 @@
 * We usually start Zeppelin first, so this usually binds to port 4040, but every Spark job after will throw a scary WARN.
 * Ignore this
 
+### derby.log
+* Spark SQL always creates a tiny derby.log file when it first starts up - before finding the real Hive Metastore
+* Sometimes this file is created in the same path where you run your Spark Application (ie. `pipeline-spark-shell` Spark Shell)
+* Ignore this
+
 ## Notebooks
 ### Strange variable assignments
 * Notebooks need to be run from top to bottom.
 * If you run them out of order - or jump between notebooks - your variable assignments may clobber each other
+* Keep an eye on this
