@@ -34,7 +34,7 @@
 ![Create Keypair](http://advancedspark.com/img/aws-create-keypair.png)
 
 * Result of Associating Keypair at Cloud Instance Creation Time
-![Cloud Instance Keypair Association](http://advancedspark.com/img/aws-keypair-instance.png) 
+![Cloud Instance Keypair Association](https://advancedspark.com/img/aws-keypair-instance.png) 
 
 ## Download the SSH Keypairs and Prepare Them for Use
 * Download the SSH Keypair and place into '~/.ssh/<keypair-name>.pem`
