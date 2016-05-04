@@ -17,6 +17,9 @@
 * Sometimes this file is created in the same path where you run your Spark Application (ie. `pipeline-spark-shell` Spark Shell)
 * Ignore this
 
+### Not Enough Resources
+![Not Enough CPUs](http://advancedspark.com/img/spark-ui-not-enough-cpus.png)
+
 ## Notebooks
 ### Strange variable assignments
 * Notebooks need to be run from top to bottom.
