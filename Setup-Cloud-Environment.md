@@ -16,7 +16,7 @@
 * In this example, my instances are using the "default" network which is the Google default
 * You **must modify these rules** or you will only be able to connect to your instance on port 80 (and 443 if selected)
 
-![Google Cloud Platform Firewall Rules](http://advancedspark.com/img/gce-firewall-rules.png)
+![Google Cloud Platform Firewall Rules](https://advancedspark.com/img/gce-firewall-rules.png)
 
 ### Amazon Web Services Security Group Modifications
 * Below is a screen shot of the **SECURITY GROUP CHANGES** required to allow all traffic into your instance
@@ -34,7 +34,7 @@
 ![Create Keypair](http://advancedspark.com/img/aws-create-keypair.png)
 
 * Result of Associating Keypair at Cloud Instance Creation Time
-![Cloud Instance Keypair Association](https://advancedspark.com/img/aws-keypair-instance.png) 
+![Cloud Instance Keypair Association](http://advancedspark.com/img/aws-keypair-instance.png) 
 
 ## Download the SSH Keypairs and Prepare Them for Use
 * Download the SSH Keypair and place into '~/.ssh/<keypair-name>.pem`
