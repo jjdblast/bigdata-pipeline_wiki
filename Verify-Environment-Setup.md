@@ -57,7 +57,7 @@ declare -x PIPELINE_HOME="/root/pipeline"
 declare -x MYSQL_CONNECTOR_JAR="/usr/share/java/mysql-connector-java.jar"
 ```
 
-## Explore Your Environment
+## Verify Your Environment
 * Navigate your browser to the Demo Home Page
 ```
 http://<your-cloud-instance-public-ip>
