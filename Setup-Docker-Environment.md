@@ -1,5 +1,3 @@
-### Start the Docker Container
-
 **At this point, you should be ssh'd into your specific cloud instance**
 
 * Run the following command to start up the Docker Container
