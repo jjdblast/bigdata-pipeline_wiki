@@ -17,7 +17,10 @@
 * Sometimes this file is created in the same path where you run your Spark Application (ie. `pipeline-spark-shell` Spark Shell)
 * Ignore this
 
-### Not Enough Resources
+### Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+* You likely have started too many long-running Spark Apps like SparkShell, PySparkShell, PySpark (Jupyter/iPython Notebook), Zeppelin Notebook, Spark Streaming, etc.
+* Below is a sample screenshot of the Spark Admin UI when you are in this state
+* You need to kill some of the long-running Spark Apps through the Spark Admin UI - usually one of the PySpark (Jupyter/iPython) apps
 ![Not Enough CPUs](http://advancedspark.com/img/spark-ui-not-enough-cpus.png)
 
 ## Notebooks
