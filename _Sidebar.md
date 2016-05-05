@@ -7,32 +7,34 @@ Environment Setup
 
 [2. Setup Docker Environment](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Docker-Environment)
 
+[3. Environment README](https://github.com/fluxcapacitor/pipeline/wiki/Environment-README)
+
 *** 
 Exploring Environment
 
-[3. Explore Services](https://github.com/fluxcapacitor/pipeline/wiki/Explore-Services)
+[4. Explore Services](https://github.com/fluxcapacitor/pipeline/wiki/Explore-Services)
 
-[4. Code Sample](https://github.com/fluxcapacitor/pipeline/wiki/Code-Sample)
+[5. Code Sample](https://github.com/fluxcapacitor/pipeline/wiki/Code-Sample)
 
-[5. Monitor Metrics](https://github.com/fluxcapacitor/pipeline/wiki/Monitor-Metrics)
+[6. Monitor Metrics](https://github.com/fluxcapacitor/pipeline/wiki/Monitor-Metrics)
 
 ***
 Managing Environment
 
-[6. Pause and Stop Environment](https://github.com/fluxcapacitor/pipeline/wiki/Pause-and-Stop-Environment)
+[7. Pause and Stop Environment](https://github.com/fluxcapacitor/pipeline/wiki/Pause-and-Stop-Environment)
 
-[7. Archive and Delete Environment](https://github.com/fluxcapacitor/pipeline/wiki/Archive-and-Delete-Environment)
+[8. Archive and Delete Environment](https://github.com/fluxcapacitor/pipeline/wiki/Archive-and-Delete-Environment)
 
-[8. Troubleshooting Environment](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshooting-Environment)
+[9. Troubleshooting Environment](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshooting-Environment)
 
 ***
 Contributing
 
-[9. Contributing](https://github.com/fluxcapacitor/pipeline/wiki/Contributing)
+[10. Contributing](https://github.com/fluxcapacitor/pipeline/wiki/Contributing)
 
 ***
 Beta Features (Not Stable)
 
-[10. TensorFlow Examples](https://github.com/fluxcapacitor/pipeline/wiki/TensorFlow)
+[11. TensorFlow Examples](https://github.com/fluxcapacitor/pipeline/wiki/TensorFlow)
 
-[11. Serving Layer](https://github.com/fluxcapacitor/pipeline/wiki/Serving-Layer)
+[12. Serving Layer](https://github.com/fluxcapacitor/pipeline/wiki/Serving-Layer)
