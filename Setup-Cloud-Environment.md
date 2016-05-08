@@ -57,6 +57,15 @@ sudo apt-get install curl
 curl -fsSL https://get.docker.com/ | sh
 curl -fsSL https://get.docker.com/gpg | sudo apt-key add -
 ```
+* Note:  Please ignore the following message that appears after the above:
+```
+... <IGNORE THIS>
+If you would like to use Docker as a non-root user, you should now consider 
+adding your user to the "docker" group with something like:
+
+  sudo usermod -aG docker <username> 
+... </IGNORE THIS>
+```
 
 * Pull down the latest Docker image
 (This will take a few mins, please be patient)
