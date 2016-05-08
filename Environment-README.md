@@ -5,7 +5,7 @@
 
 ## SSH Command Line
 ### WARNING: Your kernel does not support swap limit capabilities, memory limited without swap.
-* Docker will throw this WARNING upon starting up
+* Docker throws this WARNING upon initial `docker run`
 * Ignore this
 
 ### java.net.BindException: Address already in use
