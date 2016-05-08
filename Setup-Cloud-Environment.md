@@ -58,12 +58,6 @@ curl -fsSL https://get.docker.com/ | sh
 curl -fsSL https://get.docker.com/gpg | sudo apt-key add -
 ```
 
-## Setup Environment
-```
-echo "alias docker='sudo docker'" >> ~/.bash_aliases
-source ~/.bash_aliases
-```
-
 * Pull down the latest Docker image
 (This will take a few mins, please be patient)
 ```
