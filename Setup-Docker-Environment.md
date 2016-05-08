@@ -3,6 +3,15 @@
 * Run the following command to start up the Docker Container
 * The assumption is that this is a fresh Cloud Instance with nothing bound to popular ports like 80, 8080, 9090, etc
 Note:  This Docker Container will bind to many ports including port 80, so make sure even `apache2` is disabled before running this command
+
+### Verify Docker Images
+* Run the following and verify that you see `fluxcapacitor/pipeline`
+```
+sudo docker images
+```
+
+### Start the Docker Container
+* Adjust the `-m 48g` memory as needed
 ```
 sudo docker run -it --name pipeline --net=host -m 48g fluxcapacitor/pipeline bash
 ```
