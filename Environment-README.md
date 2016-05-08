@@ -26,6 +26,10 @@
 * You need to kill some of the long-running Spark Apps through the Spark Admin UI - usually one of the PySpark (Jupyter/iPython) apps
 ![Not Enough CPUs](http://advancedspark.com/img/spark-ui-not-enough-cpus.png)
 
+### Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+* The optimized Hadoop libraries specific to this OS and Hardware have not been installed
+* Ignore this
+
 ## Notebooks
 ### Strange variable assignments
 * Notebooks need to be run from top to bottom.
