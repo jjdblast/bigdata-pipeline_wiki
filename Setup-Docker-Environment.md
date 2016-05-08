@@ -8,10 +8,13 @@ Note:  This Docker Container will bind to many ports including port 80, so make 
 * Run the following and verify that you see `fluxcapacitor/pipeline`
 ```
 sudo docker images
+...
+REPOSITORY               TAG                 IMAGE ID            CREATED             SIZE
+fluxcapacitor/pipeline   latest              c392786d2afc        3 mins ago          11.17 GB
 ```
 
 ### Start the Docker Container
-* Adjust the `-m 48g` memory as needed
+* Adjust the `-m 48g` memory as needed - the larger, the better!
 ```
 sudo docker run -it --name pipeline --net=host -m 48g fluxcapacitor/pipeline bash
 ```
