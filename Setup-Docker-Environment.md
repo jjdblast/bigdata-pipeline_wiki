@@ -5,7 +5,7 @@
 Note:  This Docker Container will bind to many ports including port 80, so make sure even `apache2` is disabled before running this command
 
 ### Verify Docker Images
-* Run the following and verify that you see `fluxcapacitor/pipeline`
+* Run the following to verify that you have the latest `fluxcapacitor/pipeline` Docker image
 ```
 sudo docker images
 ...
@@ -24,6 +24,8 @@ sudo docker run -it --name pipeline --net=host -m 48g fluxcapacitor/pipeline bas
 **At this point, you should be in your Docker Container**
 
 * Run the following commands **inside the Docker Container**
+* Note:  You will see many WARNINGs and ERRORs
+* Please ignore these
 ```
 cd $PIPELINE_HOME && git pull && source $CONFIG_HOME/bash/pipeline.bashrc && $SCRIPTS_HOME/setup/RUNME_ONCE_LARGE.sh
 ```
