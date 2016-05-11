@@ -136,11 +136,9 @@ cd $TENSORFLOW_SERVING_HOME
 # Download the Inception Model Checkpoint to Train On
 wget http://download.tensorflow.org/models/image/imagenet/inception-v3-2016-03-01.tar.gz
 
-#cd $DATASETS_HOME/tensorflow/serving/inception_model
 tar -xvzf inception-v3-2016-03-01.tar.gz
 
-# IS THIS NEEDED?
-##?? $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_export --checkpoint_dir=inception-v3 --export_dir=$DATASETS_HOME/tensorflow/serving/inception_model
+$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_export --checkpoint_dir=inception-v3 --export_dir=$DATASETS_HOME/tensorflow/serving/inception_model
 ```
 
 ### Start TensorFlow Serving with Inception Model (Port 9091)
@@ -162,7 +160,6 @@ I tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:85]
 ```
 cd $TENSORFLOW_SERVING_HOME
 
-# TODO:  is num_tests required?
 $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_client --server=localhost:9091 --image=$DATASETS_HOME/inception/cropped_panda.jpg
 ```
 
