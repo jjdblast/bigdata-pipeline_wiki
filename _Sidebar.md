@@ -14,7 +14,7 @@ Exploring Environment
 
 [4. Explore Services](https://github.com/fluxcapacitor/pipeline/wiki/Explore-Services)
 
-[5. Code Sample](https://github.com/fluxcapacitor/pipeline/wiki/Code-Sample)
+[5. Code Samples](https://github.com/fluxcapacitor/pipeline/wiki/Code-Samples)
 
 [6. Monitor Metrics](https://github.com/fluxcapacitor/pipeline/wiki/Monitor-Metrics)
 
