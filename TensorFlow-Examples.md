@@ -133,11 +133,11 @@ bazel build //tensorflow_serving/example:inception_export
 ```
 cd $TENSORFLOW_SERVING_HOME
 
-# IS THIS NEEDED
-#wget http://download.tensorflow.org/models/image/imagenet/inception-v3-2016-03-01.tar.gz
-#
+# Download the Inception Model Checkpoint to Train On
+wget http://download.tensorflow.org/models/image/imagenet/inception-v3-2016-03-01.tar.gz
+
 #cd $DATASETS_HOME/tensorflow/serving/inception_model
-#tar -xvzf inception-v3-2016-03-01.tar.gz
+tar -xvzf inception-v3-2016-03-01.tar.gz
 
 # IS THIS NEEDED?
 ##?? $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_export --checkpoint_dir=inception-v3 --export_dir=$DATASETS_HOME/tensorflow/serving/inception_model
