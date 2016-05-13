@@ -52,8 +52,8 @@ nohup $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_infere
 * Verify that TensorFlow Serving has found the v1 MNIST Model `mnist_model/00000001`
 ```
 tail -f nohup-mnist.out 
-I tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:85] Found a servable {name: default version: 1} at path /root/pipeline/datasets/tensorflow/serving/mnist_model/00000001
-I tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:149] Aspiring 1 versions for servable default
+tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:85] Found a servable {name: default version: 1} at path /root/pipeline/datasets/tensorflow/serving/mnist_model/00000001
+tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:149] Aspiring 1 versions for servable default
 ```
 * `ctrl-c` to exit the `tail` log
 
@@ -81,9 +81,9 @@ $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --tra
 * Verify that TensorFlow Serving has found the new v2 MNIST Model `mnist_model/00000002`
 ```
 tail -f nohup-mnist.out 
-I tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:149] Aspiring 1 versions for servable default
-I tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:45] Polling the file system to look for a servable path under: /root/pipeline/datasets/tensorflow/serving/mnist_model
-I tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:85] Found a servable {name: default version: 2} at path /root/pipeline/datasets/tensorflow/serving/mnist_model/00000002
+tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:149] Aspiring 1 versions for servable default
+tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:45] Polling the file system to look for a servable path under: /root/pipeline/datasets/tensorflow/serving/mnist_model
+tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:85] Found a servable {name: default version: 2} at path /root/pipeline/datasets/tensorflow/serving/mnist_model/00000002
 ```
 * `ctrl-c` to exit the `tail` log
 
