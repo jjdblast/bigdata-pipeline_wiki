@@ -1,10 +1,7 @@
-## Configure TensorFlow (Defaults are Fine)
+## Setup TensorFlow
 ```
-cd $TENSORFLOW_SERVING_HOME/tensorflow
-
-./configure              
-Please specify the location of python. [Default is /usr/bin/python]: 
-Do you wish to build TensorFlow with GPU support? [y/N] 
+cd $MYAPPS/tensorflow
+./setup-tensorflow.sh
 No GPU support will be enabled for TensorFlow
 Configuration finished
 ```
@@ -14,21 +11,14 @@ Configuration finished
 * Errors during these build steps are likely due to not enough memory.  
 * **24 GB+ is required.**  Please believe us!  :)
 
-### Build the Inference and Client Components
+### Build the MNIST Inference, Client, and Export Components
 ```
 cd $TENSORFLOW_SERVING_HOME
 
 bazel build //tensorflow_serving/example:mnist_inference_2
-
 bazel build //tensorflow_serving/example:mnist_client
-```
 
-### Build the Export Component
-* This is just building the Export Component - not actually building and exporting the model
-* This command takes a while (10-15 mins), so please be patient.
-```
-cd $TENSORFLOW_SERVING_HOME
-
+# This command takes a while (10-15 mins), so please be patient.
 bazel build //tensorflow_serving/example:mnist_export
 ```
 
@@ -45,13 +35,13 @@ $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --tra
 ### Start TensorFlow Serving with MNIST Model (Port 9090)
 * This will pick up the v1 MNIST Model that has been training using 1,000 training iterations
 ```
-cd $TENSORFLOW_SERVING_HOME
-
-nohup $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_inference_2 --port=9090 $DATASETS_HOME/tensorflow/serving/mnist_model > nohup-mnist.out &
+cd $MYAPPS_HOME/tensorflow
+./start-tensorflow-mnist-serving-service.sh
 ```
+
 * Verify that TensorFlow Serving has found the v1 MNIST Model `mnist_model/00000001`
 ```
-tail -f nohup-mnist.out 
+tail -f $LOGS_HOME/tensorflow/serving/nohup-mnist.out 
 tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:85] Found a servable {name: default version: 1} at path /root/pipeline/datasets/tensorflow/serving/mnist_model/00000001
 tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:149] Aspiring 1 versions for servable default
 ```
@@ -80,7 +70,7 @@ $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_export --tra
 
 * Verify that TensorFlow Serving has found the new v2 MNIST Model `mnist_model/00000002`
 ```
-tail -f nohup-mnist.out 
+tail -f $LOGS_HOME/tensorflow/serving/nohup-mnist.out 
 tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:149] Aspiring 1 versions for servable default
 tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:45] Polling the file system to look for a servable path under: /root/pipeline/datasets/tensorflow/serving/mnist_model
 tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:85] Found a servable {name: default version: 2} at path /root/pipeline/datasets/tensorflow/serving/mnist_model/00000002
@@ -109,17 +99,9 @@ Inference error rate: 9.5%
 ```
 cd $TENSORFLOW_SERVING_HOME
 
-# Build Inference and Client Components
+# Build Inference, Client, and Export Components
 bazel build //tensorflow_serving/example:inception_inference
-
 bazel build //tensorflow_serving/example:inception_client
-```
-
-### Build the Export Component
-* This is just building the Export Component - not actually building and exporting the model
-```
-cd $TENSORFLOW_SERVING_HOME
-
 bazel build //tensorflow_serving/example:inception_export
 ```
 
@@ -148,7 +130,7 @@ $MYAPPS_HOME/tensorflow/start-tensorflow-inception-serving-service.sh
 
 * Verify that TensorFlow Serving found v00157585 Inception Model `inception_model/00157585`
 ```
-tail -f $LOGS_HOME/tensorflow/inception/nohup-inception.out
+tail -f $LOGS_HOME/tensorflow/serving/nohup-inception.out
 tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:149] Aspiring 1 versions for servable default
 tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:45] Polling the file system to look for a servable path under: /root/pipeline/datasets/tensorflow/serving/inception_model
 tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:85] Found a servable {name: default version: 157585} at path /root/pipeline/datasets/tensorflow/serving/inception_model/00157585
@@ -172,7 +154,6 @@ $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_client -
 
 ## TODO:  Quantize to 8-bit for Faster Inference (v0.9+)
 * http://www.kdnuggets.com/2016/05/how-quantize-neural-networks-tensorflow.html
-
 * This will produce a new model that runs the same operations as the original, but with eight bit calculations internally, and all weights quantized as well. If you look at the file size, you’ll see it’s about a quarter of the original (23MB versus 91MB). You can still run this model using exactly the same inputs and outputs though, and you should get equivalent results. Here’s an example:
 ```
 curl http://download.tensorflow.org/models/image/imagenet/inception-2015-12-05.tgz -o /tmp/inceptionv3.tgz
