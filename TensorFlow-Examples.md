@@ -143,14 +143,12 @@ $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_export -
 
 ### Start TensorFlow Serving with Inception Model (Port 9091)
 ```
-cd $TENSORFLOW_SERVING_HOME
-
-nohup $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_inference --port=9091 $DATASETS_HOME/tensorflow/serving/inception_model > nohup-inception.out &
+$MYAPPS_HOME/tensorflow/start-tensorflow-inception-serving-service.sh
 ```
 
 * Verify that TensorFlow Serving found v00157585 Inception Model `inception_model/00157585`
 ```
-tail -f nohup-inception.out
+tail -f $LOGS_HOME/tensorflow/inception/nohup-inception.out
 tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:149] Aspiring 1 versions for servable default
 tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:45] Polling the file system to look for a servable path under: /root/pipeline/datasets/tensorflow/serving/inception_model
 tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:85] Found a servable {name: default version: 157585} at path /root/pipeline/datasets/tensorflow/serving/inception_model/00157585
