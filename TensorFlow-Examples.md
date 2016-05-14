@@ -178,6 +178,8 @@ bazel-bin/tensorflow/examples/label_image/label_image \
 --output_layer_name="softmax:0"
 ```
 
+## TODO:  SyntaxNet
+* https://github.com/tensorflow/models/tree/master/syntaxnet
 
 ## TODO:  NLP Sentence Prediction with PTB
 ### Build Code
