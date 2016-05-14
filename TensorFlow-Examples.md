@@ -1,6 +1,6 @@
 ## Setup TensorFlow
 ```
-cd $MYAPPS/tensorflow
+cd $MYAPPS_HOME/tensorflow
 ./setup-tensorflow.sh
 No GPU support will be enabled for TensorFlow
 Configuration finished
