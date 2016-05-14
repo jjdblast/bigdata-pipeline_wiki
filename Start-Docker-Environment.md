@@ -1,8 +1,23 @@
+## Logging Into Your Instance
+### Linux/MacOS X
+* Use SSH to log in to your Cloud Instance using the `.pem` file created from the previous step
+* You may have to enter the password you used when you created the key pair in an earlier step 
+```
+ssh -i ~/.ssh/<your-pem-file> <your-username>@<your-cloud-instance-public-ip>
+```
+### Windows
+* Use [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
+
+![Putty Host IP](http://advancedspark.com/img/putty-1.png)
+
+![Putty pem File](http://advancedspark.com/img/putty-2.png)
+
+### Start Docker Container
+
 **At this point, you should be ssh'd into your specific cloud instance**
 
-* Run the following command to start up the Docker Container
 * The assumption is that this is a fresh Cloud Instance with nothing bound to popular ports like 80, 8080, 9090, etc
-Note:  This Docker Container will bind to many ports including port 80, so make sure even `apache2` is disabled before running this command
+* This Docker Container will bind to many ports including port 80, so make sure even `apache2` is disabled before running this command
 
 ### Verify Docker Images
 * Run the following to verify that you have the latest `fluxcapacitor/pipeline` Docker image
@@ -30,9 +45,7 @@ sudo docker run -it --privileged --name pipeline --net=host -m 48g fluxcapacitor
 cd $PIPELINE_HOME && git pull && source $CONFIG_HOME/bash/pipeline.bashrc && $SCRIPTS_HOME/setup/RUNME_ONCE_LARGE.sh
 ```
 
-
 **Wait a few mins for initialization to complete...  this may take some time.**
-
 
 ### Verify the Initialization
 * Verify the output of `jps -l` is *similar to* the following (may differ slightly):
