@@ -34,7 +34,7 @@
 ![Create Key Pair](http://advancedspark.com/img/aws-create-keypair.png)
 
 * Result of Associating Key Pair to a Cloud Instance at Creation Time
-![Cloud Instance Keypair Association](http://advancedspark.com/img/aws-keypair-instance.png) 
+![Cloud Instance Key Pair Association](http://advancedspark.com/img/aws-keypair-instance.png) 
 
 ## Download and Configure SSH Key (.pem file)
 * Download the SSH Key and place into '~/.ssh/<keypair-name>.pem`
@@ -46,7 +46,7 @@ chmod 600 ~/.ssh/<key-name>.pem
 ## Logging Into Your Instance 
 ### Linux/MacOS X
 * Use SSH to log in to your Cloud Instance using the `.pem` file created from the previous step
-* You may have to enter the password you used when you created the keypair in an earlier step 
+* You may have to enter the password you used when you created the key pair in an earlier step 
 ```
 ssh -i ~/.ssh/<your-pem-file> <your-username>@<your-cloud-instance-public-ip>
 ```
