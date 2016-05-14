@@ -197,3 +197,7 @@ python ptb_word_lm.py --data_path=$DATASETS_HOME/ptb/simple-examples/data --mode
 ```
 TODO
 ```
+
+## Troubleshooting
+### `src/main/tools/namespace-sandbox.c:774: mount("none", "/", NULL, MS_REC | MS_PRIVATE, NULL): Permission denied`
+* You're likely running this inside a Docker Container that has not been run with `--privileged`
