@@ -44,12 +44,18 @@ chmod 600 ~/.ssh/<keypair-name>.pem
 ```
  
 ## Logging Into Your Instance 
-* Use SSH or Putty (Windows) to log in to your Cloud Instance using the `.pem` file created from the previous step
+### Linux/MacOS X
+* Use SSH to log in to your Cloud Instance using the `.pem` file created from the previous step
 * You may have to enter the password you used when you created the keypair in an earlier step 
 ```
 ssh -i ~/.ssh/<your-pem-file> <your-username>@<your-cloud-instance-public-ip>
 ```
-* [SSH to Google Cloud Platform ](https://cloud.google.com/compute/docs/instances/connecting-to-instance#standardssh)
+### Windows
+* Use [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
+
+![Putty Host IP](http://advancedspark.com/img/putty-1.png)
+
+![Putty pem File](http://advancedspark.com/img/putty-2.png)
 
 ## Setup Docker
 ```
