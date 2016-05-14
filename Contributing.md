@@ -33,10 +33,8 @@ Enter passphrase for ~/.ssh/github_rsa: <your-passphrase>
 ```
 
 ### Make Your Changes
-* Do what you gotta do!  :)
 
 ### Submit a Pull Request
-* We will see the Pull Request and comment/merge as appropriate
  
 ### Troubleshooting
 * If you see the following error, make sure you ran modified the permissions on your `github_rsa` file above
