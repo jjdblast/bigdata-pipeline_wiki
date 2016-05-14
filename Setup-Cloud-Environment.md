@@ -20,7 +20,7 @@
 
 ### Amazon Web Services Security Group Modifications
 * Below is a screen shot of the **SECURITY GROUP CHANGES** required to allow all traffic into your instance
-* In this example, my instances are using the "fluxcapacitor" security group which I created myself
+* In this example, the instance is using a security group named `fluxcapacitor`
 * You **must modify the security group** or you will only be able to connect to your instance on port 80 (and 443 if selected)
 
 ![AWS Security Groups](http://advancedspark.com/img/aws-security-groups.png)
@@ -30,17 +30,17 @@
 * https://cloud.google.com/compute/docs/instances/connecting-to-instance#generatesshkeypair
 
 ### Amazon Web Services
-* Create SSH Keypair
-![Create Keypair](http://advancedspark.com/img/aws-create-keypair.png)
+* Create SSH Key Pair
+![Create Key Pair](http://advancedspark.com/img/aws-create-keypair.png)
 
-* Result of Associating Keypair at Cloud Instance Creation Time
+* Result of Associating Key Pair to a Cloud Instance at Creation Time
 ![Cloud Instance Keypair Association](http://advancedspark.com/img/aws-keypair-instance.png) 
 
-## Download the SSH Keypairs and Prepare Them for Use
-* Download the SSH Keypair and place into '~/.ssh/<keypair-name>.pem`
-* Modify the permissions
+## Download and Configure SSH Key (.pem file)
+* Download the SSH Key and place into '~/.ssh/<keypair-name>.pem`
+* Modify the permissions of the SSH Key
 ```
-chmod 600 ~/.ssh/<keypair-name>.pem
+chmod 600 ~/.ssh/<key-name>.pem
 ```
  
 ## Logging Into Your Instance 
