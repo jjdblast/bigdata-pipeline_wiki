@@ -16,7 +16,7 @@ fluxcapacitor/pipeline   latest              c392786d2afc        3 mins ago     
 ### Start the Docker Container
 * Adjust the `-m 48g` memory as needed - the larger, the better!
 ```
-sudo docker run -it --name pipeline --net=host -m 48g fluxcapacitor/pipeline bash
+sudo docker run -it --privileged --name pipeline --net=host -m 48g fluxcapacitor/pipeline bash
 ```
 
 ### Configure the Environment and Start All Services
