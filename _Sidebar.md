@@ -5,7 +5,7 @@ Environment Setup
 
 [1. Setup Cloud Environment](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Cloud-Environment)
 
-[2. Setup Docker Environment](https://github.com/fluxcapacitor/pipeline/wiki/Start-Docker-Environment)
+[2. Start Docker Environment](https://github.com/fluxcapacitor/pipeline/wiki/Start-Docker-Environment)
 
 [3. Environment README](https://github.com/fluxcapacitor/pipeline/wiki/Environment-README)
 
