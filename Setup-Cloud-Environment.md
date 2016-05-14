@@ -49,6 +49,7 @@ chmod 600 ~/.ssh/<keypair-name>.pem
 ```
 ssh -i ~/.ssh/<your-pem-file> <your-username>@<your-cloud-instance-public-ip>
 ```
+* [SSH to Google Cloud Platform ](https://cloud.google.com/compute/docs/instances/connecting-to-instance#standardssh)
 
 ## Setup Docker
 ```
