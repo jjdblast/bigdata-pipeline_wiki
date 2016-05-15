@@ -2,12 +2,11 @@
 * Not really *custom* - more about enabling various options at build-time
 
 ## Spark
-* Tachyon
 * Hadoop 
 * Hive
 * Hive ThriftServer
 * Ganglia
-* netlib-java (Java wrapper around Fortran BLAS libs)
+* netlib-java (Java wrapper around BLAS libs)
 
 Details are [here](http://spark.apache.org/docs/latest/building-spark.html).
 
