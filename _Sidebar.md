@@ -33,7 +33,7 @@ Contributing
 [10. Contributing](https://github.com/fluxcapacitor/pipeline/wiki/Contributing)
 
 ***
-Beta Features (Not Stable)
+Experimental (Not Stable)
 
 [11. TensorFlow Examples](https://github.com/fluxcapacitor/pipeline/wiki/TensorFlow-Examples)
 
