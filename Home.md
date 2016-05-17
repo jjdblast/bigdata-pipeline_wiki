@@ -4,8 +4,47 @@
 
 ![PANCAKE STACK](http://advancedspark.com/img/pancake-stack-sign-sm.png)
 
-## Pipeline Architecture Overview
+### Pipeline Architecture Overview
 ![Pipeline Architecture Overview](http://advancedspark.com/img/architecture-overview-with-nifi-sm.png)
+
+## Sign Up for an Upcoming PANCAKE STACK Workshop!
+### Title
+**Building an End-to-End Streaming Analytics and Recommendations Pipeline with Spark, Kafka, and TensorFlow**
+
+### Agenda (Full Day)
+**Part 1 (Analytics and Visualizations)**
+* Analytics and Visualizations Overview (Live Demo!)
+* Verify Environment Setup (Docker, Cloud Instance)
+* Notebooks (Zeppelin, Jupyter/iPython)
+* Interactive Data Analytics (Spark SQL, Hive, Presto)
+* Graph Analytics (Spark, Elastic, NetworkX, TitanDB)
+* Time-series Analytics (Spark, Cassandra)
+* Visualizations (Kibana, Matplotlib, D3)
+* Approximate Queries (Spark SQL, Redis, Algebird)
+* Workflow Management (Airflow)
+
+**Part 2 (Streaming and Recommendations)**
+* Streaming and Recommendations (Live Demo!)
+* Streaming (NiFi, Kafka, Spark Streaming, Flink)
+* Cluster-based Recommendation (Spark ML, Scikit-Learn)
+* Graph-based Recommendation (Spark ML, Spark Graph)
+* Collaborative-based Recommendation (Spark ML)
+* NLP-based Recommendation (CoreNLP, NLTK)
+* Geo-based Recommendation (ElasticSearch)
+* Hybrid On-Premise+Cloud Auto-scale Deploy (Docker)
+* Save Workshop Environment for Your Use Cases
+
+### Locations and Dates
+* [San Francisco](http://advanced-spark-tensorflow-june.eventbrite.com/?discount=ADVANCEDSPARK15"): Saturday, June 4th
+* [Washington DC](https://advanced-spark-kafka-tensorflow-washington-dc.eventbrite.com/?discount=ADVANCEDSPARK20):  Saturday, June 18th
+* [Seattle](https://end-to-end-streaming-recommendations-spark-seattle.eventbrite.com/?discount=ADVANCEDSPARK15"): Saturday, July 30th
+
+### Description
+The goal of this workshop is to build an end-to-end, streaming data analytics and recommendations pipeline on your local machine using Docker and the latest streaming analytics 
+* First, we create a data pipeline to interactively analyze, approximate, and visualize streaming data using modern tools such as Apache Spark, Kafka, Zeppelin, iPython, and ElasticSearch.
+* Next, we extend our pipeline to use streaming data to generate personalized recommendation models using popular machine learning, graph, and natural language processing techniques such as collaborative filtering, clustering, and topic modeling.
+* Last, we productionize our pipeline and serve live recommendations to our users!
+  
 
 ## Screenshots
 ### Apache Zeppelin Notebooks
