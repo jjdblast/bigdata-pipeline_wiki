@@ -7,7 +7,7 @@
 ### Pipeline Architecture Overview
 ![Pipeline Architecture Overview](http://advancedspark.com/img/architecture-overview-with-nifi-sm.png)
 
-## Sign Up for an Upcoming PANCAKE STACK Workshop!
+## Upcoming PANCAKE STACK Workshops!
 ### Title
 **Building an End-to-End Streaming Analytics and Recommendations Pipeline with Spark, Kafka, and TensorFlow**
 
