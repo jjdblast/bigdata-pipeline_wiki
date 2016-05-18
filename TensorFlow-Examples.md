@@ -125,7 +125,7 @@ $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_export -
 
 ### Start TensorFlow Serving with Inception Model (Port 9091)
 ```
-$MYAPPS_HOME/tensorflow/start-tensorflow-inception-serving-service.sh
+$MYAPPS_HOME/serving/tensorflow/start-tensorflow-inception-serving-service.sh
 ```
 
 * Verify that TensorFlow Serving found v00157585 Inception Model `inception_model/00157585`
