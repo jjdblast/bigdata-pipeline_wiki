@@ -1,5 +1,8 @@
 https://s3-us-west-2.amazonaws.com/advancedspark.com/keys/pipeline-training-gce.pem
 
+username: pipeline-training
+password: password9
+
  pipeline-training-v4-0001	pipeline-training-v4-0001	
 104.197.66.179
 SSH  
