@@ -1,3 +1,6 @@
+[-1. Workshop IPs](https://github.com/fluxcapacitor/pipeline/wiki/Workshop-IPs)
+
+***
 [0. Architecture Overview](https://github.com/fluxcapacitor/pipeline/wiki/Architecture-Overview)
 
 ***
