@@ -1,5 +1,3 @@
-## Troubleshooting
-
 ### Cannot Connect to Cloud Instance or Navigation Links
 * You likely have not configured your cloud instance firewall rules (GCE) or security groups (AWS) properly
 * Go back [HERE](https://github.com/fluxcapacitor/pipeline/wiki/Setup-Cloud-Environment#firewall-and-cloud-instance-security-groups) and open up the cloud instance firewall rules or security groups to all incoming traffic on all ports
