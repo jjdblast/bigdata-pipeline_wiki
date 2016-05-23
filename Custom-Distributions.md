@@ -13,7 +13,7 @@ Details are [here](http://spark.apache.org/docs/latest/building-spark.html).
 ### Build Commands (Very Long...)
 * Clone the branch/tag as follows:
 ```
-git clone --branch 'v1.6.1' --single-branch git@github.com:apache/spark.git v1.6.1
+git clone --branch 'branch-2.0' --single-branch git@github.com:apache/spark.git branch-2.0
 ```
 * Make sure you have installed R on [Mac OSX](https://cran.r-project.org/bin/macosx/) or [Linux](https://www.digitalocean.com/community/tutorials/how-to-set-up-r-on-ubuntu-14-04) before running the following command:
 
