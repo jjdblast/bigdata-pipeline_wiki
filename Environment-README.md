@@ -31,6 +31,11 @@
 * Ignore this
 
 ## Notebooks
+### Hanging iPython/Jupyter Notebooks
+* Related to the resource-starvation issue
+* Every iPython/Jupyter notebook you run will acquire **and hold** 1 CPU
+![Not Enough CPUs](http://advancedspark.com/img/spark-ui-not-enough-cpus.png)
+
 ### Strange variable assignments
 * Notebooks need to be run from top to bottom.
 * If you run them out of order - or jump between notebooks - your variable assignments may clobber each other
