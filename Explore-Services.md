@@ -400,3 +400,8 @@ http://<ip>:5080/predict/12663/7
 ```
 http://<ip>:5090/predict/12663/7
 ```
+
+### Flask-based Image Classification Service
+```
+http://<ip>:5070/classify/cropped_panda.jpg
+```
