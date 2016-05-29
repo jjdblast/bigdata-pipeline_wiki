@@ -169,7 +169,7 @@ tar xzf /tmp/inceptionv3.tgz -C /tmp/
 bazel build tensorflow/contrib/quantization/tools:quantize_graph
 bazel-bin/tensorflow/contrib/quantization/tools/quantize_graph \
 --input=/tmp/classify_image_graph_def.pb \
---output_node_names="softmax2" \
+--output_node_names="softmax" \
 --output=/tmp/quantized_graph.pb \
 --mode=eightbit
 ```
