@@ -1,7 +1,14 @@
-## Setup TensorFlow
+## Setup TensorFlow 
 ```
 cd $MYAPPS_HOME/tensorflow
 ./setup-tensorflow.sh
+No GPU support will be enabled for TensorFlow
+Configuration finished
+```
+## Setup TensorFlow Serving
+```
+cd $MYAPPS_HOME/serving/tensorflow
+./setup-tensorflow-serving.sh
 No GPU support will be enabled for TensorFlow
 Configuration finished
 ```
