@@ -152,52 +152,82 @@ cd $TENSORFLOW_SERVING_HOME
 $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_client --server=localhost:9091 --image=<my-local-image-filename>
 ```
 
-## TODO:  Label 
+## Classify an Image at Full Precision 
+```
+bazel-bin/tensorflow/examples/label_image/label_image \
+  --graph=$DATASETS_HOME/inception/classify_image_graph_def.pb \
+  --input_width=299 \
+  --input_height=299 \  
+  --input_mean=128 \  
+  --input_std=128 \  
+  --input_layer="Mul:0" \
+  --output_layer="softmax:0" \
+  --image=$DATASETS_HOME/inception/cropped_panda.jpg
+
+...
+
+W tensorflow/core/framework/op_def_util.cc:332] Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization().
+I tensorflow/examples/label_image/main.cc:207] giant panda (169): 0.89233
+I tensorflow/examples/label_image/main.cc:207] indri (75): 0.00858706
+I tensorflow/examples/label_image/main.cc:207] lesser panda (7): 0.00264235
+I tensorflow/examples/label_image/main.cc:207] custard apple (325): 0.00140671
+I tensorflow/examples/label_image/main.cc:207] earthstar (878): 0.00107063
+```
+
+## Classify an Image after 8-bit Quantization
+* http://www.kdnuggets.com/2016/05/how-quantize-neural-networks-tensorflow.html
+* This will produce a new model that runs the same operations as the original, but with eight bit calculations internally, and all weights quantized as well. 
+* If you look at the file size, you’ll see it’s about a quarter of the original (23MB versus 91MB). 
+* You can still run this model using exactly the same inputs and outputs though, and you should get equivalent results. 
+* Here's an example:
+
 ```
 bazel build tensorflow/examples/label_image/...
-bazel-bin/tensorflow/examples/label_image/label_image --image=$DATASETS_HOME/inception/cropped_panda.jpg
+bazel-bin/tensorflow/examples/label_image/label_image \
+ --graph=$DATASETS_HOME/inception/quantized_classify_image_graph_def.pb \
+ --input_width=299 \
+ --input_height=299 \ 
+ --input_mean=128 \
+ --input_std=128 \
+ --input_layer="Mul:0" \
+ --output_layer="softmax:0" \
+ --image=$DATASETS_HOME/inception/cropped_panda.jpg
+
+...
+
+I tensorflow/examples/label_image/main.cc:207] giant panda (169): 0.849015
+I tensorflow/examples/label_image/main.cc:207] indri (75): 0.00533261
+I tensorflow/examples/label_image/main.cc:207] lesser panda (7): 0.00349496
+I tensorflow/examples/label_image/main.cc:207] custard apple (325): 0.00193439
+I tensorflow/examples/label_image/main.cc:207] earthstar (878): 0.0013225
 ```
 
-## TODO:  Quantize to 8-bit for Faster Inference (v0.9+)
-* http://www.kdnuggets.com/2016/05/how-quantize-neural-networks-tensorflow.html
-* This will produce a new model that runs the same operations as the original, but with eight bit calculations internally, and all weights quantized as well. If you look at the file size, you’ll see it’s about a quarter of the original (23MB versus 91MB). You can still run this model using exactly the same inputs and outputs though, and you should get equivalent results. Here’s an example:
+## 8-bit Quantization of Inception Model
+* This has already been done for you, but if you would like to do it manually, here's how:
 ```
-# TODO: Use existing model from earlier example
 curl http://download.tensorflow.org/models/image/imagenet/inception-2015-12-05.tgz -o /tmp/inceptionv3.tgz
-tar xzf /tmp/inceptionv3.tgz -C /tmp/
 
 bazel build tensorflow/contrib/quantization/tools:quantize_graph
-bazel-bin/tensorflow/contrib/quantization/tools/quantize_graph \
---input=/tmp/classify_image_graph_def.pb \
---output_node_names="softmax" \
---output=/tmp/quantized_graph.pb \
---mode=eightbit
-```
+bazel build //tensorflow/contrib/quantization/tools:quantize_graph
 
-* This runs the newly-quantized graph and outputs a very similar answer to the original
-```
-bazel build tensorflow/examples/label_image:label_image
-bazel-bin/tensorflow/examples/label_image/label_image \
---input_graph=/tmp/quantized_graph.pb \
---input_width=299 \
---input_height=299 \
---mean_value=128 \
---std_value=128 \
---input_layer_name="Mul:0" \
---output_layer_name="softmax:0"
+bazel-bin/tensorflow/contrib/quantization/tools/quantize_graph \
+  --input=$DATASETS_HOME/inception/classify_image_graph_def.pb \
+  --mode=eightbit \
+  --output_node_names=softmax2 \
+  --output=$DATASETS_HOME/inception/quantized_classify_image_graph_def.pb
 ```
 
 ## TODO:  SyntaxNet
 * https://github.com/tensorflow/models/tree/master/syntaxnet
 
 ## TODO:  NLP Sentence Prediction with PTB
-### Build Code
+* Build Code
 ```
 cd $TENSORFLOW_HOME
 bazel build //tensorflow/models/rnn/ptb:ptb_word_lm
 ```
 
-### Train Model
+* Train Model
 ```
 python ptb_word_lm.py --data_path=$DATASETS_HOME/ptb/simple-examples/data --model small
 ```
