@@ -5,7 +5,7 @@
 * These Cloud Instance types cost around $8-10 per day and get less expensive each month
 * Later, we will show you how to save money by pausing/stopping your instance - allowing you to resume your work at a later date.
 
-(Note:  We have deprecated the local laptop installation instructions given that most laptops are not equipped to handle the large memory and disk/dataset footprint of this environment.)
+(Note:  We have deprecated the local laptop installation instructions given that most laptops are not equipped to handle the large memory and disk/dataset footprint of this real-world environment.)
 
 ## Firewall and Cloud Instance Security Groups
 * Make sure all ports are open on your Cloud Instance
