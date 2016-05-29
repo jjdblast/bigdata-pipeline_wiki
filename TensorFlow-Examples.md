@@ -2,31 +2,17 @@
 ```
 cd $MYAPPS_HOME/tensorflow
 ./setup-tensorflow.sh
+...
 No GPU support will be enabled for TensorFlow
 Configuration finished
 ```
-## Setup TensorFlow Serving
+## Setup TensorFlow Serving (Requires 24 GB RAM within Docker Container)
 ```
 cd $MYAPPS_HOME/serving/tensorflow
 ./setup-tensorflow-serving.sh
+...
 No GPU support will be enabled for TensorFlow
 Configuration finished
-```
-
-## Setup MNIST Classifier (Images of Numbers)
-* Requires **24 GB Minimum Docker Container**
-* Errors during these build steps are likely due to not enough memory.  
-* **24 GB+ is required.**  Please believe us!  :)
-
-### Build the MNIST Inference, Client, and Export Components
-```
-cd $TENSORFLOW_SERVING_HOME
-
-bazel build //tensorflow_serving/example:mnist_inference_2
-bazel build //tensorflow_serving/example:mnist_client
-
-# This command takes a while (10-15 mins), so please be patient.
-bazel build //tensorflow_serving/example:mnist_export
 ```
 
 ### Train and Deploy v1 MNIST Model to TensorFlow Serving
@@ -95,47 +81,14 @@ $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/mnist_client --num
 Inference error rate: 9.5%
 ```
 
-## Setup Inception Model Classifier
-
-### Build TensorFlow Serving Inception Example
-* Requires **24 GB Minimum Docker Container**
-* Errors during these build steps are likely due to not enough memory.  
-* **24 GB+ is required.**  Please believe us!  :)
-
-### Build the Inference and Client Components
-```
-cd $TENSORFLOW_SERVING_HOME
-
-# Build Inference, Client, and Export Components
-bazel build //tensorflow_serving/example:inception_inference
-bazel build //tensorflow_serving/example:inception_client
-bazel build //tensorflow_serving/example:inception_export
-```
-
-## Train and Deploy the Inception Model to TensorFlow Serving
-* Because of the size of the Inception Model, we need to download a checkpoint version to start with
-* The `--checkpoint_dir` must be local to where we build the model or else we see an error like the following:
-```
-"ValueError: Restore called with invalid save path model.ckpt-157585"
-```
-* Follow these instructions and you'll be fine
-```
-cd $TENSORFLOW_SERVING_HOME
-
-# Download the Inception Model Checkpoint to Train On
-wget http://download.tensorflow.org/models/image/imagenet/inception-v3-2016-03-01.tar.gz
-
-tar -xvzf inception-v3-2016-03-01.tar.gz
-
-$TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_export --checkpoint_dir=inception-v3 --export_dir=$DATASETS_HOME/tensorflow/serving/inception_model
-```
-
 ### Start TensorFlow Serving with Inception Model (Port 9091)
+* We've already deployed the model to `$DATASETS_HOME/tensorflow/serving/inception_model` to be picked up by TensorFlow Serving
+* We just need to start the TensorFlow Serving Classification Service as follows: 
 ```
 $MYAPPS_HOME/serving/tensorflow/start-tensorflow-inception-serving-service.sh
 ```
 
-* Verify that TensorFlow Serving found v00157585 Inception Model `inception_model/00157585`
+* Verify that TensorFlow Serving found the v00157585 Inception Model at `/root/pipeline/datasets/tensorflow/serving/inception_model/00157585`
 ```
 tail -f $LOGS_HOME/tensorflow/serving/nohup-inception.out
 tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:149] Aspiring 1 versions for servable default
@@ -144,6 +97,7 @@ tensorflow_serving/sources/storage_path/file_system_storage_path_source.cc:85] F
 ```
 
 ### Perform Image Classification using Inception Model (Port 9091)
+* This is an example client that uses the gRPC-based TensorFlow Serving Image Classification Service to classify an image 
 ```
 cd $TENSORFLOW_SERVING_HOME
 
