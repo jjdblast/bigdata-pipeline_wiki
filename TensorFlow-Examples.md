@@ -141,9 +141,6 @@ I tensorflow/examples/label_image/main.cc:207] earthstar (878): 0.00107063
 * If you look at the file size, you’ll see it’s about a quarter of the original (23MB versus 91MB). 
 * You can still run this model using exactly the same inputs and outputs though, and you should get equivalent results. 
 * Here's an example:
-
-```
-# Add 8-bit Quantization Libraries to this label_image example's BUILD before building
 ```
 # As of May 2016, you must replace the existing `label_image/BUILD` file
 #   with the one from our repo in order to pick up the quantization libs
@@ -167,11 +164,11 @@ bazel-bin/tensorflow/examples/label_image/label_image \
  --image=$DATASETS_HOME/inception/cropped_panda.jpg
 ...
 
-I tensorflow/examples/label_image/main.cc:207] giant panda (169): 0.849015
-I tensorflow/examples/label_image/main.cc:207] indri (75): 0.00533261
-I tensorflow/examples/label_image/main.cc:207] lesser panda (7): 0.00349496
-I tensorflow/examples/label_image/main.cc:207] custard apple (325): 0.00193439
-I tensorflow/examples/label_image/main.cc:207] earthstar (878): 0.0013225
+tensorflow/examples/label_image/main.cc:207] giant panda (169): 0.849015
+tensorflow/examples/label_image/main.cc:207] indri (75): 0.00533261
+tensorflow/examples/label_image/main.cc:207] lesser panda (7): 0.00349496
+tensorflow/examples/label_image/main.cc:207] custard apple (325): 0.00193439
+tensorflow/examples/label_image/main.cc:207] earthstar (878): 0.0013225
 ```
 
 ## 8-bit Quantization of Inception Model
