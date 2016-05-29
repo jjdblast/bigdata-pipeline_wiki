@@ -155,11 +155,8 @@ $TENSORFLOW_SERVING_HOME/bazel-bin/tensorflow_serving/example/inception_client -
 ## TODO:  Label 
 ```
 bazel build tensorflow/examples/label_image/...
-
 bazel-bin/tensorflow/examples/label_image/label_image --image=$DATASETS_HOME/inception/cropped_panda.jpg
 ```
-
-
 
 ## TODO:  Quantize to 8-bit for Faster Inference (v0.9+)
 * http://www.kdnuggets.com/2016/05/how-quantize-neural-networks-tensorflow.html
@@ -170,10 +167,9 @@ curl http://download.tensorflow.org/models/image/imagenet/inception-2015-12-05.t
 tar xzf /tmp/inceptionv3.tgz -C /tmp/
 
 bazel build tensorflow/contrib/quantization/tools:quantize_graph
-
 bazel-bin/tensorflow/contrib/quantization/tools/quantize_graph \
 --input=/tmp/classify_image_graph_def.pb \
---output_node_names="softmax" \
+--output_node_names="softmax2" \
 --output=/tmp/quantized_graph.pb \
 --mode=eightbit
 ```
