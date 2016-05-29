@@ -182,7 +182,19 @@ I tensorflow/examples/label_image/main.cc:207] earthstar (878): 0.00107063
 * Here's an example:
 
 ```
+# Add 8-bit Quantization Libraries to this label_image example's BUILD before building
+```
+# As of May 2016, you must replace the existing `label_image/BUILD` file
+#   with the one from our repo in order to pick up the quantization libs
+mv $TENSORFLOW_BLEEDINGEDGE_HOME/tensorflow/examples/label_image/BUILD $TENSORFLOW_BLEEDINGEDGE_HOME/tensorflow/examples/label_image/BUILD.orig
+
+cp $MYAPPS_HOME/tensorflow/hack-add-quantization-dependencies-BUILD $TENSORFLOW_BLEEDINGEDGE_HOME/tensorflow/examples/label_image/BUILD
+
+# Build the label_image example
 bazel build tensorflow/examples/label_image/...
+
+# Classify the image using the smaller (1/3rd) quantization model 
+#   and compare results to full-precision model above (equivalent)
 bazel-bin/tensorflow/examples/label_image/label_image \
  --graph=$DATASETS_HOME/inception/quantized_classify_image_graph_def.pb \
  --input_width=299 \
@@ -192,7 +204,6 @@ bazel-bin/tensorflow/examples/label_image/label_image \
  --input_layer="Mul:0" \
  --output_layer="softmax:0" \
  --image=$DATASETS_HOME/inception/cropped_panda.jpg
-
 ...
 
 I tensorflow/examples/label_image/main.cc:207] giant panda (169): 0.849015
