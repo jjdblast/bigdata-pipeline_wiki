@@ -33,10 +33,10 @@ fluxcapacitor/pipeline   latest              c392786d2afc        3 mins ago     
 ```
 sudo docker run -it --privileged --name pipeline --net=host -m 48g fluxcapacitor/pipeline bash
 ...
-#############################################################################################
+# HIT ENTER A FEW TIMES
+...
 # IGNORE THIS ERROR IF YOU SEE IT
 WARNING: Your kernel does not support swap limit capabilities, memory limited without swap.
-#############################################################################################
 ```
 
 ### Configure the Environment and Start All Services
