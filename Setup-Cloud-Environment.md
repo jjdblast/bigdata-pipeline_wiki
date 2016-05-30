@@ -1,16 +1,26 @@
-## Cloud Instance
-* The following are the minimum requirements for your Cloud Instance:
-**8 Cores**, **50GB RAM**, **100GB SSD - ROOT VOLUME**
-* Make sure - especially for EC2 - that you manually specify a `100 GB ROOT VOLUME` than the default of 8 GB or whatever
-* Typically, we use either the Amazon Web Services `r3.2xlarge` EC2  or Google Cloud Platform `n1-highmem-8` GCE Cloud Instance  types
-* These Cloud Instance types cost around $8-10 per day and get less expensive each month
-* Later, we will show you how to save money by pausing/stopping your instance - allowing you to resume your work at a later date.
+## Cloud Instance Configuration
+Typically, we use either the Amazon Web Services `r3.2xlarge` EC2  or Google Cloud Platform `n1-highmem-8` GCE Cloud Instance  types
 
-(Note:  We have deprecated the local laptop installation instructions given that most laptops are not equipped to handle the large memory and disk/dataset footprint of this real-world environment.)
+[r3.2xlarge](https://advancedspark.com/img/aws-ec2-step-2.png)
+
+Minimum requirements for your cloud instance:
+* 8 Cores
+* 50+ GB RAM
+* 100 GB **Root Volume** (**MUST BE ROOT VOLUME**)
+
+[100 GB Root Volume](https://advancedspark.com/img/aws-ec2-step-4.png)
+
+## Cloud Instance Cost:
+* Currently, these cloud instance types cost around $8-10 per day
+* Later, we you how to save money by pausing/stopping your instance - allowing you to resume your work at a later date
+
+## Local Laptop Installation
+* We no longer support the local laptop installation the large memory and disk footprint of this real-world environment
 
 ## Firewall and Cloud Instance Security Groups
-* Make sure all ports are open on your Cloud Instance
-* We will tighten the security later, but for now it's easier to just open them all
+* Make sure all ports are open on your cloud instance
+* While not secure in any way, we open all ports to make connectivity easier
+* For production environments, definitely lock down these ports to the bare minimum
 
 ### Google Cloud Platform Firewall Rule Modifications
 * Below is a screen shot of the **FIREWALL RULES CHANGES** required to allow all traffic into your instance
@@ -23,6 +33,8 @@
 * Below is a screen shot of the **SECURITY GROUP CHANGES** required to allow all traffic into your instance
 * In this example, the instance is using a security group named `fluxcapacitor`
 * You **must modify the security group** or you will only be able to connect to your instance on port 80 (and 443 if selected)
+
+[Firewall Rules](https://advancedspark.com/img/aws-ec2-step-6.png)
 
 ![AWS Security Groups](http://advancedspark.com/img/aws-security-groups.png)
 
