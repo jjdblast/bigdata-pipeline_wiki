@@ -1,21 +1,21 @@
+## Local Laptop Installation
+* We no longer support the local laptop installation the large memory and disk footprint of this real-world environment
+
 ## Cloud Instance Configuration
-Typically, we use either the Amazon Web Services `r3.2xlarge` EC2  or Google Cloud Platform `n1-highmem-8` GCE Cloud Instance  types
+* Typically, we use either the Amazon Web Services `r3.2xlarge` EC2  or Google Cloud Platform `n1-highmem-8` GCE Cloud Instance  types
 
-[r3.2xlarge](https://advancedspark.com/img/aws-ec2-step-2.png)
+![r3.2xlarge](https://advancedspark.com/img/aws-ec2-step-2.png)
 
-Minimum requirements for your cloud instance:
+### Minimum requirements for your cloud instance:
 * 8 Cores
 * 50+ GB RAM
 * 100 GB **Root Volume** (**MUST BE ROOT VOLUME**)
 
-[100 GB Root Volume](https://advancedspark.com/img/aws-ec2-step-4.png)
+![100 GB Root Volume](https://advancedspark.com/img/aws-ec2-step-4.png)
 
-## Cloud Instance Cost:
+### Cloud Instance Cost
 * Currently, these cloud instance types cost around $8-10 per day
 * Later, we you how to save money by pausing/stopping your instance - allowing you to resume your work at a later date
-
-## Local Laptop Installation
-* We no longer support the local laptop installation the large memory and disk footprint of this real-world environment
 
 ## Firewall and Cloud Instance Security Groups
 * Make sure all ports are open on your cloud instance
