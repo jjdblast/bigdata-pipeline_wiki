@@ -4,14 +4,14 @@
 ## Cloud Instance Configuration
 * Typically, we use either the Amazon Web Services `r3.2xlarge` EC2  or Google Cloud Platform `n1-highmem-8` GCE Cloud Instance  types
 
-![r3.2xlarge](https://advancedspark.com/img/aws-ec2-step-2.png)
+![r3.2xlarge](http://advancedspark.com/img/aws-ec2-step-2.png)
 
 ### Minimum requirements for your cloud instance:
 * 8 Cores
 * 50+ GB RAM
 * 100 GB **Root Volume** (**MUST BE ROOT VOLUME**)
 
-![100 GB Root Volume](https://advancedspark.com/img/aws-ec2-step-4.png)
+![100 GB Root Volume](http://advancedspark.com/img/aws-ec2-step-4.png)
 
 ### Cloud Instance Cost
 * Currently, these cloud instance types cost around $8-10 per day
