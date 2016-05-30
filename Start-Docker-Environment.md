@@ -32,6 +32,12 @@ fluxcapacitor/pipeline   latest              c392786d2afc        3 mins ago     
 * Adjust the `-m 48g` memory as needed - the larger, the better!
 ```
 sudo docker run -it --privileged --name pipeline --net=host -m 48g fluxcapacitor/pipeline bash
+
+...
+#############################################################################################
+# IGNORE THIS ERROR IF YOU SEE IT
+WARNING: Your kernel does not support swap limit capabilities, memory limited without swap.
+#############################################################################################
 ```
 
 ### Configure the Environment and Start All Services
