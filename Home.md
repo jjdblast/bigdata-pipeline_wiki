@@ -1,11 +1,9 @@
-## PANCAKE STACK
-### End-to-End Streaming Advanced Analytics and Machine Learning Recommendation Pipeline
-**Follow Wiki [Sidebar](https://github.com/fluxcapacitor/pipeline/wiki) to Setup Docker-based Environment >>>**
+# End-to-End, Real-time ML Reference Data Pipeline
 
+[![Gitter Chat Room](https://badges.gitter.im/fluxcapacitor/pipeline.svg)](https://gitter.im/fluxcapacitor/pipeline?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+## Powered by the PANCAKE STACK!
 ![PANCAKE STACK](http://advancedspark.com/img/pancake-stack-sign-sm.png)
-
-### Pipeline Architecture Overview
-![Pipeline Architecture Overview](http://advancedspark.com/img/architecture-overview-with-nifi-sm.png)
 
 ## Upcoming PANCAKE STACK Workshops!
 ### Title
@@ -35,9 +33,10 @@
 * Save Workshop Environment for Your Use Cases
 
 ### Locations and Dates
-* [San Francisco](http://advanced-spark-tensorflow-june.eventbrite.com/?discount=ADVANCEDSPARK15"): Saturday, June 4th
+* [San Francisco](http://advanced-spark-tensorflow-june.eventbrite.com/?discount=ADVANCEDSPARK15): Saturday, June 4th
 * [Washington DC](https://advanced-spark-kafka-tensorflow-washington-dc.eventbrite.com/?discount=ADVANCEDSPARK20):  Saturday, June 18th
 * [Seattle](https://end-to-end-streaming-recommendations-spark-seattle.eventbrite.com/?discount=ADVANCEDSPARK15): Saturday, July 30th
+* [SF Bay Area](https://end-to-end-streaming-recommendations-spark-aug-bay.eventbrite.com/?discount=ADVANCEDSPARK15): Saturday, August 6th
 * [Chicago](https://end-to-end-streaming-recommendations-spark-chicago.eventbrite.com/?discount=ADVANCEDSPARK20): Saturday, September 17th
 * [Toronto](https://end-to-end-streaming-recommendations-spark-toronto.eventbrite.com?discount=ADVANCEDSPARK20): Saturday, September 24th
 * [New York](https://end-to-end-streaming-recommendations-spark-nyc.eventbrite.com?discount=ADVANCEDSPARK25): Saturday, October 1st
@@ -45,7 +44,7 @@
 * [London](https://end-to-end-streaming-recommendations-spark-london.eventbrite.com?discount=ADVANCEDSPARK25): Saturday, October 22nd
 * [Brussels](https://end-to-end-streaming-recommendations-spark-brussel.eventbrite.com?discount=ADVANCEDSPARK25): Saturday, October 29th
 
-[>>> Click Here To Suggest a City and Date <<<](https://docs.google.com/forms/d/1fYqnjfXZjHYF0QgxWGQPXDcdCneBeOhGZasvejTw0WE/edit?usp=sharing)
+[Suggest a City and Date](https://docs.google.com/forms/d/1fYqnjfXZjHYF0QgxWGQPXDcdCneBeOhGZasvejTw0WE/edit?usp=sharing)
       
 ### Description
 The goal of this workshop is to build an end-to-end, streaming data analytics and recommendations pipeline on your local machine using Docker and the latest streaming analytics 
@@ -54,7 +53,11 @@ The goal of this workshop is to build an end-to-end, streaming data analytics an
 * Last, we productionize our pipeline and serve live recommendations to our users!
   
 
-## Screenshots
+## Architecture Overview
+**Follow [Wiki](https://github.com/fluxcapacitor/pipeline/wiki) to Setup Docker-based Environment**
+![Pipeline Architecture Overview](http://advancedspark.com/img/architecture-overview-with-nifi-sm.png)
+
+##  Screenshots
 ### Apache Zeppelin Notebooks
 ![Apache Zeppelin Notebooks](http://advancedspark.com/img/zeppelin-notebooks-sm.png)
 
@@ -71,7 +74,7 @@ The goal of this workshop is to build an end-to-end, streaming data analytics an
 ![TensorFlow Notebooks](http://advancedspark.com/img/tensorflow.png)
 
 ### Apache NiFi Data Flows
-![Apache NiFi Data Flows](https://s3.amazonaws.com/fluxcapacitor.com/img/nifi-flow.png)
+![Apache NiFi Data Flows](http://advancedspark.com/img/nifi-flow.png)
 
 ### AirFlow Workflows
 ![AirFlow Workflows](http://advancedspark.com/img/airflow.png)
@@ -99,12 +102,12 @@ The goal of this workshop is to build an end-to-end, streaming data analytics an
 ### Ganglia System and JVM Metrics Monitoring UIs
 ![Ganglia Metrics UI](http://advancedspark.com/img/flux-ganglia-1.png)
 ![Ganglia Metrics UI](http://advancedspark.com/img/flux-ganglia-2.png)
+![Ganglia Metrics UI](http://advancedspark.com/img/flux-ganglia-3.png)
 
 ## Tools Overview
 ![Apache Spark](http://spark.apache.org/images/spark-logo.png) ![Redis](https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Redis_Logo.svg/200px-Redis_Logo.svg.png)
-![TensorFlow](http://advancedspark.com/img/tensorflow-logo.png) 
 ![Apache Cassandra](https://upload.wikimedia.org/wikipedia/commons/a/a0/Cassandra_logo.png)
 ![Apache Kafka](http://www.bogotobogo.com/Hadoop/images/Ecosystem/Kafka.png)
 ![NiFi](http://advancedspark.com/img/nifi-logo.png)
 ![ElasticSearch Logstash Kibana](https://www.enalean.com/sites/default/files/field/image/elk-logos.png) ![Apache Zeppelin](http://4.bp.blogspot.com/-rsc3t_dZmBg/VbPDwhb_IBI/AAAAAAAABeY/9zKUjK4VFbQ/s1600/zeppelin-bl.png) ![Ganglia](https://developer.nvidia.com/sites/default/files/akamai/cuda/images/Ganglia-logo-small-rs.jpg) ![Hadoop HDFS](http://datatechblog.com/wp-content/uploads/2014/04/HadoopHive.png) ![iPython Notebook](http://ipython.org/ipython-doc/dev/_images/ipynb_icon_128x128.png)
-![Docker](http://blog.docker.com/wp-content/uploads/2013/08/KuDr42X_ITXghJhSInDZekNEF0jLt3NeVxtRye3tqco.png) 
+![Docker](http://blog.docker.com/wp-content/uploads/2013/08/KuDr42X_ITXghJhSInDZekNEF0jLt3NeVxtRye3tqco.png)
