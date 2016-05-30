@@ -52,7 +52,6 @@ The goal of this workshop is to build an end-to-end, streaming data analytics an
 * Next, we extend our pipeline to use streaming data to generate personalized recommendation models using popular machine learning, graph, and natural language processing techniques such as collaborative filtering, clustering, and topic modeling.
 * Last, we productionize our pipeline and serve live recommendations to our users!
   
-
 ## Architecture Overview
 **Follow [Wiki](https://github.com/fluxcapacitor/pipeline/wiki) to Setup Docker-based Environment**
 ![Pipeline Architecture Overview](http://advancedspark.com/img/architecture-overview-with-nifi-sm.png)
