@@ -4,6 +4,7 @@
 * Workers run `start-spark-worker-only.sh`
 * Master navigates to `http://<master-ip>:6060` to show all the workers
 * Master `spark-submit`'s a large job
+* Master navigates to `http://<master-ip>:4040` to show the details of the submitted large job
 
 ### `spark-submit` Configuration Notes
 * `--num-executors` can exceed the total available executors - the job just won't use them all
