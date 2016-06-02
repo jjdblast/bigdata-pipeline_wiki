@@ -1,1 +1,1 @@
-![Pipeline Architecture Overview](http://advancedspark.com/img/architecture-overview-with-nifi-sm.png)
+![Pipeline Architecture Overview](http://pipeline.io/images/architecture-overview-with-nifi-768x562.png)
