@@ -15,7 +15,7 @@
 
 ### SparkPi
 ```
-$SPARK_HOME/bin/spark-submit --class org.apache.spark.examples.SparkPi --master spark://<master-ip>:7077 --num-executors 100 --executor-memory 48g --total-executor-cores 800 $SPARK_HOME/lib/spark-examples*.jar 4000
+$SPARK_HOME/bin/spark-submit --repositories $SPARK_REPOSITORIES --jars $SPARK_SUBMIT_JARS --packages $SPARK_SUBMIT_PACKAGES --class org.apache.spark.examples.SparkPi --master spark://<master-ip>:7077 --num-executors 100 --executor-memory 48g --total-executor-cores 800 $SPARK_HOME/lib/spark-examples*.jar 4000
 ```
 
 ### Similarity Pathways
