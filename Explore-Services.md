@@ -247,7 +247,6 @@ jps -l
 ```
 
 ### Presto + Kafka
-* Requires `start-presto-service.sh` (which may already be running)
 * Run `pipeline-presto-kafka.sh` and query a live Kafka Topic
 ```
 pipeline-presto-kafka.sh
@@ -272,7 +271,6 @@ presto:default> quit
 ```
 
 ### Presto + Hive/SparkSQL
-* Requires `start-presto-service.sh` (likely already be running)
 * Run `pipeline-presto-hive.sh` and query a Hive-friendly table 
 _(ie. non-Hive-friendly tables use SerDe's like `com.databricks.spark.csv`)_
 ```
@@ -334,7 +332,6 @@ http://127.0.0.1:6060
 ```
 
 ### Spark History Server UI
-* Requires `start-history-server.sh`
 ```
 http://<ip>:5050
 ```
