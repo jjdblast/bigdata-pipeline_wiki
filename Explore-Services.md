@@ -272,7 +272,7 @@ presto:default> quit
 ```
 
 ### Presto + Hive/SparkSQL
-* Requires `start-presto-service.sh` (may already be running)
+* Requires `start-presto-service.sh` (likely already be running)
 * Run `pipeline-presto-hive.sh` and query a Hive-friendly table 
 _(ie. non-Hive-friendly tables use SerDe's like `com.databricks.spark.csv`)_
 ```
