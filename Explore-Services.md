@@ -404,7 +404,7 @@ http://<ip>:6969/nifi/
 
 ### AirFlow
 ```
-http://<ip>:5060/
+http://<ip>:3060/
 ```
 
 ### Presto
