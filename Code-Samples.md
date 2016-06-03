@@ -10,8 +10,11 @@ ls -l $MYAPPS_HOME
 ...
 airflow/
 akka/
-flink/  
+codegen/
+flink/
+html/
 jupyter/
+kafka/
 nifi/
 serving/    
 spark/
@@ -28,14 +31,39 @@ zeppelin/
 * [akka/feeder](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/akka/feeder)
 * Akka-based App that Feeds Ratings from CSV into a Kafka Topic
 * Simulates Users Posting Ratings to a Kafka Topic
+
+### Code Generation/Spark
+* [codegen/spark](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/codegen/spark) 
+* Code Generation of Spark ML Models
  
 ### Flink Streaming
 * [flink/streaming](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/flink/streaming) 
 * Flink Streaming 
 
+### HTML
+* [html](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/html) 
+* Demo HTML and JavaScript
+
 ### Jupyter
 * [juptyer](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/jupyter)
 * Jupyter/iPython notebooks including PySpark, TensorFlow, SciKit-Learn, NetworkX, Matplotlib and various other examples from around the world wide web (aka www)
+
+### Kafka
+* [kafka](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/kafka)
+* Kafka Consumers and Producers
+* Kafka Connectors
+* Kafka Streams
+
+
+### NiFi
+* [nifi](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/nifi) 
+* NiFi Data Flows
+
+### Model Serving and Online Predicting
+* [serving/finagle](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/serving/finagle)
+* [serving/flask](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/serving/flask)
+* [serving/tensorflow](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/serving/tensorflow)
+* [serving/watcher](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/serving/watcher)
 
 ### Spark Core
 * [spark/core](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/spark/core)
@@ -52,6 +80,10 @@ zeppelin/
 * Graph Processing
 * Text Analytics and NLP
 
+### Spark Redis
+* [spark/redis](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/spark/redis)
+* Spark + Redis Integration
+
 ### Spark SQL
 * [spark/sql](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/spark/sql)
 * Custom In-memory DataSource API Implementation 
@@ -64,14 +96,9 @@ zeppelin/
 * Calculate distinct count using Redis HyperLogLog and Twitter Algebird HyperLogLog
 * Calculate count and heavy hitters using Twitter Algebird CountMin Sketch
 
-### NiFi
-* [nifi](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/nifi) 
-* NiFi Data Flows
+### TitanDB Graph Database
+* [titan](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/titan)
 
-### Serving/Prediction ML Layer 
-* [serving](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/serving) 
-* ML Serving Layer
-
-### Apache Zeppelin 
+### Zeppelin
 * [zeppelin](https://github.com/fluxcapacitor/pipeline/tree/master/myapps/zeppelin)
 * Python and Scala-based notebooks including many new and existing examples from around the web
