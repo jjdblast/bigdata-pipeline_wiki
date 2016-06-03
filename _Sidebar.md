@@ -37,4 +37,4 @@ Experimental (Not Stable)
 
 [11. TensorFlow Examples](https://github.com/fluxcapacitor/pipeline/wiki/TensorFlow-Examples)
 
-[12. ML Serving Layer](https://github.com/fluxcapacitor/pipeline/wiki/ML-Serving-Layer)
+[12. ML Prediction Layer](https://github.com/fluxcapacitor/pipeline/wiki/ML-Prediction-Layer)
