@@ -291,13 +291,14 @@ presto:default> select movies_hive_friendly.id, movies_hive_friendly.title, avg(
  86055 | "Foster Brothers                               |        5.0 
 (10 rows)
 
-Query 20160603_045525_00010_np3dh, FINISHED, 1 node
+Query 20160603_050503_00001_e38h6, FINISHED, 1 node
 Splits: 21 total, 21 done (100.00%)
-1:29 [21.7M rows, 559MB] [242K rows/s, 6.26MB/s]
+1:26 [21.7M rows, 559MB] [251K rows/s, 6.46MB/s]
 ```
 
-### Compare Presto to Spark
-* Run `spark-sql`
+### Presto vs. Spark
+_This is not a valid benchmark.  Just a quick example._
+* Run `spark-sql --executor-memory=2GB`
 * Hit enter a few times if the prompt doesn't appear
 * Find Top 10 Movies by Rating
 ```
@@ -313,8 +314,8 @@ spark-sql> select movies_hive_friendly.id, movies_hive_friendly.title, avg(ratin
 130468	The Circle (2015)	5.0
 132155	Ape (2012)	5.0
 139849	The Capsule (2012)	5.0
-Time taken: 42.959 seconds, Fetched 10 row(s)
-16/06/03 04:54:25 INFO CliDriver: Time taken: 42.959 seconds, Fetched 10 row(s)
+Time taken: 46.058 seconds, Fetched 10 row(s)
+16/06/03 05:10:11 INFO CliDriver: Time taken: 46.058 seconds, Fetched 10 row(s)
 ``` 
 
 ## Test Services Outside Docker Container
