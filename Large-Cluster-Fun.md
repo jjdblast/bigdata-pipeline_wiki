@@ -20,11 +20,11 @@ $SPARK_HOME/bin/spark-submit --class org.apache.spark.examples.SparkPi --master 
 
 ### Similarity Pathways
 ```
-$SPARK_HOME/bin/spark-submit --repositories $SPARK_REPOSITORIES --jars $SPARK_SUBMIT_JARS --packages $SPARK_SUBMIT_PACKAGES  --class com.advancedspark.ml.graph.SimilarityPathway --master spark://<master-ip>:7077 --num-executors 100 --executor-memory 48g --total-executor-cores 16 /root/pipeline/myapps/spark/ml/target/scala-2.10/ml_2.10-1.0.jar 80
+$SPARK_HOME/bin/spark-submit --repositories $SPARK_REPOSITORIES --jars $SPARK_SUBMIT_JARS --packages $SPARK_SUBMIT_PACKAGES --class com.advancedspark.ml.graph.SimilarityPathway --master spark://<master-ip>:7077 --num-executors 100 --executor-memory 48g --total-executor-cores 16 /root/pipeline/myapps/spark/ml/target/scala-2.10/ml_2.10-1.0.jar 80
 ```
 
 ### Matrix Factorization (ALS)
 ```
-$SPARK_HOME/bin/spark-submit --repositories $SPARK_REPOSITORIES --jars $SPARK_SUBMIT_JARS --packages $SPARK_SUBMIT_PACKAGES  --class com.advancedspark.ml.recommendation.ALS --master spark://<master-ip>:7077 --num-executors 100 --executor-memory 48g --total-executor-cores 16 /root/pipeline/myapps/spark/ml/target/scala-2.10/ml_2.10-1.0.jar 80
+$SPARK_HOME/bin/spark-submit --repositories $SPARK_REPOSITORIES --jars $SPARK_SUBMIT_JARS --packages $SPARK_SUBMIT_PACKAGES --class com.advancedspark.ml.recommendation.ALS --master spark://<master-ip>:7077 --num-executors 100 --executor-memory 48g --total-executor-cores 16 /root/pipeline/myapps/spark/ml/target/scala-2.10/ml_2.10-1.0.jar 80
 ```
 
