@@ -273,26 +273,49 @@ presto:default> quit
 ### Presto + Hive/SparkSQL
 * Run `pipeline-presto-hive.sh` and query a Hive-friendly table 
 _(ie. non-Hive-friendly tables use SerDe's like `com.databricks.spark.csv`)_
+* Find Top 10 Movies by Rating
 ```
-presto:default> select * from movies_hive_friendly limit 10;
-  id  |               title                |                    tags                     
-------+------------------------------------+---------------------------------------------
- NULL | title                              | genres                                      
-    1 | Toy Story (1995)                   | Adventure|Animation|Children|Comedy|Fantasy 
-    2 | Jumanji (1995)                     | Adventure|Children|Fantasy                  
-    3 | Grumpier Old Men (1995)            | Comedy|Romance                              
-    4 | Waiting to Exhale (1995)           | Comedy|Drama|Romance                        
-    5 | Father of the Bride Part II (1995) | Comedy                                      
-    6 | Heat (1995)                        | Action|Crime|Thriller                       
-    7 | Sabrina (1995)                     | Comedy|Romance                              
-    8 | Tom and Huck (1995)                | Adventure|Children                          
-    9 | Sudden Death (1995)                | Action                                      
+presto:default> select movies_hive_friendly.id, movies_hive_friendly.title, avg(ratings_hive_friendly.rating) as avg_rating from movies_hive_friendly, ratings_hive_friendly where movies_hive_friendly.id = ratings_hive_friendly.itemId group by movies_hive_friendly.id, movies_hive_friendly.title order by avg_rating desc limit 10;
+...
+  id   |                     title                      | avg_rating 
+-------+------------------------------------------------+------------
+ 51119 | "Dagger of Kamui                               |        5.0 
+ 81117 | "Moth                                          |        5.0 
+ 72235 | Between the Devil and the Deep Blue Sea (1995) |        5.0 
+ 40404 | Al otro lado (2004)                            |        5.0 
+ 26718 | Life On A String (Bian chang Bian Zou) (1991)  |        5.0 
+ 54326 | "Sierra                                        |        5.0 
+ 27011 | Koko Flanel (1990)                             |        5.0 
+ 27914 | "Hijacking Catastrophe: 9/11                   |        5.0 
+ 88488 | "Summer Wishes                                 |        5.0 
+ 86055 | "Foster Brothers                               |        5.0 
 (10 rows)
 
-Query 20160403_160506_00010_wq24r, FINISHED, 1 node
-Splits: 2 total, 2 done (100.00%)
-0:01 [2.46K rows, 114KB] [4.51K rows/s, 209KB/s]
+Query 20160603_045525_00010_np3dh, FINISHED, 1 node
+Splits: 21 total, 21 done (100.00%)
+1:29 [21.7M rows, 559MB] [242K rows/s, 6.26MB/s]
 ```
+
+### Compare Presto to Spark
+* Run `spark-sql`
+* Hit enter a few times if the prompt doesn't appear
+* Find Top 10 Movies by Rating
+```
+spark-sql> select movies_hive_friendly.id, movies_hive_friendly.title, avg(ratings_hive_friendly.rating) as avg_rating from movies_hive_friendly, ratings_hive_friendly where movies_hive_friendly.id = ratings_hive_friendly.itemId group by movies_hive_friendly.id, movies_hive_friendly.title order by avg_rating desc limit 10;
+...
+27011	Koko Flanel (1990)	5.0
+137006	Poison (2000)	5.0
+136878	Paradh (2010)	5.0
+137010	The Nightmare Nanny (2013)	5.0
+126945	Small Roads (2011)	5.0
+116387	Muddy River (1981)	5.0
+129036	People of the Wind (1976)	5.0
+130468	The Circle (2015)	5.0
+132155	Ape (2012)	5.0
+139849	The Capsule (2012)	5.0
+Time taken: 42.959 seconds, Fetched 10 row(s)
+16/06/03 04:54:25 INFO CliDriver: Time taken: 42.959 seconds, Fetched 10 row(s)
+``` 
 
 ## Test Services Outside Docker Container
 * Use your browser to verify the following services
