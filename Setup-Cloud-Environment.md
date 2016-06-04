@@ -75,6 +75,9 @@ ssh -i ~/.ssh/<your-pem-file> <your-username>@<your-cloud-instance-public-ip>
 ![Putty pem File](http://advancedspark.com/img/putty-2.png)
 
 ## Setup Docker
+* Do not rely on the Docker installation that comes with your Operating System
+* You will need at least Docker 1.11+
+* Install the LATEST Docker per the following instructions:
 ```
 sudo apt-get update
 sudo apt-get install curl
