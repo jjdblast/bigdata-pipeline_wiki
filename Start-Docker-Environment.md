@@ -1,12 +1,22 @@
+## Download SSH `.pem` File to your Local Laptop in the `~/.ssh/` folder
+```
+mkdir -p ~/.ssh
+
+wget http://advancedspark.com/keys/pipeline-training-gce.pem ~/.ssh
+```
+
 ## Logging Into Your Instance
 ### Linux/MacOS X
 * Use SSH to log in to your Cloud Instance using the `.pem` file created from the previous step
 * You may have to enter the password you used when you created the key pair in an earlier step 
+* NOTE:  YOUR PASSWORD FOR THE SSH `.pem` FILE IS `password9`
 ```
-ssh -i ~/.ssh/<your-pem-file> <your-username>@<your-cloud-instance-public-ip>
+ssh -i ~/.ssh/pipeline-training-gce.pem pipeline-training@<your-cloud-instance-public-ip>
 ```
+
 ### Windows
 * Use [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
+* NOTE:  YOUR PASSWORD FOR THE SSH `.pem` FILE IS `password9`
 
 ![Putty Host IP](http://advancedspark.com/img/putty-1.png)
 
