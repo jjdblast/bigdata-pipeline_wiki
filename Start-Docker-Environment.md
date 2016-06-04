@@ -1,8 +1,13 @@
-## Download SSH `.pem` File to your Local Laptop in the `~/.ssh/` folder
+## Download SSH `.pem` File to your Local Laptop
+* Put this in the `~/.ssh/` folder
 ```
 mkdir -p ~/.ssh
 
 wget http://advancedspark.com/keys/pipeline-training-gce.pem ~/.ssh
+```
+* Update Permissions
+```
+chmod 600 ~/.ssh/pipeline-training-gce.pem
 ```
 
 ## Logging Into Your Instance
