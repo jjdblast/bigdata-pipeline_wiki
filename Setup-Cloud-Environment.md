@@ -2,6 +2,10 @@
 * We no longer support the local laptop installation the large memory and disk footprint of this real-world environment
 
 ## Cloud Instance Configuration
+* While not required, I would recommend choosing Ubuntu 14.04
+
+![Ubuntu 14.04](http://advancedspark.com/img/aws-ec2-step-1.png)
+
 * Typically, we use either the Amazon Web Services `r3.2xlarge` EC2  or Google Cloud Platform `n1-highmem-8` GCE Cloud Instance  types
 
 ![r3.2xlarge](http://advancedspark.com/img/aws-ec2-step-2.png)
