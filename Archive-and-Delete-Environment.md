@@ -13,7 +13,7 @@
 * The following creates a 10 GB+ .tar file that you will need to download from your Cloud Instance to your local laptop
 * Export your Docker Container
 ```
-cd ~ && sudo docker export --output="pipeline.tar" fluxcapacitor/pipeline
+cd ~ && sudo docker export --output="pipeline.tar" pipeline
 ```
 
 * Download the newly-created `pipeline.tar` file from your Cloud Instance to your local home directory using your `.pem` file from the SSH Keypair that you created during Cloud Instance setup:
