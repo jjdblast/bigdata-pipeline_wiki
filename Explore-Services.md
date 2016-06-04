@@ -397,11 +397,6 @@ http://<ip>:5601/app/sense
 http://<ip>/ganglia
 ```
 
-### NiFi
-```
-http://<ip>:6969/nifi/
-```
-
 ### AirFlow
 ```
 http://<ip>:3060/
