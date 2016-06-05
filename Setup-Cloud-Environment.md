@@ -38,7 +38,7 @@
 * In this example, the instance is using a security group named `fluxcapacitor`
 * You **must modify the security group** or you will only be able to connect to your instance on port 80 (and 443 if selected)
 
-![Firewall Rules](https://pipeline.io/images/aws-ec2-step-6.png)
+![Firewall Rules](http://advancedspark.com/img/aws-ec2-step-6.png)
 
 ![AWS Security Groups](http://advancedspark.com/img/aws-security-groups.png)
 
