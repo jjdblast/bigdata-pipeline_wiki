@@ -68,7 +68,8 @@ chmod 600 ~/.ssh/<key-name>.pem
 ssh -i ~/.ssh/<your-pem-file> <your-username>@<your-cloud-instance-public-ip>
 ```
 ### Windows
-* Use [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
+* Download Putty and PuttyGen from http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
+* See the Windows-specific instructions to convert the `.pem` to a `.ppk` file for [Google Cloud Platform](https://cloud.google.com/compute/docs/instances/connecting-to-instance#generatesshkeypair) and [AWS](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html)
 
 ![Putty Host IP](http://advancedspark.com/img/putty-1.png)
 
