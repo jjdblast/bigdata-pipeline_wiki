@@ -10,10 +10,16 @@
 * This will stop your Docker Container as well as all services running within the Container
 
 ## Save Options
-* The following creates a 10 GB+ .tar file that you will need to download from your Cloud Instance to your local laptop
+* The following creates a 13 GB+ .tar file that you will need to download from your Cloud Instance to your local laptop
 * Export your Docker Container
 ```
 cd ~ && sudo docker export --output="pipeline.tar" pipeline
+```
+
+##
+* Relax Permissions to Allow the Download to Your Laptop 
+```
+sudo chmod a+r pipeline.tar
 ```
 
 * Download the newly-created `pipeline.tar` file from your Cloud Instance to your local home directory using your `.pem` file from the SSH Keypair that you created during Cloud Instance setup:
