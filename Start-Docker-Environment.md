@@ -12,20 +12,21 @@ chmod 600 ~/.ssh/pipeline-training-gce.pem
 
 ## Logging Into Your Instance
 ### Linux/MacOS X
+* NOTE:  YOUR PASSWORD FOR THE SSH `.pem` FILE IS `password9`
 * Use SSH to log in to your Cloud Instance using the `.pem` file created from the previous step
 * You may have to enter the password you used when you created the key pair in an earlier step 
-* NOTE:  YOUR PASSWORD FOR THE SSH `.pem` FILE IS `password9`
 ```
 ssh -i ~/.ssh/pipeline-training-gce.pem pipeline-training@<your-cloud-instance-public-ip>
 ```
 
 ### Windows
-* Use [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
 * NOTE:  YOUR PASSWORD FOR THE SSH `.pem` FILE IS `password9`
+* Download [Putty](https://the.earth.li/~sgtatham/putty/latest/x86/putty.exe) and [PuttyGen](https://the.earth.li/~sgtatham/putty/latest/x86/puttygen.exe) 
+* Use PuttyGen to convert the `.pem` file to a `.ppk` file
 
 ![Putty Host IP](http://advancedspark.com/img/putty-1.png)
 
-![Putty pem File](http://advancedspark.com/img/putty-2.png)
+![Putty ppk File](http://advancedspark.com/img/putty-2.png)
 
 ### Start Docker Container
 
@@ -40,7 +41,7 @@ ssh -i ~/.ssh/pipeline-training-gce.pem pipeline-training@<your-cloud-instance-p
 sudo docker images
 ...
 REPOSITORY               TAG                 IMAGE ID            CREATED             SIZE
-fluxcapacitor/pipeline   latest              c392786d2afc        3 mins ago          11.17 GB
+fluxcapacitor/pipeline   latest              c392786d2afc        3 mins ago          13.17 GB
 ```
 
 ### Start the Docker Container
