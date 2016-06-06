@@ -18,7 +18,7 @@ cd ~ && sudo docker export --output="pipeline.tar" pipeline
 
 * Download the newly-created `pipeline.tar` file from your Cloud Instance to your local home directory using your `.pem` file from the SSH Keypair that you created during Cloud Instance setup:
 ```
-scp -i ~/<your-pem-file.pem> <your-username>@<your-cloud-instance-public-ip>:pipeline.tar ~/pipeline.tar
+scp -i ~/.ssh/<your-pem-file.pem> <your-username>@<your-cloud-instance-public-ip>:pipeline.tar ~/pipeline.tar
 ```
 
 ## Reload the Docker Container at a Later Date
