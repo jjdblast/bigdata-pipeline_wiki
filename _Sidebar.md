@@ -23,7 +23,7 @@ Managing Environment
 
 [7. Pause and Stop Environment](https://github.com/fluxcapacitor/pipeline/wiki/Pause-and-Stop-Environment)
 
-[8. Archive and Delete Environment](https://github.com/fluxcapacitor/pipeline/wiki/Archive-and-Delete-Environment)
+[8. Archive and Delete Environment](https://github.com/fluxcapacitor/pipeline/wiki/Save-and-Restore-Environment)
 
 [9. Troubleshooting Environment](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshooting-Environment)
 
