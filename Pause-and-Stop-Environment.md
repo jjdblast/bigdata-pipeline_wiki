@@ -20,7 +20,7 @@ sudo docker attach pipeline
 
 ### Restart the Core Services
 ```
-cd $PIPELINE_HOME && start-core-services-large.sh
+cd $PIPELINE_HOME && start-all-services.sh
 ```
 
 ### Explore Services
