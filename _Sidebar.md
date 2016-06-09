@@ -21,7 +21,7 @@ Exploring Environment
 ***
 Managing Environment
 
-[7. Pause and Stop Environment](https://github.com/fluxcapacitor/pipeline/wiki/Pause-and-Stop-Environment)
+[7. Stop and Restart Environment](https://github.com/fluxcapacitor/pipeline/wiki/Stop-and-Restart-Environment)
 
 [8. Save and Restore Environment](https://github.com/fluxcapacitor/pipeline/wiki/Save-and-Restore-Environment)
 
