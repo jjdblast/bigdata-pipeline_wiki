@@ -63,7 +63,7 @@ WARNING: Your kernel does not support swap limit capabilities, memory limited wi
 * Run the following commands **inside the Docker Container**
 * Note:  You will likely see many WARNINGs and ERRORs - IGNORE THESE
 ```
-cd $PIPELINE_HOME && git pull && source $CONFIG_HOME/bash/pipeline.bashrc && $SCRIPTS_HOME/setup/RUNME_ONCE_LARGE.sh
+cd $PIPELINE_HOME && git pull && source $CONFIG_HOME/bash/pipeline.bashrc && $SCRIPTS_HOME/setup/RUNME_ONCE.sh
 ```
 
 **Wait a few mins for initialization to complete...  this may take some time.**
