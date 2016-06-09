@@ -24,7 +24,7 @@ jps -l
 
 * No Services Running?  Start Services Again
 ```
-cd $PIPELINE_HOME && start-core-services.sh
+cd $PIPELINE_HOME && start-all-services.sh
 ```
 
 ### Email for Help
