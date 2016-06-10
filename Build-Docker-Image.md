@@ -12,8 +12,8 @@ sudo docker login
 
 Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
 
-Username:  <-- Entire DockerHub Username
-Password:  <-- Entire DockerHub Password
+Username:  <-- Enter DockerHub Username
+Password:  <-- Enter DockerHub Password
 
 Login Succeeded
 ```
