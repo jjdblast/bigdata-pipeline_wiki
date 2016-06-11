@@ -12,11 +12,11 @@ chmod 600 ~/.ssh/<key>.pem
 
 ## Logging Into Your Instance
 ### Linux/MacOS X
-* NOTE:  YOUR PASSWORD FOR THE SSH `.pem` FILE IS `password9`
+* Note:  Try `password9` if asked for a password
 * Use SSH to log in to your Cloud Instance using the `.pem` file created from the previous step
 * You may have to enter the password you used when you created the key pair in an earlier step 
 ```
-ssh -i ~/.ssh/<key>.pem pipeline-training@<your-cloud-instance-public-ip>
+ssh -i ~/.ssh/<key>.pem <your-cloud-instance-user-name>@<your-cloud-instance-public-ip>
 ```
 
 ### Windows
