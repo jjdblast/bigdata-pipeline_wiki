@@ -1,7 +1,8 @@
 ## tl;dr
-* This is a complex environment.
-* You will see (non-FATAL) warnings and errors.  Most of them are OK.
-* Every step is verified externally from the browser or CLI - be alarmed only if this external check fails.
+* This is a complex environment
+* You will see some scary (non-FATAL) WARNings and ERRORs
+* Please don't panic - Everything is OK!
+* We will verify every step of the installation through either a UI or command line as we go along
 * Continue reading to see some of the specific (non-FATAL) errors that you will see
 
 ## SSH Command Line
