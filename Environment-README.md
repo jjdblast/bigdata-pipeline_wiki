@@ -1,7 +1,8 @@
+## tl;dr
 * This is a complex environment.
 * You will see (non-FATAL) warnings and errors.  Most of them are OK.
 * Every step is verified externally from the browser or CLI - be alarmed only if this external check fails.
-* Here are some of the (non-FATAL) errors you will see along with their (non-FATAL) descriptions
+* Continue reading to see some of the specific (non-FATAL) errors that you will see
 
 ## SSH Command Line
 ### WARNING: Your kernel does not support swap limit capabilities, memory limited without swap.
@@ -28,6 +29,16 @@
 
 ### Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
 * The optimized Hadoop libraries specific to this OS and Hardware have not been installed
+* Ignore this
+
+### WARN ObjectStore: Version information not found in metastore. hive.metastore.schema.verification is not enabled so recording the schema version 1.2.0
+* This warning appears to indicate a problem with the Hive Metastore
+* I assure you that the Hive Metastore is running properly
+* Ignore this
+
+### WARN ObjectStore: Failed to get database default, returning NoSuchObjectException
+* Haven't bothered to track this warning down
+* It doesn't affect anything
 * Ignore this
 
 ## Notebooks
