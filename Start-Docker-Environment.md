@@ -4,10 +4,17 @@
 mkdir -p ~/.ssh
 
 wget http://advancedspark.com/keys/pipeline-training-gce.pem ~/.ssh
+
+# WINDOWS USERS!!
+wget http://advancedspark.com/keys/pipeline-training-gce.ppk \Users\<username>\.ssh
 ```
+
 * Update Permissions
 ```
 chmod 600 ~/.ssh/pipeline-training-gce.pem
+
+# WINDOWS USERS!!
+chmod 600 \Users\<username>\.ssh\pipeline-training-gce.ppk
 ```
 
 ## Logging Into Your Instance
