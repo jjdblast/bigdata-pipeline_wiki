@@ -19,11 +19,15 @@ chmod 600 \Users\<username>\.ssh\pipeline-training-gce.ppk
 
 ## Logging Into Your Instance
 ### Linux/MacOS X
-* Note:  Try `password9` if asked for a password
+* Username: `pipeline-training`
+* Password: `password9` if asked for a password
 * Use SSH to log in to your Cloud Instance using the `.pem` file created from the previous step
 * You may have to enter the password you used when you created the key pair in an earlier step 
 ```
 ssh -i ~/.ssh/pipeline-training-gce.pem pipeline-training@<your-cloud-instance-public-ip>
+
+# WINDOWS USERS!!
+ssh -i \Users\<username>\.ssh\pipeline-training-gce.ppk pipeline-training@<your-cloud-instance-public-ip>
 ```
 
 ### Windows
