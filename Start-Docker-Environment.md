@@ -3,11 +3,11 @@
 ```
 mkdir -p ~/.ssh
 
-wget <url-path-to-key>/<key>.pem ~/.ssh
+wget http://advancedspark.com/keys/pipeline-training-gce.pem ~/.ssh
 ```
 * Update Permissions
 ```
-chmod 600 ~/.ssh/<key>.pem
+chmod 600 ~/.ssh/pipeline-training-gce.pem
 ```
 
 ## Logging Into Your Instance
@@ -16,7 +16,7 @@ chmod 600 ~/.ssh/<key>.pem
 * Use SSH to log in to your Cloud Instance using the `.pem` file created from the previous step
 * You may have to enter the password you used when you created the key pair in an earlier step 
 ```
-ssh -i ~/.ssh/<key>.pem <your-cloud-instance-user-name>@<your-cloud-instance-public-ip>
+ssh -i ~/.ssh/pipeline-training-gce.pem pipeline-training@<your-cloud-instance-public-ip>
 ```
 
 ### Windows
