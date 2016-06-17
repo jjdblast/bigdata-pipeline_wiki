@@ -219,9 +219,9 @@ Beeline version 1.5.1 by Apache Hive
 
 ![Apache Zeppelin Notebooks](http://advancedspark.com/img/zeppelin-hive-thriftserver.png)
 
-* Type `quit` to exit
+* Type `!quit` to exit
 ```
-0: jdbc:hive2://127.0.0.1:10000> quit
+0: jdbc:hive2://127.0.0.1:10000> !quit
 ```
 
 * Stop the long-running Hive Thrift Server frees up CPU cores for more Spark exploration
