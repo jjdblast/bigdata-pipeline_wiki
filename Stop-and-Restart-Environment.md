@@ -16,7 +16,7 @@ sudo docker start pipeline
 ```
 sudo docker attach pipeline
 ```
-* Hit <enter> a few times to get a Docker Container prompt
+* Hit [Enter] a few times to get a Docker Container prompt
 
 ### Restart the Core Services
 ```
