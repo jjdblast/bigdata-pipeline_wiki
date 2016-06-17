@@ -3,37 +3,38 @@
 ```
 mkdir -p ~/.ssh
 
+# MacOS + Linux
 wget http://advancedspark.com/keys/pipeline-training-gce.pem ~/.ssh
 
-# WINDOWS USERS!!
+# Windows
 wget http://advancedspark.com/keys/pipeline-training-gce.ppk \Users\<username>\.ssh
 ```
 
 * Update Permissions
 ```
+# MacOS + Linux
 chmod 600 ~/.ssh/pipeline-training-gce.pem
 
-# WINDOWS USERS!!
+# Windows
 chmod 600 \Users\<username>\.ssh\pipeline-training-gce.ppk
 ```
 
 ## Logging Into Your Instance
 ### Linux/MacOS X
-* Username: `pipeline-training`
-* Password: `password9` if asked for a password
+* Username: **pipeline-training**
+* Password: **password9** if asked for a password
 * Use SSH to log in to your Cloud Instance using the `.pem` file created from the previous step
 * You may have to enter the password you used when you created the key pair in an earlier step 
 ```
+# MacOS + Linux
 ssh -i ~/.ssh/pipeline-training-gce.pem pipeline-training@<your-cloud-instance-public-ip>
-
-# WINDOWS USERS!!
-ssh -i \Users\<username>\.ssh\pipeline-training-gce.ppk pipeline-training@<your-cloud-instance-public-ip>
 ```
 
 ### Windows
-* NOTE:  YOUR PASSWORD FOR THE SSH `.pem` FILE IS `password9`
-* Download [Putty](https://the.earth.li/~sgtatham/putty/latest/x86/putty.exe) and [PuttyGen](https://the.earth.li/~sgtatham/putty/latest/x86/puttygen.exe) 
-* Use PuttyGen to convert the `.pem` file to a `.ppk` file
+* Username: **pipeline-training**
+* Password: **password9** if asked for a password
+* Download [Putty](https://the.earth.li/~sgtatham/putty/latest/x86/putty.exe) 
+* Use `putty` to connect to <your-cloud-instance-ip> using `pipeline-training-gce.ppk` 
 
 ![Putty Host IP](http://advancedspark.com/img/putty-1.png)
 
@@ -56,7 +57,8 @@ fluxcapacitor/pipeline   latest              c392786d2afc        3 mins ago     
 ```
 
 ### Start the Docker Container
-* Adjust the `-m 48g` memory as needed - the larger, the better!
+* You may need to adjust the `-m 48g` memory if you're not on a cloud instance with 50+ GB of RAM
+* We highly recommend 50+ GB of RAM
 ```
 sudo docker run -it --privileged --name pipeline --net=host -m 48g fluxcapacitor/pipeline bash
 ...
@@ -78,6 +80,7 @@ cd $PIPELINE_HOME && git pull && source $CONFIG_HOME/bash/pipeline.bashrc && $SC
 ```
 
 **Wait a few mins for initialization to complete...  this may take some time.**
+**Ignore all errors!!**
 
 ### Verify the Initialization
 * Verify the output of `jps -l` is *similar to* the following (may differ slightly):
@@ -109,9 +112,18 @@ declare -x PIPELINE_HOME="/root/pipeline"
 ...
 declare -x MYSQL_CONNECTOR_JAR="/usr/share/java/mysql-connector-java.jar"
 ```
+## Start the Demo Spark Streaming Application
+* This command will automatically `tail` the Spark Streaming Application log file
+* Keep an eye on this log file during the next step
+```
+start-spark-streaming.sh
+```
 
 ## Verify Your Environment
 * Navigate your browser to the Demo Home Page
+* Follow the steps detailed on the Demo Home Page
+* Keep an eye on the Spark Streaming Application log file from the previous step
+* (You should see ratings flowing through the Spark Streaming Application log file)
 ```
 http://<your-cloud-instance-public-ip>
 ```
