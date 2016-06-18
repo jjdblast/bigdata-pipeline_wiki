@@ -1,23 +1,14 @@
 ## Download SSH `.pem` File to your Local Laptop
-* Put this in the `~/.ssh/` folder
+### MacOS + Linux `.pem`
 ```
 mkdir -p ~/.ssh
-
-# MacOS + Linux
 wget http://advancedspark.com/keys/pipeline-training-gce.pem ~/.ssh
-
-# Windows
-wget http://advancedspark.com/keys/pipeline-training-gce.ppk \Users\<username>\.ssh
-```
-
-* Update Permissions
-```
-# MacOS + Linux
 chmod 600 ~/.ssh/pipeline-training-gce.pem
-
-# Windows
-chmod 600 \Users\<username>\.ssh\pipeline-training-gce.ppk
 ```
+
+### Windows `.ppk`
+* Navigate your browser to to http://advancedspark.com/keys/pipeline-training-gce.ppk
+* This should automatically download the `.ppk` file
 
 ## Logging Into Your Instance
 ### Linux/MacOS X
@@ -41,11 +32,13 @@ ssh -i ~/.ssh/pipeline-training-gce.pem pipeline-training@<your-cloud-instance-p
 ![Putty ppk File](http://advancedspark.com/img/putty-2.png)
 
 ### Start Docker Container
-
-**At this point, you should be ssh'd into your specific cloud instance**
-
-* The assumption is that this is a fresh Cloud Instance with nothing bound to popular ports like 80, 8080, 9090, etc
-* This Docker Container will bind to many ports including port 80, so make sure even `apache2` is disabled before running this command
+* At this point, you should be ssh'd into your specific cloud instance
+* Verify that you see the `pipeline-training` username in the prompt as follows:
+```
+pipeline-training@<something>$
+```
+* This cloud instance should be a fresh instance with no external processes running or bound to any ports
+* This Docker Container will bind to many ports including port 80, so make sure even `apache2` is disabled
 
 ### Verify Docker Images
 * Run the following to verify that you have the latest `fluxcapacitor/pipeline` Docker image
@@ -55,6 +48,7 @@ sudo docker images
 REPOSITORY               TAG                 IMAGE ID            CREATED             SIZE
 fluxcapacitor/pipeline   latest              c392786d2afc        3 mins ago          13.17 GB
 ```
+* If you don't see the `fluxcapacitor/pipeline` Docker image listed, you will need to do `sudo docker pull/fluxcapacitor`
 
 ### Start the Docker Container
 * You may need to adjust the `-m 48g` memory if you're not on a cloud instance with 50+ GB of RAM
@@ -62,25 +56,31 @@ fluxcapacitor/pipeline   latest              c392786d2afc        3 mins ago     
 ```
 sudo docker run -it --privileged --name pipeline --net=host -m 48g fluxcapacitor/pipeline bash
 ...
-WARNING: Your kernel does not support swap limit capabilities, memory limited without swap.
-# ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+##################################
 # IGNORE THIS ERROR IF YOU SEE IT
-# ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+##################################
+WARNING: Your kernel does not support swap limit capabilities, memory limited without swap.
+##################################
+# IGNORE THIS ERROR IF YOU SEE IT
+##################################
 ```
-* Hit `enter` a few times if nothing is happening
+* Hit [Enter] a few times if nothing is happening
 
 ### Configure the Environment and Start All Services
-
-**Note:  At this point, you are in the Docker Container**
-
-* Run the following commands **inside the Docker Container**
+* Note:  At this point, you are inside the Docker Container
+* Verify that you see the `root` username in the prompt as follows
+```
+root@<something>$
+```
+* Run the following commands
 * Note:  You will likely see many WARNINGs and ERRORs - IGNORE THESE
 ```
 cd $PIPELINE_HOME && git pull && source $CONFIG_HOME/bash/pipeline.bashrc && $SCRIPTS_HOME/setup/RUNME_ONCE.sh
 ```
 
 **Wait a few mins for initialization to complete...  this may take some time.**
-**Ignore all errors!!**
+
+**IGNORE ALL ERRORS**
 
 ### Verify the Initialization
 * Verify the output of `jps -l` is *similar to* the following (may differ slightly):
@@ -116,6 +116,7 @@ declare -x MYSQL_CONNECTOR_JAR="/usr/share/java/mysql-connector-java.jar"
 * This command will automatically `tail` the Spark Streaming Application log file
 * Keep an eye on this log file during the next step
 ```
+# Run this from anywhere - it's mounted on the $PATH automatically for you
 start-spark-streaming.sh
 ```
 
@@ -123,7 +124,7 @@ start-spark-streaming.sh
 * Navigate your browser to the Demo Home Page
 * Follow the steps detailed on the Demo Home Page
 * Keep an eye on the Spark Streaming Application log file from the previous step
-* (You should see ratings flowing through the Spark Streaming Application log file)
+* You should see ratings flowing through the Spark Streaming Application log file.
 ```
 http://<your-cloud-instance-public-ip>
 ```
@@ -132,4 +133,4 @@ http://<your-cloud-instance-public-ip>
 ## Troubleshooting
 ### Cannot Connect to Demo Home Page or Navigation Links?
 * Your services are either not started or you have not configured your cloud instance firewall rules (GCE) or security groups (AWS) properly
-* Check out [THIS](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshooting-Environment) for further environment troubleshooting
+* Check out this [Troubleshooting Guide](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshooting-Guide) if you're having problems
