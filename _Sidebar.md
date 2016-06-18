@@ -25,7 +25,7 @@ Managing Environment
 
 [8. Save and Restore Environment](https://github.com/fluxcapacitor/pipeline/wiki/Save-and-Restore-Environment)
 
-[9. Troubleshooting Environment](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshooting-Environment)
+[9. Troubleshooting Guide](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshooting-Guide)
 
 ***
 Contributing
