@@ -19,7 +19,7 @@
 
 ### Cloud Instance Cost
 * Currently, these cloud instance types cost around $8-10 per day
-* Later, we show how to save money by [pausing/stopping](https://github.com/fluxcapacitor/pipeline/wiki/Stop-and-Restart-Environment) your instance - allowing you to resume your work at a later date
+* Later, we show how to save money by [Stopping](https://github.com/fluxcapacitor/pipeline/wiki/Stop-and-Restart-Environment) your instance - allowing you to resume your work at a later date
 
 ## Firewall and Cloud Instance Security Groups
 * Make sure all ports are open on your cloud instance
