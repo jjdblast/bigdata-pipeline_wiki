@@ -18,6 +18,7 @@ item_ratings
 ### Spark Job Submit Script
 ```
 spark-submit --class org.apache.spark.examples.SparkPi --master spark://127.0.0.1:7077 $SPARK_EXAMPLES_JAR 10 
+...
 15/11/19 13:21:34 INFO DAGScheduler: Job 0 finished: reduce at SparkPi.scala:36, took 3.483164 s
 ...
 Pi is roughly 3.14134   <--- Value of Pi using Monte Carlo Simulation with 10 iters
@@ -72,16 +73,16 @@ pipeline-pyspark-shell.sh
 
 ### Spark SQL Shell
 We've created a separate `pipeline-spark-sql.sh` script for the sole purpose of pre-configuring `--jars` and `--packages` to include things like the following:
-
 * MySQL JDBC Connector jar used to access the MySQL Hive Metastore 
 * Any custom file readers like [spark-csv](https://github.com/databricks/spark-csv)
 
 Notes: 
-
 * You can certainly use the regular `spark-sql.sh` that comes with Spark, but this will not have the `--jars` and `--packages` configured as described above.
 ```
 spark-sql> show tables;
+...
 15/11/19 13:22:44 INFO DAGScheduler: Job 0 finished: processCmd at CliDriver.java:376, took 1.626844 s
+...
 datings_genders	false   <------   datings_genders table registered with Hive (isTemporary == false)
 datings_ratings	false   <------   datings_ratings table registered with Hive (isTemporary == false)
 Time taken: 2.179 seconds, Fetched 2 row(s)
@@ -93,12 +94,8 @@ Time taken: 2.179 seconds, Fetched 2 row(s)
 ```
 cqlsh
 cqlsh> use advancedspark;
-
-cqlsh:advancedspark> select userid, rating, timestamp from item_ratings;
 ...
-
-cqlsh> describe advancedspark;
-CREATE KEYSPACE advancedspark WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'} AND durable_writes = true;
+cqlsh:advancedspark> select userid, itemid, rating, timestamp, geocity from item_ratings;
 ...
 ```
 * Type `exit` to exit
