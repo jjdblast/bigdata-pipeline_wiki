@@ -2,12 +2,14 @@ Few Important Notes:
 * NEVER `exit` out of your Docker Container as this stops the Docker Container as well - as the services running within it!
 * Instead, use `ctrl-p ctrl-q` to do a "soft exit" to keep the Docker Container running - as well as the services running within it
 * You can later use `sudo docker attach pipeline` to re-enter a soft-exited container.
-* More environment troubleshooting tips are [HERE](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshooting-Guide)
+* Check out the [Troubleshooting Guide](https://github.com/fluxcapacitor/pipeline/wiki/Troubleshooting-Guide) if you're having problems
 
 ## Explore Service Inside Docker Container
 ### Kafka Native
 ```
 kafka-topics --zookeeper 127.0.0.1:2181 --list
+__confluent.support.metrics
+__consumer_offsets
 _schemas
 item_ratings
 ...
