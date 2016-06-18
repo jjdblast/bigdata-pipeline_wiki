@@ -5,7 +5,8 @@
 
 ## Restarting after Pausing/Stopping your Cloud Instance
 * Re-Start Cloud Instance through Cloud Provider UI
-* `ssh` into your Cloud Instance similar to the initial setup using the SSH keypair `.pem`
+
+* SSH (or Putty/Windows) into your Cloud Instance similar to the initial [setup](https://github.com/fluxcapacitor/pipeline/wiki/Start-Docker-Environment#logging-into-your-instance) using the SSH `.pem` (or `.ppk`/Windows) file
 
 ## Start the Docker Container
 ```
@@ -18,7 +19,7 @@ sudo docker attach pipeline
 ```
 * Hit [Enter] a few times to get a Docker Container prompt
 
-### Restart the Core Services
+### Restart All Services
 ```
 cd $PIPELINE_HOME && start-all-services.sh
 ```
